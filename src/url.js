@@ -1,12 +1,12 @@
 const ApiUrl = {
   One: "https://myfitsta-backend-app-server.herokuapp.com/",
   content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
-  network: "https://servernetwr.herokuapp.com",
+  network: "https://realtimeserver.herokuapp.com",
   streaming: "http://localhost:9500/",
 };
 
 const ApiUrlOrigine = {
-  One: "http://localhost:5000/",
+  One: "http://localhost:8000/",
   Two: "http://localhost:4000/",
   Three: "http://localhost:4500/",
   Messaging: "http://localhost:9000/",
