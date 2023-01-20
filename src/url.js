@@ -24,7 +24,7 @@ const ApiUrlNew = {
   Pay: "https://serverpay.herokuapp.com/",
   content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
   Recover: "https://serverrec.herokuapp.com/",
-  network: "https://servernetwr.herokuapp.com",
+  network: "https://realtimeserver.herokuapp.com",
   streaming: "https://streamingwokout.herokuapp.com/",
 };
 export default ApiUrl;
