@@ -127,8 +127,8 @@ class Comment extends Component {
   };
 
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.state.loadind == false) {
+    if (data===true) {
+      if (this.state.loadind===false) {
         this.setState(
           {
             numberToLoad: this.state.numberToLoad + 10,
@@ -165,7 +165,7 @@ class Comment extends Component {
 
   updatePost = (data) => {
     if (this.props.postList.length > 0) {
-      let Updated = this.props.postList.find((item) => item.filename == data);
+      let Updated = this.props.postList.find((item) => item.filename===data);
       if (Updated) {
         Updated.numberofcomments = this.state.counter;
         let list = this.props.postList.filter((item) => item.filename !== data);
@@ -177,7 +177,7 @@ class Comment extends Component {
   };
   componentDidMount = () => {
     socket.on("update-this-comment", (data) => {
-      if (data.filename == this.state.item.filename) {
+      if (data.filename===this.state.item.filename) {
         this.setState(
           {
             counter: data.count,
@@ -280,7 +280,7 @@ class Comment extends Component {
                       </div>
 
                       {this.state.comments?.map((elment, index) => {
-                        if (this.state.comments.length == index + 1) {
+                        if (this.state.comments.length===index + 1) {
                           return (
                             <motion.div
                               className="fhknrbhfiknrbhj"
@@ -314,7 +314,7 @@ class Comment extends Component {
                           );
                         }
                       })}
-                      {this.state.loadind == true ? (
+                      {this.state.loadind===true ? (
                         <div className="bixnknfkfjkjrjr">
                           <LoadingSpin />
                         </div>

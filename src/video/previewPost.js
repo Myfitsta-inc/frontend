@@ -7,7 +7,7 @@ class PreviewPost extends Component {
     playing: false,
   };
   run = (data) => {
-    if (data == false) {
+    if (data===false) {
       this.setState({
         playing: false,
       });
@@ -51,7 +51,7 @@ class PreviewPost extends Component {
         />
         <div className="control-video">
           <div onClick={this.playvideo} className="play-video">
-            {this.state.playing == false ? (
+            {this.state.playing===false ? (
               <div className="jfjfnnerbb">
                 <GrPlayFill style={{ fill: "white" }} size={20} />
               </div>

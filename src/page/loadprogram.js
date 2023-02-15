@@ -61,7 +61,7 @@ class Loadprogram extends Component {
             this.setState({
               media: res.data,
             });
-            if (this.state.playing == false) {
+            if (this.state.playing===false) {
               this.loadRelater(res.data.programId, res.data.AuthorId);
               this.setState({
                 playing: true,
@@ -233,7 +233,7 @@ class Loadprogram extends Component {
                           this.changlepage(false, true);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.lecture == true ? "active" : ""
+                          this.state.lecture===true ? "active" : ""
                         }`}
                       >
                         Content
@@ -244,7 +244,7 @@ class Loadprogram extends Component {
                           this.changlepage(true, false);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.comment == true ? "active" : ""
+                          this.state.comment===true ? "active" : ""
                         }`}
                       >
                         Comment
@@ -252,7 +252,7 @@ class Loadprogram extends Component {
                     </div>
                     <div
                       className={`commnentnjntjn ${
-                        this.state.comment == true ? "active" : ""
+                        this.state.comment===true ? "active" : ""
                       }`}
                     >
                       <div className="load-the-comnent-title">
@@ -268,7 +268,7 @@ class Loadprogram extends Component {
 
                   <div
                     className={`showthebar-of-theother-element-player ${
-                      this.state.lecture == true ? "active" : ""
+                      this.state.lecture===true ? "active" : ""
                     }`}
                   >
                     <div className="fjejdgrrfje">
@@ -280,7 +280,7 @@ class Loadprogram extends Component {
                           return (
                             <div
                               className={`box-that-hold-theinfo-next-program-c ${
-                                item.file == this.props.match.params.id
+                                item.file===this.props.match.params.id
                                   ? "active"
                                   : ""
                               }`}

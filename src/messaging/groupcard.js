@@ -23,7 +23,7 @@ class Groupcard extends Component {
       profileGroup: this.props.item.profileGroup,
     });
     socket.on("new-group-name", (data) => {
-      if (this.props.item.conversationId == data.conversationId) {
+      if (this.props.item.conversationId===data.conversationId) {
         this.setState({
           name: data.name,
         });
@@ -31,7 +31,7 @@ class Groupcard extends Component {
     });
 
     socket.on("group-new-icon", (data) => {
-      if (this.props.item.conversationId == data.conversationId) {
+      if (this.props.item.conversationId===data.conversationId) {
         this.setState({
           profileGroup: data.content,
         });
@@ -39,10 +39,10 @@ class Groupcard extends Component {
     });
   };
   render() {
-    return this.state.nope == true ? (
+    return this.state.nope===true ? (
       <div
         className={`box-hold-friend-totalkwith ${
-          this.props.item.conversationId == this.props.match.params.id
+          this.props.item.conversationId===this.props.match.params.id
             ? "active"
             : ""
         }`}

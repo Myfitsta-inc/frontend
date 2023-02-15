@@ -143,10 +143,10 @@ class Group extends Component {
 
   messageConnection = () => {
     socket.on("group-new-message", (data) => {
-      if (data.conversationId == this.props.match.params.id) {
+      if (data.conversationId===this.props.match.params.id) {
         let listt = [...this.props.inbox];
         let foundIndex = listt.findIndex(
-          (x) => x.conversationId == this.props.match.params.id
+          (x) => x.conversationId===this.props.match.params.id
         );
         if (foundIndex) {
           let message = this.props.inbox[foundIndex];
@@ -166,7 +166,7 @@ class Group extends Component {
     });
 
     socket.on("new-group-name", (name) => {
-      if (this.props.match.params.id == name.conversationId) {
+      if (this.props.match.params.id===name.conversationId) {
         let newgroup = this.state.group;
         newgroup.name = name.name;
         this.setState({
@@ -176,7 +176,7 @@ class Group extends Component {
     });
 
     socket.on("group-new-icon", (data) => {
-      if (this.props.match.params.id == data.conversationId) {
+      if (this.props.match.params.id===data.conversationId) {
         let groupe = this.state.group;
         groupe.profileGroup = data.content;
 
@@ -274,30 +274,30 @@ class Group extends Component {
                       <div
                         key={item._id}
                         className={`${
-                          item.sender == this.props.user.userid
+                          item.sender===this.props.user.userid
                             ? "box-other-me"
                             : "box-other-freind"
                         }`}
                       >
-                        {item.sender == this.props.user.userid ? (
+                        {item.sender===this.props.user.userid ? (
                           ""
                         ) : (
                           <div className="box-that-holf-theico">
                             <IconProfile user={item.sender} />
                           </div>
                         )}
-                        {item.kind == "message" ? (
+                        {item.kind==="message" ? (
                           <MessageCon
                             handleRemove={this.handleRemove}
                             message={item}
                           />
-                        ) : item.kind == "post" ? (
+                        ) : item.kind==="post" ? (
                           <PostMessage item={item} />
-                        ) : item.kind == "profile" ? (
+                        ) : item.kind==="profile" ? (
                           <Profilemessage item={item} />
-                        ) : item.kind == "program" ? (
+                        ) : item.kind==="program" ? (
                           <ProgramMessage item={item} />
-                        ) : item.kind == "profilepro" ? (
+                        ) : item.kind==="profilepro" ? (
                           <ProfilePromessage item={item} />
                         ) : (
                           ""
@@ -344,7 +344,7 @@ class Group extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.add == true ? (
+                {this.state.add===true ? (
                   <AddParticipant
                     group={this.state.group}
                     handleaddParti={this.handleaddParti}

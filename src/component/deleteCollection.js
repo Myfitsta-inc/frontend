@@ -22,7 +22,7 @@ class DeleteCollection extends Component {
     return (
       <div
         className={`overlay-to-deletet ${
-          this.props.deleteCollection == true ? "active" : ""
+          this.props.deleteCollection===true ? "active" : ""
         }`}
       >
         <div className="delete-the-colletion">

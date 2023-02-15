@@ -30,7 +30,7 @@ class PostCollection extends Component {
 
   loadPost = () => {
     let list = this.props.postList;
-    let found = list.find((item) => item.filename == this.props.item);
+    let found = list.find((item) => item.filename===this.props.item);
     if (found) {
       this.setState({
         data: found,
@@ -60,7 +60,7 @@ class PostCollection extends Component {
 
   updatePost = (data, count) => {
     if (this.props.postList.length > 0) {
-      let Updated = this.props.postList.find((item) => item.filename == data);
+      let Updated = this.props.postList.find((item) => item.filename===data);
       if (Updated) {
         Updated.numberofcomments = count;
         let list = this.props.postList.filter((item) => item.filename !== data);
@@ -79,7 +79,7 @@ class PostCollection extends Component {
   };
   componentDidMount = () => {
     socket.on("update-this-comment", (data) => {
-      if (data.filename == this.props.item) {
+      if (data.filename===this.props.item) {
         this.updatePost(data.filename, data.count);
       }
     });

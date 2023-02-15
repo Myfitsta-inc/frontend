@@ -53,7 +53,7 @@ class Conversation extends Component {
           if (res.data._id) {
             let listt = [...this.props.inbox];
             let foundIndex = listt.findIndex(
-              (x) => x.userid == this.props.match.params.id
+              (x) => x.userid===this.props.match.params.id
             );
             if (foundIndex) {
               let message = this.props.inbox[foundIndex];
@@ -227,12 +227,12 @@ class Conversation extends Component {
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
       if (
-        data.sender == this.props.match.params.id ||
-        data.sender == this.props.user.userid
+        data.sender===this.props.match.params.id ||
+        data.sender===this.props.user.userid
       ) {
         let listt = [...this.props.inbox];
         let foundIndex = listt.findIndex(
-          (x) => x.userid == this.props.match.params.id
+          (x) => x.userid===this.props.match.params.id
         );
         if (foundIndex) {
           let message = this.props.inbox[foundIndex];
@@ -308,52 +308,52 @@ class Conversation extends Component {
                     this.state.loader ? "active" : ""
                   } `}
                 >
-                  {this.state.loading == true ? (
+                  {this.state.loading===true ? (
                     <div className="bixnknfkfjkjrjr">
                       <LoadingSpin />
                     </div>
                   ) : (
                     ""
                   )}
-                  {this.state.block == false
+                  {this.state.block===false
                     ? this.state.conversation?.map((item) => {
                         return (
                           <div
                             key={item._id}
                             className={`${
-                              item.sender == this.props.user.userid
+                              item.sender===this.props.user.userid
                                 ? "box-other-me"
                                 : "box-other-freind"
                             }`}
                           >
-                            {item.sender == this.props.user.userid ? (
+                            {item.sender===this.props.user.userid ? (
                               ""
                             ) : (
                               <div className="box-that-holf-theico">
                                 <IconProfile user={item.sender} />
                               </div>
                             )}
-                            {item.kind == "message" ? (
+                            {item.kind==="message" ? (
                               <MessageCon
                                 handleRemove={this.handleRemove}
                                 message={item}
                               />
-                            ) : item.kind == "post" ? (
+                            ) : item.kind==="post" ? (
                               <PostMessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind == "profile" ? (
+                            ) : item.kind==="profile" ? (
                               <Profilemessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind == "program" ? (
+                            ) : item.kind==="program" ? (
                               <ProgramMessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind == "profilepro" ? (
+                            ) : item.kind==="profilepro" ? (
                               <ProfilePromessage
                                 handleRemove={this.handleRemove}
                                 item={item}
@@ -393,7 +393,7 @@ class Conversation extends Component {
                   )}
                 </div>
                 {this.state.block !== null ? (
-                  this.state.block == false ? (
+                  this.state.block===false ? (
                     <div className="type-message-box">
                       <div className="watpr-contnr-mem">
                         <div className="wrappe-mmeshe">
@@ -430,7 +430,7 @@ class Conversation extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.open == true ? (
+                {this.state.open===true ? (
                   <ConversationDetail
                     handleblock={this.handleblock}
                     block={this.state.block}

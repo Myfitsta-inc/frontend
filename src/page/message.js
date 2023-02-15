@@ -52,7 +52,7 @@ class Message extends Component {
             </div>
           </div>
         </div>
-        {this.state.open == true ? (
+        {this.state.open===true ? (
           <Newmessage handleopen={this.handleopen} open={this.state.open} />
         ) : (
           ""

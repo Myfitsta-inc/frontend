@@ -922,7 +922,7 @@ class Feature extends Component {
         <Fade bottom>
           <div
             className={`featyu-aboutb-app ${
-              this.props.mode == true ? "active" : ""
+              this.props.mode===true ? "active" : ""
             } `}
           >
             <div className="detailskfnf white">

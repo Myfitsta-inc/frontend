@@ -57,7 +57,7 @@ class PostOption extends Component {
       this.container.current &&
       !this.container.current.contains(event.target)
     ) {
-      if (this.state.open == true) {
+      if (this.state.open===true) {
         this.handleclick(false, null);
       }
     } else {
@@ -81,7 +81,7 @@ class PostOption extends Component {
   render() {
     return (
       <div
-        className={`boxmrjrjerjrjnue ${this.state.top == true ? "top" : "top"}`}
+        className={`boxmrjrjerjrjnue ${this.state.top===true ? "top" : "top"}`}
         ref={this.container}
       >
         <div className="title-of--thise-action">
@@ -95,7 +95,7 @@ class PostOption extends Component {
           </button>
         </div>
         <div
-          className={`tisjjrjrjr ${this.state.open == true ? "active" : ""}`}
+          className={`tisjjrjrjr ${this.state.open===true ? "active" : ""}`}
         >
           <div className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
@@ -126,7 +126,7 @@ class PostOption extends Component {
             ""
           )}
 
-          {this.props.users.userid == this.props.item.userId ? (
+          {this.props.users.userid===this.props.item.userId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />

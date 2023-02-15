@@ -113,9 +113,9 @@ class FieldCard extends Component {
     axios
       .post(`/api/api/braintree/v1/sandbox`, option)
       .then((result) => {
-        if (result.data.success == true) {
+        if (result.data.success===true) {
           itemCouter++;
-          if (itemCouter == this.props.item.length) {
+          if (itemCouter===this.props.item.length) {
             this.props.history.push("/collection/program");
           } else {
             this.handlePay(data);
@@ -164,12 +164,12 @@ class FieldCard extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading == true ? "loading" : ""
+                  this.state.loading===true ? "loading" : ""
                 }`}
-                value={`${this.state.loading == true ? "" : "Purchase"}`}
+                value={`${this.state.loading===true ? "" : "Purchase"}`}
                 id="submit"
               />
-              {this.state.loading == true ? (
+              {this.state.loading===true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

@@ -110,7 +110,7 @@ class Collection extends Component {
             <div className="wraper-collection ">
               <div className="title-coc">
                 <p className="col-tit">Collection</p>
-                {this.props.location.pathname == "/collection/program" ? (
+                {this.props.location.pathname==="/collection/program" ? (
                   ""
                 ) : (
                   <div
@@ -128,7 +128,7 @@ class Collection extends Component {
                   <Link
                     to={"/collection"}
                     className={`vbfhj-tabs ${
-                      this.props.location.pathname == "/collection"
+                      this.props.location.pathname==="/collection"
                         ? "active"
                         : ""
                     } `}
@@ -138,7 +138,7 @@ class Collection extends Component {
                   <Link
                     to={"/collection/program"}
                     className={`vbfhj-tabs ${
-                      this.props.location.pathname == "/collection/program"
+                      this.props.location.pathname==="/collection/program"
                         ? "active"
                         : ""
                     } `}
@@ -152,7 +152,7 @@ class Collection extends Component {
                 this.state.collection !== "no" ? (
                   <div
                     className={`box-hold-all-collection ${
-                      this.props.location.pathname == "/collection"
+                      this.props.location.pathname==="/collection"
                         ? "active"
                         : ""
                     } `}
@@ -275,7 +275,7 @@ class Collection extends Component {
                 ) : (
                   <div
                     className={`box-hold-all-collection ${
-                      this.props.location.pathname == "/collection"
+                      this.props.location.pathname==="/collection"
                         ? "active"
                         : ""
                     } `}
@@ -297,10 +297,10 @@ class Collection extends Component {
                 </div>
               )}
 
-              {this.props.location.pathname == "/collection/program" ? (
+              {this.props.location.pathname==="/collection/program" ? (
                 <div
                   className={`prihrrrnnf-myrnrnr ${
-                    this.props.location.pathname == "/collection/program"
+                    this.props.location.pathname==="/collection/program"
                       ? "active"
                       : ""
                   } `}
@@ -313,16 +313,16 @@ class Collection extends Component {
             </div>
             <Navbom handloption={this.handloption} />
           </div>
-          {this.state.boxCollection == true ? (
+          {this.state.boxCollection===true ? (
             <div
               className={`collection-overlay  ${
-                this.state.boxCollection == false ? "" : "active"
+                this.state.boxCollection===false ? "" : "active"
               }`}
             >
               <div className="box-hold-collection">
                 <div
                   className={`add-tocollection-box ${
-                    this.state.create == false ? "" : "active"
+                    this.state.create===false ? "" : "active"
                   }`}
                 >
                   <div className="Create-a-new-list-title">
@@ -355,7 +355,7 @@ class Collection extends Component {
             ""
           )}
         </div>
-        {this.state.drop == true ? (
+        {this.state.drop===true ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

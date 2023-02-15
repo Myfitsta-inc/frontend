@@ -14,7 +14,7 @@ class Menupost extends Component {
     return (
       <div
         className={`overlay-that-horlt-it  ${
-          this.props.setting == false ? "" : "active"
+          this.props.setting===false ? "" : "active"
         }`}
       >
         <div className="boxmrjrjenue">

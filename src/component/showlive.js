@@ -44,7 +44,7 @@ export default class ShowLive extends Component {
     return (
       <div
         className={`liv-workot-streaming  ${
-          this.state.open == true ? "active" : ""
+          this.state.open===true ? "active" : ""
         }`}
       >
         <div className="titeehwhle">Live Streaming</div>

@@ -81,7 +81,7 @@ class Shoping extends Component {
   };
 
   subscribe = (event) => {
-    if (this.state.subscribe == true) {
+    if (this.state.subscribe===true) {
       let option = {
         User: this.state.profile.userid,
         subScriber: this.props.user.userid,
@@ -127,7 +127,7 @@ class Shoping extends Component {
       })
       .then((res) => {
         if (res.data.userid) {
-          if (res.data.userid == this.props.user.userid) {
+          if (res.data.userid===this.props.user.userid) {
             this.props.history.push("/myfitstapro");
           } else {
             this.setState({
@@ -217,7 +217,7 @@ class Shoping extends Component {
                         ""
                       )}
 
-                      {this.state.subscribe == false ? (
+                      {this.state.subscribe===false ? (
                         <button className="flo">Subscribe</button>
                       ) : (
                         <button onClick={this.subscribe} className="flo active">
@@ -241,7 +241,7 @@ class Shoping extends Component {
                     ) : (
                       ""
                     )}
-                    {this.state.subscribe == false ? (
+                    {this.state.subscribe===false ? (
                       <button className="flo">Subscribe</button>
                     ) : (
                       <button onClick={this.subscribe} className="flo active">
@@ -291,7 +291,7 @@ class Shoping extends Component {
 */}
 
             {this.state.subscribeCheck !== null ? (
-              this.state.subscribeCheck == false ? (
+              this.state.subscribeCheck===false ? (
                 <div className="wraperjf-ffkfkr">
                   <p>Subscribe to {this.state.profile.Username} </p>
                   <p>
@@ -302,7 +302,7 @@ class Shoping extends Component {
                 this.state.program !== "no" ? (
                   <div
                     className={`hold-your-work-program ${
-                      this.state.tabsprogram == true ? "active" : ""
+                      this.state.tabsprogram===true ? "active" : ""
                     }`}
                   >
                     {this.state.program !== null
@@ -342,7 +342,7 @@ class Shoping extends Component {
 
             <div
               className={`hiold-my-programs ${
-                this.state.tabscard == true ? "active" : ""
+                this.state.tabscard===true ? "active" : ""
               }`}
             >
               <PersoCard />

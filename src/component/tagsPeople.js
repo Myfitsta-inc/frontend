@@ -89,7 +89,7 @@ class TagPeople extends Component {
                   this.selectedpeople({ id: item.userid });
                 }}
                 className={`list-peopkojr ${
-                  this.state.selected.some((e) => e.id == item.userid)
+                  this.state.selected.some((e) => e.id===item.userid)
                     ? "active"
                     : ""
                 } `}

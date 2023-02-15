@@ -73,7 +73,7 @@ class Nav extends Component {
                 <p>Profile</p>
               </NavLink>
 
-              {this.props.user.myfista == true ? (
+              {this.props.user.myfista===true ? (
                 <NavLink
                   to="/myfitstapro"
                   className="nav-lii nav-infoo   "

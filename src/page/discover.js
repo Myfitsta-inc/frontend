@@ -91,8 +91,8 @@ class Discover extends Component {
     }
   };
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState({
           numberLoad: this.state.numberLoad + 10,
         });
@@ -162,7 +162,7 @@ class Discover extends Component {
                 {this.state.post.length > 0 ? (
                   <div className="contiantien-post">
                     {this.state.post?.map((item, index) => {
-                      if (this.state.post.length == index + 1) {
+                      if (this.state.post.length===index + 1) {
                         return (
                           <div key={item._id} className="box-media-box">
                             {item.filename.split(",").length > 1 ? (
@@ -319,7 +319,7 @@ class Discover extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.loading == true ? (
+                {this.state.loading===true ? (
                   <div className="bixnknfkfjkjrjr">
                     <LoadingSpin />
                   </div>
@@ -343,7 +343,7 @@ class Discover extends Component {
             />
           </div>
         </div>
-        {this.state.drop == true ? (
+        {this.state.drop===true ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

@@ -44,7 +44,7 @@ class AddTocardButton extends Component {
   render() {
     return (
       <div className="box-theprocedt0-thecheckk">
-        {this.state.card.some((i) => i.programId == this.props.id) ? (
+        {this.state.card.some((i) => i.programId===this.props.id) ? (
           <button className="add-to-card">
             {" "}
             <ImCheckmark className="added" /> Added to card

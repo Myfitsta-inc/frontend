@@ -33,8 +33,8 @@ class LastMessage extends Component {
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
       if (
-        data.friend == this.props.item.userid ||
-        data.sender == this.props.item.userid
+        data.friend===this.props.item.userid ||
+        data.sender===this.props.item.userid
       ) {
         this.setState({
           lastMessage: data,
@@ -53,17 +53,17 @@ class LastMessage extends Component {
     return (
       <div className="hojj-jjjr">
         {this.state.lastMessage !== null ? (
-          this.state.lastMessage.kind == "message" ? (
+          this.state.lastMessage.kind==="message" ? (
             this.state.lastMessage.content
-          ) : this.state.lastMessage.kind == "post" ? (
+          ) : this.state.lastMessage.kind==="post" ? (
             <p className="postg">Post</p>
-          ) : this.state.lastMessage.kind == "program" ? (
+          ) : this.state.lastMessage.kind==="program" ? (
             <p className="postg">Program</p>
-          ) : this.state.lastMessage.kind == "profile" ? (
+          ) : this.state.lastMessage.kind==="profile" ? (
             <p className="postg">Profile</p>
-          ) : this.state.lastMessage.kind == "profilepro" ? (
+          ) : this.state.lastMessage.kind==="profilepro" ? (
             <p className="postg">Profile</p>
-          ) : this.state.lastMessage.kind == "image/png" ? (
+          ) : this.state.lastMessage.kind==="image/png" ? (
             <p className="postg">Image</p>
           ) : (
             "No message"

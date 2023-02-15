@@ -18,7 +18,7 @@ class Interest extends Component {
   };
 
   handleCheck = () => {
-    if (this.props.interest == null) {
+    if (this.props.interest===null) {
     }
     axios
       .get(`/api/load-Interest/${this.props.users.userid}`)
@@ -41,7 +41,7 @@ class Interest extends Component {
     return (
       <div
         className={`subjection-top-folow-box ${
-          this.props.tabs == true ? "active" : ""
+          this.props.tabs===true ? "active" : ""
         }`}
       >
         {this.props.interest !== null ? (

@@ -22,7 +22,7 @@ class Username extends Component {
 
   username = () => {
     let userFind = this.props.usernameList.filter(
-      (item) => item.userid == this.props.user
+      (item) => item.userid===this.props.user
     );
     if (userFind.length > 0) {
       this.setState({
@@ -70,7 +70,7 @@ class Username extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.state.user !== this.props.user) {
-      if (this.state.monted == true) {
+      if (this.state.monted===true) {
         this.username();
         this.setState({ user: this.props.user });
       }
@@ -91,9 +91,9 @@ class Username extends Component {
         className="usernsmr-the-compoocnf"
       >
         {this.state.username !== null ? (
-          this.props.link == true ? (
+          this.props.link===true ? (
             <div className="srjhsur">
-              {this.state.username.username == this.props.users.Username ? (
+              {this.state.username.username===this.props.users.Username ? (
                 <Link
                   className={`rnwjrkwr ${
                     this.props.go !== undefined ? "active" : ""
@@ -112,7 +112,7 @@ class Username extends Component {
                   {this.state.username.username}
                 </Link>
               )}
-              {this.state.username.pro == true ? (
+              {this.state.username.pro===true ? (
                 <div className="wfjiriej">
                   <img src={logo} />
                 </div>

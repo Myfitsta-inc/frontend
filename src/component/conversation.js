@@ -82,7 +82,7 @@ class ConversationList extends Component {
     return (
       <div
         className={`your-conversation-box-seesion  ${
-          this.props.data == false ? "" : "disp-cht-bo"
+          this.props.data===false ? "" : "disp-cht-bo"
         }`}
       >
         <div className="tilte-t-the-message">
@@ -125,7 +125,7 @@ class ConversationList extends Component {
                         className="wrpaittjjtjsiirir"
                         key={item._id}
                       >
-                        {item.kind == "inbox" ? (
+                        {item.kind==="inbox" ? (
                           <Convercard
                             item={item}
                             user={this.props.user}
@@ -149,7 +149,7 @@ class ConversationList extends Component {
             <LoadingSpin />
           </div>
         )}
-        {this.state.open == true ? (
+        {this.state.open===true ? (
           <Newmessage
             user={this.props.user}
             handleopen={this.handleopen}

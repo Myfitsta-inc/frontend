@@ -18,7 +18,7 @@
       (v.document,
       !!a.documentElement &&
         !!a.head &&
-        "function" == typeof a.addEventListener &&
+        "function"===typeof a.addEventListener &&
         a.createElement,
       ~z.indexOf("MSIE") || z.indexOf("Trident/"),
       "___FONT_AWESOME___"),
@@ -49,7 +49,7 @@
           for (var c = 1; c < arguments.length; c++) {
             var a = null != arguments[c] ? arguments[c] : {},
               l = Object.keys(a);
-            "function" == typeof Object.getOwnPropertySymbols &&
+            "function"===typeof Object.getOwnPropertySymbols &&
               (l = l.concat(
                 Object.getOwnPropertySymbols(a).filter(function (c) {
                   return Object.getOwnPropertyDescriptor(a, c).enumerable;
@@ -3175,7 +3175,7 @@
         (v.document,
         !!a.documentElement &&
           !!a.head &&
-          "function" == typeof a.addEventListener &&
+          "function"===typeof a.addEventListener &&
           a.createElement,
         ~z.indexOf("MSIE") || z.indexOf("Trident/"),
         "___FONT_AWESOME___"),
@@ -3206,7 +3206,7 @@
             for (var c = 1; c < arguments.length; c++) {
               var a = null != arguments[c] ? arguments[c] : {},
                 l = Object.keys(a);
-              "function" == typeof Object.getOwnPropertySymbols &&
+              "function"===typeof Object.getOwnPropertySymbols &&
                 (l = l.concat(
                   Object.getOwnPropertySymbols(a).filter(function (c) {
                     return Object.getOwnPropertyDescriptor(a, c).enumerable;
@@ -4323,7 +4323,7 @@
         (v.document,
         !!a.documentElement &&
           !!a.head &&
-          "function" == typeof a.addEventListener &&
+          "function"===typeof a.addEventListener &&
           a.createElement,
         ~z.indexOf("MSIE") || z.indexOf("Trident/"),
         "___FONT_AWESOME___"),
@@ -4354,7 +4354,7 @@
             for (var c = 1; c < arguments.length; c++) {
               var a = null != arguments[c] ? arguments[c] : {},
                 l = Object.keys(a);
-              "function" == typeof Object.getOwnPropertySymbols &&
+              "function"===typeof Object.getOwnPropertySymbols &&
                 (l = l.concat(
                   Object.getOwnPropertySymbols(a).filter(function (c) {
                     return Object.getOwnPropertyDescriptor(a, c).enumerable;
@@ -11144,13 +11144,13 @@
     "use strict";
     function a(c) {
       return (a =
-        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+        "function"===typeof Symbol && "symbol"===typeof Symbol.iterator
           ? function (c) {
               return typeof c;
             }
           : function (c) {
               return c &&
-                "function" == typeof Symbol &&
+                "function"===typeof Symbol &&
                 c.constructor === Symbol &&
                 c !== Symbol.prototype
                 ? "symbol"
@@ -11170,7 +11170,7 @@
       for (var c = 1; c < arguments.length; c++) {
         var a = null != arguments[c] ? arguments[c] : {},
           l = Object.keys(a);
-        "function" == typeof Object.getOwnPropertySymbols &&
+        "function"===typeof Object.getOwnPropertySymbols &&
           (l = l.concat(
             Object.getOwnPropertySymbols(a).filter(function (c) {
               return Object.getOwnPropertyDescriptor(a, c).enumerable;
@@ -11213,7 +11213,7 @@
             (v = !0), (a = c);
           } finally {
             try {
-              z || null == s.return || s.return();
+              z || null===s.return || s.return();
             } finally {
               if (v) throw a;
             }
@@ -11271,8 +11271,8 @@
       H =
         !!V.documentElement &&
         !!V.head &&
-        "function" == typeof V.addEventListener &&
-        "function" == typeof V.createElement,
+        "function"===typeof V.addEventListener &&
+        "function"===typeof V.createElement,
       p = ~e.indexOf("MSIE") || ~e.indexOf("Trident/"),
       i = "___FONT_AWESOME___",
       b = 16,
@@ -11367,7 +11367,7 @@
           })
         ),
       T = o.FontAwesomeConfig || {};
-    if (V && "function" == typeof V.querySelector) {
+    if (V && "function"===typeof V.querySelector) {
       [
         ["data-family-prefix", "familyPrefix"],
         ["data-replacement-class", "replacementClass"],
@@ -11446,8 +11446,8 @@
       hc =
         "undefined" != typeof global &&
         void 0 !== global.process &&
-        "function" == typeof global.process.emit,
-      zc = "undefined" == typeof setImmediate ? setTimeout : setImmediate,
+        "function"===typeof global.process.emit,
+      zc = "undefined"===typeof setImmediate ? setTimeout : setImmediate,
       vc = [];
     function ac() {
       for (var c = 0; c < vc.length; c++) vc[c][0](vc[c][1]);
@@ -11462,7 +11462,7 @@
         z = l._data,
         v = c[h],
         a = c.then;
-      if ("function" == typeof v) {
+      if ("function"===typeof v) {
         h = $;
         try {
           z = v(z);
@@ -11479,9 +11479,9 @@
           throw new TypeError(
             "A promises callback cannot return that same promise."
           );
-        if (h && ("function" == typeof h || "object" === a(h))) {
+        if (h && ("function"===typeof h || "object" === a(h))) {
           var c = h.then;
-          if ("function" == typeof c)
+          if ("function"===typeof c)
             return (
               c.call(
                 h,
@@ -11528,7 +11528,7 @@
     function oc(c) {
       if ("function" != typeof c)
         throw new TypeError("Promise resolver " + c + " is not a function");
-      if (this instanceof oc == !1)
+      if (this instanceof oc===!1)
         throw new TypeError(
           "Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function."
         );
@@ -11588,7 +11588,7 @@
             );
           }
           for (var a, m = 0; m < s.length; m++)
-            (a = s[m]) && "function" == typeof a.then
+            (a = s[m]) && "function"===typeof a.then
               ? a.then(l(m), c)
               : (z[m] = a);
           v || h(z);
@@ -11599,7 +11599,7 @@
           throw new TypeError("You must pass an array to Promise.race().");
         return new oc(function (c, l) {
           for (var h, z = 0; z < v.length; z++)
-            (h = v[z]) && "function" == typeof h.then ? h.then(c, l) : c(h);
+            (h = v[z]) && "function"===typeof h.then ? h.then(c, l) : c(h);
         });
       }),
       (oc.resolve = function (l) {
@@ -11614,7 +11614,7 @@
           l(h);
         });
       });
-    var Vc = "function" == typeof Promise ? Promise : oc,
+    var Vc = "function"===typeof Promise ? Promise : oc,
       Cc = b,
       Lc = { size: 16, x: 0, y: 0, rotate: 0, flipX: !1, flipY: !1 };
     function uc(c) {
@@ -12131,7 +12131,7 @@
         v = void 0 === z ? {} : z,
         a = c.children,
         m = void 0 === a ? [] : a;
-      return "string" == typeof c
+      return "string"===typeof c
         ? Ac(c)
         : "<"
             .concat(l, " ")
@@ -12149,7 +12149,7 @@
     }
     var $c = function () {};
     function cl(c) {
-      return "string" == typeof (c.getAttribute ? c.getAttribute(B) : null);
+      return "string"===typeof (c.getAttribute ? c.getAttribute(B) : null);
     }
     var ll = {
       replace: function (c) {
@@ -12202,7 +12202,7 @@
       c();
     }
     function zl(h, c) {
-      var z = "function" == typeof c ? c : $c;
+      var z = "function"===typeof c ? c : $c;
       if (0 === h.length) z();
       else {
         var l = hl;
@@ -12482,7 +12482,7 @@
         var h = { found: !1, width: 512, height: 512, icon: ol };
         if (z && v && Vl[v] && Vl[v][z]) return c(Cl(Vl[v][z]));
         "object" === a(o.FontAwesomeKitConfig) &&
-          "string" == typeof window.FontAwesomeKitConfig.token &&
+          "string"===typeof window.FontAwesomeKitConfig.token &&
           o.FontAwesomeKitConfig.token,
           z && v && !K.showMissingIcons
             ? l(
@@ -12608,7 +12608,7 @@
                     z("active"),
                       z("complete"),
                       v("pending"),
-                      "function" == typeof h && h(),
+                      "function"===typeof h && h(),
                       e(),
                       l();
                   });

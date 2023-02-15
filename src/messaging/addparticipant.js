@@ -113,7 +113,7 @@ class AddParticipant extends Component {
             <div className="box-that-reajfjjjrjrnjttf">
               {this.state.people?.map((item) => {
                 return this.props.group.members.some(
-                  (data) => data.userid == item.userid
+                  (data) => data.userid===item.userid
                 ) ? (
                   <div className={`list-peopkojr active `} key={item._id}>
                     <div className="inforisjjofjjr">

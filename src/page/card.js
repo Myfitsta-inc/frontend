@@ -47,7 +47,7 @@ class Card extends Component {
   handleclick = (id, item, status) => {
     let list = this.state.Ucards;
     list.forEach((element) => {
-      if (element.programId == id) {
+      if (element.programId===id) {
         element.selected = !element.selected;
       }
     });
@@ -266,7 +266,7 @@ class Card extends Component {
             )}
           </div>
         </div>
-        {this.state.checkout == true ? (
+        {this.state.checkout===true ? (
           <PaymentBoxCard
             handleCheckout={this.handleCheckout}
             item={this.state.item}

@@ -14,7 +14,7 @@ class SettingAccount extends Component {
   render() {
     return (
       <div
-        className={`boxmenue  ${this.props.setting == false ? "" : "active"}`}
+        className={`boxmenue  ${this.props.setting===false ? "" : "active"}`}
       >
         <div className="title-of--thise-action rhbrnr">
           <p>Setting</p>
@@ -26,7 +26,7 @@ class SettingAccount extends Component {
           </button>
         </div>
 
-        {this.props.follow == false ? (
+        {this.props.follow===false ? (
           <div className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <IoCloseSharp />

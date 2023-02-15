@@ -37,7 +37,7 @@ class BoxMedia extends Component {
   render() {
     return (
       <div className="post-content">
-        {this.props.file.split(",").length == 1 ? (
+        {this.props.file.split(",").length===1 ? (
           this.props.kind[0].includes("image") ? (
             <img src={`${ApiUrl.content}${this.props.file}`} alt="workout" />
           ) : (
@@ -46,7 +46,7 @@ class BoxMedia extends Component {
         ) : (
           <div className="multipla-content">
             {this.props.file.split(",").map((value, index) => {
-              return this.state.index == index ? (
+              return this.state.index===index ? (
                 <AnimatePresence custom={index} key={index}>
                   <motion.div
                     key={index}
@@ -61,7 +61,7 @@ class BoxMedia extends Component {
                     variants={{
                       enter: {
                         x:
-                          this.state.begin == true
+                          this.state.begin===true
                             ? this.state.index > this.state.previous
                               ? 500
                               : -500
@@ -122,7 +122,7 @@ class BoxMedia extends Component {
                 return (
                   <div
                     className={`wrwsjrp ${
-                      this.state.index == index ? "active" : ""
+                      this.state.index===index ? "active" : ""
                     }`}
                     key={Math.floor(Math.random() * 1000)}
                   >

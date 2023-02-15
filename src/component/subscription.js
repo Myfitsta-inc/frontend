@@ -27,7 +27,7 @@ class Subscribe extends Component {
     return (
       <motion.div
         className={`overlay-to-subcribe  ${
-          this.props.subscribeBox == false ? "" : "active"
+          this.props.subscribeBox===false ? "" : "active"
         }`}
       >
         <motion.div layout className="pupurps-to0subcribve">
@@ -49,7 +49,7 @@ class Subscribe extends Component {
           </div>
           <div className="hold-thesubcribe">
             <p className="his-nreame">Select one subscription plan</p>
-            {this.state.tabNext == true ? (
+            {this.state.tabNext===true ? (
               ""
             ) : (
               <div className="wrajrkr-wosorr">
@@ -81,9 +81,9 @@ class Subscribe extends Component {
                             <span>$</span>
                             <p className="price-it">{item.price}</p> /{" "}
                             <p className="title-4hh4">
-                              {item.planChoose == "Silver"
+                              {item.planChoose==="Silver"
                                 ? "month"
-                                : item.planChoose == "Platinium"
+                                : item.planChoose==="Platinium"
                                 ? "3 month"
                                 : "Year"}
                             </p>
@@ -102,7 +102,7 @@ class Subscribe extends Component {
               </div>
             )}
 
-            {this.state.tabNext == true ? (
+            {this.state.tabNext===true ? (
               <PaymentSub
                 handlenext={this.handlenext}
                 Authorid={this.props.profile}

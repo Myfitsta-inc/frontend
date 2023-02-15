@@ -28,7 +28,7 @@ class Addprogram extends Component {
       axios
         .post(`/api/add-a-new-program-with-no-image-or-video`, program)
         .then((res) => {
-          if (res.data == "change the title") {
+          if (res.data==="change the title") {
             console.log("chage it");
             document.querySelector(".hold-that-messe").classList.add("active");
             document.querySelector(".hold-that-messe").innerText =
@@ -69,7 +69,7 @@ class Addprogram extends Component {
     return (
       <div
         className={`overlay-new-program  ${
-          this.props.open == false ? "" : "active"
+          this.props.open===false ? "" : "active"
         }`}
       >
         <div className="box-that-create-a-new-program">
@@ -111,14 +111,14 @@ class Addprogram extends Component {
             {this.state.loadind ? (
               <button
                 className={`create  ${
-                  this.state.button == false ? "" : "active"
+                  this.state.button===false ? "" : "active"
                 }`}
               ></button>
             ) : (
               <button
                 onClick={() => this.handleCreate()}
                 className={`create  ${
-                  this.state.button == false ? "" : "active"
+                  this.state.button===false ? "" : "active"
                 }`}
               >
                 CREATE

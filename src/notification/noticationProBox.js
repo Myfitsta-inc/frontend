@@ -21,8 +21,8 @@ class NotificationProBox extends Component {
     };
   }
   LoadMore = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState(
           {
             numberToLoad: this.state.numberToLoad + 10,
@@ -72,13 +72,13 @@ class NotificationProBox extends Component {
         {this.state.fitstanot !== null ? (
           this.state.fitstanot !== "no" ? (
             this.state.fitstanot?.map((item, index) => {
-              if (this.state.fitstanot.length == index + 1) {
+              if (this.state.fitstanot.length===index + 1) {
                 return (
                   <InView
                     onChange={(inView) => this.LoadMore(inView)}
                     key={item._id}
                   >
-                    {item.type == "Subscription" ? (
+                    {item.type==="Subscription" ? (
                       <ProSubscription item={item} key={item._id} />
                     ) : (
                       ""
@@ -86,7 +86,7 @@ class NotificationProBox extends Component {
                   </InView>
                 );
               } else {
-                return item.type == "Subscription" ? (
+                return item.type==="Subscription" ? (
                   <ProSubscription item={item} key={item._id} />
                 ) : (
                   ""

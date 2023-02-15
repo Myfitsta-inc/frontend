@@ -140,17 +140,17 @@ class CreatGroupChat extends Component {
   render() {
     return (
       <div
-        className={`gnjtjtjtjdt ${this.props.group == true ? "active" : ""}`}
+        className={`gnjtjtjtjdt ${this.props.group===true ? "active" : ""}`}
       >
         <div
           className={`group-chat-box  ${
-            this.state.next == true ? "active" : ""
+            this.state.next===true ? "active" : ""
           } `}
         >
           <div className="wrapeerjj">
             <div
               className={`boxjfjrtii ${
-                this.state.next == false ? "active" : ""
+                this.state.next===false ? "active" : ""
               }`}
             >
               <div className="cresjfjf">
@@ -246,7 +246,7 @@ class CreatGroupChat extends Component {
               </div>
             </div>
             <div
-              className={`fnjerfe ${this.state.next == true ? "active" : ""}`}
+              className={`fnjerfe ${this.state.next===true ? "active" : ""}`}
             >
               <div className="cresjfjf">
                 <button onClick={this.nextsilde} className="close-that">

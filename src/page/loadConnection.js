@@ -79,7 +79,7 @@ class LoadConnection extends Component {
                         <div className="tabs0dkke">
                           <div
                             className={`tsgfhjked ${
-                              this.props.match.params.data == "follower"
+                              this.props.match.params.data==="follower"
                                 ? "active"
                                 : ""
                             }`}
@@ -92,7 +92,7 @@ class LoadConnection extends Component {
                           </div>
                           <div
                             className={`tsgfhjked ${
-                              this.props.match.params.data == "following"
+                              this.props.match.params.data==="following"
                                 ? "active"
                                 : ""
                             }`}
@@ -103,10 +103,10 @@ class LoadConnection extends Component {
                               Following
                             </Link>
                           </div>
-                          {this.state.profile.myfista == true ? (
+                          {this.state.profile.myfista===true ? (
                             <div
                               className={`tsgfhjked ${
-                                this.props.match.params.data == "subscriber"
+                                this.props.match.params.data==="subscriber"
                                   ? "active"
                                   : ""
                               }`}
@@ -124,12 +124,12 @@ class LoadConnection extends Component {
                         <div className="wrpskrijkjrkkrkrkkr">
                           <motion.div
                             className={`wfijiwrjwkjrnr ${
-                              this.props.match.params.data == "follower"
+                              this.props.match.params.data==="follower"
                                 ? "active"
                                 : ""
                             } `}
                           >
-                            {this.props.match.params.data == "follower" ? (
+                            {this.props.match.params.data==="follower" ? (
                               this.state.profile !== null ? (
                                 <Follower user={this.state.profile.userid} />
                               ) : (
@@ -141,12 +141,12 @@ class LoadConnection extends Component {
                           </motion.div>
                           <motion.div
                             className={`wfijiwrjwkjrnr ${
-                              this.props.match.params.data == "following"
+                              this.props.match.params.data==="following"
                                 ? "active"
                                 : ""
                             }`}
                           >
-                            {this.props.match.params.data == "following" ? (
+                            {this.props.match.params.data==="following" ? (
                               this.state.profile !== null ? (
                                 <Following user={this.state.profile.userid} />
                               ) : (
@@ -157,15 +157,15 @@ class LoadConnection extends Component {
                             )}
                           </motion.div>
 
-                          {this.state.profile.myfista == true ? (
+                          {this.state.profile.myfista===true ? (
                             <motion.div
                               className={`wfijiwrjwkjrnr ${
-                                this.props.match.params.data == "subscriber"
+                                this.props.match.params.data==="subscriber"
                                   ? "active"
                                   : ""
                               }`}
                             >
-                              {this.props.match.params.data == "subscriber" ? (
+                              {this.props.match.params.data==="subscriber" ? (
                                 this.state.profile !== null ? (
                                   <SubscriberList
                                     user={this.state.profile.userid}

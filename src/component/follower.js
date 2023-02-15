@@ -40,8 +40,8 @@ class Follower extends Component {
       });
   };
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState(
           {
             numberLoad: this.state.numberLoad + 10,
@@ -95,7 +95,7 @@ class Follower extends Component {
                   placeholder="Seach..."
                   type="text"
                 />
-                {this.state.loading == true ? (
+                {this.state.loading===true ? (
                   <div className="cnjrrjrn">
                     <LoadingSpin />
                   </div>
@@ -114,7 +114,7 @@ class Follower extends Component {
           {this.state.follower !== null ? (
             this.state.follower !== "no" ? (
               this.state.follower?.map((item, index) => {
-                if (this.state.follower.length == index + 1) {
+                if (this.state.follower.length===index + 1) {
                   return (
                     <motion.div
                       layout

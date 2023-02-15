@@ -26,8 +26,8 @@ class NotificationBasicBox extends Component {
   }
 
   LoadMore = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState(
           {
             numberToLoad: this.state.numberToLoad + 10,
@@ -74,26 +74,26 @@ class NotificationBasicBox extends Component {
     return (
       <div
         className={`tabs-for-all ${
-          this.state.tabsDeafalt == true ? "active" : ""
+          this.state.tabsDeafalt===true ? "active" : ""
         }`}
       >
         {this.state.basic !== null ? (
           this.state.basic !== "no" ? (
             this.state.basic?.map((item, index) => {
-              if (this.state.basic.length == index + 1) {
+              if (this.state.basic.length===index + 1) {
                 return (
                   <InView
                     onChange={(inView) => this.LoadMore(inView)}
                     key={item._id}
                   >
                     <motion.div layout>
-                      {item.type == "like" ? (
+                      {item.type==="like" ? (
                         <LikedNotification item={item} key={item._id} />
-                      ) : item.type == "comment" ? (
+                      ) : item.type==="comment" ? (
                         <CommentNotification item={item} key={item._id} />
-                      ) : item.type == "tagged" ? (
+                      ) : item.type==="tagged" ? (
                         <TaggedNotification item={item} key={item._id} />
-                      ) : item.type == "follow" ? (
+                      ) : item.type==="follow" ? (
                         <FollowNotification item={item} key={item._id} />
                       ) : (
                         ""
@@ -108,13 +108,13 @@ class NotificationBasicBox extends Component {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
-                    {item.type == "like" ? (
+                    {item.type==="like" ? (
                       <LikedNotification item={item} key={item._id} />
-                    ) : item.type == "comment" ? (
+                    ) : item.type==="comment" ? (
                       <CommentNotification item={item} key={item._id} />
-                    ) : item.type == "tagged" ? (
+                    ) : item.type==="tagged" ? (
                       <TaggedNotification item={item} key={item._id} />
-                    ) : item.type == "follow" ? (
+                    ) : item.type==="follow" ? (
                       <FollowNotification item={item} key={item._id} />
                     ) : (
                       ""

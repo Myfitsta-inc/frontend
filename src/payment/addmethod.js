@@ -35,7 +35,7 @@ class AddMethod extends Component {
             </button>
             <p>Add Payment Method</p>
           </div>
-          {this.state.option == true ? (
+          {this.state.option===true ? (
             <div className="wroiriitiiir">
               <div onClick={this.handlePaymentcard} className="pay-with-card">
                 <div className="wrtapr">
@@ -63,7 +63,7 @@ class AddMethod extends Component {
           ) : (
             ""
           )}
-          {this.state.field == true ? (
+          {this.state.field===true ? (
             <AddField acountD={this.props.acountD} />
           ) : (
             ""

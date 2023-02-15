@@ -35,7 +35,7 @@ class OptionComment extends Component {
   render() {
     return (
       <div
-        className={`boxmrjrjerjrjnue ${this.state.top == true ? "top" : "top"}`}
+        className={`boxmrjrjerjrjnue ${this.state.top===true ? "top" : "top"}`}
         ref={this.container}
       >
         <div className="title-of--thise-action">
@@ -49,9 +49,9 @@ class OptionComment extends Component {
           </button>
         </div>
         <div
-          className={`tisjjrjrjr ${this.state.open == true ? "active" : ""}`}
+          className={`tisjjrjrjr ${this.state.open===true ? "active" : ""}`}
         >
-          {this.props.users.userid == this.props.item.UserId ? (
+          {this.props.users.userid===this.props.item.UserId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />

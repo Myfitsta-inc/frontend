@@ -10,7 +10,7 @@ class DeleteContent extends Component {
     return (
       <div
         className={`overlayrjhhntufbghjdjhb ${
-          this.props.deleteContent == true ? "active" : ""
+          this.props.deleteContent===true ? "active" : ""
         }`}
       >
         <div className="delete-the-colletion">

@@ -101,7 +101,7 @@ class Field extends Component {
             axios
               .post(`/api/api/braintree/subscription`, option)
               .then((result) => {
-                if (result.data.success == true) {
+                if (result.data.success===true) {
                   window.location.reload();
                 } else {
                   console.log(result.data);
@@ -153,12 +153,12 @@ class Field extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading == true ? "loading" : ""
+                  this.state.loading===true ? "loading" : ""
                 }`}
-                value={`${this.state.loading == true ? "" : "Subscribe"}`}
+                value={`${this.state.loading===true ? "" : "Subscribe"}`}
                 id="submit"
               />
-              {this.state.loading == true ? (
+              {this.state.loading===true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

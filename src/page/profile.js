@@ -34,7 +34,7 @@ class Profile extends Component {
     ); // fragment locator
 
     let result = !!pattern.test(str);
-    if (result == true) {
+    if (result===true) {
       return str;
     } else {
       let modifie = `${str}.com`;
@@ -137,7 +137,7 @@ class Profile extends Component {
                           <div className="name-action">
                             <div className="name-pr">
                               {this.props.user.Username}
-                              {this.props.user.verified == true ? (
+                              {this.props.user.verified===true ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
                                 </div>
@@ -146,7 +146,7 @@ class Profile extends Component {
                               )}
                             </div>
                             <div className="wrpw-it">
-                              {this.props.user.canActivate == true ? (
+                              {this.props.user.canActivate===true ? (
                                 <button className="edit-profile-activatge">
                                   <img src={logo} alt="logo" />
                                   <Link to="/setup"></Link>
@@ -289,7 +289,7 @@ class Profile extends Component {
                       this.chantabs(false);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged == false ? "active" : ""
+                      this.state.tagged===false ? "active" : ""
                     }`}
                   >
                     POST
@@ -299,7 +299,7 @@ class Profile extends Component {
                       this.chantabs(true);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged == true ? "active" : ""
+                      this.state.tagged===true ? "active" : ""
                     }`}
                   >
                     TAGGED
@@ -310,7 +310,7 @@ class Profile extends Component {
                   this.state.posted.length > 0 ? (
                     <div
                       className={`post-detail ${
-                        this.state.tagged == false ? "active" : ""
+                        this.state.tagged===false ? "active" : ""
                       }`}
                     >
                       {this.state.posted !== null ? (
@@ -327,7 +327,7 @@ class Profile extends Component {
                         </div>
                       )}
                     </div>
-                  ) : this.state.tagged == false ? (
+                  ) : this.state.tagged===false ? (
                     <div className="wraperififoojfhr">
                       <div className="wraperjf-ffkfkr">
                         <p>Create a new post</p>
@@ -350,7 +350,7 @@ class Profile extends Component {
                 )}
                 <div
                   className={`tabgeedhs ${
-                    this.state.tagged == true ? "active" : ""
+                    this.state.tagged===true ? "active" : ""
                   }`}
                 >
                   <TagggedPost

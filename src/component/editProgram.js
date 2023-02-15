@@ -90,7 +90,7 @@ class Editprogram extends Component {
     return (
       <div
         className={`overlay-new-program  ${
-          this.props.edit == false ? "" : "active"
+          this.props.edit===false ? "" : "active"
         }`}
       >
         <div className="box-that-create-a-new-program">
@@ -135,7 +135,7 @@ class Editprogram extends Component {
             </div>
           </div>
 
-          {this.props.program.programType == 1 ? (
+          {this.props.program.programType===1 ? (
             <div className="edit-box-profile">
               <label htmlFor="title">Price</label>
               <div className="wharoor-the-amoiut">
@@ -155,7 +155,7 @@ class Editprogram extends Component {
 
           <div
             className={`conte-thise-action ${
-              this.state.button == true ? "active" : ""
+              this.state.button===true ? "active" : ""
             }`}
           >
             <button onClick={this.saveChange} className="save">

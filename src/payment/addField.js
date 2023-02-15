@@ -144,12 +144,12 @@ class AddField extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading == true ? "loading" : ""
+                  this.state.loading===true ? "loading" : ""
                 }`}
-                value={`${this.state.loading == true ? "" : "ADD Card"}`}
+                value={`${this.state.loading===true ? "" : "ADD Card"}`}
                 id="submit"
               />
-              {this.state.loading == true ? (
+              {this.state.loading===true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

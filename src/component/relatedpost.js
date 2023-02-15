@@ -19,8 +19,8 @@ class RelatedPost extends Component {
   };
 
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState(
           {
             number: this.state.number + 10,
@@ -64,7 +64,7 @@ class RelatedPost extends Component {
     return (
       <div className="wrsnrkoeoeood">
         {this.state.list?.map((item, index) => {
-          if (this.state.list.length == index + 1) {
+          if (this.state.list.length===index + 1) {
             return (
               <InView
                 key={item._id}
@@ -88,7 +88,7 @@ class RelatedPost extends Component {
             );
           }
         })}
-        {this.state.loading == true ? (
+        {this.state.loading===true ? (
           <div className="bixnknfkfjkjrjr">
             <LoadingSpin />
           </div>

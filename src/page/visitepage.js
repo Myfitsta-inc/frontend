@@ -112,7 +112,7 @@ class Visitpage extends Component {
       })
       .then((res) => {
         if (res.data.Username) {
-          if (res.data.Username == this.props.user.Username) {
+          if (res.data.Username===this.props.user.Username) {
             this.props.history.push("/profile");
           } else {
             this.setState({
@@ -152,7 +152,7 @@ class Visitpage extends Component {
                       </div>
                       <div className="name-pr">
                         {this.state.profile.Username}
-                        {this.state.profile.verified == true ? (
+                        {this.state.profile.verified===true ? (
                           <div className="verified">
                             <i className="fas fa-check"></i>
                           </div>
@@ -206,7 +206,7 @@ class Visitpage extends Component {
                           <div className="name-actionn">
                             <div className="name-prrr">
                               {this.state.profile.Username}
-                              {this.state.profile.verified == true ? (
+                              {this.state.profile.verified===true ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
                                 </div>
@@ -278,7 +278,7 @@ class Visitpage extends Component {
                               ""
                             )}
 
-                            {this.state.profile.myfista == true ? (
+                            {this.state.profile.myfista===true ? (
                               <button className="flo">
                                 <Link
                                   className="llx"
@@ -338,7 +338,7 @@ class Visitpage extends Component {
                           )}
                         </div>
 
-                        {this.state.profile.myfista == true ? (
+                        {this.state.profile.myfista===true ? (
                           <button className="flo">
                             <Link
                               className="llx"
@@ -421,7 +421,7 @@ class Visitpage extends Component {
                       this.chantabs(false);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged == false ? "active" : ""
+                      this.state.tagged===false ? "active" : ""
                     }`}
                   >
                     POST
@@ -431,7 +431,7 @@ class Visitpage extends Component {
                       this.chantabs(true);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged == true ? "active" : ""
+                      this.state.tagged===true ? "active" : ""
                     }`}
                   >
                     TAGGED
@@ -442,7 +442,7 @@ class Visitpage extends Component {
                   this.state.posted.length > 0 ? (
                     <div
                       className={`post-detail ${
-                        this.state.tagged == false ? "active" : ""
+                        this.state.tagged===false ? "active" : ""
                       }`}
                     >
                       {this.state.posted !== null
@@ -453,7 +453,7 @@ class Visitpage extends Component {
                           : ""
                         : "loading..."}
                     </div>
-                  ) : this.state.tagged == false ? (
+                  ) : this.state.tagged===false ? (
                     <div className="wraperififoojfhr">
                       <div className="wraperjf-ffkfkr">
                         <p>No post</p>
@@ -471,7 +471,7 @@ class Visitpage extends Component {
                 )}
                 <div
                   className={`tabgeedhs ${
-                    this.state.tagged == true ? "active" : ""
+                    this.state.tagged===true ? "active" : ""
                   }`}
                 >
                   {this.state.profile.userid ? (

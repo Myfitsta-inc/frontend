@@ -16,7 +16,7 @@ class DropOption extends Component {
     return (
       <div
         className={`boxmenue rgrhhrhrhh  ${
-          this.props.drop == false ? "" : "active"
+          this.props.drop===false ? "" : "active"
         }`}
       >
         <div className="title-of--thise-action rhbrnr">

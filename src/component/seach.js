@@ -158,10 +158,10 @@ class Search extends Component {
     return (
       <div
         className={`profile-session font-link  ${
-          this.props.seach == false ? "" : "active"
+          this.props.seach===false ? "" : "active"
         }`}
       >
-        <div className={`box-find ${this.state.tabs == true ? "active" : ""}`}>
+        <div className={`box-find ${this.state.tabs===true ? "active" : ""}`}>
           <p>
             <i className="fas fa-search"></i>
           </p>
@@ -184,13 +184,13 @@ class Search extends Component {
         </div>
         <div
           className={`box-profile-session ${
-            this.state.tabs == false ? "active" : ""
+            this.state.tabs===false ? "active" : ""
           }`}
         >
           {this.state.people !== null ? (
             this.state.people.length > 0 ? (
               this.state.people.map((item, index) => {
-                if (this.state.people.length == index + 1) {
+                if (this.state.people.length===index + 1) {
                   return (
                     <motion.div
                       initial={{ opacity: 0 }}

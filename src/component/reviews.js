@@ -46,7 +46,7 @@ class Reviews extends Component {
     return (
       <div
         className={`box-trans-ce-hold-conm ${
-          this.props.reviewtabs == true ? "active" : ""
+          this.props.reviewtabs===true ? "active" : ""
         }`}
       >
         <div className="box-comment-title">

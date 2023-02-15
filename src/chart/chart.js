@@ -74,13 +74,13 @@ class Chart extends Component {
   };
 
   filter = (type) => {
-    if (type == "week") {
+    if (type==="week") {
       this.filterWeek();
       this.setState({
         week: true,
       });
     }
-    if (type == "month") {
+    if (type==="month") {
       this.filtermonth();
       this.setState({
         week: false,

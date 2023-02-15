@@ -102,7 +102,7 @@ class Upload extends Component {
         uploadIng: true,
       });
     } else {
-      if (this.state.tags.length == 0) {
+      if (this.state.tags.length===0) {
         this.setState({
           messageTag: "You need at least one Tag",
         });
@@ -154,7 +154,7 @@ class Upload extends Component {
           fileArray: list,
         });
       }
-      if (this.state.fileShow == null) {
+      if (this.state.fileShow===null) {
         this.showFirstElment();
       } else {
       }
@@ -198,7 +198,7 @@ class Upload extends Component {
         });
       }
     }
-    if (this.state.fileShow == null) {
+    if (this.state.fileShow===null) {
       this.showFirstElment();
     } else {
     }
@@ -225,7 +225,7 @@ class Upload extends Component {
       if (item.type.includes("image")) {
         return (
           <div
-            className={`prpbox  ${this.state.fileShow == item ? "active" : ""}`}
+            className={`prpbox  ${this.state.fileShow===item ? "active" : ""}`}
             key={this.state.fileArray.indexOf(item)}
           >
             <div className="remove-media">
@@ -287,7 +287,7 @@ class Upload extends Component {
       <div className="conatiner">
         <div
           className={`over-lay-when-postig  ${
-            this.state.uploadIng == true ? "active" : ""
+            this.state.uploadIng===true ? "active" : ""
           }`}
         >
           <LoadingSpin />
@@ -298,7 +298,7 @@ class Upload extends Component {
             <div id="post">
               <div
                 className={`box-uploadone  ${
-                  this.state.pageOne == true ? "active" : "disp"
+                  this.state.pageOne===true ? "active" : "disp"
                 }`}
               >
                 <div className="title-post">
@@ -367,7 +367,7 @@ class Upload extends Component {
 
               <div
                 className={`section-two  ${
-                  this.state.pageTwo == true ? "active" : ""
+                  this.state.pageTwo===true ? "active" : ""
                 }`}
               >
                 <div className="before-upod">

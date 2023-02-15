@@ -53,7 +53,7 @@ class Agreement extends Component {
             </p>
           </div>
         </div>
-        {this.state.loading == true ? (
+        {this.state.loading===true ? (
           <button className="add-shch active">
             <LoadingSpin />
           </button>

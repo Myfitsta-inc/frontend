@@ -21,7 +21,7 @@ class Verification extends Component {
             verify: result.data.verification,
           });
 
-          if (result.data.verification == true) {
+          if (result.data.verification===true) {
             x = setInterval(() => {
               this.checkVerification();
             }, 3000);
@@ -50,7 +50,7 @@ class Verification extends Component {
       data: this.state.data.privateWallet[0],
     };
     axios.post(`/api/verify-if-succes-indentity`, data).then((result) => {
-      if (result.data.verification == "passed") {
+      if (result.data.verification==="passed") {
         this.props.move(4);
       }
     });
@@ -68,7 +68,7 @@ class Verification extends Component {
           your verify you identity for legal purposes , and ban you will be
           couple steop away to create your fitnes world
         </div>
-        {this.state.verify == false ? (
+        {this.state.verify===false ? (
           <div className="controil-theaction">
             <button
               onClick={() => this.lanchVerification()}

@@ -83,7 +83,7 @@ class ConversationDetail extends Component {
         animate={{ opacity: 1, transform: "translateX(0px)" }}
         exit={{ opacity: 0 }}
         className={`box-about-your-info  ${
-          this.props.open == false ? "" : "active"
+          this.props.open===false ? "" : "active"
         }`}
       >
         <div className="title-ofthe-tjhrjrj">
@@ -135,7 +135,7 @@ class ConversationDetail extends Component {
           </div>
         </div>
         <div className="bosnjrjr-persofm">
-          {this.props.block == true ? (
+          {this.props.block===true ? (
             <div onClick={this.handleDeblock} className="bloafjfkfjj">
               <div className="iconjgjjgj">
                 <BiBlock />

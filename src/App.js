@@ -106,7 +106,7 @@ class App extends Component {
         socket.connect();
 
         this.checkLike();
-        if (res.data.myfista == true) {
+        if (res.data.myfista===true) {
           this.getfitstapro();
         }
       } else {
@@ -140,7 +140,7 @@ class App extends Component {
 
     this.checkLogin();
     const mode = localStorage.getItem("mode");
-    if (mode == null) {
+    if (mode===null) {
       this.loadTheme("light");
     } else {
       this.loadTheme(mode);
@@ -412,7 +412,7 @@ class App extends Component {
               <Route exact path="/myfitstapro">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.myfista == true ? (
+                    this.state.user.myfista===true ? (
                       this.state.myfitstapro.Username ? (
                         <Myfitstapro
                           myfitstapro={this.state.myfitstapro}
@@ -438,7 +438,7 @@ class App extends Component {
               <Route exact path="/program/workout/:id">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.myfista == true ? (
+                    this.state.user.myfista===true ? (
                       <Myprogram
                         openBoxCollection={this.openBoxCollection}
                         boxCollection={this.state.boxCollection}
@@ -458,7 +458,7 @@ class App extends Component {
               <Route exact path="/program/workout/course/:id">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.myfista == true ? (
+                    this.state.user.myfista===true ? (
                       <Loadprogram
                         myfitstapro={this.state.myfitstapro}
                         openBoxCollection={this.openBoxCollection}
@@ -590,7 +590,7 @@ class App extends Component {
               <Route exact path="/setup">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.canActivate == true ? (
+                    this.state.user.canActivate===true ? (
                       this.state.myfitstapro.Username ? (
                         <Redirect to="/myfitstapro" />
                       ) : (

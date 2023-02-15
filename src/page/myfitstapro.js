@@ -140,7 +140,7 @@ class Myfitstapro extends Component {
                         <div className="name-action">
                           <div className="name-pr">
                             <p>{this.props.user.Username}</p>{" "}
-                            {this.props.user.verified == true ? (
+                            {this.props.user.verified===true ? (
                               <p className="cheh">
                                 <i className="fas fa-check"></i>
                               </p>
@@ -248,7 +248,7 @@ class Myfitstapro extends Component {
                                 <Rating rating={item.rating} />
 
                                 <div className="action-postf-desing">
-                                  {item.programType == 0 ? (
+                                  {item.programType===0 ? (
                                     ""
                                   ) : (
                                     <div className="mmenu-act5">
@@ -257,7 +257,7 @@ class Myfitstapro extends Component {
                                   )}
                                 </div>
 
-                                {item.publish == true ? (
+                                {item.publish===true ? (
                                   <p className="publish">Publish</p>
                                 ) : (
                                   <p className="draft">Draft</p>

@@ -42,7 +42,7 @@ class ChangePassword extends Component {
     });
   };
   handlecheck = () => {
-    if (this.state.loading == false) {
+    if (this.state.loading===false) {
       let StatePaword = this.CheckPassword(this.state.newPassword);
       if (this.state.currentPassword.length > 0) {
         if (this.state.newPassword === this.state.confirmPassword) {
@@ -54,7 +54,7 @@ class ChangePassword extends Component {
             };
             axios.post("/api/change-password", option).then((res) => {
               console.log(res);
-              if (res.data == "succes") {
+              if (res.data==="succes") {
                 this.setState({
                   succes: true,
                 });
@@ -146,10 +146,10 @@ class ChangePassword extends Component {
           <button
             onClick={this.handlecheck}
             className={`update-profile ${
-              this.state.active == true ? "active" : ""
+              this.state.active===true ? "active" : ""
             }`}
           >
-            {this.state.succes == true ? "PASSWORD CHANGE" : "SAVE CHANGE"}
+            {this.state.succes===true ? "PASSWORD CHANGE" : "SAVE CHANGE"}
           </button>
         </div>
       </div>

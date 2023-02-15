@@ -110,7 +110,7 @@ class Myfitstapr extends Component {
       .then((res) => {
         console.log(res.data);
         if (res.data.userid) {
-          if (res.data.userid == this.props.user.userid) {
+          if (res.data.userid===this.props.user.userid) {
             this.props.history.push("/myfitstapro");
           } else {
             this.setState({
@@ -198,7 +198,7 @@ class Myfitstapr extends Component {
                         ) : (
                           ""
                         )}
-                        {this.state.subscribe == false ? (
+                        {this.state.subscribe===false ? (
                           <button className="flo">Subscribe</button>
                         ) : (
                           <button
@@ -225,7 +225,7 @@ class Myfitstapr extends Component {
                       ) : (
                         ""
                       )}
-                      {this.state.subscribe == false ? (
+                      {this.state.subscribe===false ? (
                         <button className="flo">Subscribe</button>
                       ) : (
                         <button onClick={this.subscribe} className="flo active">
@@ -266,7 +266,7 @@ class Myfitstapr extends Component {
               </div>
 
               {this.state.subscribeCheck !== null ? (
-                this.state.subscribeCheck == false ? (
+                this.state.subscribeCheck===false ? (
                   <div className="wraperififoojfhr">
                     <div className="wraperjf-ffkfkr">
                       <p>Subscribe to {this.state.profile.Username} </p>
@@ -335,7 +335,7 @@ class Myfitstapr extends Component {
           </div>
         </div>
 
-        {this.state.subscribeBox == true ? (
+        {this.state.subscribeBox===true ? (
           this.state.profile._id ? (
             <Subscribe
               closesubscribe={this.closesubscribe}

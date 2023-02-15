@@ -38,7 +38,7 @@ class BoxAccount extends Component {
       <div className="wraper-boxndrrb">
         <div
           onClick={
-            this.state.open == false
+            this.state.open===false
               ? () => {
                   this.handleClick(true);
                 }
@@ -65,7 +65,7 @@ class BoxAccount extends Component {
           </div>
           <div className="jjfjjfjfjjrjrr"></div>
         </div>
-        {this.state.open == true ? (
+        {this.state.open===true ? (
           <div ref={this.container} className="wraprrr-rrrj">
             <div className="boxnfjjr"></div>
             <div className="jjrrrtjjtjtt">

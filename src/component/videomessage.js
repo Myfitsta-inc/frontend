@@ -14,7 +14,7 @@ class VideoMessage extends Component {
   render() {
     return (
       <div className="fesjte">
-        {this.props.users.userid == this.props.item.sender ? (
+        {this.props.users.userid===this.props.item.sender ? (
           <div className="bfhehbfbhe">
             <MenuMessage
               handleRemove={this.props.handleRemove}

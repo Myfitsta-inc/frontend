@@ -95,7 +95,7 @@ class RegisterThree extends Component {
       this.props.data.email.length > 0 &&
       this.props.data.fullName.length > 0 &&
       this.props.data.username.length > 2 &&
-      Statepassword == true
+      Statepassword===true
     ) {
       const userinfo = {
         email: this.props.data.email.trim(),
@@ -109,7 +109,7 @@ class RegisterThree extends Component {
       });
 
       axios.post("/api/register", userinfo).then((res) => {
-        if (res.data == "Username already exist") {
+        if (res.data==="Username already exist") {
           this.setState({
             messageusername: "😅 Sorry This username is already taken",
           });
@@ -118,7 +118,7 @@ class RegisterThree extends Component {
             messageusername: "",
           });
         }
-        if (res.data == "Email already exist") {
+        if (res.data==="Email already exist") {
           this.setState({
             messageeemail: "😅 Sorry This email is already taken",
           });
@@ -196,15 +196,15 @@ class RegisterThree extends Component {
         <p className="messsage" id="message-passowrd">
           {this.state.messagepassword}
         </p>
-        {this.state.loading == false ? (
+        {this.state.loading===false ? (
           <input id="register" type="submit" value="Join" />
         ) : (
           <button
             className={`next agreen   ${
-              this.state.loading == true ? "loading" : ""
+              this.state.loading===true ? "loading" : ""
             }  `}
           >
-            {this.state.loading == true ? <LoadingSpin /> : ""}
+            {this.state.loading===true ? <LoadingSpin /> : ""}
           </button>
         )}
         <div id="agreement">

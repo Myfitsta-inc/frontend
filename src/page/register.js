@@ -103,7 +103,7 @@ class Register extends Component {
       });
     }
     let Statepassword = this.CheckPassword(this.state.password);
-    if (Statepassword == false) {
+    if (Statepassword===false) {
       this.setState({
         messagepassword: this.passwordCheck(this.state.password),
       });
@@ -117,7 +117,7 @@ class Register extends Component {
       this.state.email.length > 0 &&
       this.state.fullName.length > 0 &&
       this.state.username.length > 2 &&
-      Statepassword == true
+      Statepassword===true
     ) {
       const userinfo = {
         email: this.state.email.trim(),
@@ -129,7 +129,7 @@ class Register extends Component {
       axios.post("/api/register", userinfo).then((res) => {
         console.log(res.data);
 
-        if (res.data == "Username already exist") {
+        if (res.data==="Username already exist") {
           this.setState({
             messageusername: "😅 Sorry This username is already taken",
           });
@@ -138,7 +138,7 @@ class Register extends Component {
             messageusername: "",
           });
         }
-        if (res.data == "Email already exist") {
+        if (res.data==="Email already exist") {
           this.setState({
             messageeemail: "😅 Sorry This email is already taken",
           });
@@ -156,22 +156,22 @@ class Register extends Component {
   };
 
   handleChange = (e) => {
-    if (e.target.name == "password") {
+    if (e.target.name==="password") {
       this.setState({
         password: e.target.value,
       });
     }
-    if (e.target.name == "fullName") {
+    if (e.target.name==="fullName") {
       this.setState({
         fullName: e.target.value,
       });
     }
-    if (e.target.name == "email") {
+    if (e.target.name==="email") {
       this.setState({
         email: e.target.value.trim(),
       });
     }
-    if (e.target.name == "username") {
+    if (e.target.name==="username") {
       this.setState({
         username: e.target.value.trim(),
       });
@@ -185,14 +185,14 @@ class Register extends Component {
         <Navland openNav={this.openNav} />
         <div className="div-hold-box">
           <div className="wrapjrijrr">
-            {this.state.step == 0 ? (
+            {this.state.step===0 ? (
               <RegisterOne
                 fullName={this.state.fullName}
                 email={this.state.email}
                 handleNext={this.handleNext}
                 handleChange={this.handleChange}
               />
-            ) : this.state.step == 1 ? (
+            ) : this.state.step===1 ? (
               <RegisterTwo
                 email={this.state.email}
                 handleNext={this.handleNext}

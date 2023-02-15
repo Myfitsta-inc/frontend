@@ -20,8 +20,8 @@ class Following extends Component {
   };
 
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.state.loading == false) {
+    if (data===true) {
+      if (this.state.loading===false) {
         this.setState(
           {
             numberLoad: this.state.numberLoad + 10,
@@ -88,7 +88,7 @@ class Following extends Component {
               placeholder="Seach..."
               type="text"
             />
-            {this.state.loading == true ? (
+            {this.state.loading===true ? (
               <div className="cnjrrjrn">
                 <LoadingSpin />
               </div>
@@ -110,7 +110,7 @@ class Following extends Component {
                     className="wrprtit-peoplrkr"
                     key={item.following}
                   >
-                    {this.state.following.length == index + 1 ? (
+                    {this.state.following.length===index + 1 ? (
                       <InView
                         onChange={(inView, entry) => this.checkLoad(inView)}
                         className="jkrikskfjjr"

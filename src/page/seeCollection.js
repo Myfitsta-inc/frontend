@@ -87,8 +87,8 @@ class SeeCollection extends Component {
   };
 
   checkLoad = (data) => {
-    if (data == true) {
-      if (this.props.loading == false) {
+    if (data===true) {
+      if (this.props.loading===false) {
         this.setState(
           {
             number: this.state.number + 10,
@@ -112,7 +112,7 @@ class SeeCollection extends Component {
   };
   render() {
     let media = this.state.collection.data?.map((item, index) => {
-      if (this.state.collection.data.length == index + 1) {
+      if (this.state.collection.data.length===index + 1) {
         return (
           <InView>
             <PostCollection
@@ -182,7 +182,7 @@ class SeeCollection extends Component {
 
                   <div className="box-hold-all-collecn active">
                     {media}
-                    {this.state.loading == true ? (
+                    {this.state.loading===true ? (
                       <div className="bixnknfkfjkjrjr">
                         <LoadingSpin />
                       </div>

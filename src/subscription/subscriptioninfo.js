@@ -33,7 +33,7 @@ class SubscriptionInfo extends Component {
         withCredentials: true,
       })
       .then((result) => {
-        if (result.data.succes == true) {
+        if (result.data.succes===true) {
           let data = this.state.data;
           data.activeSubscription = false;
           this.setState({
@@ -55,7 +55,7 @@ class SubscriptionInfo extends Component {
       .then((res) => {
         if (res.data._id) {
           let plansChoose = this.state.profile.plan.filter(
-            (item) => item.planChoose == res.data.PlanOfUser
+            (item) => item.planChoose===res.data.PlanOfUser
           );
           if (plansChoose.length > 0 !== null) {
             this.setState({
@@ -133,7 +133,7 @@ class SubscriptionInfo extends Component {
 
         <div className="button-busnn-bossn">
           {this.state.data !== null ? (
-            this.state.data.activeSubscription == true ? (
+            this.state.data.activeSubscription===true ? (
               <button onClick={this.cancelSubscription}>Unsubscribe</button>
             ) : (
               <button>Subscribe</button>
@@ -142,7 +142,7 @@ class SubscriptionInfo extends Component {
             ""
           )}
         </div>
-        {this.state.unbscribe == true ? (
+        {this.state.unbscribe===true ? (
           <div className="unbribeijsjjfjfj">
             <div className="delete-the-colletion ajrjjrj">
               <div className="title-of--thise-action">
@@ -160,7 +160,7 @@ class SubscriptionInfo extends Component {
                 {this.state.data !== null ? this.state.data.nextPayingdate : ""}{" "}
               </div>
               <div className="conte-thise-actionrrr active">
-                {this.state.loadinUnb == true ? (
+                {this.state.loadinUnb===true ? (
                   <button>
                     <LoadingSpin />
                   </button>

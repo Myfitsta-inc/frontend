@@ -34,7 +34,7 @@ class UploadInProgram extends Component {
   };
 
   upload = () => {
-    if (this.state.loading == false) {
+    if (this.state.loading===false) {
       if (this.state.preview !== null && this.state.title.length > 0) {
         let formData = new FormData();
         formData.append("file", this.state.preview);
@@ -96,13 +96,13 @@ class UploadInProgram extends Component {
     return (
       <div
         className={`overlay-new-program-Upload  ${
-          this.props.upload == false ? "" : "active"
+          this.props.upload===false ? "" : "active"
         }`}
       >
         <motion.div className="box-that-create-a-new-program big">
           <div
             className={`jehtjfnejdnrn ${
-              this.state.next == false ? "active" : ""
+              this.state.next===false ? "active" : ""
             }`}
           >
             <div className="title-of--thise-action gjtjtjtj">
@@ -168,7 +168,7 @@ class UploadInProgram extends Component {
           </div>
 
           <div
-            className={`box-bfjner ${this.state.next == true ? "active" : ""}`}
+            className={`box-bfjner ${this.state.next===true ? "active" : ""}`}
           >
             <div className="title-of--thise-action">
               <div className="wrieii">
@@ -203,13 +203,13 @@ class UploadInProgram extends Component {
             </div>
             <div
               className={`conte-thise-action ${
-                this.state.button == true ? "active" : ""
-              } ${this.state.loading == true ? "loading" : ""}`}
+                this.state.button===true ? "active" : ""
+              } ${this.state.loading===true ? "loading" : ""}`}
             >
               <button onClick={this.upload} className="upload">
                 Upload
               </button>
-              {this.state.loading == true ? (
+              {this.state.loading===true ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>

@@ -58,7 +58,7 @@ class Rate extends Component {
     return (
       <div
         className={`over-lauy-that-boxnfnf  ${
-          this.props.rate == false ? "" : "active"
+          this.props.rate===false ? "" : "active"
         }`}
       >
         <div className="bojxjfjjtj-to-rate">

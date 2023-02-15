@@ -101,7 +101,7 @@ class Field extends Component {
             axios
               .post(`/api/api/braintree/v1/sandbox`, option)
               .then((result) => {
-                if (result.data.success == true) {
+                if (result.data.success===true) {
                   this.props.history.push(
                     `/program/unlock/${program.programId}`
                   );
@@ -153,12 +153,12 @@ class Field extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading == true ? "loading" : ""
+                  this.state.loading===true ? "loading" : ""
                 }`}
-                value={`${this.state.loading == true ? "" : "Purchase"}`}
+                value={`${this.state.loading===true ? "" : "Purchase"}`}
                 id="submit"
               />
-              {this.state.loading == true ? (
+              {this.state.loading===true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

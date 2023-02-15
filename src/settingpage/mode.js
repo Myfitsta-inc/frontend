@@ -49,7 +49,7 @@ class Mode extends Component {
           <p>Light</p>
           <div
             className={`add-to-this-collection  ${
-              this.state.theme == "light" ? "active" : ""
+              this.state.theme==="light" ? "active" : ""
             }`}
           >
             <div className="savethat-ccolelti"></div>
@@ -65,7 +65,7 @@ class Mode extends Component {
           <p>Dark</p>
           <div
             className={`add-to-this-collection  ${
-              this.state.theme == "dark" ? "active" : ""
+              this.state.theme==="dark" ? "active" : ""
             }`}
           >
             <div className="savethat-ccolelti "></div>

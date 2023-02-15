@@ -107,7 +107,7 @@ class Lookprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.bougth == true) {
+        if (res.data.bougth===true) {
           this.setState({
             program: res.data.program,
           });
@@ -243,7 +243,7 @@ class Lookprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.publish == true ? (
+                {this.state.program.publish===true ? (
                   <p className="publish rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
@@ -255,7 +255,7 @@ class Lookprogram extends Component {
                       this.changetabs(true, false);
                     }}
                     className={`tabs-tonore ${
-                      this.state.tabsprogram == true ? "active" : ""
+                      this.state.tabsprogram===true ? "active" : ""
                     }`}
                   >
                     Content
@@ -265,7 +265,7 @@ class Lookprogram extends Component {
                       this.changetabs(false, true);
                     }}
                     className={`tabs-tonore ${
-                      this.state.reviewtabs == true ? "active" : ""
+                      this.state.reviewtabs===true ? "active" : ""
                     }`}
                   >
                     Reviews
