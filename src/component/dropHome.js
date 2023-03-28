@@ -16,7 +16,7 @@ class DropOption extends Component {
     return (
       <div
         className={`boxmenue rgrhhrhrhh  ${
-          this.props.drop===false ? "" : "active"
+          this.props.drop === false ? "" : "active"
         }`}
       >
         <div className="title-of--thise-action rhbrnr">
@@ -35,7 +35,7 @@ class DropOption extends Component {
             </div>
             <button className="edit-the-program"> New Post</button>
           </Link>
-             {/*
+          {/*
           <Link to={"/live"} className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <i className="fas fa-video"></i>

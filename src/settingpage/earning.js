@@ -66,7 +66,7 @@ class Earning extends Component {
           </div>
         </div>
 
-        {this.props.user.myfista===true ? (
+        {this.props.user.myfista === true ? (
           this.state.data !== null ? (
             <div className="earningsf-boxnjf">
               <div className="hold-thegrapgjhs-jfhtf">
@@ -101,7 +101,7 @@ class Earning extends Component {
                     {this.state.data !== null ? (
                       this.state.profile !== null ? (
                         this.state.profile !== "no" ? (
-                          this.state.profile===0 ? (
+                          this.state.profile === 0 ? (
                             <OrderSubscription
                               data={this.state.data.reverse()}
                             />

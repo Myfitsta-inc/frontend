@@ -16,14 +16,13 @@ class Agreement extends Component {
   render() {
     return (
       <div className="wrpaeorrr">
-       
         <div className="procer-toactive0-my-fitstra-pro">
           <div className="theslider">
-          <div onClick={() => this.props.next(2)} className="close-that">
-            <BiArrowBack />
+            <div onClick={() => this.props.next(2)} className="close-that">
+              <BiArrowBack />
+            </div>
+            <div className="wwwr-text">Terms and Conditions</div>
           </div>
-          <div className="wwwr-text">Terms and Conditions</div>
-        </div>
 
           <div className="wtaper-tit">
             <div className="hold-infomation-nedded">
@@ -53,7 +52,7 @@ class Agreement extends Component {
             </p>
           </div>
         </div>
-        {this.state.loading===true ? (
+        {this.state.loading === true ? (
           <button className="add-shch active">
             <LoadingSpin />
           </button>

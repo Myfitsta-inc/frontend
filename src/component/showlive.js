@@ -12,21 +12,19 @@ export default class ShowLive extends Component {
   };
 
   getOnline = () => {
-    axios
-      .get(`/api/open-live-room/${this.props.user.userid}`)
-      .then((res) => {
-        if (res.data !== "") {
-          this.setState({
-            open: true,
-            online: res.data.account.reverse(),
-          });
-        } else {
-          this.setState({
-            open: false,
-            online: [],
-          });
-        }
-      });
+    axios.get(`/api/open-live-room/${this.props.user.userid}`).then((res) => {
+      if (res.data !== "") {
+        this.setState({
+          open: true,
+          online: res.data.account.reverse(),
+        });
+      } else {
+        this.setState({
+          open: false,
+          online: [],
+        });
+      }
+    });
   };
 
   componentWillUnmount = () => {
@@ -44,7 +42,7 @@ export default class ShowLive extends Component {
     return (
       <div
         className={`liv-workot-streaming  ${
-          this.state.open===true ? "active" : ""
+          this.state.open === true ? "active" : ""
         }`}
       >
         <div className="titeehwhle">Live Streaming</div>

@@ -33,15 +33,13 @@ class EditGroupProfile extends Component {
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
       formData.append("conversationId", this.state.group.conversationId);
-      axios
-        .post(`/api/change-group-icon`, formData)
-        .then((result) => {
-          socket.emit("group-new-icon", {
-            members: this.state.group.members,
-            content: result.data,
-            conversationId: this.state.group.conversationId,
-          });
+      axios.post(`/api/change-group-icon`, formData).then((result) => {
+        socket.emit("group-new-icon", {
+          members: this.state.group.members,
+          content: result.data,
+          conversationId: this.state.group.conversationId,
         });
+      });
     }
   };
 

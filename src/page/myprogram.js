@@ -253,7 +253,7 @@ class Myprogram extends Component {
                             <p className="njr">RATE</p>
                           </div>
 
-                          <div
+                          {/* <div
                             onClick={() => {
                               this.handleSettingg(true, this.state.file);
                             }}
@@ -265,7 +265,7 @@ class Myprogram extends Component {
                               </div>
                             </div>
                             <p className="njr">SHARE</p>
-                          </div>
+                          </div> */}
 
                           <div
                             onClick={() => this.handlepublish(true)}
@@ -308,7 +308,7 @@ class Myprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.publish===true ? (
+                {this.state.program.publish === true ? (
                   <p className="publish rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
@@ -320,7 +320,7 @@ class Myprogram extends Component {
                       this.changetabs(true, false);
                     }}
                     className={`tabs-tonore ${
-                      this.state.tabsprogram===true ? "active" : ""
+                      this.state.tabsprogram === true ? "active" : ""
                     }`}
                   >
                     Content
@@ -330,7 +330,7 @@ class Myprogram extends Component {
                       this.changetabs(false, true);
                     }}
                     className={`tabs-tonore ${
-                      this.state.reviewtabs===true ? "active" : ""
+                      this.state.reviewtabs === true ? "active" : ""
                     }`}
                   >
                     Reviews
@@ -343,7 +343,7 @@ class Myprogram extends Component {
                       tabsprogram={this.state.tabsprogram}
                       item={this.state.item}
                     />
-                  ) : this.state.tabsprogram===true ? (
+                  ) : this.state.tabsprogram === true ? (
                     <div className="wisiffii">
                       <div className="wraperififoojfhr">
                         <div className="wraperjf-ffkfkr">
@@ -388,7 +388,7 @@ class Myprogram extends Component {
         </div>
 
         {this.state.program.programId ? (
-          this.state.edit===true ? (
+          this.state.edit === true ? (
             <Editprogram
               getProgramInfo={this.getProgramInfo}
               handlepublish={this.handlepublish}
@@ -419,8 +419,8 @@ class Myprogram extends Component {
           ""
         )}
 
-        {this.state.upload===true ? (
-          this.state.upload===true ? (
+        {this.state.upload === true ? (
+          this.state.upload === true ? (
             <UploadInProgram
               looadProgram={this.looadProgram}
               handlUpload={this.handlUpload}
@@ -435,7 +435,7 @@ class Myprogram extends Component {
           ""
         )}
         {this.state.program.programId ? (
-          this.state.publish===true ? (
+          this.state.publish === true ? (
             <Publish
               changePublichState={this.changePublichState}
               content={this.state.item}

@@ -85,10 +85,10 @@
 .stepw.active .bar-butiit {
   background-color: #6f56e5;
 }
-.sucbrcriotion-thatprice{
+.sucbrcriotion-thatprice {
   margin-top: 10px;
 }
-.wwwr-text{
+.wwwr-text {
   width: 100%;
   color: var(--text);
   font-size: 20px;
@@ -448,5 +448,3 @@ input[type="number"] {
     justify-content: center;
   }
 }
-
-

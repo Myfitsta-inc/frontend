@@ -120,7 +120,7 @@ class Live extends Component {
 
   live = () => {
     if (this.state.title.length > 0) {
-      if (this.state.StateLive===false) {
+      if (this.state.StateLive === false) {
         this.setState({
           loadingCreateLive: true,
         });
@@ -150,7 +150,7 @@ class Live extends Component {
       loadingCreateLive: true,
     });
     let data = {};
-    if (this.state.scheduleInfo===null) {
+    if (this.state.scheduleInfo === null) {
       data = {
         title: this.state.title,
         description: this.state.description,
@@ -171,7 +171,7 @@ class Live extends Component {
           id: data.data.roomId,
         },
         () => {
-          if (data.data.instant===false) {
+          if (data.data.instant === false) {
             window.location.reload();
           } else {
             console.log(data.data.roomId);
@@ -288,7 +288,7 @@ class Live extends Component {
   };
 
   sendmessage = () => {
-    if (this.state.StateLive===true) {
+    if (this.state.StateLive === true) {
       if (this.state.message.length > 0) {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
@@ -324,7 +324,7 @@ class Live extends Component {
   };
 
   handleEnlive = (data) => {
-    if (data===true) {
+    if (data === true) {
       this.removeMyLiveSesssion();
     }
   };
@@ -380,7 +380,7 @@ class Live extends Component {
               <div className="hold-videi-live">
                 <div
                   className={`hold-lay ${
-                    this.state.StateLive===true ? "active" : ""
+                    this.state.StateLive === true ? "active" : ""
                   }`}
                 >
                   <div className="tile-o-live-prpe">
@@ -437,7 +437,7 @@ class Live extends Component {
                   muted
                   className="live"
                 ></video>
-                {this.state.StateLive===true ? (
+                {this.state.StateLive === true ? (
                   <div className="wrappingf">
                     <div className="controle-the-call">
                       <button
@@ -457,7 +457,7 @@ class Live extends Component {
 
               <div
                 className={`hold-chat-live ${
-                  this.state.StateLive===true ? "active" : ""
+                  this.state.StateLive === true ? "active" : ""
                 }`}
               >
                 <div className="hold-those-chat">
@@ -468,7 +468,7 @@ class Live extends Component {
                         this.openLivebox(true);
                       }}
                       className={`memu ${
-                        this.state.StateLive===true ? "active" : ""
+                        this.state.StateLive === true ? "active" : ""
                       }`}
                     >
                       <i className="fas fa-ellipsis-v"></i>
@@ -530,7 +530,7 @@ class Live extends Component {
                 </div>
                 <div
                   className={`overlay-live-info  ${
-                    this.state.livebox===false ? "" : "active"
+                    this.state.livebox === false ? "" : "active"
                   }`}
                 >
                   <div className="box-info-live">
@@ -580,7 +580,7 @@ class Live extends Component {
 
         <div
           className={`overlay-workoiut-live-box  ${
-            this.state.open===false ? "" : "active"
+            this.state.open === false ? "" : "active"
           }`}
         >
           <div className="card-tolanch-the-live">
@@ -595,7 +595,7 @@ class Live extends Component {
               </button>
               <p>Create a Live</p>
             </div>
-            {this.state.nextBox===false ? (
+            {this.state.nextBox === false ? (
               <div className="wraprkrkrrrr">
                 <div
                   onClick={() => {

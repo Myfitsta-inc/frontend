@@ -26,7 +26,7 @@ class Login extends Component {
 
   handeSubmit = (e) => {
     e.preventDefault();
-    if (this.state.username.length > 0 && this.state.loading===false) {
+    if (this.state.username.length > 0 && this.state.loading === false) {
       this.setState({
         messageUsername: "",
       });
@@ -60,14 +60,14 @@ class Login extends Component {
       axios
         .post("/api/login", userinfo)
         .then((res) => {
-          if (res.data==="This username do not exist") {
+          if (res.data === "This username do not exist") {
             this.setState({
               loading: false,
               messageUsername: "Sorry 😅 this email  does not exist",
             });
           }
 
-          if (res.data==="Your password is incorect") {
+          if (res.data === "Your password is incorect") {
             this.setState({
               loading: false,
               messagepassword: "Sorry 😅 your password is incorrect",
@@ -75,7 +75,7 @@ class Login extends Component {
           }
 
           if (res.data.email) {
-            console.log("t")
+            console.log("t");
             window.location.reload();
           }
         })
@@ -141,15 +141,15 @@ class Login extends Component {
               {this.state.messagepassword}
             </p>
 
-            {this.state.loading===false ? (
+            {this.state.loading === false ? (
               <input id="login" type="submit" name="submit" value="Login" />
             ) : (
               <button
                 className={`next agreen   ${
-                  this.state.loading===true ? "loading" : ""
+                  this.state.loading === true ? "loading" : ""
                 }  `}
               >
-                {this.state.loading===true ? <LoadingSpin /> : ""}
+                {this.state.loading === true ? <LoadingSpin /> : ""}
               </button>
             )}
             <div id="agreement">

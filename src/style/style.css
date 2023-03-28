@@ -3620,6 +3620,7 @@ body {
 .wrappe-mmeshe-bio {
   width: 100%;
   display: flex;
+  padding-left: 10px;
   align-items: center;
 }
 .wrappe-mmeshe-bio div {

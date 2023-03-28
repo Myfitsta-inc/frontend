@@ -32,19 +32,17 @@ class MyfistaProAc extends Component {
       let option = {
         userid: this.props.users.userid,
       };
-      axios
-        .post(`/api/activate-myfit-sta-pro`, option)
-        .then((data) => {
-          if (data.data.succes===true) {
-            this.props.history.push("/setup");
-          } else {
-          }
-        });
+      axios.post(`/api/activate-myfit-sta-pro`, option).then((data) => {
+        if (data.data.succes === true) {
+          this.props.history.push("/setup");
+        } else {
+        }
+      });
     }
   };
   componentDidUpdate(prevProps) {
     if (this.state.id !== this.props.match.params.id) {
-      if (this.props.match.params.id==="myfistapro") {
+      if (this.props.match.params.id === "myfistapro") {
       }
       this.setState({ id: this.props.match.params.id });
     }
@@ -52,7 +50,7 @@ class MyfistaProAc extends Component {
 
   componentDidMount = () => {
     //this.activate()
-    if (this.props.match.params.id==="myfistapro") {
+    if (this.props.match.params.id === "myfistapro") {
     }
     if (
       this.props.users.postnumber >= 10 &&
@@ -74,12 +72,12 @@ class MyfistaProAc extends Component {
             <p>MyFitstaPro</p>
           </div>
         </div>
-        {this.props.users.myfista===true ? (
+        {this.props.users.myfista === true ? (
           <div className="fjejtietii">
             <div className="wrpajna-thetabshs">
               <div
                 className={`tabshjjjr ${
-                  this.props.match.params.data===undefined ? "active" : ""
+                  this.props.match.params.data === undefined ? "active" : ""
                 }`}
               >
                 <Link to={"/setting/myfistapro"}>Account</Link>
@@ -87,7 +85,7 @@ class MyfistaProAc extends Component {
               <div
                 className={`tabshjjjr ${
                   this.props.match.params.data
-                    ? this.props.match.params.data==="subscriber"
+                    ? this.props.match.params.data === "subscriber"
                       ? "active"
                       : ""
                     : ""
@@ -98,7 +96,7 @@ class MyfistaProAc extends Component {
               <div
                 className={`tabshjjjr ${
                   this.props.match.params.data
-                    ? this.props.match.params.data==="subscriber"
+                    ? this.props.match.params.data === "subscriber"
                       ? ""
                       : "active"
                     : ""
@@ -108,7 +106,7 @@ class MyfistaProAc extends Component {
               </div>
             </div>
             {this.props.match.params.data ? (
-              this.props.match.params.data==="subscriber" ? (
+              this.props.match.params.data === "subscriber" ? (
                 <SubscriberList user={this.props.users.userid} />
               ) : (
                 <Billing />
@@ -236,18 +234,43 @@ class MyfistaProAc extends Component {
                   ></div>
                 </div>
               </div>
-              {/*{this.props.users.canActivate==true?<div className={`activated-buttobox`}>
-<div className={`conte-thise-actionrb active`}>
-
-			<button  onClick={this.activate}  className={`create`}><Link to="/setup">SETUP YOUR ACCOUNT</Link></button>
-            {this.state.loading==true?<div className="jietiooeo"> <LoadingSpin/></div>:""}
-			</div>
-</div>:<div className={`activated-buttobox`}>
-<div className={`conte-thise-actionrb ${this.state.button==false ? "" :"active"}  ${this.state.loading==true ?"":""}`}>
-			<button  onClick={this.activate}  className={`create`}>ACTIVATE</button>
-            {this.state.loading==true?<div className="jietiooeo"> <LoadingSpin/></div>:""}
-			</div>
-</div>}*/}
+              {this.props.users.canActivate == true ? (
+                <div className={`activated-buttobox`}>
+                  <div className={`conte-thise-actionrb active`}>
+                    <button onClick={this.activate} className={`create`}>
+                      <Link to="/setup">SETUP YOUR ACCOUNT</Link>
+                    </button>
+                    {this.state.loading == true ? (
+                      <div className="jietiooeo">
+                        {" "}
+                        <LoadingSpin />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className={`activated-buttobox`}>
+                  <div
+                    className={`conte-thise-actionrb ${
+                      this.state.button == false ? "" : "active"
+                    }  ${this.state.loading == true ? "" : ""}`}
+                  >
+                    <button onClick={this.activate} className={`create`}>
+                      ACTIVATE
+                    </button>
+                    {this.state.loading == true ? (
+                      <div className="jietiooeo">
+                        {" "}
+                        <LoadingSpin />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

@@ -9,19 +9,17 @@ class ProgramBought extends Component {
     item: null,
   };
   componentDidMount = () => {
-    axios
-      .get(`/api/program-bought/${this.props.programid}`)
-      .then((result) => {
-        if (result.data !== "no") {
-          this.setState({
-            item: result.data,
-          });
-        } else {
-          this.setState({
-            item: "no",
-          });
-        }
-      });
+    axios.get(`/api/program-bought/${this.props.programid}`).then((result) => {
+      if (result.data !== "no") {
+        this.setState({
+          item: result.data,
+        });
+      } else {
+        this.setState({
+          item: "no",
+        });
+      }
+    });
   };
   render() {
     return this.state.item !== null ? (

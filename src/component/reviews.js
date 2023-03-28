@@ -15,19 +15,17 @@ class Reviews extends Component {
   };
 
   loadReviews = () => {
-    axios
-      .get(`/api/load-reviews/${this.props.match.params.id}`)
-      .then((res) => {
-        if (res.data.length > 0) {
-          this.setState({
-            reviews: res.data,
-          });
-        } else {
-          this.setState({
-            reviews: [],
-          });
-        }
-      });
+    axios.get(`/api/load-reviews/${this.props.match.params.id}`).then((res) => {
+      if (res.data.length > 0) {
+        this.setState({
+          reviews: res.data,
+        });
+      } else {
+        this.setState({
+          reviews: [],
+        });
+      }
+    });
   };
 
   componentDidUpdate(prevProps) {
@@ -46,7 +44,7 @@ class Reviews extends Component {
     return (
       <div
         className={`box-trans-ce-hold-conm ${
-          this.props.reviewtabs===true ? "active" : ""
+          this.props.reviewtabs === true ? "active" : ""
         }`}
       >
         <div className="box-comment-title">

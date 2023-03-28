@@ -609,9 +609,14 @@
 .tabshjjjr.active {
   border-bottom: 1px solid rgb(111, 86, 229, 1);
 }
+.activated-buttobox .conte-thise-actionrb {
+  max-width: 500px !important;
+}
 .activated-buttobox {
   width: 100%;
-  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 

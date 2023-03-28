@@ -18,15 +18,13 @@ class SharePost extends Component {
   };
 
   loadPeople = () => {
-    axios
-      .get(`/api/my-conversation/${this.props.user.userid}`)
-      .then((res) => {
-        if (res.data !== "no") {
-          this.setState({
-            people: res.data,
-          });
-        }
-      });
+    axios.get(`/api/my-conversation/${this.props.user.userid}`).then((res) => {
+      if (res.data !== "no") {
+        this.setState({
+          people: res.data,
+        });
+      }
+    });
   };
 
   continue = () => {
@@ -64,7 +62,7 @@ class SharePost extends Component {
         axios.post(`/api/new-message`, option).then((result) => {
           people++;
 
-          if (people===this.state.selected.length) {
+          if (people === this.state.selected.length) {
             people = 0;
             this.props.handlOpenS(false);
             this.setState({
@@ -117,7 +115,7 @@ class SharePost extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.sharebox !== this.state.sharebox) {
-      if (this.state.sharebox===false) {
+      if (this.state.sharebox === false) {
         this.loadPeople();
       }
       this.setState({ sharebox: this.props.sharebox });
@@ -132,7 +130,7 @@ class SharePost extends Component {
     return (
       <div
         className={`overlay-that-holt-it  ${
-          this.props.sharebox===true ? "active" : ""
+          this.props.sharebox === true ? "active" : ""
         }`}
       >
         <div className="box-that-hold-the-shrare">
@@ -207,7 +205,7 @@ class SharePost extends Component {
           </div>
 
           <div className="rhhjiushhf">
-            {this.state.loading===true ? (
+            {this.state.loading === true ? (
               <button onClick={this.continue} className="add-shch active">
                 <LoadingSpin />
               </button>

@@ -55,49 +55,49 @@ const rootReducer = (state = initState, action) => {
       interest: action.data,
     };
   }
-  if (action.type==="UPDATE_REVIEW") {
+  if (action.type === "UPDATE_REVIEW") {
     return {
       ...state,
       counterReview: action.data,
     };
   }
-  if (action.type==="UPDATE_REPORT") {
+  if (action.type === "UPDATE_REPORT") {
     return {
       ...state,
       report: action.data,
     };
   }
-  if (action.type==="DELETE_POST") {
+  if (action.type === "DELETE_POST") {
     return {
       ...state,
       report: action.data,
     };
   }
-  if (action.type==="UPDATE_INBOX") {
+  if (action.type === "UPDATE_INBOX") {
     return {
       ...state,
       inbox: action.data,
     };
   }
-  if (action.type==="UPDATE_USERNAME") {
+  if (action.type === "UPDATE_USERNAME") {
     return {
       ...state,
       usernameList: action.data,
     };
   }
-  if (action.type==="UPDATE_ICON") {
+  if (action.type === "UPDATE_ICON") {
     return {
       ...state,
       iconList: action.data,
     };
   }
-  if (action.type==="UPDATE_FOLLOWER") {
+  if (action.type === "UPDATE_FOLLOWER") {
     return {
       ...state,
       followList: action.data,
     };
   }
-  if (action.type==="UPDATE_POSTDATA") {
+  if (action.type === "UPDATE_POSTDATA") {
     return {
       ...state,
       postData: action.data,

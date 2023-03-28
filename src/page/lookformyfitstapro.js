@@ -36,9 +36,8 @@ class Lookformyfitstapro extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res);
         if (res.data.userid) {
-          if (res.data.userid===this.props.user.userid) {
+          if (res.data.userid === this.props.user.userid) {
             //this.props.history.push("/myfitstapro")
           } else {
             this.setState({
@@ -67,7 +66,7 @@ class Lookformyfitstapro extends Component {
         <Nav user={this.props.user} />
         <div id="app">
           {this.state.profile !== null ? (
-            this.state.profile.accountType===1 ? (
+            this.state.profile.accountType === 1 ? (
               <Shoping user={this.props.user} />
             ) : (
               <Myfitstapr user={this.props.user} />

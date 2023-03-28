@@ -15,9 +15,7 @@ class Rate extends Component {
 
   loadRate = () => {
     axios
-      .get(
-        `/api/load-my-rate/${this.props.userid}/${this.props.programId}`
-      )
+      .get(`/api/load-my-rate/${this.props.userid}/${this.props.programId}`)
       .then((res) => {
         if (res.data.AnthorId) {
           this.props.updateRating(res.data.star);
@@ -58,7 +56,7 @@ class Rate extends Component {
     return (
       <div
         className={`over-lauy-that-boxnfnf  ${
-          this.props.rate===false ? "" : "active"
+          this.props.rate === false ? "" : "active"
         }`}
       >
         <div className="bojxjfjjtj-to-rate">

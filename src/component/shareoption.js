@@ -8,7 +8,7 @@ class ShareOption extends Component {
     return (
       <div
         className={`over-lay-theshare  ${
-          this.props.shareoption===false ? "" : "active"
+          this.props.shareoption === false ? "" : "active"
         }`}
       >
         <div className="div-that-wrap-thesetting">

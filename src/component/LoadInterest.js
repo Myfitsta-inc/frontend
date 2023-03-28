@@ -65,8 +65,8 @@ class LoadInterest extends Component {
   };
 
   handleLoad = (data) => {
-    if (data===true) {
-      if (this.state.loading===false) {
+    if (data === true) {
+      if (this.state.loading === false) {
         this.setState(
           {
             numberLoad: this.state.numberLoad + 10,
@@ -134,7 +134,7 @@ class LoadInterest extends Component {
               <button onClick={this.changetable} className={`${this.state.account==true?"active":""}`}>Accounts</button>
               <button  onClick={this.changetable} className={`${this.state.account==false?"active":""}`}> Programs</button>
            </div> */}
-          {this.state.account===true ? (
+          {this.state.account === true ? (
             <div className="kfldkmrkf">
               {this.state.list !== null ? (
                 this.state.list !== "no" ? (
@@ -149,7 +149,7 @@ class LoadInterest extends Component {
                         type="text"
                         placeholder="Search..."
                       />
-                      {this.state.loading===true ? (
+                      {this.state.loading === true ? (
                         <div className="cnjrrjrn">
                           <LoadingSpin />
                         </div>

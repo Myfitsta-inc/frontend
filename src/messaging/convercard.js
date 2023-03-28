@@ -11,7 +11,7 @@ class Convercard extends Component {
     return (
       <div
         className={`box-hold-friend-totalkwith ${
-          this.props.item.userid===this.props.match.params.id ? "active" : ""
+          this.props.item.userid === this.props.match.params.id ? "active" : ""
         }`}
         key={this.props.data}
       >

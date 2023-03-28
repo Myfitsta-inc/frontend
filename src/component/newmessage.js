@@ -22,9 +22,7 @@ class Newmessage extends Component {
     if (this.props.user) {
       if (this.props.user.Username) {
         axios
-          .get(
-            `/api/Myfollowings/${this.props.user.userid}/myfitsta/10`
-          )
+          .get(`/api/Myfollowings/${this.props.user.userid}/myfitsta/10`)
           .then((result) => {
             let list = [];
             if (result.data !== "no") {
@@ -70,7 +68,7 @@ class Newmessage extends Component {
       .post(`/api/add/to/conversattion`, option, { withCredentials: true })
       .then((result) => {
         people++;
-        if (people===this.state.selected.length) {
+        if (people === this.state.selected.length) {
           socket.emit("run-that-conversation", [this.props.users.userid]);
           this.props.handleopen(false);
           this.props.history.push(`/message/${this.state.selected[0].userid}`);
@@ -118,10 +116,10 @@ class Newmessage extends Component {
     this.seachPeopplrrre();
   };
   render() {
-    return this.props.open===true ? (
+    return this.props.open === true ? (
       <div
         className={`overflow-it-newmesagee  ${
-          this.props.open===true ? "active" : ""
+          this.props.open === true ? "active" : ""
         }`}
       >
         <div className="box-that-hold-the-shrare">
@@ -203,7 +201,7 @@ class Newmessage extends Component {
           </div>
 
           <div className="rhhjiushhf">
-            {this.state.loadding===true ? (
+            {this.state.loadding === true ? (
               <button className="add-shch active">
                 <LoadingSpin />
               </button>

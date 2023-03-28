@@ -15,10 +15,7 @@ class PaymentCard extends Component {
     try {
       // Send the nonce to your server
       const { nonce } = await this.instance.requestPaymentMethod();
-      const response = await axios.post(
-        `/api/api/braintree/v1/sandbox`,
-        nonce
-      );
+      const response = await axios.post(`/api/api/braintree/v1/sandbox`, nonce);
       console.log(response);
     } catch (err) {
       console.error(err);
@@ -28,9 +25,7 @@ class PaymentCard extends Component {
   async componentDidMount() {
     try {
       // Get a client token for authorization from your server
-      const response = await axios.get(
-        `/api/api/braintree/v1/getToken`
-      );
+      const response = await axios.get(`/api/api/braintree/v1/getToken`);
       const clientToken = response.data.clientToken;
       this.setState({ clientToken });
     } catch (err) {

@@ -97,9 +97,7 @@ class Notification extends Component {
 
   handleUpdateCount = () => {
     axios
-      .post(
-        `/api/update-number-of-notification/${this.props.user.userid}`
-      )
+      .post(`/api/update-number-of-notification/${this.props.user.userid}`)
       .then((result) => {
         return;
       });
@@ -137,7 +135,7 @@ class Notification extends Component {
                         this.handleSwich(true);
                       }}
                       className={`boxj-thsttjsntnd ${
-                        this.state.tabsDeafalt===true ? "active" : ""
+                        this.state.tabsDeafalt === true ? "active" : ""
                       }`}
                     >
                       All
@@ -147,19 +145,19 @@ class Notification extends Component {
                         this.handleSwich(false);
                       }}
                       className={`boxj-thsttjsntnd ${
-                        this.state.tabsDeafalt===false ? "active" : ""
+                        this.state.tabsDeafalt === false ? "active" : ""
                       }`}
                     >
                       MyFistapro
                     </div>
                   </div>
                   <div className="hold-thodisjhjijjrnbbd">
-                    {this.state.tabsDeafalt===true ? (
+                    {this.state.tabsDeafalt === true ? (
                       <NotificationBasicBox userid={this.props.user.userid} />
                     ) : (
                       ""
                     )}
-                    {this.state.tabsDeafalt===false ? (
+                    {this.state.tabsDeafalt === false ? (
                       <NotificationProBox userid={this.props.user.userid} />
                     ) : (
                       ""
@@ -178,7 +176,7 @@ class Notification extends Component {
           </div>
         </div>
 
-        {this.state.drop===true ? (
+        {this.state.drop === true ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

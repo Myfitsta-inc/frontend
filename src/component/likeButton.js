@@ -13,7 +13,7 @@ class LikeButton extends Component {
   };
 
   updatePost = (data) => {
-    let Updated = this.props.postList.find((item) => item.filename===data);
+    let Updated = this.props.postList.find((item) => item.filename === data);
     if (Updated) {
       Updated.numberlike = this.state.numberlike;
       let list = this.props.postList.filter((item) => item.filename !== data);
@@ -45,9 +45,7 @@ class LikeButton extends Component {
     };
 
     if (this.props.userid !== this.props.posterId) {
-      axios
-        .post(`/api/update-notification`, option)
-        .then((res) => {});
+      axios.post(`/api/update-notification`, option).then((res) => {});
     }
     socket.emit("some-like-a-post", {
       filename: data.filename,
@@ -116,7 +114,7 @@ class LikeButton extends Component {
       numberlike: this.props.numberlike,
     });
     socket.on("like-this-post", (data) => {
-      if (data.filename===this.props.filename) {
+      if (data.filename === this.props.filename) {
         this.setState(
           {
             numberlike: data.numberlike,

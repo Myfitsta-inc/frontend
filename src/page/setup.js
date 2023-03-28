@@ -47,7 +47,7 @@ class Setup extends Component {
     axios
       .post("/api/create-the-wallet", { withCredentials: true })
       .then((result) => {
-        if (result.data.succes===true) {
+        if (result.data.succes === true) {
           this.setState({
             loadingButtton: false,
           });
@@ -95,7 +95,7 @@ class Setup extends Component {
           );
         }
       } else {
-        if (value.length===0) {
+        if (value.length === 0) {
           data.parentElement.parentElement.parentElement.children[1].innerText =
             "Enter a value";
           data.parentElement.parentElement.parentElement.children[1].classList.add(
@@ -136,11 +136,10 @@ class Setup extends Component {
       accountType: this.state.kind,
     };
     if (this.state.kind !== null) {
-      axios.post(`/api/add-a-new-myfitsta-user`, option)
-            .then((res) => {
-              this.props.history.push("/myfitstapro");
-            }); 
-    } 
+      axios.post(`/api/add-a-new-myfitsta-user`, option).then((res) => {
+        this.props.history.push("/myfitstapro");
+      });
+    }
   };
 
   selectOption = (data) => {
@@ -150,8 +149,8 @@ class Setup extends Component {
   };
 
   checkIfSelecthc = () => {
-    if (this.state.kind===0 || this.state.kind===1) {
-      if (this.state.kind===0) {
+    if (this.state.kind === 0 || this.state.kind === 1) {
+      if (this.state.kind === 0) {
         this.next(3);
       } else {
         this.next(4);
@@ -170,7 +169,7 @@ class Setup extends Component {
     axios
       .get("/api/created-wallet", { withCredentials: true })
       .then((result) => {
-        if (result.data.succes===true) {
+        if (result.data.succes === true) {
           this.setState({
             created: true,
             step: result.data.step,
@@ -203,11 +202,9 @@ class Setup extends Component {
                 </div>
               </div>
               <div className="box-that-container-thecoursecro">
-                {this.state.step===1 ? (
+                {this.state.step === 1 ? (
                   <div className="wpaer-theslider active  ">
-                    <div className="welcom-title">
-                      Welcome to MYFITSTAPRO
-                    </div>
+                    <div className="welcom-title">Welcome to MYFITSTAPRO</div>
                     <div className="describe-ite-simple">
                       <div className="wtapthensjjfjtr">
                         <div className="class-boxx">
@@ -291,10 +288,10 @@ class Setup extends Component {
                       <button
                         onClick={() => this.createWallet()}
                         className={`next agreen   ${
-                          this.state.loadingButtton===true ? "loading" : ""
+                          this.state.loadingButtton === true ? "loading" : ""
                         }  `}
                       >
-                        {this.state.loadingButtton===true ? (
+                        {this.state.loadingButtton === true ? (
                           <LoadingSpin />
                         ) : (
                           "NEXT"
@@ -313,7 +310,7 @@ class Setup extends Component {
 <Verification move={this.next}/>  
     </div>:""}*/}
 
-                {this.state.step===2 ? (
+                {this.state.step === 2 ? (
                   <div className="wpaer-theslider active">
                     <Select
                       next={this.next}
@@ -326,7 +323,7 @@ class Setup extends Component {
                   ""
                 )}
 
-                {this.state.step===3 ? (
+                {this.state.step === 3 ? (
                   <div className="wpaer-theslider active ">
                     <SelectPlan
                       goToNectAfterConfifiguration={
@@ -340,9 +337,12 @@ class Setup extends Component {
                   ""
                 )}
 
-                {this.state.step===4 ? (
+                {this.state.step === 4 ? (
                   <div className="wpaer-theslider active">
-                    <Agreement  next={this.next} Activatemyfistapro={this.Activatemyfistapro} />
+                    <Agreement
+                      next={this.next}
+                      Activatemyfistapro={this.Activatemyfistapro}
+                    />
                   </div>
                 ) : (
                   ""

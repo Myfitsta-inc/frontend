@@ -8,7 +8,6 @@ class Select extends Component {
   render() {
     return (
       <div className="wrpaeorrr">
-        
         <div className="theslider">
           <div onClick={() => this.props.next(1)} className="close-that">
             <BiArrowBack />
@@ -21,7 +20,7 @@ class Select extends Component {
               onClick={() => {
                 this.props.selectOption(0);
               }}
-              className={`class-boxx ${this.props.kind===0 ? "active" : ""}`}
+              className={`class-boxx ${this.props.kind === 0 ? "active" : ""}`}
             >
               <div className="eldtoo"></div>
               <div className="rrjjsjeje">
@@ -68,7 +67,7 @@ class Select extends Component {
               onClick={() => {
                 this.props.selectOption(1);
               }}
-              className={`class-boxx ${this.props.kind===1 ? "active" : ""}`}
+              className={`class-boxx ${this.props.kind === 1 ? "active" : ""}`}
             >
               <div className="eldtoo"></div>
               <div className="rrjjsjeje">

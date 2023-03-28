@@ -32,7 +32,7 @@ class CardItem extends Component {
           this.setState({
             item: res.data,
           });
-          if (this.props.item.selected===true) {
+          if (this.props.item.selected === true) {
             this.props.handleadd(res.data);
           }
         }
@@ -53,7 +53,7 @@ class CardItem extends Component {
           );
         }}
         className={`hold-thise-programd-selxtr ${
-          this.props.item.selected===true ? "active" : ""
+          this.props.item.selected === true ? "active" : ""
         }`}
       >
         <div className="box-that-hold0-the-prijfnfjtnbxjfnn">

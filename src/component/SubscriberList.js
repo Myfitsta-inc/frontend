@@ -35,8 +35,8 @@ class SubscriberList extends Component {
   };
 
   checkLoad = (data) => {
-    if (data===true) {
-      if (this.state.loading===false) {
+    if (data === true) {
+      if (this.state.loading === false) {
         this.setState(
           {
             numberLoad: this.state.numberLoad + 10,
@@ -89,7 +89,7 @@ class SubscriberList extends Component {
               placeholder="Seach..."
               type="text"
             />
-            {this.state.loading===true ? (
+            {this.state.loading === true ? (
               <div className="cnjrrjrn">
                 <LoadingSpin />
               </div>
@@ -108,7 +108,7 @@ class SubscriberList extends Component {
                     className="wrprtit-peoplrkr"
                     key={item.subScriber}
                   >
-                    {this.state.list.length===index + 1 ? (
+                    {this.state.list.length === index + 1 ? (
                       <InView
                         className="jkrikskfjjr"
                         onChange={(inView, entry) => this.checkLoad(inView)}

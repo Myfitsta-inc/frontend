@@ -27,7 +27,7 @@ class PaymentmethodSub extends Component {
       if (result.data._id) {
         if (result.data.paymentTokens.length > 0) {
           let tochoose = result.data.paymentTokens.filter(
-            (item) => item.default===true
+            (item) => item.default === true
           );
           this.setState({
             payment: tochoose[0],
@@ -55,14 +55,12 @@ class PaymentmethodSub extends Component {
     this.setState({
       loading: true,
     });
-    axios
-      .post(`/api/api/braintree/subscription`, option)
-      .then((result) => {
-        if (result.data.success===true) {
-          window.location.reload();
-        } else {
-        }
-      });
+    axios.post(`/api/api/braintree/subscription`, option).then((result) => {
+      if (result.data.success === true) {
+        window.location.reload();
+      } else {
+      }
+    });
   };
 
   componentDidMount = () => {
@@ -78,7 +76,7 @@ class PaymentmethodSub extends Component {
               <div
                 onClick={this.handleclick}
                 className={`wraskfkfofnj-crsfdnf ${
-                  this.state.button===true ? "active" : ""
+                  this.state.button === true ? "active" : ""
                 } `}
               >
                 <div className="positf active">
@@ -120,18 +118,18 @@ class PaymentmethodSub extends Component {
               <LoadingSpin />
             </div>
           )}
-          {this.state.button===true ? (
+          {this.state.button === true ? (
             <div className="wraohririirii">
               <div className="controil-theaction">
                 <button
                   onClick={this.handlePay}
                   className={`add-shch ${
-                    this.state.loading===true ? "active" : ""
+                    this.state.loading === true ? "active" : ""
                   }`}
                 >
-                  {this.state.loading===true ? "" : "Subscribe"}
+                  {this.state.loading === true ? "" : "Subscribe"}
                 </button>
-                {this.state.loading===true ? (
+                {this.state.loading === true ? (
                   <div className="jietiooeo">
                     {" "}
                     <LoadingSpin />

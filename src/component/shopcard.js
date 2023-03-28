@@ -38,12 +38,12 @@ class Shopcard extends Component {
         <div className="statqusre">
           <div className="descplr-image-program-ui">
             <div className="hold-imf">
-              {this.state.check===true ? (
+              {this.state.check === true ? (
                 <div className="fjgkkgkgjg bougth">bougth</div>
               ) : (
                 ""
               )}
-              {this.state.check===true ? (
+              {this.state.check === true ? (
                 <Link
                   className="link0-toorohran"
                   to={`/program/unlock/${this.props.item.programId}`}

@@ -73,20 +73,16 @@ class Nav extends Component {
                 <p>Profile</p>
               </NavLink>
 
-              {this.props.user.myfista===true ? (
-                <NavLink
-                  to="/myfitstapro"
-                  className="nav-lii nav-infoo   "
-                  data-tab-target="#account"
-                >
-                  <div className="ic">
-                    <i className="fas fa-fire-alt"></i>
-                  </div>
-                  <p>MyFitstapro</p>
-                </NavLink>
-              ) : (
-                ""
-              )}
+              <NavLink
+                to="/myfitstapro"
+                className="nav-lii nav-infoo   "
+                data-tab-target="#account"
+              >
+                <div className="ic">
+                  <i className="fas fa-fire-alt"></i>
+                </div>
+                <p>MyFitstapro</p>
+              </NavLink>
 
               <NavLink
                 to="/collection"

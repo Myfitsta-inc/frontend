@@ -35,11 +35,11 @@ class Recorver extends Component {
       <div id="container">
         <Navland openNav={this.openNav} />
         <div className="div-hold-box">
-          {this.state.step===0 ? (
+          {this.state.step === 0 ? (
             ""
-          ) : this.state.step===1 ? (
+          ) : this.state.step === 1 ? (
             <One updateEmail={this.updateEmail} move={this.move} />
-          ) : this.state.step===2 ? (
+          ) : this.state.step === 2 ? (
             <Two email={this.state.email} move={this.move} />
           ) : (
             <Three email={this.state.email} />

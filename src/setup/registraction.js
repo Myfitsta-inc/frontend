@@ -26,7 +26,7 @@ class Registraction extends Component {
   };
 
   nextStep = () => {
-    if (this.state.nextStep===false) {
+    if (this.state.nextStep === false) {
       if (
         this.state.user.firstname.length > 0 &&
         this.state.user.lastName.length > 0 &&
@@ -60,7 +60,7 @@ class Registraction extends Component {
         withCredentials: true,
       })
       .then((result) => {
-        if (result.data.message==="created") {
+        if (result.data.message === "created") {
           this.props.move(3);
         } else {
           console.log(result);
@@ -156,7 +156,7 @@ class Registraction extends Component {
     return (
       <div className="wrpaeorrr">
         <div className="welcom-title">Now let's register your account </div>
-        {this.state.nextStep===false ? (
+        {this.state.nextStep === false ? (
           <div className="jsjfoijeif">
             <div className="edit-box-profile">
               <p>Legal Fist name</p>
@@ -209,15 +209,19 @@ class Registraction extends Component {
             user={this.state}
           />
         )}
-        {this.state.submit===false ? (
+        {this.state.submit === false ? (
           <div className="controil-theaction">
             <button
               onClick={() => this.nextStep()}
               className={`next agreen   ${
-                this.state.loadingButtton===true ? "loading" : ""
+                this.state.loadingButtton === true ? "loading" : ""
               }  `}
             >
-              {this.state.loadingButtton===true ? <LoadingSpin /> : "CONTINUE"}
+              {this.state.loadingButtton === true ? (
+                <LoadingSpin />
+              ) : (
+                "CONTINUE"
+              )}
             </button>
           </div>
         ) : (

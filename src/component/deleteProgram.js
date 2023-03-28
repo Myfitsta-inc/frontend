@@ -11,18 +11,16 @@ class DeleteProgram extends Component {
       AuthorId: this.props.program.AuthorId,
       programId: this.props.program.programId,
     };
-    axios
-      .post(`/api/handle-the-delete-program`, option)
-      .then((result) => {
-        window.location.reload();
-      });
+    axios.post(`/api/handle-the-delete-program`, option).then((result) => {
+      window.location.reload();
+    });
   };
 
   render() {
     return (
       <div
         className={`overlayrjhhntufbghjdjhb ${
-          this.props.deleteProgram===true ? "active" : ""
+          this.props.deleteProgram === true ? "active" : ""
         }`}
       >
         <div className="delete-the-colletion">

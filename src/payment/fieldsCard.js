@@ -18,9 +18,7 @@ class FieldCard extends Component {
   async getclient() {
     try {
       // Get a client token for authorization from your server
-      const response = await axios.get(
-        `/api/api/braintree/v1/getToken`
-      );
+      const response = await axios.get(`/api/api/braintree/v1/getToken`);
       const clientToken = response.data.clientToken;
       this.setState({ clientToken });
       this.runpay();
@@ -110,20 +108,18 @@ class FieldCard extends Component {
     this.setState({
       loading: true,
     });
-    axios
-      .post(`/api/api/braintree/v1/sandbox`, option)
-      .then((result) => {
-        if (result.data.success===true) {
-          itemCouter++;
-          if (itemCouter===this.props.item.length) {
-            this.props.history.push("/collection/program");
-          } else {
-            this.handlePay(data);
-          }
+    axios.post(`/api/api/braintree/v1/sandbox`, option).then((result) => {
+      if (result.data.success === true) {
+        itemCouter++;
+        if (itemCouter === this.props.item.length) {
+          this.props.history.push("/collection/program");
         } else {
-          console.log(result.data);
+          this.handlePay(data);
         }
-      });
+      } else {
+        console.log(result.data);
+      }
+    });
   };
 
   componentDidMount = () => {
@@ -164,12 +160,12 @@ class FieldCard extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading===true ? "loading" : ""
+                  this.state.loading === true ? "loading" : ""
                 }`}
-                value={`${this.state.loading===true ? "" : "Purchase"}`}
+                value={`${this.state.loading === true ? "" : "Purchase"}`}
                 id="submit"
               />
-              {this.state.loading===true ? (
+              {this.state.loading === true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

@@ -62,7 +62,7 @@ class Watcher extends Component {
   };
 
   sendmessage = () => {
-    if (this.state.StateLive===true) {
+    if (this.state.StateLive === true) {
       if (this.state.message.length > 0) {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
@@ -94,7 +94,7 @@ class Watcher extends Component {
       })
       .then((res) => {
         if (res.data.broadcasterName) {
-          if (res.data.instant===true) {
+          if (res.data.instant === true) {
             this.setState({
               data: res.data,
               title: res.data.roomName,
@@ -132,7 +132,7 @@ class Watcher extends Component {
 
         socket.emit("wacth-a-live", payload);
         socket.on("wath-accepted", (infolive) => {
-          if (infolive.succes===true) {
+          if (infolive.succes === true) {
             const desc = new RTCSessionDescription(infolive.sdp);
             peer.setRemoteDescription(desc).catch((e) => console.log(e));
           } else {
@@ -192,7 +192,7 @@ class Watcher extends Component {
   };
 
   playVideo = () => {
-    if (this.state.playing===false) {
+    if (this.state.playing === false) {
       this.setState({
         playing: true,
         muted: false,
@@ -240,7 +240,7 @@ class Watcher extends Component {
               <div className="hold-videi-live">
                 <div
                   className={`hold-lay ${
-                    this.state.StateLive===true ? "active" : ""
+                    this.state.StateLive === true ? "active" : ""
                   }`}
                 >
                   <div className="tile-o-live-prpe">
@@ -249,7 +249,7 @@ class Watcher extends Component {
                     </div>
                     <p className="">Live Workout</p>
                   </div>
-                  {this.state.loading===true ? (
+                  {this.state.loading === true ? (
                     <div className="wrapjrjrrjjrjrjjrj">
                       <LoadingSpin />
                     </div>
@@ -273,9 +273,9 @@ class Watcher extends Component {
                   className="live"
                 ></video>
                 {this.state.StateLive ? (
-                  this.state.playing===false ? (
+                  this.state.playing === false ? (
                     <div className="bigerr-wrpaprr">
-                      {this.state.playing===false ? (
+                      {this.state.playing === false ? (
                         <div
                           onClick={() => {
                             this.playVideo();
@@ -299,7 +299,7 @@ class Watcher extends Component {
 
               <div
                 className={`hold-chat-live ${
-                  this.state.StateLive===true ? "active" : ""
+                  this.state.StateLive === true ? "active" : ""
                 }`}
               >
                 <div className="hold-those-chat">
@@ -366,7 +366,7 @@ class Watcher extends Component {
 
                 <div
                   className={`overlay-live-info  ${
-                    this.state.livebox===false ? "" : "active"
+                    this.state.livebox === false ? "" : "active"
                   }`}
                 >
                   <div className="box-info-live">

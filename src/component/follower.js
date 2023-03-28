@@ -29,9 +29,7 @@ class Follower extends Component {
       loading: true,
     });
     axios
-      .get(
-        `/api/Myfollowers/${this.props.user}/${this.state.value}/${number}`
-      )
+      .get(`/api/Myfollowers/${this.props.user}/${this.state.value}/${number}`)
       .then((result) => {
         this.setState({
           loading: false,
@@ -40,8 +38,8 @@ class Follower extends Component {
       });
   };
   checkLoad = (data) => {
-    if (data===true) {
-      if (this.state.loading===false) {
+    if (data === true) {
+      if (this.state.loading === false) {
         this.setState(
           {
             numberLoad: this.state.numberLoad + 10,
@@ -95,7 +93,7 @@ class Follower extends Component {
                   placeholder="Seach..."
                   type="text"
                 />
-                {this.state.loading===true ? (
+                {this.state.loading === true ? (
                   <div className="cnjrrjrn">
                     <LoadingSpin />
                   </div>
@@ -114,7 +112,7 @@ class Follower extends Component {
           {this.state.follower !== null ? (
             this.state.follower !== "no" ? (
               this.state.follower?.map((item, index) => {
-                if (this.state.follower.length===index + 1) {
+                if (this.state.follower.length === index + 1) {
                   return (
                     <motion.div
                       layout
@@ -133,7 +131,7 @@ class Follower extends Component {
                           </div>
                           <div className="wirjsjjfkkfkf">
                             <Username link={true} user={item.follower} />
-                           {/* <Subinfo user={item.follower} />*/}
+                            {/* <Subinfo user={item.follower} />*/}
                           </div>
                         </div>
                       </InView>
@@ -161,7 +159,7 @@ class Follower extends Component {
                         </div>
                         <div className="wirjsjjfkkfkf">
                           <Username link={true} user={item.follower} />
-                        {/*  <Subinfo user={item.follower} />*/}
+                          {/*  <Subinfo user={item.follower} />*/}
                         </div>
                       </div>
                       <div className="wrsokf">

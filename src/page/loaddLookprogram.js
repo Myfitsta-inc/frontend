@@ -44,7 +44,7 @@ class LoadlookProgram extends Component {
           this.setState({
             media: res.data,
           });
-          if (this.state.playing===false) {
+          if (this.state.playing === false) {
             this.loadRelater(res.data.programId, res.data.AuthorId);
             this.setState({
               playing: true,
@@ -176,11 +176,11 @@ class LoadlookProgram extends Component {
 
                       <div className="bar-tha-th4botomnn">
                         <div className="two-onnrnn">
-                          {this.state.media._id ? (
+                          {/* {this.state.media._id ? (
                             <LikeProgram type={1} item={this.state.media} />
                           ) : (
                             ""
-                          )}
+                          )} */}
                           {/* <div className="Wtrpsrirjtns">
        <div className="iocnidjnn">
            <IoIosShareAlt/>
@@ -206,13 +206,13 @@ class LoadlookProgram extends Component {
                       </div>
                     </div>
 
-                    <div className="tabhsjfj-jr">
+                    {/* <div className="tabhsjfj-jr">
                       <div
                         onClick={() => {
                           this.changlepage(false, true);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.lecture===true ? "active" : ""
+                          this.state.lecture === true ? "active" : ""
                         }`}
                       >
                         Content
@@ -222,34 +222,22 @@ class LoadlookProgram extends Component {
                           this.changlepage(true, false);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.comment===true ? "active" : ""
+                          this.state.comment === true ? "active" : ""
                         }`}
                       >
                         Comment
                       </div>
-                    </div>
+                    </div> */}
                     <div
                       className={`commnentnjntjn ${
-                        this.state.comment===true ? "active" : ""
+                        this.state.comment === true ? "active" : ""
                       }`}
-                    >
-                      <div className="load-the-comnent-title">
-                        <p>{this.state.media.numberofComments} Comment</p>
-                      </div>
-                      {this.state.media.AuthorId ? (
-                        <CommentMedia
-                          userid={this.state.media.AuthorId}
-                          media={this.state.media}
-                        />
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                    ></div>
                   </div>
 
                   <div
                     className={`showthebar-of-theother-element-player ${
-                      this.state.lecture===true ? "active" : ""
+                      this.state.lecture === true ? "active" : ""
                     }`}
                   >
                     <div className="fjejdgrrfje">
@@ -261,7 +249,7 @@ class LoadlookProgram extends Component {
                           return (
                             <div
                               className={`box-that-hold-theinfo-next-program-c ${
-                                item.file===this.props.match.params.id
+                                item.file === this.props.match.params.id
                                   ? "active"
                                   : ""
                               }`}

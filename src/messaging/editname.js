@@ -26,15 +26,13 @@ class EditName extends Component {
         conversationId: this.props.group.conversationId,
         name: this.state.groupname,
       };
-      axios
-        .post(`/api/change-group-name`, option)
-        .then((result) => {
-          socket.emit("name-group-change", {
-            name: this.state.groupname,
-            members: this.props.group.members,
-            conversationId: this.props.group.conversationId,
-          });
+      axios.post(`/api/change-group-name`, option).then((result) => {
+        socket.emit("name-group-change", {
+          name: this.state.groupname,
+          members: this.props.group.members,
+          conversationId: this.props.group.conversationId,
         });
+      });
     }
   };
 
@@ -52,12 +50,12 @@ class EditName extends Component {
     return (
       <div
         className={`edit-box-profile ${
-          this.state.editname===true ? "active" : ""
+          this.state.editname === true ? "active" : ""
         }`}
       >
         <div className="wrapefjej">
           <label htmlFor="Website">Group Name</label>
-          {this.state.editname===true ? (
+          {this.state.editname === true ? (
             <div onClick={this.savename} className="dibnifif">
               <GoCheck />
             </div>
@@ -69,7 +67,7 @@ class EditName extends Component {
         </div>
 
         <div className="wrwapwerisiiri">
-          {this.state.editname===true ? (
+          {this.state.editname === true ? (
             <input
               onChange={this.saveChange}
               className="website-profile"

@@ -4,14 +4,14 @@
   --main-bg-box-dark: #2d3136;
   --main-bg-box-item-dark: #2a2e32;
   --text-dark: white;
-  --main-bg-cool-rgb-dark: rgba(255, 255, 255, 0.2);
+  --main-bg-cool-rgb-dark: rgba(255, 255, 255, 0.3);
 
   --main-bg-pagebox-white: #f7f6fb;
   --main-bg-box-item-white: #f7f6fb;
   --main-bg-box-white: #f7f6fb;
   --main-bg--side-white: #fff;
   --text-light: #191919;
-  --main-bg-cool-rgb-white: rgba(0, 0, 0, 0.2);
+  --main-bg-cool-rgb-white: rgba(0, 0, 0, 0.3);
 }
 
 [color-scheme="dark"] {
@@ -306,7 +306,7 @@ input[type="range"]::-webkit-slider-thumb {
 .two-onnrnn {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .iocnidjnn {
   width: 40px;
@@ -535,7 +535,7 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 20px;
 }
 .progress-bar {
-  background-color: tomato;
+  background-color: #6f56e5;
   width: 0%;
   height: 100%;
   border-radius: 20px;
@@ -817,7 +817,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .bar-that-show-it {
   height: 5px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(300px);
   width: 98%;
   border-radius: 30px;
   background-color: var(--main-bg-cool-rgb);

@@ -61,7 +61,7 @@ class Loadprogram extends Component {
             this.setState({
               media: res.data,
             });
-            if (this.state.playing===false) {
+            if (this.state.playing === false) {
               this.loadRelater(res.data.programId, res.data.AuthorId);
               this.setState({
                 playing: true,
@@ -196,11 +196,6 @@ class Loadprogram extends Component {
 
                       <div className="bar-tha-th4botomnn">
                         <div className="two-onnrnn">
-                          {this.state.media._id ? (
-                            <LikeProgram type={1} item={this.state.media} />
-                          ) : (
-                            ""
-                          )}
                           {
                             <NavLink
                               to={`/program/workout/course/edit/${this.state.media.file}`}
@@ -227,7 +222,7 @@ class Loadprogram extends Component {
                       </div>
                     </div>
 
-                    <div className="tabhsjfj-jr">
+                    {/* <div className="tabhsjfj-jr">
                       <div
                         onClick={() => {
                           this.changlepage(false, true);
@@ -249,26 +244,26 @@ class Loadprogram extends Component {
                       >
                         Comment
                       </div>
-                    </div>
+                    </div> */}
                     <div
                       className={`commnentnjntjn ${
-                        this.state.comment===true ? "active" : ""
+                        this.state.comment === true ? "active" : ""
                       }`}
                     >
-                      <div className="load-the-comnent-title">
+                      {/* <div className="load-the-comnent-title">
                         <p>{this.state.media.numberofComments} Comment</p>
                       </div>
                       <CommentMedia
                         userid={this.props.myfitstapro.userid}
                         user={this.props.user}
                         media={this.state.media}
-                      />
+                      /> */}
                     </div>
                   </div>
 
                   <div
                     className={`showthebar-of-theother-element-player ${
-                      this.state.lecture===true ? "active" : ""
+                      this.state.lecture === true ? "active" : ""
                     }`}
                   >
                     <div className="fjejdgrrfje">
@@ -280,7 +275,7 @@ class Loadprogram extends Component {
                           return (
                             <div
                               className={`box-that-hold-theinfo-next-program-c ${
-                                item.file===this.props.match.params.id
+                                item.file === this.props.match.params.id
                                   ? "active"
                                   : ""
                               }`}

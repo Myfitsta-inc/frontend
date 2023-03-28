@@ -17,7 +17,7 @@ class DropHomeUp extends Component {
     return (
       <div
         className={`boxmenuefnf rgrhhrhrhh  ${
-          this.props.drop===false ? "" : "active"
+          this.props.drop === false ? "" : "active"
         }`}
       >
         <div className="title-of--thise-action rhbrnr">

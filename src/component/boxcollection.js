@@ -55,11 +55,9 @@ class Boxcollection extends Component {
       collectionName: data,
       file: this.props.file,
     };
-    axios
-      .post(`/api/delete/WorkoiutCollection`, option)
-      .then((res) => {
-        this.getCollection();
-      });
+    axios.post(`/api/delete/WorkoiutCollection`, option).then((res) => {
+      this.getCollection();
+    });
   };
 
   addtoCollection = (data) => {
@@ -103,13 +101,13 @@ class Boxcollection extends Component {
     return (
       <div
         className={`collection-overlay  ${
-          this.props.boxCollection===false ? "" : "active"
+          this.props.boxCollection === false ? "" : "active"
         }`}
       >
         <div className="box-hold-collection">
           <div
             className={`box-collection-user ${
-              this.state.add===false ? "" : "active"
+              this.state.add === false ? "" : "active"
             }`}
           >
             <div className="collection-title">
@@ -185,12 +183,12 @@ class Boxcollection extends Component {
               </button>
             </div>
           </div>
-          {this.state.create===false ? (
+          {this.state.create === false ? (
             ""
           ) : (
             <div
               className={`add-tocollection-box ${
-                this.state.create===false ? "" : "active"
+                this.state.create === false ? "" : "active"
               }`}
             >
               <div className="Create-a-new-list-title abrb">

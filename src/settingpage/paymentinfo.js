@@ -86,7 +86,7 @@ class PaymentInfo extends Component {
                     <div key={item._id} className="wrapwediiriri">
                       <div
                         className={`wraskfkfofnj-crsfdnf ${
-                          item.default===true ? "active" : ""
+                          item.default === true ? "active" : ""
                         } `}
                       >
                         <div className="positf active">
@@ -99,7 +99,7 @@ class PaymentInfo extends Component {
                               <div className="boldsfk"></div>
                               <div className="boldsfk"></div>
                               <div className="boldsfk">
-                                {item.default===true ? "Default" : ""}
+                                {item.default === true ? "Default" : ""}
                               </div>
                             </div>
                           </div>
@@ -131,9 +131,9 @@ class PaymentInfo extends Component {
                       </div>
                       <div className="tabsjdjdj">
                         <button
-                          className={`${item.default===true ? "active" : ""}`}
+                          className={`${item.default === true ? "active" : ""}`}
                         >
-                          {item.default===true ? "Default" : "Make Default"}
+                          {item.default === true ? "Default" : "Make Default"}
                         </button>
                         <button
                           onClick={() => {
@@ -156,7 +156,7 @@ class PaymentInfo extends Component {
     <button>Add Payment Method</button>
 </div>*/}
         </div>
-        {this.state.addcard===true ? (
+        {this.state.addcard === true ? (
           <AddMethod
             acountD={this.state.acountD}
             hnddleclick={this.hnddleclick}

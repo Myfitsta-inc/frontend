@@ -47,7 +47,7 @@ class ShopingItem extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.bougth===false) {
+        if (res.data.bougth === false) {
           this.setState({
             program: res.data.program,
           });
@@ -151,7 +151,7 @@ class ShopingItem extends Component {
         </div>
 
         {this.state.program._id ? (
-          this.state.paybox===true ? (
+          this.state.paybox === true ? (
             <PaymentOption
               handlePay={this.handlePay}
               program={this.state.program}

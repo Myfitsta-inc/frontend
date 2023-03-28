@@ -20,7 +20,7 @@ class Subcription extends Component {
     };
     axios.post(`/api/get-my-programm`, option).then((res) => {
       if (res.data !== "no") {
-        let list = res.data.data.filter((item) => item.kind===0);
+        let list = res.data.data.filter((item) => item.kind === 0);
         if (list.length > 0) {
           this.setState({
             list: list,

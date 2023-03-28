@@ -19,13 +19,11 @@ class RegisterOne extends Component {
       this.setState({
         loading: true,
       });
-      axios
-        .post(`/api/recover-my-account`, option)
-        .then((result) => {
-          if (result.data.succes===true) {
-            this.props.handleNext(1);
-          }
-        });
+      axios.post(`/api/recover-my-account`, option).then((result) => {
+        if (result.data.succes === true) {
+          this.props.handleNext(1);
+        }
+      });
     }
   };
   render() {
@@ -65,15 +63,15 @@ class RegisterOne extends Component {
         <p className="messsage" id="message-Username">
           {this.state.message}
         </p>
-        {this.state.loading===false ? (
+        {this.state.loading === false ? (
           <input id="register" type="submit" value="CONTINUE" />
         ) : (
           <button
             className={`next agreen   ${
-              this.state.loading===true ? "loading" : ""
+              this.state.loading === true ? "loading" : ""
             }  `}
           >
-            {this.state.loading===true ? <LoadingSpin /> : ""}
+            {this.state.loading === true ? <LoadingSpin /> : ""}
           </button>
         )}
       </form>

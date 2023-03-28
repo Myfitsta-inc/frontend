@@ -8,8 +8,8 @@ class Post extends Component {
   state = {};
 
   checkLoad = (data) => {
-    if (data===true) {
-      if (this.props.loading===true) {
+    if (data === true) {
+      if (this.props.loading === true) {
       } else {
         this.props.loadmore(true);
       }
@@ -26,7 +26,7 @@ class Post extends Component {
         {/*  <Postfit loadmore={this.props.loadmore}   user={this.props.user}  openBoxCollection={this.props.openBoxCollection}  handleSetting={this.props.handleSetting}/>*/}
         {this.props.feed.length > 0 ? (
           this.props.feed.map((item, index) => {
-            if (this.props.feed.length===index + 1) {
+            if (this.props.feed.length === index + 1) {
               return (
                 <InView
                   key={item}
@@ -58,7 +58,7 @@ class Post extends Component {
           <div className="wrpsjfifkfkfjf "></div>
         )}
 
-        {this.props.loading===true ? (
+        {this.props.loading === true ? (
           <div className="bixnknfkfjkjrjr">
             <LoadingSpin />
           </div>

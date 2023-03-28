@@ -18,10 +18,10 @@ class Unlocked extends Component {
       if (res.data !== "no") {
         let list = [];
         res.data.data.forEach((item) => {
-          let dataS = list.filter((info) => info.AuthorId===item.AuthorId);
+          let dataS = list.filter((info) => info.AuthorId === item.AuthorId);
           if (dataS.length > 0) {
             list.forEach((data) => {
-              if (data.AuthorId===item.AuthorId) {
+              if (data.AuthorId === item.AuthorId) {
                 data.list.push(item.programid);
               }
             });
@@ -55,7 +55,7 @@ class Unlocked extends Component {
         {this.state.data !== null ? (
           this.state.data !== "no" ? (
             this.state.data.map((item) => {
-              if (item.kind===1) {
+              if (item.kind === 1) {
                 return (
                   <div
                     className="box-that-that-hold-the-row"

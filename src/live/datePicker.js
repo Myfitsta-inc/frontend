@@ -89,7 +89,7 @@ class DatePicker extends Component {
   render() {
     return (
       <div className="scheule-wraper-boxxx">
-        {this.state.activate===false ? (
+        {this.state.activate === false ? (
           <div onClick={this.change} className="wraper-boxee">
             <div className="icondrr">
               <BsCalendarCheck />

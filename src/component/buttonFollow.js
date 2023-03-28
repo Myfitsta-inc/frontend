@@ -56,7 +56,7 @@ class ButtonFollow extends Component {
     axios
       .post("/api/unfollowrequest", option, { withCredentials: true })
       .then((result) => {
-        if (this.state.monted===true) {
+        if (this.state.monted === true) {
           let list = this.props.followLists.filter(
             (item) => item !== this.props.friend
           );
@@ -79,7 +79,7 @@ class ButtonFollow extends Component {
           { withCredentials: true }
         )
         .then((res) => {
-          if (res.data===true) {
+          if (res.data === true) {
             let data = this.props.followLists;
             data.push(this.props.friend);
             this.props.updataFollow(data);
@@ -110,10 +110,10 @@ class ButtonFollow extends Component {
     return (
       <div
         className={`wriffjjxif ${
-          this.props.users.userid===this.props.friend
+          this.props.users.userid === this.props.friend
             ? ""
             : this.state.follow !== null
-            ? this.state.follow===true
+            ? this.state.follow === true
               ? ""
               : "fol"
             : ""
@@ -126,12 +126,12 @@ class ButtonFollow extends Component {
         ) : (
           ""
         )}
-        {this.props.users.userid===this.props.friend ? (
+        {this.props.users.userid === this.props.friend ? (
           <button>
             <Link to="/profile">Profile</Link>{" "}
           </button>
         ) : this.state.follow !== null ? (
-          this.state.follow===true ? (
+          this.state.follow === true ? (
             <button onClick={this.activeFollow}>Follow </button>
           ) : (
             <button onClick={this.follow} className="active">
@@ -141,7 +141,7 @@ class ButtonFollow extends Component {
         ) : (
           <div className="jrkjrijrrrj"></div>
         )}
-        {this.state.unfollow===true ? (
+        {this.state.unfollow === true ? (
           <div className="unfolowbox">
             <div className="delete-the-colletion ajrjjrj">
               <div className="title-of--thise-action-e">

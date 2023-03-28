@@ -75,7 +75,7 @@ class Time extends Component {
   render() {
     return (
       <div className="wraper-time">
-        {this.state.activate===false ? (
+        {this.state.activate === false ? (
           <div onClick={this.change} className="wraper-boxee">
             <div className="icondrr">
               <BiTime />

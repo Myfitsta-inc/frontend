@@ -34,7 +34,7 @@ class Cardmdedia extends Component {
     return (
       <div
         className={`hold-the-program-media ${
-          this.props.tabsprogram===true ? "active" : ""
+          this.props.tabsprogram === true ? "active" : ""
         }`}
       >
         {media}

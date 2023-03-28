@@ -14,7 +14,7 @@ class Video extends Component {
         fullscren: !this.state.fullscren,
       },
       () => {
-        if (this.state.fullscren===true) {
+        if (this.state.fullscren === true) {
           document
             .exitFullscreen()
             .then(() => {})
@@ -113,7 +113,7 @@ class Video extends Component {
 
         <div
           className={`control-theelment ${
-            this.state.playing===false ? "active" : ""
+            this.state.playing === false ? "active" : ""
           }`}
         >
           <div className="control-bar">
@@ -125,7 +125,7 @@ class Video extends Component {
             <div className="wraper-div-actionr-omne">
               <div className="play-or-pause-media">
                 <div className="play-that-orpause-tie" onClick={this.play}>
-                  {this.state.playing===false ? (
+                  {this.state.playing === false ? (
                     <GrPlayFill style={{ fill: "white" }} size={20} />
                   ) : (
                     <GrPauseFill />

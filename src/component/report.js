@@ -65,7 +65,7 @@ class Report extends Component {
   };
   handleFilter = () => {
     let list = this.state.report.filter(
-      (item) => item.name===this.props.report.kind
+      (item) => item.name === this.props.report.kind
     );
     this.setState({
       toShow: list,
@@ -84,7 +84,7 @@ class Report extends Component {
     return (
       <div
         className={`report-hiver-overt ${
-          this.props.report.open===true ? "active" : ""
+          this.props.report.open === true ? "active" : ""
         }`}
       >
         <div className="box-theholf-thereport">

@@ -31,7 +31,7 @@ class Setting extends Component {
   };
 
   componentDidUpdate = () => {
-    if (this.props.match.params.id===undefined) {
+    if (this.props.match.params.id === undefined) {
       if (window.screen.width >= 1100) {
         this.props.history.push("/setting/edit");
       }
@@ -43,7 +43,7 @@ class Setting extends Component {
     });
   };
   componentDidMount = () => {
-    if (this.props.match.params.id===undefined) {
+    if (this.props.match.params.id === undefined) {
       if (window.screen.width >= 1030) {
         this.props.history.push("/setting/edit");
       }
@@ -80,7 +80,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="edit"
+                      ? this.props.match.params.id === "edit"
                         ? "active "
                         : ""
                       : ""
@@ -97,7 +97,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="changePassword"
+                      ? this.props.match.params.id === "changePassword"
                         ? "active "
                         : ""
                       : ""
@@ -122,7 +122,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="myfistapro"
+                      ? this.props.match.params.id === "myfistapro"
                         ? "active "
                         : ""
                       : ""
@@ -140,7 +140,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="subscription"
+                      ? this.props.match.params.id === "subscription"
                         ? "active "
                         : ""
                       : ""
@@ -157,7 +157,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="earning"
+                      ? this.props.match.params.id === "earning"
                         ? "active "
                         : ""
                       : ""
@@ -174,7 +174,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="loginActivity"
+                      ? this.props.match.params.id === "loginActivity"
                         ? "active "
                         : ""
                       : ""
@@ -191,7 +191,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="mode"
+                      ? this.props.match.params.id === "mode"
                         ? "active "
                         : ""
                       : ""
@@ -216,7 +216,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="termsCondition"
+                      ? this.props.match.params.id === "termsCondition"
                         ? "active "
                         : ""
                       : ""
@@ -237,7 +237,7 @@ class Setting extends Component {
                   onClick={this.logout}
                   className={`box-that0-hold-thetabsb-m rhrhhrh ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id==="termsCondition"
+                      ? this.props.match.params.id === "termsCondition"
                         ? "active "
                         : ""
                       : ""
@@ -255,11 +255,11 @@ class Setting extends Component {
                 }`}
               >
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="edit" ? (
+                  this.props.match.params.id === "edit" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="edit"
+                          ? this.props.match.params.id === "edit"
                             ? "active "
                             : ""
                           : ""
@@ -275,11 +275,11 @@ class Setting extends Component {
                 )}
 
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="changePassword" ? (
+                  this.props.match.params.id === "changePassword" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="changePassword"
+                          ? this.props.match.params.id === "changePassword"
                             ? "active "
                             : ""
                           : ""
@@ -295,11 +295,11 @@ class Setting extends Component {
                 )}
 
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="earning" ? (
+                  this.props.match.params.id === "earning" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="earning"
+                          ? this.props.match.params.id === "earning"
                             ? "active "
                             : ""
                           : ""
@@ -315,11 +315,11 @@ class Setting extends Component {
                 )}
 
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="loginActivity" ? (
+                  this.props.match.params.id === "loginActivity" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="loginActivity"
+                          ? this.props.match.params.id === "loginActivity"
                             ? "active "
                             : ""
                           : ""
@@ -338,11 +338,11 @@ class Setting extends Component {
   <NotificationAc/>
 </div>:"" :""}*/}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="subscription" ? (
+                  this.props.match.params.id === "subscription" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="subscription"
+                          ? this.props.match.params.id === "subscription"
                             ? "active "
                             : ""
                           : ""
@@ -360,11 +360,11 @@ class Setting extends Component {
    {<PaymentInfo/>}
 </div>:"" :""}*/}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="termsCondition" ? (
+                  this.props.match.params.id === "termsCondition" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="termsCondition"
+                          ? this.props.match.params.id === "termsCondition"
                             ? "active "
                             : ""
                           : ""
@@ -379,11 +379,11 @@ class Setting extends Component {
                   ""
                 )}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="myfistapro" ? (
+                  this.props.match.params.id === "myfistapro" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="myfistapro"
+                          ? this.props.match.params.id === "myfistapro"
                             ? "active "
                             : ""
                           : ""
@@ -398,11 +398,11 @@ class Setting extends Component {
                   ""
                 )}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id==="mode" ? (
+                  this.props.match.params.id === "mode" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id==="mode"
+                          ? this.props.match.params.id === "mode"
                             ? "active "
                             : ""
                           : ""

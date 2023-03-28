@@ -13,6 +13,7 @@ import ApiUrl from "../url";
 import LoadingSpin from "../component/loadingspin.js";
 import Addprogram from "../component/addProgram";
 import { BiArrowBack } from "react-icons/bi";
+import ActivateMyfitsta from "../component/ActivateMyFitstaPro";
 import SettingMyfiststapro from "../component/settingMyfitstapro";
 import { connect } from "react-redux";
 let source;
@@ -111,7 +112,7 @@ class Myfitstapro extends Component {
                   user={this.props.user}
                 />
                 <div className="barnner-propfde">
-                  {this.props.pro.banner.length > 0 ? (
+                  {this.props.pro.banner?.length > 0 ? (
                     <img
                       className="pect-ppr"
                       src={`${ApiUrl.content}${this.props.pro.banner}`}
@@ -126,7 +127,7 @@ class Myfitstapro extends Component {
                   <div className="imga-profile-descp eexr">
                     <div className="pro-img-box">
                       <div className="pro-img">
-                        {this.props.pro.profileUrl.length > 0 ? (
+                        {this.props.pro.profileUrl?.length > 0 ? (
                           <img
                             className="imag-pro"
                             src={`${ApiUrl.content}${this.props.pro.profileUrl}`}
@@ -140,7 +141,7 @@ class Myfitstapro extends Component {
                         <div className="name-action">
                           <div className="name-pr">
                             <p>{this.props.user.Username}</p>{" "}
-                            {this.props.user.verified===true ? (
+                            {this.props.user.verified === true ? (
                               <p className="cheh">
                                 <i className="fas fa-check"></i>
                               </p>
@@ -154,7 +155,7 @@ class Myfitstapro extends Component {
                           <div className="info-acct">
                             <div id="post-nu " className="al">
                               <div id="number-post" className="number-post">
-                                {this.props.myfitstapro.numberOfProgram}
+                                {this.props.myfitstapro.numberOfProgram ?? 0}
                               </div>
                               <p>program</p>
                             </div>
@@ -163,10 +164,11 @@ class Myfitstapro extends Component {
                                 id="number-followers"
                                 className="number-followers"
                               >
-                                {this.props.myfitstapro.numberOfSubscriber}
+                                {this.props.myfitstapro.numberOfSubscriber ?? 0}
                               </div>
                               <p>subscribers</p>
                             </div>
+                            s
                           </div>
                         </div>
                         <div className="bio-info">
@@ -208,6 +210,7 @@ class Myfitstapro extends Component {
                     </div>
                   </div>
                 </div>
+
                 <div className="wosjfijitjid">
                   {this.state.program != null ? (
                     this.state.program.length > 0 ? (
@@ -248,7 +251,7 @@ class Myfitstapro extends Component {
                                 <Rating rating={item.rating} />
 
                                 <div className="action-postf-desing">
-                                  {item.programType===0 ? (
+                                  {item.programType === 0 ? (
                                     ""
                                   ) : (
                                     <div className="mmenu-act5">
@@ -257,7 +260,7 @@ class Myfitstapro extends Component {
                                   )}
                                 </div>
 
-                                {item.publish===true ? (
+                                {item.publish === true ? (
                                   <p className="publish">Publish</p>
                                 ) : (
                                   <p className="draft">Draft</p>
@@ -267,7 +270,7 @@ class Myfitstapro extends Component {
                           );
                         })}{" "}
                       </div>
-                    ) : (
+                    ) : this.props.user.myfista ? (
                       <div className="wraperififoojfhr">
                         <div className="wraperjf-ffkfkr">
                           <p>Create a Program</p>
@@ -286,6 +289,8 @@ class Myfitstapro extends Component {
                           </div>
                         </div>
                       </div>
+                    ) : (
+                      <ActivateMyfitsta user={this.props.user} />
                     )
                   ) : (
                     <div className="bixnknfkfjkjrjr">

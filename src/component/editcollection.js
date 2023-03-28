@@ -32,11 +32,9 @@ class EditCollection extends Component {
           collectionName: this.props.collection.collectionName,
           collectionNewnmae: this.state.name,
         };
-        axios
-          .post(`/api/changeCollectionname`, option)
-          .then((res) => {
-            window.location.reload();
-          });
+        axios.post(`/api/changeCollectionname`, option).then((res) => {
+          window.location.reload();
+        });
       } else {
       }
     }
@@ -51,7 +49,7 @@ class EditCollection extends Component {
     return (
       <div
         className={`change-collectlection-name ${
-          this.props.editCollection===true ? "active" : ""
+          this.props.editCollection === true ? "active" : ""
         }`}
       >
         <div className="add-tocollection-boxx">
@@ -82,7 +80,7 @@ class EditCollection extends Component {
           <div className="add-collection-tolistt">
             <button
               onClick={this.saveChange}
-              className={`change ${this.state.save===true ? "active" : ""}`}
+              className={`change ${this.state.save === true ? "active" : ""}`}
             >
               SAVE CHANGE
             </button>

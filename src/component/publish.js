@@ -36,8 +36,8 @@ class Publish extends Component {
   };
 
   checkPublich = () => {
-    if (this.state.publish===false) {
-      if (this.props.type===0) {
+    if (this.state.publish === false) {
+      if (this.props.type === 0) {
         if (this.props.title.length > 5 && this.props.description.length > 5) {
           this.setState({
             canpublih: true,
@@ -70,7 +70,9 @@ class Publish extends Component {
   render() {
     return (
       <div
-        className={`box-sggbdd  ${this.props.publish===false ? "" : "active"}`}
+        className={`box-sggbdd  ${
+          this.props.publish === false ? "" : "active"
+        }`}
       >
         <div className="bodnfkror">
           <div className="title-of--thise-action gjtjtjtj">
@@ -107,7 +109,7 @@ class Publish extends Component {
             </div>
 
             {this.props.type !== undefined ? (
-              this.props.type===0 ? (
+              this.props.type === 0 ? (
                 ""
               ) : (
                 <div className="edit-box-profile">
@@ -120,17 +122,17 @@ class Publish extends Component {
             )}
           </div>
 
-          {this.state.publish===false ? (
+          {this.state.publish === false ? (
             <div
               onClick={this.publish}
               className={`conte-thise-action  ${
-                this.state.canpublih===false ? "" : "active"
-              }  ${this.state.loading===true ? "loading" : ""}`}
+                this.state.canpublih === false ? "" : "active"
+              }  ${this.state.loading === true ? "loading" : ""}`}
             >
               <button className="save">
-                {this.state.loading===true ? "Publishing" : "Publish"}
+                {this.state.loading === true ? "Publishing" : "Publish"}
               </button>
-              {this.state.loading===true ? (
+              {this.state.loading === true ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>
@@ -142,17 +144,17 @@ class Publish extends Component {
             ""
           )}
 
-          {this.state.publish===true ? (
+          {this.state.publish === true ? (
             <div
               onClick={this.publish}
               className={`conte-thise-action  ${
-                this.state.canpublih===false ? "" : "activefjf"
-              }  ${this.state.loading===true ? "loading" : ""}`}
+                this.state.canpublih === false ? "" : "activefjf"
+              }  ${this.state.loading === true ? "loading" : ""}`}
             >
               <button className="save">
-                {this.state.loading===true ? "UnPublishing" : "UnPublish"}
+                {this.state.loading === true ? "UnPublishing" : "UnPublish"}
               </button>
-              {this.state.loading===true ? (
+              {this.state.loading === true ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>

@@ -10,7 +10,7 @@ class Info extends Component {
         <Fade left>
           <div
             className={`featyu-aboutb-app ${
-              this.props.mode===true ? "active" : ""
+              this.props.mode === true ? "active" : ""
             } `}
           >
             <div className="detailskfnf white">What is MyFitsta?</div>

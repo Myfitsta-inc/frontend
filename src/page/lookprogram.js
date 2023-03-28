@@ -107,7 +107,7 @@ class Lookprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.bougth===true) {
+        if (res.data.bougth === true) {
           this.setState({
             program: res.data.program,
           });
@@ -144,7 +144,7 @@ class Lookprogram extends Component {
                     <div onClick={this.goBack} className="close-that">
                       <BiArrowBack />
                     </div>
-                    <p className="tti-rhe">Program</p>
+                    <p className="tti-rhe">Programm</p>
                   </div>
                   <div className="hold-the-upload"></div>
                 </div>
@@ -185,7 +185,7 @@ class Lookprogram extends Component {
                             <p className="njr">RATE</p>
                           </div>
 
-                          <div
+                          {/* <div
                             onClick={() => {
                               this.handleSettingg(true, this.state.file);
                             }}
@@ -197,7 +197,7 @@ class Lookprogram extends Component {
                               </div>
                             </div>
                             <p className="njr">SHARE</p>
-                          </div>
+                          </div> */}
 
                           <div
                             onClick={() => {
@@ -243,7 +243,7 @@ class Lookprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.publish===true ? (
+                {this.state.program.publish === true ? (
                   <p className="publish rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
@@ -255,7 +255,7 @@ class Lookprogram extends Component {
                       this.changetabs(true, false);
                     }}
                     className={`tabs-tonore ${
-                      this.state.tabsprogram===true ? "active" : ""
+                      this.state.tabsprogram === true ? "active" : ""
                     }`}
                   >
                     Content
@@ -265,7 +265,7 @@ class Lookprogram extends Component {
                       this.changetabs(false, true);
                     }}
                     className={`tabs-tonore ${
-                      this.state.reviewtabs===true ? "active" : ""
+                      this.state.reviewtabs === true ? "active" : ""
                     }`}
                   >
                     Reviews

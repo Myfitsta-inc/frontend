@@ -47,39 +47,37 @@ class Conversation extends Component {
       formData.append("UserId", this.props.user.userid);
       formData.append("friend", this.props.match.params.id);
       formData.append("kind", file[0].type);
-      axios
-        .post(`/api/save-image-or-video-message`, formData)
-        .then((res) => {
-          if (res.data._id) {
-            let listt = [...this.props.inbox];
-            let foundIndex = listt.findIndex(
-              (x) => x.userid===this.props.match.params.id
-            );
-            if (foundIndex) {
-              let message = this.props.inbox[foundIndex];
-              message.data = Date.now();
-              listt[foundIndex] = message;
-              let sorted = listt.sort((a, b) => {
-                return parseInt(b.data) - parseInt(a.data);
-              });
-              this.props.updateInbox(sorted);
-            }
-            let message = res.data.message[res.data.message.length - 1];
-            let list = [...this.state.conversation, message];
-            message.friend = this.props.match.params.id;
-            socket.emit("new-message", message);
-            socket.emit("run-that-conversation", [
-              this.props.users.userid,
-              this.props.match.params.id,
-            ]);
-            this.setState({
-              message: "",
+      axios.post(`/api/save-image-or-video-message`, formData).then((res) => {
+        if (res.data._id) {
+          let listt = [...this.props.inbox];
+          let foundIndex = listt.findIndex(
+            (x) => x.userid === this.props.match.params.id
+          );
+          if (foundIndex) {
+            let message = this.props.inbox[foundIndex];
+            message.data = Date.now();
+            listt[foundIndex] = message;
+            let sorted = listt.sort((a, b) => {
+              return parseInt(b.data) - parseInt(a.data);
             });
-            document.querySelector(".hold-message").innerText = "";
-            document.querySelector(".hold-message").focus();
-          } else {
+            this.props.updateInbox(sorted);
           }
-        });
+          let message = res.data.message[res.data.message.length - 1];
+          let list = [...this.state.conversation, message];
+          message.friend = this.props.match.params.id;
+          socket.emit("new-message", message);
+          socket.emit("run-that-conversation", [
+            this.props.users.userid,
+            this.props.match.params.id,
+          ]);
+          this.setState({
+            message: "",
+          });
+          document.querySelector(".hold-message").innerText = "";
+          document.querySelector(".hold-message").focus();
+        } else {
+        }
+      });
     }
   };
 
@@ -227,12 +225,12 @@ class Conversation extends Component {
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
       if (
-        data.sender===this.props.match.params.id ||
-        data.sender===this.props.user.userid
+        data.sender === this.props.match.params.id ||
+        data.sender === this.props.user.userid
       ) {
         let listt = [...this.props.inbox];
         let foundIndex = listt.findIndex(
-          (x) => x.userid===this.props.match.params.id
+          (x) => x.userid === this.props.match.params.id
         );
         if (foundIndex) {
           let message = this.props.inbox[foundIndex];
@@ -308,52 +306,52 @@ class Conversation extends Component {
                     this.state.loader ? "active" : ""
                   } `}
                 >
-                  {this.state.loading===true ? (
+                  {this.state.loading === true ? (
                     <div className="bixnknfkfjkjrjr">
                       <LoadingSpin />
                     </div>
                   ) : (
                     ""
                   )}
-                  {this.state.block===false
+                  {this.state.block === false
                     ? this.state.conversation?.map((item) => {
                         return (
                           <div
                             key={item._id}
                             className={`${
-                              item.sender===this.props.user.userid
+                              item.sender === this.props.user.userid
                                 ? "box-other-me"
                                 : "box-other-freind"
                             }`}
                           >
-                            {item.sender===this.props.user.userid ? (
+                            {item.sender === this.props.user.userid ? (
                               ""
                             ) : (
                               <div className="box-that-holf-theico">
                                 <IconProfile user={item.sender} />
                               </div>
                             )}
-                            {item.kind==="message" ? (
+                            {item.kind === "message" ? (
                               <MessageCon
                                 handleRemove={this.handleRemove}
                                 message={item}
                               />
-                            ) : item.kind==="post" ? (
+                            ) : item.kind === "post" ? (
                               <PostMessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind==="profile" ? (
+                            ) : item.kind === "profile" ? (
                               <Profilemessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind==="program" ? (
+                            ) : item.kind === "program" ? (
                               <ProgramMessage
                                 handleRemove={this.handleRemove}
                                 item={item}
                               />
-                            ) : item.kind==="profilepro" ? (
+                            ) : item.kind === "profilepro" ? (
                               <ProfilePromessage
                                 handleRemove={this.handleRemove}
                                 item={item}
@@ -393,11 +391,11 @@ class Conversation extends Component {
                   )}
                 </div>
                 {this.state.block !== null ? (
-                  this.state.block===false ? (
+                  this.state.block === false ? (
                     <div className="type-message-box">
                       <div className="watpr-contnr-mem">
                         <div className="wrappe-mmeshe">
-                          <div className="send-hold  fnjjrjr butieh">
+                          {/* <div className="send-hold  fnjjrjr butieh">
                             <button>
                               <label htmlFor="file-profilee">
                                 <AiOutlinePlus />
@@ -409,7 +407,7 @@ class Conversation extends Component {
                                 accept="image/x-png,image/gif,image/jpeg"
                               />
                             </button>
-                          </div>
+                          </div> */}
                           <div
                             contentEditable="true"
                             onKeyUp={this.addMessage}
@@ -430,7 +428,7 @@ class Conversation extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.open===true ? (
+                {this.state.open === true ? (
                   <ConversationDetail
                     handleblock={this.handleblock}
                     block={this.state.block}

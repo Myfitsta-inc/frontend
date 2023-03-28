@@ -19,7 +19,7 @@ class RegisterTwo extends Component {
   };
   handleRegister = (e) => {
     e.preventDefault();
-    if (this.state.code.length===6) {
+    if (this.state.code.length === 6) {
       this.setState({
         loading: true,
       });
@@ -27,18 +27,16 @@ class RegisterTwo extends Component {
         email: this.props.email,
         code: parseInt(this.state.code),
       };
-      axios
-        .post(`/api/verifie-your-code`, option)
-        .then((result) => {
-          if (result.data.succes===true) {
-            this.props.handleNext(2);
-          } else {
-            this.setState({
-              message: "This code does not match this email",
-              loading: false,
-            });
-          }
-        });
+      axios.post(`/api/verifie-your-code`, option).then((result) => {
+        if (result.data.succes === true) {
+          this.props.handleNext(2);
+        } else {
+          this.setState({
+            message: "This code does not match this email",
+            loading: false,
+          });
+        }
+      });
     }
   };
   render() {
@@ -70,15 +68,15 @@ class RegisterTwo extends Component {
         <p className="messsage" id="message-Username">
           {this.state.message}
         </p>
-        {this.state.loading===false ? (
+        {this.state.loading === false ? (
           <input id="login" type="submit" name="submit" value="CHECK CODE" />
         ) : (
           <button
             className={`next agreen   ${
-              this.state.loading===true ? "loading" : ""
+              this.state.loading === true ? "loading" : ""
             }  `}
           >
-            {this.state.loading===true ? <LoadingSpin /> : ""}
+            {this.state.loading === true ? <LoadingSpin /> : ""}
           </button>
         )}
       </form>

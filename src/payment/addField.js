@@ -13,9 +13,7 @@ class AddField extends Component {
   async getclient() {
     try {
       // Get a client token for authorization from your server
-      const response = await axios.get(
-        `/api/api/braintree/v1/getToken`
-      );
+      const response = await axios.get(`/api/api/braintree/v1/getToken`);
       const clientToken = response.data.clientToken;
       this.setState({ clientToken });
       this.runpay();
@@ -144,12 +142,12 @@ class AddField extends Component {
               <input
                 type="submit"
                 className={`button button--small button--green ${
-                  this.state.loading===true ? "loading" : ""
+                  this.state.loading === true ? "loading" : ""
                 }`}
-                value={`${this.state.loading===true ? "" : "ADD Card"}`}
+                value={`${this.state.loading === true ? "" : "ADD Card"}`}
                 id="submit"
               />
-              {this.state.loading===true ? (
+              {this.state.loading === true ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

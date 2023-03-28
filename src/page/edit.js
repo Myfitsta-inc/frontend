@@ -67,7 +67,7 @@ class Edit extends Component {
   };
 
   handleRemove = (data) => {
-    if (data===1) {
+    if (data === 1) {
       this.setState({
         previewsIcon: null,
       });
@@ -116,21 +116,21 @@ class Edit extends Component {
   };
 
   handleChange = (event) => {
-    if (event.target.name==="fullName") {
+    if (event.target.name === "fullName") {
       this.setState({
         fullName: event.target.value,
         UpdateButton: true,
       });
     }
 
-    if (event.target.name==="username") {
+    if (event.target.name === "username") {
       this.setState({
         username: event.target.value,
         UpdateButton: true,
       });
     }
 
-    if (event.target.name==="website") {
+    if (event.target.name === "website") {
       this.setState({
         website: event.target.value,
         UpdateButton: true,
@@ -162,7 +162,7 @@ class Edit extends Component {
         email: this.props.user.email,
       };
       axios.post(`/api/update-username`, option).then((data) => {
-        if (data.data.succes===true) {
+        if (data.data.succes === true) {
           window.location.reload();
         } else {
           this.setState({

@@ -104,7 +104,7 @@ class Home extends Component {
               });
             }
           } else {
-            if (this.state.post===null) {
+            if (this.state.post === null) {
               this.setState({
                 loading: false,
                 post: [],
@@ -247,7 +247,7 @@ class Home extends Component {
           boxCollection={this.props.boxCollection}
         />
         <Menupost handlOpen={this.handlOpen} setting={this.state.setting} />
-        {this.state.shareoption===true ? (
+        {this.state.shareoption === true ? (
           <ShareOption
             handlOpenS={this.handlOpenS}
             handleSetting={this.handleSetting}
@@ -256,7 +256,7 @@ class Home extends Component {
         ) : (
           ""
         )}
-        {this.state.sharebox===true ? (
+        {this.state.sharebox === true ? (
           <SharePost
             user={this.props.user}
             file={this.state.file}
@@ -269,7 +269,7 @@ class Home extends Component {
         )}
         <Report />
         <DeletePost />
-        {this.state.drop===true ? (
+        {this.state.drop === true ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

@@ -17,7 +17,7 @@ class Two extends Component {
   };
   handeSubmit = (e) => {
     e.preventDefault();
-    if (this.state.code.length===6) {
+    if (this.state.code.length === 6) {
       let option = {
         email: this.props.email,
         code: parseInt(this.state.code),
@@ -25,15 +25,13 @@ class Two extends Component {
       this.setState({
         loading: true,
       });
-      axios
-        .post(`/api/verifie-your-code`, option)
-        .then((result) => {
-          console.log(result);
-          if (result.data.succes===true) {
-            this.props.move(3);
-          } else {
-          }
-        });
+      axios.post(`/api/verifie-your-code`, option).then((result) => {
+        console.log(result);
+        if (result.data.succes === true) {
+          this.props.move(3);
+        } else {
+        }
+      });
     } else {
       this.setState({
         messageUsername: "code need to be 6 digit",

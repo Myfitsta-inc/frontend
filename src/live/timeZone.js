@@ -9,7 +9,7 @@ class TimeZone extends Component {
   };
 
   selected = (item) => {
-    let newList = this.state.origin.filter((data) => data===item);
+    let newList = this.state.origin.filter((data) => data === item);
     this.setState(
       {
         list: newList,
@@ -70,7 +70,7 @@ class TimeZone extends Component {
                   className="contry-bojn"
                 >
                   <div>{item}</div>
-                  {this.state.timeChoose===item ? (
+                  {this.state.timeChoose === item ? (
                     <div className="icondrr active">
                       <BiCheck />
                     </div>

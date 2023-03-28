@@ -38,10 +38,13 @@ class Navbom extends Component {
           </div>
         </NavLink>
 
-        {/*<NavLink  to={"/myfitstapro"} className="nav-li nav-info  " data-tab-target="#account">
-            <i className="fas fa-fire-alt"></i>
-           
-            </NavLink>*/}
+        <NavLink
+          to={"/myfitstapro"}
+          className="nav-li nav-info  "
+          data-tab-target="#account"
+        >
+          <i className="fas fa-fire-alt"></i>
+        </NavLink>
       </div>
     );
   }

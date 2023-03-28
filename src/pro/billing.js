@@ -28,7 +28,7 @@ class Billing extends Component {
     axios
       .get("/api/load-my-finanicial/data-fic", { withCredentials: true })
       .then((result) => {
-        if (result.data.success===true) {
+        if (result.data.success === true) {
           this.setState({
             wallet: result.data,
           });
@@ -66,7 +66,6 @@ class Billing extends Component {
                 {this.state.wallet.wallet.length > 0 ? (
                   <div>
                     <div>Email: {this.state.wallet.wallet[0].email}</div>
-        
                   </div>
                 ) : (
                   "Add your PayPal email to get Paid"
@@ -75,7 +74,7 @@ class Billing extends Component {
             </div>
             {this.state.wallet.wallet.length > 0 ? (
               <button onClick={this.removeMethode} className="jkwiriur">
-              Edit PayPal Email
+                Edit PayPal Email
               </button>
             ) : (
               <button onClick={this.hnddleclick} className="jkwiriur">
@@ -101,7 +100,7 @@ class Billing extends Component {
             </div>
           </div>
         </div>
-        {this.state.bank===true ? (
+        {this.state.bank === true ? (
           <Banking
             getData={this.getData}
             data={this.state.data}

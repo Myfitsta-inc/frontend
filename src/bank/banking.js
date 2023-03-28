@@ -20,9 +20,7 @@ class Banking extends Component {
     });
   };
   savedetail = () => {
-    if (
-      this.state.data.email.length > 0 
-    ) {
+    if (this.state.data.email.length > 0) {
       this.setState({
         loading: true,
       });
@@ -41,11 +39,11 @@ class Banking extends Component {
     }
   };
   handleChange = (e) => {
-    let data={};
+    let data = {};
     data.email = e.target.value;
     this.setState({
       data: data,
-    })
+    });
   };
   render() {
     return (
@@ -65,7 +63,6 @@ class Banking extends Component {
           </div>
 
           <div className="wrapunf-roup">
-        
             <div className="edit-box-profile">
               <label htmlFor="username">PayPal Email</label>
               <input
@@ -85,12 +82,12 @@ class Banking extends Component {
               type="submit"
               onClick={this.savedetail}
               className={`button button--small button--green ${
-                this.state.loading===true ? "loading" : ""
+                this.state.loading === true ? "loading" : ""
               }`}
-              value={`${this.state.loading===true ? "" : "Save Email"}`}
+              value={`${this.state.loading === true ? "" : "Save Email"}`}
               id="submit"
             />
-            {this.state.loading===true ? (
+            {this.state.loading === true ? (
               <div className="jietiooeo">
                 {" "}
                 <LoadingSpin />

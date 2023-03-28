@@ -21,7 +21,7 @@ class LikeProgram extends Component {
       contentId: this.props.item.file,
       like: data,
     };
-    if (data===true) {
+    if (data === true) {
       this.setState({
         item: option,
         counter: this.state.counter + 1,
@@ -58,24 +58,22 @@ class LikeProgram extends Component {
   };
 
   removeLike = (data) => {
-    axios
-      .post(`/api/like-program-remove`, this.state.item)
-      .then((result) => {
-        if (data===true) {
-          this.setState({
-            item: {},
-            counter: this.state.counter !== 0 ? this.state.counter - 1 : 0,
-          });
-        } else {
-          this.setState({
-            item: {},
-            counterDowm:
-              this.state.counterDowm !== 0 ? this.state.counterDowm - 1 : 0,
-          });
-        }
+    axios.post(`/api/like-program-remove`, this.state.item).then((result) => {
+      if (data === true) {
+        this.setState({
+          item: {},
+          counter: this.state.counter !== 0 ? this.state.counter - 1 : 0,
+        });
+      } else {
+        this.setState({
+          item: {},
+          counterDowm:
+            this.state.counterDowm !== 0 ? this.state.counterDowm - 1 : 0,
+        });
+      }
 
-        this.setState({});
-      });
+      this.setState({});
+    });
   };
   componentDidMount = () => {
     this.setState({
@@ -88,11 +86,11 @@ class LikeProgram extends Component {
   render() {
     return (
       <div className="fnedijtjfkef">
-        {this.props.type===1 ? (
+        {this.props.type === 1 ? (
           <div className="jjrwretgtt">
             <div className="tjjtjtjjt">
               {this.state.item !== null ? (
-                this.state.item.like===true ? (
+                this.state.item.like === true ? (
                   <div
                     onClick={() => {
                       this.removeLike(true);
@@ -122,7 +120,7 @@ class LikeProgram extends Component {
               )}
 
               {this.state.item !== null ? (
-                this.state.item.like===false ? (
+                this.state.item.like === false ? (
                   <div
                     onClick={() => {
                       this.removeLike(false);
