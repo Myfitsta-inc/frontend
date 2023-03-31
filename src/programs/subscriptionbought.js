@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ApiUrl from "../url";
 import ProgramBought from "../programs/programbougth";
 import { connect } from "react-redux";
 

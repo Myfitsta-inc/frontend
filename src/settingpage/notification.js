@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import axios from "axios";
-import ApiUrl from "../url";
-import { BiCheck } from "react-icons/bi";
+import { withRouter } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 class NotificationAc extends Component {
   state = {

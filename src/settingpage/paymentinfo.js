@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
-import Paymentmethod from "../payment/paymentMethod";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
-import { GoPlus } from "react-icons/go";
 import AddMethod from "../payment/addmethod";
 
-import { IoThumbsUpSharp } from "react-icons/io5";
-import LoadingSpin from "../component/loadingspin";
+
 class PaymentInfo extends Component {
   state = {
     listCard: null,

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import Chart from "../chart/chart.js";
-import ApiUrl from "../url";
 import { BiArrowBack } from "react-icons/bi";
 import OrderSales from "../pro/orderSale";
 import LoadingSpin from "../component/loadingspin.js";

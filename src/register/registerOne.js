@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ApiUrl from "../url";
 import logoone from "../logo/logo.png";
 import Fade from "react-reveal/Fade";
 import LoadingSpin from "../component/loadingspin";

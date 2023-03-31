@@ -3,7 +3,6 @@ import { IoCloseSharp } from "react-icons/io5";
 import { BiCheck } from "react-icons/bi";
 import { AiOutlineSearch, AiOutlineCamera } from "react-icons/ai";
 import axios from "axios";
-import ApiUrl from "../url";
 import { withRouter } from "react-router-dom";
 import Username from "../component/username";
 import IconProfile from "../component/iconpicture";

@@ -3,7 +3,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import LoadingSpin from "../component/loadingspin";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
 class PaymentmethodSub extends Component {
   state = {
     payment: null,

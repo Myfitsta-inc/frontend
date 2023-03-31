@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { withRouter } from "react-router-dom";
 
-import ApiUrl from "../url";
 class Mode extends Component {
   state = {
     theme: "",

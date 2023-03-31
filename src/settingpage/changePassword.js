@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
-import ApiUrl from "../url";
 
 import { connect } from "react-redux";
 class ChangePassword extends Component {

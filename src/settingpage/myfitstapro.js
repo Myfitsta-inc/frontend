@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { HiCheck } from "react-icons/hi";
 import axios from "axios";
-import ApiUrl from "../url";
 import { BsArrowRepeat, BsGraphUp } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 import LoadingSpin from "../component/loadingspin";

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
-import ApiUrl from "../url";
 import { BiArrowBack } from "react-icons/bi";
-import moment from "moment";
 import DataPost from "../component/datePost";
 import { motion } from "framer-motion";
 import { SiGooglemaps } from "react-icons/si";
