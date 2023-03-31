@@ -96,17 +96,13 @@ class Field extends Component {
             this.setState({
               loading: true,
             });
-            axios
-              .post(`/api/api/braintree/v1/sandbox`, option)
-              .then((result) => {
-                if (result.data.success === true) {
-                  this.props.history.push(
-                    `/program/unlock/${program.programId}`
-                  );
-                } else {
-                  console.log(result.data);
-                }
-              });
+            axios.post(`/api/braintree/v1/sandbox`, option).then((result) => {
+              if (result.data.success === true) {
+                this.props.history.push(`/program/unlock/${program.programId}`);
+              } else {
+                console.log(result.data);
+              }
+            });
           });
         };
 

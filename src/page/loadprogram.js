@@ -134,13 +134,9 @@ class Loadprogram extends Component {
                       ) : (
                         ""
                       )}
-                      {/*<div   className="left">&#10094;</div>
-   <div   className="right">&#10095;</div>*/}
                     </div>
 
                     <div className="ejtcondigjojr">
-                      {/*<div className="iconjgjotieir"></div>*/}
-
                       <div className="iondoftjkfjjf">
                         <div className="hoilt-tje-titlem">
                           {this.state.media.title}
@@ -149,9 +145,6 @@ class Loadprogram extends Component {
                           <div className="wraprjttrjr-infofo"></div>
                         </div>
                       </div>
-                      {/*<div className="holt-the-butotktktjrn">
-    <button>Subscribers</button>
-</div>*/}
                     </div>
 
                     <div className="ejwkjrtngnej"></div>

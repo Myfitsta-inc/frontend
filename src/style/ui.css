@@ -883,7 +883,9 @@
   height: 40px;
   border-radius: 3px;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   letter-spacing: 0.5px;
   color: var(--text);

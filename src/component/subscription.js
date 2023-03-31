@@ -30,7 +30,7 @@ class Subscribe extends Component {
           this.props.subscribeBox === false ? "" : "active"
         }`}
       >
-        <motion.div layout className="pupurps-to0subcribve">
+        <motion.div className="pupurps-to0subcribve">
           <div className="bander-box-subred">
             <div className="babdo">
               <button

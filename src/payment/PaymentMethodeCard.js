@@ -55,7 +55,7 @@ class PaymentmethodCard extends Component {
       this.setState({
         loading: true,
       });
-      axios.post(`/api/api/braintree/v1/sandbox`, option).then((result) => {
+      axios.post(`/api/braintree/v1/sandbox`, option).then((result) => {
         if (result.data.success === true) {
           itemCouter++;
           if (itemCouter === this.props.item.length) {

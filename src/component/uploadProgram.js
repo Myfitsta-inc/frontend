@@ -167,9 +167,7 @@ class UploadInProgram extends Component {
             </div>
           </div>
 
-          <div
-            className={`box-bfjner ${this.state.next === true ? "active" : ""}`}
-          >
+          <div className={`box-bfjner ${this.state.next ? "active" : ""}`}>
             <div className="title-of--thise-action">
               <div className="wrieii">
                 <button onClick={this.nextTab} className="close-that">
@@ -203,13 +201,13 @@ class UploadInProgram extends Component {
             </div>
             <div
               className={`conte-thise-action ${
-                this.state.button === true ? "active" : ""
-              } ${this.state.loading === true ? "loading" : ""}`}
+                this.state.button ? "active" : ""
+              } ${this.state.loading ? "loading" : ""}`}
             >
               <button onClick={this.upload} className="upload">
-                Upload
+                {this.state.loading ? "" : "Upload"}
               </button>
-              {this.state.loading === true ? (
+              {this.state.loading ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>

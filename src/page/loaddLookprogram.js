@@ -5,7 +5,6 @@ import "../style/loadp.css";
 import { withRouter, NavLink } from "react-router-dom";
 import Video from "../component/video";
 import Username from "../component/username";
-import LikeProgram from "../component/likeProgram";
 import { BiArrowBack } from "react-icons/bi";
 import LoadingSpin from "../component/loadingspin";
 import ApiUrl from "../url";
@@ -13,7 +12,6 @@ import { GrPlayFill } from "react-icons/gr";
 import ProIcon from "../programs/proicon";
 import Report from "../component/report";
 import { connect } from "react-redux";
-import CommentMedia from "../component/commentMedia";
 let source;
 source = axios.CancelToken.source();
 class LoadlookProgram extends Component {
@@ -106,7 +104,6 @@ class LoadlookProgram extends Component {
                     <p>Program</p>
                   </div>
                 </div>
-                {/*    <div className="gjrdkjgkf"></div>*/}
                 <div className="wrrpaorjwwko">
                   <div className="video--image-elmnebnt-player">
                     <div className="box-player-elment">
@@ -121,13 +118,9 @@ class LoadlookProgram extends Component {
                       ) : (
                         ""
                       )}
-                      {/*<div   className="left">&#10094;</div>
-   <div   className="right">&#10095;</div>*/}
                     </div>
 
                     <div className="ejtcondigjojr">
-                      {/*<div className="iconjgjotieir"></div>*/}
-
                       <div className="iondoftjkfjjf">
                         <div className="hoilt-tje-titlem">
                           {this.state.media.title}
@@ -138,9 +131,6 @@ class LoadlookProgram extends Component {
                           </div>
                         </div>
                       </div>
-                      {/*<div className="holt-the-butotktktjrn">
-    <button>Subscribers</button>
-</div>*/}
                     </div>
 
                     <div className="ejwkjrtngnej"></div>
@@ -159,7 +149,6 @@ class LoadlookProgram extends Component {
                               user={this.state.media.AuthorId}
                               link={true}
                             />
-                            <p className="hfhrurdru">subscribers</p>
                           </div>
                         </div>
                       </div>
@@ -173,61 +162,8 @@ class LoadlookProgram extends Component {
                       ) : (
                         ""
                       )}
-
-                      <div className="bar-tha-th4botomnn">
-                        <div className="two-onnrnn">
-                          {/* {this.state.media._id ? (
-                            <LikeProgram type={1} item={this.state.media} />
-                          ) : (
-                            ""
-                          )} */}
-                          {/* <div className="Wtrpsrirjtns">
-       <div className="iocnidjnn">
-           <IoIosShareAlt/>
-       </div>
-       <p>SHARE</p>
-   </div>*/}
-                          <div
-                            onClick={() => {
-                              this.props.updataReport({
-                                open: true,
-                                file: this.state.media.file,
-                                kind: "Reviews",
-                              });
-                            }}
-                            className="Wtrpsrirjtns"
-                          >
-                            <div className="iocnidjnn">
-                              <i className="fas fa-flag"></i>
-                            </div>
-                            <p>REPORT</p>
-                          </div>
-                        </div>
-                      </div>
                     </div>
 
-                    {/* <div className="tabhsjfj-jr">
-                      <div
-                        onClick={() => {
-                          this.changlepage(false, true);
-                        }}
-                        className={`tabs-vjoor  ${
-                          this.state.lecture === true ? "active" : ""
-                        }`}
-                      >
-                        Content
-                      </div>
-                      <div
-                        onClick={() => {
-                          this.changlepage(true, false);
-                        }}
-                        className={`tabs-vjoor  ${
-                          this.state.comment === true ? "active" : ""
-                        }`}
-                      >
-                        Comment
-                      </div>
-                    </div> */}
                     <div
                       className={`commnentnjntjn ${
                         this.state.comment === true ? "active" : ""

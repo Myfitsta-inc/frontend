@@ -184,7 +184,7 @@ class Home extends Component {
                       drop={this.state.drop}
                     />
                   </div>
-                  <ShowLive user={this.props.user} />
+                  {/* <ShowLive user={this.props.user} /> */}
                   {this.state.post !== null ? (
                     this.state.post.length > 0 ? (
                       <Post

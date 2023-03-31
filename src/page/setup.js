@@ -17,7 +17,7 @@ source = axios.CancelToken.source();
 
 class Setup extends Component {
   state = {
-    kind: null,
+    kind: 0,
     plan: [],
     created: null,
     step: 0,
@@ -45,13 +45,13 @@ class Setup extends Component {
     });
 
     axios
-      .post("/api/create-the-wallet", { withCredentials: true })
+      .post("/api/create-the-wallet", { step: 3 }, { withCredentials: true })
       .then((result) => {
         if (result.data.succes === true) {
           this.setState({
             loadingButtton: false,
           });
-          this.next(2);
+          this.next(3);
         }
       });
   };
@@ -137,7 +137,7 @@ class Setup extends Component {
     };
     if (this.state.kind !== null) {
       axios.post(`/api/add-a-new-myfitsta-user`, option).then((res) => {
-        this.props.history.push("/myfitstapro");
+        window.location.href = "/myfitstapro";
       });
     }
   };
@@ -244,44 +244,6 @@ class Setup extends Component {
                             </div>
                           </div>
                         </div>
-
-                        <div className="class-boxx">
-                          <div className="eldtoo"></div>
-                          <div className="rrjjsjeje">
-                            <div className="wrieii">
-                              <div className="wrpsjiirir-icocod">
-                                <BsGraphUp />
-                              </div>
-                              <div className="djfrjir">Sell Programs</div>
-                            </div>
-                          </div>
-                          <div className="decrioirbe">
-                            <div className="wrapeiirr">
-                              <div className="fjsifojdisf">
-                                <HiCheck />
-                              </div>
-                              <div className="ksffkfkkf">
-                                Set your own pricing for each program
-                              </div>
-                            </div>
-                            <div className="wrapeiirr">
-                              <div className="fjsifojdisf">
-                                <HiCheck />
-                              </div>
-                              <div className="ksffkfkkf">
-                                Potentility to have more subscriber
-                              </div>
-                            </div>
-                            <div className="wrapeiirr">
-                              <div className="fjsifojdisf">
-                                <HiCheck />
-                              </div>
-                              <div className="ksffkfkkf">
-                                Quick and easy implimentation
-                              </div>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <div className="controil-theaction">
@@ -302,13 +264,6 @@ class Setup extends Component {
                 ) : (
                   ""
                 )}
-
-                {/*{this.state.step==2? <div className="wpaer-theslider active">
-<Registraction move={this.next}/>  
-    </div>:""}
-    {this.state.step==3? <div className="wpaer-theslider active">
-<Verification move={this.next}/>  
-    </div>:""}*/}
 
                 {this.state.step === 2 ? (
                   <div className="wpaer-theslider active">

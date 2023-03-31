@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
-import ApiUrl from "../url";
+import LoadingSpin from "../component/loadingspin";
+
 class Addprogram extends Component {
   state = {
     open: true,
@@ -29,11 +30,17 @@ class Addprogram extends Component {
         .post(`/api/add-a-new-program-with-no-image-or-video`, program)
         .then((res) => {
           if (res.data === "change the title") {
-            console.log("chage it");
             document.querySelector(".hold-that-messe").classList.add("active");
             document.querySelector(".hold-that-messe").innerText =
               "This title already exist";
           } else {
+            document
+              .querySelector(".hold-that-messe")
+              .classList.remove("active");
+            this.setState({
+              button: false,
+              loadind: false,
+            });
             this.props.history.push(`/program/workout/${res.data.programId}`);
           }
         });
@@ -110,10 +117,10 @@ class Addprogram extends Component {
           <div className="conte-thise-action">
             {this.state.loadind ? (
               <button
-                className={`create  ${
-                  this.state.button === false ? "" : "active"
-                }`}
-              ></button>
+                className={`create  ${this.state.button === false ? "" : ""}`}
+              >
+                <LoadingSpin />
+              </button>
             ) : (
               <button
                 onClick={() => this.handleCreate()}

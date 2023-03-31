@@ -132,12 +132,12 @@ class VideoProgram extends Component {
                 </div>
               </div>
 
-              <div className="soud-or-pause-media">
+              {/* <div className="soud-or-pause-media">
                 <i className="fas fa-volume-up"></i>
                 <div className="wrpain-that-slide">
                   <input type="range" />
                 </div>
-              </div>
+              </div> */}
 
               <div className="timeur-intheplayyer">
                 <div className="box-hold-thsttimeur">

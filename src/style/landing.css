@@ -132,7 +132,6 @@ body {
   width: 50%;
   max-width: 500px;
   color: var(--text);
-  border: 1px solid red;
   text-align: center;
   margin-top: 80px;
 }

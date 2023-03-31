@@ -253,20 +253,6 @@ class Myprogram extends Component {
                             <p className="njr">RATE</p>
                           </div>
 
-                          {/* <div
-                            onClick={() => {
-                              this.handleSettingg(true, this.state.file);
-                            }}
-                            className="wraprjrj"
-                          >
-                            <div className=" box-accc">
-                              <div className="icon">
-                                <IoIosShareAlt />
-                              </div>
-                            </div>
-                            <p className="njr">SHARE</p>
-                          </div> */}
-
                           <div
                             onClick={() => this.handlepublish(true)}
                             className="wraprjrj"

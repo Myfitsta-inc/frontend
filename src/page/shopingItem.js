@@ -128,9 +128,9 @@ class ShopingItem extends Component {
                     </div>
                     <div className="box-theprocedt0-thecheckk">
                       <button onClick={this.handlePay} className="add-to-cardr">
-                        Buy Now
+                        Buy
                       </button>
-                      <AddTocardButton id={this.state.program.programId} />
+                      {/* <AddTocardButton id={this.state.program.programId} /> */}
                     </div>
                   </div>
 
