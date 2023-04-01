@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { MdDelete } from "react-icons/md";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
 import moment from "moment";
 import Username from "../component/username";
 import { IoCloseSharp } from "react-icons/io5";

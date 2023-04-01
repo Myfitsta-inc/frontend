@@ -4,7 +4,6 @@ import OptionComment from "../component/optioncommentp";
 import { withRouter } from "react-router-dom";
 import Username from "../component/username";
 import IconProfile from "../component/iconpicture";
-import ApiUrl from "../url";
 import moment from "moment";
 import DataPost from "../component/datePost";
 import Editable from "../component/editable";

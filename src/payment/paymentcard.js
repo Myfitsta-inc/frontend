@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "braintree-web";
-import ApiUrl from "../url";
 import DropIn from "braintree-web-drop-in-react";
 import { withRouter } from "react-router-dom";
 class PaymentCard extends Component {

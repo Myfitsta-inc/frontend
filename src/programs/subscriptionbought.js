@@ -14,7 +14,6 @@ class SubscriptionBougth extends Component {
         `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userid}`
       )
       .then((res) => {
-        console.log(res);
         if (res.data.length > 0) {
           this.setState({
             list: res.data.reverse(),

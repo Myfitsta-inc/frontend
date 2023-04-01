@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ApiUrl from "../url";
 import axios from "axios";
 import { connect } from "react-redux";
 import { BiCheck, BiArrowBack } from "react-icons/bi";
@@ -68,7 +67,6 @@ class Boxcollection extends Component {
       workout: this.props.file,
     };
     axios.post("/api/add-to-thiscollection", option).then((res) => {
-      console.log(res);
       this.getCollection();
     });
   };

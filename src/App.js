@@ -7,12 +7,10 @@ import {
   Redirect,
   Switch,
   withRouter,
-  useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Pageai from "./ai/pageai";
 import axios from "axios";
-import Faq from "./landing/faq";
 import LoadConnection from "./page/loadConnection";
 import Card from "./page/card";
 import { connect } from "react-redux";
@@ -598,7 +596,7 @@ class App extends Component {
                   <Loading />
                 )}
               </Route>
-              <Route exact path="/card">
+              {/* <Route exact path="/card">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
                     <Card user={this.state.user} />
@@ -608,7 +606,7 @@ class App extends Component {
                 ) : (
                   <Loading />
                 )}
-              </Route>
+              </Route> */}
               <Route exact path="/setting">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (

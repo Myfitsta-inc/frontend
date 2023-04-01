@@ -148,15 +148,10 @@ class Setup extends Component {
     });
   };
 
-  checkIfSelecthc = () => {
-    if (this.state.kind === 0 || this.state.kind === 1) {
-      if (this.state.kind === 0) {
-        this.next(3);
-      } else {
-        this.next(4);
-      }
-    } else {
-    }
+  cleanPlan = () => {
+    this.setState({
+      plan: [],
+    });
   };
 
   next = (data) => {
@@ -265,19 +260,6 @@ class Setup extends Component {
                   ""
                 )}
 
-                {this.state.step === 2 ? (
-                  <div className="wpaer-theslider active">
-                    <Select
-                      next={this.next}
-                      checkIfSelecthc={this.checkIfSelecthc}
-                      kind={this.state.kind}
-                      selectOption={this.selectOption}
-                    />
-                  </div>
-                ) : (
-                  ""
-                )}
-
                 {this.state.step === 3 ? (
                   <div className="wpaer-theslider active ">
                     <SelectPlan
@@ -295,6 +277,7 @@ class Setup extends Component {
                 {this.state.step === 4 ? (
                   <div className="wpaer-theslider active">
                     <Agreement
+                      cleanPlan={this.cleanPlan}
                       next={this.next}
                       Activatemyfistapro={this.Activatemyfistapro}
                     />

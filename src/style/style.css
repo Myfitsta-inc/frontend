@@ -4211,6 +4211,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-weight: 600;
+  white-space: nowrap;
   max-width: calc(100% - 25px);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5299,7 +5300,7 @@ body {
   position: absolute;
   top: 5px;
   color: var(--text);
-  background-color: #6f56e5;
+  background-color: #fa3e3e;
   color: white;
   border-radius: 30px;
   padding-left: 7px;

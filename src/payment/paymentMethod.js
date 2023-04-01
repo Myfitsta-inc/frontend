@@ -3,7 +3,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import LoadingSpin from "../component/loadingspin";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
 class Paymentmethod extends Component {
   state = {
     payment: null,
@@ -24,7 +23,6 @@ class Paymentmethod extends Component {
     };
 
     axios.post(`/api/my-payment-methode`, option).then((result) => {
-      console.log(result);
       if (result.data._id) {
         if (result.data.paymentTokens.length > 0) {
           let tochoose = result.data.paymentTokens.filter(

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import LoadingSpin from "../component/loadingspin";
 import axios from "axios";
 import braintree from "braintree-web";
-import ApiUrl from "../url";
 import { connect } from "react-redux";
 
 class AddField extends Component {

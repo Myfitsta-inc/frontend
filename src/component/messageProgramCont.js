@@ -12,9 +12,7 @@ class MessageProgramCon extends Component {
       .post(`/api/program-chech-subscription/${this.props.item.content}`, {
         withCredentials: true,
       })
-      .then((res) => {
-        console.log(res);
-      })
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
       });

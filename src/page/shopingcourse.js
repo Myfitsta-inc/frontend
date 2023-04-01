@@ -4,7 +4,6 @@ import Shopcard from "../component/shopcard";
 import Setting from "../component/settinglookMyfista";
 import axios from "axios";
 import ProIcon from "../programs/proicon";
-import ApiUrl from "../url";
 import Username from "../component/username";
 import LoadingSpin from "../component/loadingspin";
 import PersoCard from "../component/persocard";

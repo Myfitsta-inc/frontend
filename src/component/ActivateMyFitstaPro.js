@@ -31,7 +31,7 @@ function ActivateMyFitstaPro({ user }) {
             }`}
           >
             <button onClick={activate} className={`create`}>
-              {loading ? "" : "ACTIVATE MYFITSTAP"}
+              {loading ? "" : "ACTIVATE MYFITSTAPRO"}
             </button>
             {loading == true ? (
               <div className="jietiooeo">

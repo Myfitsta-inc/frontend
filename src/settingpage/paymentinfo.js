@@ -5,7 +5,6 @@ import { BiArrowBack } from "react-icons/bi";
 import { connect } from "react-redux";
 import AddMethod from "../payment/addmethod";
 
-
 class PaymentInfo extends Component {
   state = {
     listCard: null,

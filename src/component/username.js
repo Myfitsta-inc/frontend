@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ApiUrl from "../url";
 import { connect } from "react-redux";
 import ProfileModal from "../component/profillemodal";
 import logo from "../logo/logo.png";

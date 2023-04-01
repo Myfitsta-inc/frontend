@@ -7,9 +7,7 @@ class OrderSales extends Component {
     list: null,
   };
 
-  componentDidMount = () => {
-    console.log(this.props.data);
-  };
+  componentDidMount = () => {};
   render() {
     return (
       <div className="hold-the-box-of-shit-bjf">

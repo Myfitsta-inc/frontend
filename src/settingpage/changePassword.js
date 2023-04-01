@@ -52,7 +52,6 @@ class ChangePassword extends Component {
               newPassword: this.state.newPassword,
             };
             axios.post("/api/change-password", option).then((res) => {
-              console.log(res);
               if (res.data === "succes") {
                 this.setState({
                   succes: true,

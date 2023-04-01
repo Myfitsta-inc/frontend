@@ -48,12 +48,12 @@ class DropOption extends Component {
             </div>
             <button className="edit-the-program">New Ai</button>
           </Link>*/}
-          <Link to={"/card"} className="box-that-hold-the-setting">
+          {/* <Link to={"/card"} className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <AiOutlineShoppingCart />
             </div>
             <button className="edit-the-program">Shoping Card</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

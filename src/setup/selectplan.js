@@ -8,7 +8,7 @@ class SelectPlan extends Component {
     return (
       <div className="wrpaeorrr">
         <div className="theslider">
-          <div onClick={() => this.props.next(2)} className="close-that">
+          <div onClick={() => this.props.next(1)} className="close-that">
             <BiArrowBack />
           </div>
           <div className="wwwr-text">Choose your subscrition plan</div>

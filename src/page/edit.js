@@ -75,7 +75,6 @@ class Edit extends Component {
         userid: this.props.user.userid,
       };
       axios.post(`/api/remove-profile`, option).then((result) => {
-        console.log(result);
         this.setState({
           previewsIcon: result.data.profile,
         });
@@ -220,12 +219,14 @@ class Edit extends Component {
     }
   };
   componentDidMount = () => {
+    console.log(this.props.user);
+    const { email, fullName, username, website, bio } = this.props.user;
     this.setState({
-      email: this.props.user.email,
-      fullName: this.props.user.fullName,
-      username: this.props.user.Username,
-      website: this.props.user.website,
-      bio: this.props.user.bio,
+      email,
+      fullName,
+      username,
+      website,
+      bio,
       previewBanner: this.props.user.banner,
       previewsIcon: this.props.user.profile,
     });

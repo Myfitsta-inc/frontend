@@ -13,6 +13,7 @@ class Account extends Component {
     previewsIcon: null,
     bio: "",
     data: null,
+    loading: false,
   };
 
   handleChangebanner = (event) => {
@@ -38,11 +39,15 @@ class Account extends Component {
       userid: this.props.user.userid,
       bio: this.state.bio,
     };
-
+    this.setState({
+      loading: true,
+    });
     axios
       .post(`/api/update-my-info-for-myprofilepro`, option)
       .then((result) => {
-        console.log(result.data);
+        this.setState({
+          loading: false,
+        });
       });
   };
 
@@ -90,7 +95,6 @@ class Account extends Component {
       formData.append("file", event.target.files[0]);
       formData.append("Userid", this.props.user.userid);
       axios.post(`/api/profileimagepro`, formData).then((result) => {
-        console.log(result);
         this.setState({
           previewsIcon: result.data.profileUrl,
         });
@@ -234,8 +238,11 @@ class Account extends Component {
           </div>
         </div>
         <div className="save-option">
-          <button onClick={this.handleUpdate} className="update-profile">
-            Save change
+          <button
+            onClick={this.handleUpdate}
+            className={`update-profile ${this.state.loading && "active"}`}
+          >
+            {this.state.loading ? <LoadingSpin /> : "Save change"}
           </button>
         </div>
       </div>

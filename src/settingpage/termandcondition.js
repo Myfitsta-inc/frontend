@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
-import ApiUrl from "../url";
 import { FiCheckCircle } from "react-icons/fi";
 import { BiCookie } from "react-icons/bi";
 import { BsShieldCheck } from "react-icons/bs";

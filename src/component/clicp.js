@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import ApiUrl from "../url";
 import { GrPlayFill, GrPauseFill } from "react-icons/gr";
 import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";

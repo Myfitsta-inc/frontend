@@ -36,24 +36,24 @@ class DropHomeUp extends Component {
             </div>
             <button className="edit-the-program"> New Post</button>
           </Link>
-          <Link to={"/live"} className="box-that-hold-the-setting">
+          {/* <Link to={"/live"} className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <i className="fas fa-video"></i>
             </div>
             <button className="edit-the-program">Live Workout</button>
-          </Link>
-          <Link to={"/ai"} className="box-that-hold-the-setting">
+          </Link> */}
+          {/* <Link to={"/ai"} className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <AiOutlineShoppingCart />
             </div>
             <button className="edit-the-program">New Ai</button>
-          </Link>
-          <Link to={"/card"} className="box-that-hold-the-setting">
+          </Link> */}
+          {/* <Link to={"/card"} className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <AiOutlineShoppingCart />
             </div>
             <button className="edit-the-program">Shoping Card</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

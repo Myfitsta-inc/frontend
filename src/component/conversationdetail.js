@@ -47,9 +47,7 @@ class ConversationDetail extends Component {
     };
     this.props.handleDetail(false);
     this.props.handleblock(false);
-    axios.post(`/api/remove-this-dude-block`, option).then((result) => {
-      console.log(result);
-    });
+    axios.post(`/api/remove-this-dude-block`, option).then((result) => {});
   };
 
   getinfo = () => {
