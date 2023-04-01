@@ -12,7 +12,6 @@ import { AnimatePresence } from "framer-motion";
 import Pageai from "./ai/pageai";
 import axios from "axios";
 import LoadConnection from "./page/loadConnection";
-import Card from "./page/card";
 import { connect } from "react-redux";
 import Checkout from "./page/checkout";
 import Register from "./page/register";

@@ -1,0 +1,60 @@
+import React, { useState } from "react";
+import { useStripe, useElements } from "@stripe/react-stripe-js";
+import { PaymentElement, CardElement } from "@stripe/react-stripe-js";
+import LoadingSpin from "../component/loadingspin";
+
+function CheckoutForm() {
+  const [loading, setLoading] = useState(false);
+  const [priceId, setPriceId] = useState("");
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!stripe || !elements) {
+      return;
+    }
+    setLoading(true);
+
+    const { error, paymentIntent } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        return_url: `${window.location.origin}`,
+      },
+      redirect: "if_required",
+    });
+    if (error) {
+      console.log(error);
+    } else if (paymentIntent && paymentIntent.status == "succeeded") {
+      window.location.reload();
+    }
+
+    setLoading(false);
+  };
+  return (
+    <form id="payment-form" onSubmit={handleSubmit}>
+      <PaymentElement className="payment-element" />
+      <div className="button-container">
+        <input
+          disabled={loading}
+          type="submit"
+          className={`button button--small button--green ${
+            loading === true ? "loading" : ""
+          }`}
+          value={`${loading === true ? "" : "SUBSCRIBE"}`}
+          id="submit"
+        />
+        {loading === true ? (
+          <div className="jietiooeo">
+            {" "}
+            <LoadingSpin />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+    </form>
+  );
+}
+
+export default CheckoutForm;

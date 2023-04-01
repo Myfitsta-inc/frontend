@@ -97,6 +97,7 @@ class Myfitstapr extends Component {
           this.setState({
             subscribe: true,
           });
+          this.subscribe();
         }
       });
   };

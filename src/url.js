@@ -1,5 +1,5 @@
 const ApiUrl = {
-  One: "https://myfitsta-backend-app-server.herokuapp.com/",
+  One: "http://localhost:8000/",
   content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
   network: "https://realtimeserver.herokuapp.com",
   streaming: "http://localhost:9500/",

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Nav from "../component/nav";
 import axios from "axios";
-import "braintree-web";
 import { withRouter } from "react-router-dom";
+
 let source;
 source = axios.CancelToken.source();
 class Checkout extends Component {

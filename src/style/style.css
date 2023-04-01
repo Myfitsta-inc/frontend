@@ -713,6 +713,10 @@ video:-webkit-media-controls-panel {
 
   background-color: var(--main-bg-side);
 }
+.wraping-button {
+  display: flex;
+  justify-content: center;
+}
 .card-that-hold-ifr.active {
   box-shadow: none;
   padding: 0px;
@@ -4205,6 +4209,13 @@ body {
 }
 .usernsmr-the-compoocnf a:hover {
   text-decoration: underline;
+}
+
+.payment-element {
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .usernsmr-the-compoocnf a {
   color: var(--text);

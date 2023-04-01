@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import { FaRegCreditCard } from "react-icons/fa";
 import { HiOutlineChevronRight } from "react-icons/hi";
-import PaymentmethodSub from "./paymentMethodSub";
+import Checkout from "./Checkout";
 import FieldSub from "../payment/fieldSub";
 class PaymentSub extends Component {
   instance;
@@ -13,13 +14,7 @@ class PaymentSub extends Component {
     dropin: false,
   };
   componentDidMount() {
-    let option = {
-      userid: "1",
-    };
-
-    //axios.post("http://localhost:3500/pay-the-program",option).then((result)=>{
-    //
-    //})
+    this.handlePaymentcard();
   }
 
   handleCard = () => {};
@@ -37,7 +32,6 @@ class PaymentSub extends Component {
       dropin: !this.state.dropin,
     });
   };
-
   render() {
     return (
       <div className="card-that-hold-ifr active">
@@ -79,12 +73,12 @@ class PaymentSub extends Component {
         {this.state.option === true ? (
           <div className="payment-option">
             <div className="boixbfitjrj">Choose Payment Method</div>
-            <PaymentmethodSub
+            {/* <PaymentmethodSub
               planChoose={this.props.item}
               Authorid={this.props.Authorid}
               hideoption={this.hideoption}
               handleCard={this.handleCard}
-            />
+            /> */}
             {this.state.card === true ? (
               <div className="wroiriitiiir">
                 <div onClick={this.handlePaymentcard} className="pay-with-card">
@@ -117,7 +111,7 @@ class PaymentSub extends Component {
         ) : (
           ""
         )}
-
+        {/* 
         <div className="holdnrkj-fjrkr">
           {this.state.dropin === true ? (
             <FieldSub
@@ -127,10 +121,16 @@ class PaymentSub extends Component {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
+        <Checkout user={this.props.users} />
       </div>
     );
   }
 }
+const mapstateToProps = (state) => {
+  return {
+    users: state.user,
+  };
+};
 
-export default withRouter(PaymentSub);
+export default connect(mapstateToProps, null)(withRouter(PaymentSub));

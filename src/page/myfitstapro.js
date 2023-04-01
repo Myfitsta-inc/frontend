@@ -168,7 +168,6 @@ class Myfitstapro extends Component {
                               </div>
                               <p>subscribers</p>
                             </div>
-                            s
                           </div>
                         </div>
                         <div className="bio-info">
