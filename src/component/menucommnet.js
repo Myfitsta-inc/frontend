@@ -8,6 +8,7 @@ class MenuComment extends Component {
   container = React.createRef();
   state = {
     open: false,
+    delete: false,
     option: {
       open: true,
       file: "",
@@ -15,13 +16,16 @@ class MenuComment extends Component {
     },
   };
   removeComment = () => {
+    this.setState({
+      delete: true,
+    });
     let option = {
       userId: this.props.item.userId,
       postId: this.props.item.postId,
     };
-    console.log(option, "-09iuhbnmo");
-    this.props.removecomment({ id: this.props.item._id });
-    axios.post("/api/remove-this-comment", option).then((result) => {});
+    axios.post("/api/remove-this-comment", option).then((result) => {
+      this.props.removecomment({ id: this.props.item._id });
+    });
   };
   handleclick = (data, e) => {
     if (e != null) {
@@ -94,7 +98,11 @@ class MenuComment extends Component {
               <div className="hold-thatiocom">
                 <MdDelete />
               </div>
-              <button onClick={this.removeComment} className="edit-the-program">
+              <button
+                disabled={this.state.delete}
+                onClick={this.removeComment}
+                className="edit-the-program"
+              >
                 Delete
               </button>
             </div>

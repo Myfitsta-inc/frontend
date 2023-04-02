@@ -5,9 +5,6 @@ import IconProfile from "../component/iconpicture";
 import DataPost from "../component/datePost";
 
 class CommentBox extends Component {
-  componentDidMount = () => {
-    // document.querySelector(".hold-comment-relater").scrollTop = document.querySelector(".hold-comment-relater").scrollHeight
-  };
   render() {
     return (
       <div className="wrapwer-comment-post" key={this.props.item._id}>

@@ -128,7 +128,7 @@ class PostOption extends Component {
             ""
           )}
 
-          {this.props.users.userId === this.props.item.userId ? (
+          {/* {this.props.users.userId === this.props.item.userId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />
@@ -137,7 +137,7 @@ class PostOption extends Component {
             </div>
           ) : (
             ""
-          )}
+          )} */}
           {/* {this.props.user.userId!==this.props.item.userId?<div className="follenn-ejrnhr">
              <ButtonFollow  activeBox={true}  friend ={this.props.item.userId}  />
              </div>:""} */}

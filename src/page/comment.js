@@ -5,7 +5,6 @@ import Username from "../component/username";
 import IconProfile from "../component/iconpicture";
 import { Link } from "react-router-dom";
 import BoxMedia from "../component/boxmedia";
-import ApiUrl from "../url";
 import { InView } from "react-intersection-observer";
 import Editable from "../component/editable";
 import LoadingSpin from "../component/loadingspin.js";
@@ -13,7 +12,6 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { BiArrowBack } from "react-icons/bi";
 import { IoSendSharp } from "react-icons/io5";
-import { motion } from "framer-motion";
 import Report from "../component/report";
 import moment from "moment";
 import socket from "../socketConfig";
@@ -35,7 +33,6 @@ class Comment extends Component {
     source = axios.CancelToken.source();
   }
   removecomment = (data) => {
-    console.log(data);
     let list = this.state.comments.filter((item) => item._id !== data.id);
     this.setState(
       {
@@ -51,7 +48,7 @@ class Comment extends Component {
     );
   };
 
-  updatenotification = (data) => {
+  updatenotification = () => {
     let option = {
       userId: this.state.item.userId,
       type: "comment",
@@ -289,11 +286,7 @@ class Comment extends Component {
                       {this.state.comments?.map((elment, index) => {
                         if (this.state.comments.length === index + 1) {
                           return (
-                            <motion.div
-                              className="fhknrbhfiknrbhj"
-                              layout
-                              key={elment._id}
-                            >
+                            <div className="fhknrbhfiknrbhj" key={elment._id}>
                               <InView
                                 onChange={(inView, entry) =>
                                   this.checkLoad(inView)
@@ -304,20 +297,16 @@ class Comment extends Component {
                                   item={elment}
                                 />
                               </InView>
-                            </motion.div>
+                            </div>
                           );
                         } else {
                           return (
-                            <motion.div
-                              className="fhknrbhfiknrbhj"
-                              layout
-                              key={elment._id}
-                            >
+                            <div className="fhknrbhfiknrbhj" key={elment._id}>
                               <CommentBox
                                 removecomment={this.removecomment}
                                 item={elment}
                               />
-                            </motion.div>
+                            </div>
                           );
                         }
                       })}

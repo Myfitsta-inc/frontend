@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logoone from "../logo/logo.png";
+import { motion } from "framer-motion";
 import BoxAccount from "../component/boxAccoount";
 import Notin from "../component/notin";
 class Nav extends Component {
@@ -19,7 +20,7 @@ class Nav extends Component {
           <div>
             <div className="fjejgf">
               <div className="nan-app">
-                <img src={logoone} alt="logo" />
+                <img draggable="false" src={logoone} alt="logo" />
               </div>
               <div className="rrjhr">MYFITSTA</div>
             </div>
