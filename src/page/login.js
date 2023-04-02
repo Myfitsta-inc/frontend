@@ -13,7 +13,7 @@ class Login extends Component {
   state = {
     username: "",
     password: "",
-    messageUsername: "",
+    messageusername: "",
     messagepassword: "",
     loading: false,
   };
@@ -28,11 +28,11 @@ class Login extends Component {
     e.preventDefault();
     if (this.state.username.length > 0 && this.state.loading === false) {
       this.setState({
-        messageUsername: "",
+        messageusername: "",
       });
     } else {
       this.setState({
-        messageUsername: "Username can not be empty",
+        messageusername: "username can not be empty",
       });
     }
 
@@ -63,7 +63,7 @@ class Login extends Component {
           if (res.data === "This username do not exist") {
             this.setState({
               loading: false,
-              messageUsername: "Sorry 😅 this email  does not exist",
+              messageusername: "Sorry 😅 this email  does not exist",
             });
           }
 
@@ -123,8 +123,8 @@ class Login extends Component {
                 placeholder="Example@gmail.com"
               />
             </div>
-            <p className="messsage" id="message-Username">
-              {this.state.messageUsername}
+            <p className="messsage" id="message-username">
+              {this.state.messageusername}
             </p>
 
             <div className="edit-box-profile">

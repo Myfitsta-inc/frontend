@@ -86,20 +86,20 @@ class TagPeople extends Component {
             return (
               <div
                 onClick={(e) => {
-                  this.selectedpeople({ id: item.userid });
+                  this.selectedpeople({ id: item.userId });
                 }}
                 className={`list-peopkojr ${
-                  this.state.selected.some((e) => e.id === item.userid)
+                  this.state.selected.some((e) => e.id === item.userId)
                     ? "active"
                     : ""
                 } `}
                 key={item._id}
               >
                 <div className="inforisjjofjjr">
-                  <IconProfile user={item.userid} />
+                  <IconProfile user={item.userId} />
                 </div>
                 <div className="ksiiriijr">
-                  <Username user={item.userid} />
+                  <Username user={item.userId} />
                 </div>
                 <div className="inforisjjorfjjr">
                   <p className="pinntjsjdjj">

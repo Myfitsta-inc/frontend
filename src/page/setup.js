@@ -127,10 +127,10 @@ class Setup extends Component {
     }
   };
 
-  Activatemyfistapro = () => {
+  Activatemyfitstapropro = () => {
     let option = {
-      userid: this.props.user.userid,
-      Username: this.props.user.Username,
+      userId: this.props.user.userId,
+      username: this.props.user.username,
       email: this.props.user.email,
       plan: this.state.plan,
       accountType: this.state.kind,
@@ -279,7 +279,7 @@ class Setup extends Component {
                     <Agreement
                       cleanPlan={this.cleanPlan}
                       next={this.next}
-                      Activatemyfistapro={this.Activatemyfistapro}
+                      Activatemyfitstapropro={this.Activatemyfitstapropro}
                     />
                   </div>
                 ) : (

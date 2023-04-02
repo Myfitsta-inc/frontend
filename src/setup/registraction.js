@@ -8,7 +8,7 @@ import Sila from "../silaconfig";
 class Registraction extends Component {
   state = {
     user: {
-      userid: "",
+      userId: "",
       firstname: "",
       lastName: "",
       address: "",
@@ -144,8 +144,8 @@ class Registraction extends Component {
 
   componentDidMount = () => {
     let user = this.state.user;
-    user.userid = this.props.user.userid;
-    user.Username = this.props.user.Username;
+    user.userId = this.props.user.userId;
+    user.username = this.props.user.username;
     user.email = this.props.user.email;
     this.setState({
       user: user,

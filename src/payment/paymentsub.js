@@ -49,8 +49,9 @@ class PaymentSub extends Component {
                     <div className="wharoor-the-amoiut">
                       <span>$</span>
                       <p className="price-itr">
-                        {this.props.item.price}
-                      </p> /{" "}
+                        {this.props.item.price / 100}
+                      </p>{" "}
+                      /{" "}
                       <p className="title-4hh4">
                         {this.props.item.planChoose === "Silver"
                           ? "month"
@@ -73,12 +74,6 @@ class PaymentSub extends Component {
         {this.state.option === true ? (
           <div className="payment-option">
             <div className="boixbfitjrj">Choose Payment Method</div>
-            {/* <PaymentmethodSub
-              planChoose={this.props.item}
-              Authorid={this.props.Authorid}
-              hideoption={this.hideoption}
-              handleCard={this.handleCard}
-            /> */}
             {this.state.card === true ? (
               <div className="wroiriitiiir">
                 <div onClick={this.handlePaymentcard} className="pay-with-card">
@@ -116,13 +111,17 @@ class PaymentSub extends Component {
           {this.state.dropin === true ? (
             <FieldSub
               planChoose={this.props.item}
-              Authorid={this.props.Authorid}
+              authorId={this.props.authorId}
             />
           ) : (
             ""
           )}
         </div> */}
-        <Checkout user={this.props.users} />
+        <Checkout
+          authorId={this.props.authorId}
+          plan={this.props.item}
+          user={this.props.users}
+        />
       </div>
     );
   }

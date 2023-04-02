@@ -7,7 +7,7 @@ source = axios.CancelToken.source();
 class One extends Component {
   state = {
     email: "",
-    messageUsername: "",
+    messageusername: "",
     loading: false,
   };
 
@@ -59,8 +59,8 @@ class One extends Component {
             placeholder="Example@gmail.com"
           />
         </div>
-        <p className="messsage" id="message-Username">
-          {this.state.messageUsername}
+        <p className="messsage" id="message-username">
+          {this.state.messageusername}
         </p>
 
         {this.state.loading === true ? (

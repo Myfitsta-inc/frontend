@@ -81,7 +81,7 @@ class Upload extends Component {
         messageTag: "",
       });
       const formData = new FormData();
-      formData.append("id", this.props.user.userid);
+      formData.append("id", this.props.user.userId);
       formData.append("caption", this.state.description);
       formData.append("date", moment().format());
       for (let i = 0; i < this.state.fileArray.length; i++) {

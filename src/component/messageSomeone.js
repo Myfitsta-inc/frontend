@@ -6,7 +6,7 @@ class MessageButton extends Component {
   message = () => {
     let option = {
       id: this.props.friend,
-      user: this.props.users.userid,
+      user: this.props.users.userId,
       profileGroup: "",
       type: "inbox",
       members: [],

@@ -9,7 +9,7 @@ class ProgramBought extends Component {
     item: null,
   };
   componentDidMount = () => {
-    axios.get(`/api/program-bought/${this.props.programid}`).then((result) => {
+    axios.get(`/api/program-bought/${this.props.programId}`).then((result) => {
       if (result.data !== "no") {
         this.setState({
           item: result.data,
@@ -38,7 +38,7 @@ class ProgramBought extends Component {
           </div>
           <Link
             className="box-that-link"
-            to={`/program/unlock/${this.props.programid}`}
+            to={`/program/unlock/${this.props.programId}`}
           ></Link>
         </div>
       ) : (

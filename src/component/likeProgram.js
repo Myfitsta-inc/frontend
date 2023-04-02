@@ -17,7 +17,7 @@ class LikeProgram extends Component {
 
   likePogram = (data) => {
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
       contentId: this.props.item.file,
       like: data,
     };
@@ -42,7 +42,7 @@ class LikeProgram extends Component {
   handleCheck = () => {
     axios
       .get(
-        `/api/check/${this.props.users.userid}/in/${this.props.item.file}/programs`
+        `/api/check/${this.props.users.userId}/in/${this.props.item.file}/programs`
       )
       .then((result) => {
         if (result.data.contentId) {

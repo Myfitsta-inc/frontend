@@ -82,7 +82,7 @@ class Home extends Component {
       loading: true,
     });
     axios
-      .get(`/api/Show-Feed/${this.props.user.userid}/${data}`, {
+      .get(`/api/Show-Feed/${this.props.user.userId}/${data}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -142,7 +142,7 @@ class Home extends Component {
             <div id="home">
               <div id="head">
                 <Link to={"/profile"} className="iconsnr">
-                  <Iconpicture user={this.props.user.userid} />
+                  <Iconpicture user={this.props.user.userId} />
                 </Link>
 
                 <div id="nt-mes">
@@ -205,7 +205,7 @@ class Home extends Component {
                           <div className="wraperififoojfhr">
                             <div className="wraperjf-ffkfkr">
                               <div className="jrkjkr">
-                                Welcome, {this.props.user.Username}
+                                Welcome, {this.props.user.username}
                               </div>
                               <p>
                                 Share with your community your favorite workout

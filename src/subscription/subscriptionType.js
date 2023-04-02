@@ -7,7 +7,7 @@ class SubscriptionType extends Component {
   };
   checkSubscription = () => {
     axios
-      .get(`/api/checkSubscriotion/account/${this.props.userid}`, {
+      .get(`/api/checkSubscriotion/account/${this.props.userId}`, {
         withCredentials: true,
       })
       .then((res) => {

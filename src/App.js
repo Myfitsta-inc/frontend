@@ -71,7 +71,7 @@ class App extends Component {
     });
   };
 
-  checkmyfistapro = (follower, post) => {};
+  checkmyfitstapropro = (follower, post) => {};
 
   getfitstapro = (e) => {
     axios
@@ -94,16 +94,16 @@ class App extends Component {
   checkLogin = () => {
     axios.get("/api/check-login", { withCredentials: true }).then((res) => {
       this.props.loginAthification(res.data);
-      if (res.data.userid) {
+      if (res.data.userId) {
         this.setState({
           user: res.data,
         });
-        let userid = res.data.userid;
-        socket.auth = { userid };
+        let userId = res.data.userId;
+        socket.auth = { userId };
         socket.connect();
 
         this.checkLike();
-        if (res.data.myfista === true) {
+        if (res.data.myfitstapro === true) {
           this.getfitstapro();
         }
       } else {
@@ -427,7 +427,7 @@ class App extends Component {
               <Route exact path="/program/workout/:id">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.myfista === true ? (
+                    this.state.user.myfitstapro === true ? (
                       <Myprogram
                         openBoxCollection={this.openBoxCollection}
                         boxCollection={this.state.boxCollection}
@@ -447,7 +447,7 @@ class App extends Component {
               <Route exact path="/program/workout/course/:id">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    this.state.user.myfista === true ? (
+                    this.state.user.myfitstapro === true ? (
                       <Loadprogram
                         myfitstapro={this.state.myfitstapro}
                         openBoxCollection={this.openBoxCollection}
@@ -580,7 +580,7 @@ class App extends Component {
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
                     this.state.user.canActivate === true ? (
-                      this.state.myfitstapro.Username ? (
+                      this.state.myfitstapro.username ? (
                         <Redirect to="/myfitstapro" />
                       ) : (
                         <Setup user={this.state.user} />

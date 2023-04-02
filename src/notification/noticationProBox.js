@@ -40,7 +40,7 @@ class NotificationProBox extends Component {
     });
     axios
       .get(
-        `/api/load-notiionpro/${this.props.userid}/${this.state.numberToLoad}`,
+        `/api/load-notiionpro/${this.props.userId}/${this.state.numberToLoad}`,
         { cancelToken: source.token }
       )
       .then((res) => {

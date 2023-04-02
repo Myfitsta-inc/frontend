@@ -7,7 +7,7 @@ class Two extends Component {
   state = {
     code: "",
     loading: false,
-    messageUsername: "",
+    messageusername: "",
   };
   handleChange = (e) => {
     this.setState({
@@ -32,7 +32,7 @@ class Two extends Component {
       });
     } else {
       this.setState({
-        messageUsername: "code need to be 6 digit",
+        messageusername: "code need to be 6 digit",
       });
     }
   };
@@ -62,8 +62,8 @@ class Two extends Component {
             placeholder="000000"
           />
         </div>
-        <p className="messsage" id="message-Username">
-          {this.state.messageUsername}
+        <p className="messsage" id="message-username">
+          {this.state.messageusername}
         </p>
 
         <input id="login" type="submit" name="submit" value="CHECK CODE" />

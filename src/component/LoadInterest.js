@@ -34,7 +34,7 @@ class LoadInterest extends Component {
       //   })
       //  let arraylist=[]
       // list.forEach(item=>{
-      ///    arraylist.push(item.userid)
+      ///    arraylist.push(item.userId)
       // })
       // let newlist =[]
       //  this.state.original.forEach(item=>{
@@ -85,12 +85,12 @@ class LoadInterest extends Component {
     });
     axios
       .get(
-        `/api/connet-interest/${this.props.users.userid}/${this.state.filter}/${this.state.numberLoad}`
+        `/api/connet-interest/${this.props.users.userId}/${this.state.filter}/${this.state.numberLoad}`
       )
       .then((result) => {
         if (result.data !== "no") {
           let list = result.data.filter(
-            (item) => item.accountId !== this.props.users.userid
+            (item) => item.accountId !== this.props.users.userId
           );
 
           this.setState({

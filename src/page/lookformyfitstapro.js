@@ -36,8 +36,8 @@ class Lookformyfitstapro extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.userid) {
-          if (res.data.userid === this.props.user.userid) {
+        if (res.data.userId) {
+          if (res.data.userId === this.props.user.userId) {
             //this.props.history.push("/myfitstapro")
           } else {
             this.setState({
@@ -45,7 +45,7 @@ class Lookformyfitstapro extends Component {
             });
           }
         } else {
-          this.props.history.push("/");
+          /// this.props.history.push("/");
         }
       });
   };

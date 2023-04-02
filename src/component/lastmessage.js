@@ -33,8 +33,8 @@ class LastMessage extends Component {
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
       if (
-        data.friend === this.props.item.userid ||
-        data.sender === this.props.item.userid
+        data.friend === this.props.item.userId ||
+        data.sender === this.props.item.userId
       ) {
         this.setState({
           lastMessage: data,

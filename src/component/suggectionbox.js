@@ -12,7 +12,7 @@ class SuggectionBox extends Component {
 
   callAi = () => {
     axios
-      .get(`/api/suggstion-for-you/${this.props.users.userid}`)
+      .get(`/api/suggstion-for-you/${this.props.users.userId}`)
       .then((res) => {
         if (res.data !== "no") {
           let list = [...this.state.list, ...res.data];
@@ -58,15 +58,14 @@ class SuggectionBox extends Component {
                     </div>
                     <div className="icon-info">
                       <div className="iconfnrr">
-                        <IconProfile user={item.userid} />
+                        <IconProfile user={item.userId} />
                       </div>
                     </div>
                     <div className="wrparrs-info">
-                      <p>{item.Username}</p>
-                      <p>{item.fullName}</p>
+                      <p>{item.username}</p>
                     </div>
                     <div className="wraprrrt-follror">
-                      <ButtonFollow friend={item.userid} />
+                      <ButtonFollow friend={item.userId} />
                     </div>
                   </div>
                 );

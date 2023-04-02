@@ -44,7 +44,7 @@ class Nav extends Component {
                 data-tab-target="#home"
               >
                 <div className="ic">
-                  <Notin userid={this.props.user.userid} />
+                  <Notin userId={this.props.user.userId} />
                   <i className="far fa-bell"></i>
                 </div>
                 <p>Notifications</p>

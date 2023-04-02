@@ -19,7 +19,7 @@ class PaymentmethodSub extends Component {
 
   getPaymentMethod = () => {
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
     };
 
     axios.post(`/api/my-payment-methode`, option).then((result) => {
@@ -47,8 +47,8 @@ class PaymentmethodSub extends Component {
   handlePay = () => {
     let option = {
       planChoose: this.props.planChoose,
-      Authorid: this.props.Authorid,
-      userid: this.props.users.userid,
+      authorId: this.props.authorId,
+      userId: this.props.users.userId,
     };
 
     this.setState({

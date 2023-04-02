@@ -15,7 +15,7 @@ class Subcription extends Component {
 
   handlePgram = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
     };
     axios.post(`/api/get-my-programm`, option).then((res) => {
       if (res.data !== "no") {

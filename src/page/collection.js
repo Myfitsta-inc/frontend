@@ -36,7 +36,7 @@ class Collection extends Component {
   createCollection = () => {
     if (this.state.newCollection.length > 0) {
       let detail = {
-        userId: this.props.user.userid,
+        userId: this.props.user.userId,
         collectionName: this.state.newCollection,
       };
 
@@ -74,7 +74,7 @@ class Collection extends Component {
 
   mypost = (e) => {
     axios
-      .get(`/api/myCollection/${this.props.user.userid}`, {
+      .get(`/api/myCollection/${this.props.user.userId}`, {
         withCredentials: true,
         cancelToken: source.token,
       })

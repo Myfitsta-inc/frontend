@@ -12,7 +12,7 @@ class Profilemessage extends Component {
 
   getprofilrhhhfhe = () => {
     axios.get(`/api/getid/6064a917f2f04e508d13b0d1`).then((res) => {
-      if (res.data.userid) {
+      if (res.data.userId) {
         this.setState({
           data: res.data,
           post: res.data.post,
@@ -53,7 +53,7 @@ class Profilemessage extends Component {
         <div className="header-post">
           <div className="icon0tjnnr">
             {this.state.data !== null ? (
-              <IconProfile user={this.state.data.userid} />
+              <IconProfile user={this.state.data.userId} />
             ) : (
               ""
             )}
@@ -61,7 +61,7 @@ class Profilemessage extends Component {
           <div className="usernamerrjjr">
             {" "}
             {this.state.data !== null ? (
-              <Username user={this.state.data.userid} />
+              <Username user={this.state.data.userId} />
             ) : (
               ""
             )}

@@ -12,7 +12,7 @@ export default class ShowLive extends Component {
   };
 
   getOnline = () => {
-    axios.get(`/api/open-live-room/${this.props.user.userid}`).then((res) => {
+    axios.get(`/api/open-live-room/${this.props.user.userId}`).then((res) => {
       if (res.data !== "") {
         this.setState({
           open: true,

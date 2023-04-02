@@ -17,8 +17,8 @@ class Addprogram extends Component {
   handleCreate = () => {
     if (this.state.title.length > 0) {
       const program = {
-        Author: this.props.user.Username,
-        AuthorId: this.props.user.userid,
+        Author: this.props.user.username,
+        AuthorId: this.props.user.userId,
         title: this.state.title,
         description: this.state.description,
         type: this.props.type,

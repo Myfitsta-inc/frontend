@@ -12,7 +12,7 @@ class Unlocked extends Component {
   };
   getdata = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
     };
     axios.post(`/api/get-my-programm`, option).then((res) => {
       if (res.data !== "no") {
@@ -22,14 +22,14 @@ class Unlocked extends Component {
           if (dataS.length > 0) {
             list.forEach((data) => {
               if (data.AuthorId === item.AuthorId) {
-                data.list.push(item.programid);
+                data.list.push(item.programId);
               }
             });
           } else {
             list.push({
               AuthorId: item.AuthorId,
               kind: item.kind,
-              list: [item.programid],
+              list: [item.programId],
             });
           }
         });
@@ -71,7 +71,7 @@ class Unlocked extends Component {
                     </div>
                     <div className="row-0tjhat-hold-theprojhfnnf">
                       {item.list.map((data, index) => {
-                        return <ProgramBought programid={data} key={index} />;
+                        return <ProgramBought programId={data} key={index} />;
                       })}
                     </div>
                   </div>

@@ -92,7 +92,7 @@ class ReviewMenu extends Component {
         >
           <div
             className={`box-that-hold-the-setting ${
-              this.props.item.AnthorId !== this.props.users.userid
+              this.props.item.AnthorId !== this.props.users.userId
                 ? "disparais"
                 : ""
             }`}

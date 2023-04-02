@@ -78,7 +78,7 @@ class Group extends Component {
 
     axios
       .get(
-        `/api/the-group/${this.props.match.params.id}/${this.props.user.userid}`
+        `/api/the-group/${this.props.match.params.id}/${this.props.user.userId}`
       )
       .then((res) => {
         if (res.data) {
@@ -114,10 +114,10 @@ class Group extends Component {
   sendmessage = (event) => {
     if (this.state.message.length > 0) {
       let option = {
-        UserId: this.props.user.userid,
+        UserId: this.props.user.userId,
         conversationId: this.props.match.params.id,
         message: {
-          sender: this.props.user.userid,
+          sender: this.props.user.userId,
           content: this.state.message,
           kind: "message",
         },
@@ -233,10 +233,10 @@ class Group extends Component {
 
                   <div className="show-his-her-name">
                     {this.state.group !== null ? (
-                      this.state.group.userid ? (
+                      this.state.group.userId ? (
                         <div className="rkfjrkfmffn">
                           {" "}
-                          {this.state.group.userid ? (
+                          {this.state.group.userId ? (
                             <p>{this.state.group.name}</p>
                           ) : (
                             ""
@@ -274,12 +274,12 @@ class Group extends Component {
                       <div
                         key={item._id}
                         className={`${
-                          item.sender === this.props.user.userid
+                          item.sender === this.props.user.userId
                             ? "box-other-me"
                             : "box-other-freind"
                         }`}
                       >
-                        {item.sender === this.props.user.userid ? (
+                        {item.sender === this.props.user.userId ? (
                           ""
                         ) : (
                           <div className="box-that-holf-theico">

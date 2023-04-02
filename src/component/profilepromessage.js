@@ -15,7 +15,7 @@ class ProfilePromessage extends Component {
       })
       .then((res) => {
         console.log(res.data);
-        if (res.data.Username) {
+        if (res.data.username) {
           this.setState({
             profile: res.data,
           });
@@ -40,14 +40,14 @@ class ProfilePromessage extends Component {
                   loading="lazy"
                 />
               </div>
-              <div className="usernamerrjjr">{this.state.profile.Username}</div>
+              <div className="usernamerrjjr">{this.state.profile.username}</div>
             </div>
             <div className="barjsjj">
               <div className="box-thjtjtjr">
-                {this.state.profile.numberOfProgram} Program
+                {this.state.profile.numberOfProgram ?? 0} Program
               </div>
               <div className="box-thjtjtjr fjjr">
-                {this.state.profile.numberOfSubscriber} Subscribers
+                {this.state.profile.numberOfSubscriber ?? 0} Subscribers
               </div>
             </div>
             <div className="rjrrj=tearjr"></div>

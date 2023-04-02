@@ -23,7 +23,7 @@ class Search extends Component {
   };
   addToRecent = (data) => {
     let option = {
-      User: this.props.user.userid,
+      User: this.props.user.userId,
       name: data,
     };
     axios
@@ -38,12 +38,12 @@ class Search extends Component {
   removerecent = (e, data) => {
     let target = e.currentTarget;
     let option = {
-      User: this.props.user.userid,
-      userid: data,
+      User: this.props.user.userId,
+      userId: data,
     };
     axios.post("/api/removeRecentprofile", option).then((res) => {
       let list = this.state.people.filter((item) => {
-        return item.userid != data;
+        return item.userId != data;
       });
       this.setState({
         people: list,
@@ -127,7 +127,7 @@ class Search extends Component {
   };
   recent = (e) => {
     axios
-      .get(`/api/recentSeach/${this.props.user.userid}`, {
+      .get(`/api/recentSeach/${this.props.user.userId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -204,18 +204,18 @@ class Search extends Component {
                         className="profile-tofindt"
                       >
                         <div className="image-pr">
-                          <IconProfile live={true} user={item.userid} />
+                          <IconProfile live={true} user={item.userId} />
                         </div>
                         <div className="inf-or">
                           <div className="bfjirtnj"></div>
-                          <div onClick={() => this.addToRecent(item.userid)}>
-                            <Username link={true} user={item.userid} />
-                            {/* <Subinfo user={item.userid} />*/}
+                          <div onClick={() => this.addToRecent(item.userId)}>
+                            <Username link={true} user={item.userId} />
+                            {/* <Subinfo user={item.userId} />*/}
                           </div>
                         </div>
                         <div
                           onClick={(e) => {
-                            this.removerecent(e, item.userid);
+                            this.removerecent(e, item.userId);
                           }}
                           className="delc-pro"
                         >
@@ -234,18 +234,18 @@ class Search extends Component {
                       key={item._id}
                     >
                       <div className="image-pr">
-                        <IconProfile live={true} user={item.userid} />
+                        <IconProfile live={true} user={item.userId} />
                       </div>
                       <div className="inf-or">
                         <div className="bfjirtnj"></div>
-                        <div onClick={() => this.addToRecent(item.userid)}>
-                          <Username link={true} user={item.userid} />
-                          {/*<Subinfo user={item.userid} />*/}
+                        <div onClick={() => this.addToRecent(item.userId)}>
+                          <Username link={true} user={item.userId} />
+                          {/*<Subinfo user={item.userId} />*/}
                         </div>
                       </div>
                       <div
                         onClick={(e) => {
-                          this.removerecent(e, item.userid);
+                          this.removerecent(e, item.userId);
                         }}
                         className="delc-pro"
                       >

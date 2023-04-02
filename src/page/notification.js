@@ -45,7 +45,7 @@ class Notification extends Component {
 
   loadNotification = () => {
     axios
-      .get(`/api/load-notiionbasic/${this.props.user.userid}/${10}`, {
+      .get(`/api/load-notiionbasic/${this.props.user.userId}/${10}`, {
         cancelToken: source.token,
       })
       .then((res) => {
@@ -67,7 +67,7 @@ class Notification extends Component {
 
   loadNotificationPro = () => {
     axios
-      .get(`/api/load-notiionpro/${this.props.user.userid}/${10}`, {
+      .get(`/api/load-notiionpro/${this.props.user.userId}/${10}`, {
         cancelToken: source.token,
       })
       .then((res) => {
@@ -97,7 +97,7 @@ class Notification extends Component {
 
   handleUpdateCount = () => {
     axios
-      .post(`/api/update-number-of-notification/${this.props.user.userid}`)
+      .post(`/api/update-number-of-notification/${this.props.user.userId}`)
       .then((result) => {
         return;
       });
@@ -153,12 +153,12 @@ class Notification extends Component {
                   </div>
                   <div className="hold-thodisjhjijjrnbbd">
                     {this.state.tabsDeafalt === true ? (
-                      <NotificationBasicBox userid={this.props.user.userid} />
+                      <NotificationBasicBox userId={this.props.user.userId} />
                     ) : (
                       ""
                     )}
                     {this.state.tabsDeafalt === false ? (
-                      <NotificationProBox userid={this.props.user.userid} />
+                      <NotificationProBox userId={this.props.user.userId} />
                     ) : (
                       ""
                     )}

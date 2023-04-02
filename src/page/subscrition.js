@@ -66,7 +66,7 @@ class Myfitstapr extends Component {
   getProgram = (e) => {
     axios
       .get(
-        `/api/load-my-active-pwo/${this.state.profile.userid}/to/${this.props.user.userid}`,
+        `/api/load-my-active-pwo/${this.state.profile.userId}/to/${this.props.user.userId}`,
         { cancelToken: source.token }
       )
       .then((res) => {
@@ -80,12 +80,12 @@ class Myfitstapr extends Component {
 
   checkSubscription = () => {
     axios
-      .get(`/api/checkSubscriotion/account/${this.state.profile.userid}`, {
+      .get(`/api/checkSubscriotion/account/${this.state.profile.userId}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.subScriber) {
+        if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,
           });
@@ -97,7 +97,6 @@ class Myfitstapr extends Component {
           this.setState({
             subscribe: true,
           });
-          this.subscribe();
         }
       });
   };
@@ -109,9 +108,8 @@ class Myfitstapr extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res.data);
-        if (res.data.userid) {
-          if (res.data.userid === this.props.user.userid) {
+        if (res.data.userId) {
+          if (res.data.userId === this.props.user.userId) {
             this.props.history.push("/myfitstapro");
           } else {
             this.setState({
@@ -145,7 +143,7 @@ class Myfitstapr extends Component {
                 <div onClick={this.goBack} className="close-that">
                   <BiArrowBack />
                 </div>
-                <Username link={true} user={this.state.profile.userid} />
+                <Username link={true} user={this.state.profile.userId} />
                 <div className="jjjrrrdd">
                   {/*    <button  onClick={()=>this.handleSetting(true)}  className="add-nrew-progma"> <i className="fas fa-ellipsis-v"></i></button>*/}
                 </div>
@@ -172,13 +170,13 @@ class Myfitstapr extends Component {
                     </div>
 
                     <div className="actine-edit">
-                      <Username user={this.state.profile.userid} />
+                      <Username user={this.state.profile.userId} />
 
                       <div className="bio-sub-desciption rjjr">
                         <div className="info-acct">
                           <div id="post-nu " className="al">
                             <div id="number-post" className="number-post">
-                              {this.state.profile.numberOfProgram}
+                              {this.state.profile.numberOfProgram ?? 0}
                             </div>
                             <p>Program</p>
                           </div>
@@ -187,15 +185,15 @@ class Myfitstapr extends Component {
                               id="number-followers"
                               className="number-followers"
                             >
-                              {this.state.profile.numberOfSubscriber}
+                              {this.state.profile.numberOfSubscriber ?? 0}
                             </div>
                             <p>Subscribers</p>
                           </div>
                         </div>
                       </div>
                       <div className="action-follow-un-fo disps">
-                        {this.state.profile.userid ? (
-                          <MessageButton friend={this.state.profile.userid} />
+                        {this.state.profile.userId ? (
+                          <MessageButton friend={this.state.profile.userId} />
                         ) : (
                           ""
                         )}
@@ -221,8 +219,8 @@ class Myfitstapr extends Component {
                   </div>
                   <div className="action-follow-un-fo mobioe">
                     <div className="wraeoieke">
-                      {this.state.profile.userid ? (
-                        <MessageButton friend={this.state.profile.userid} />
+                      {this.state.profile.userId ? (
+                        <MessageButton friend={this.state.profile.userId} />
                       ) : (
                         ""
                       )}
@@ -247,7 +245,7 @@ class Myfitstapr extends Component {
                       <div className="info-acct">
                         <div id="post-nu " className="al">
                           <div id="number-post" className="number-post">
-                            {this.state.profile.numberOfProgram}
+                            {this.state.profile.numberOfProgram ?? 0}
                           </div>
                           <p>Program</p>
                         </div>
@@ -256,7 +254,7 @@ class Myfitstapr extends Component {
                             id="number-followers"
                             className="number-followers"
                           >
-                            {this.state.profile.numberOfSubscriber}
+                            {this.state.profile.numberOfSubscriber ?? 0}
                           </div>
                           <p>Subscribers</p>
                         </div>
@@ -270,7 +268,7 @@ class Myfitstapr extends Component {
                 this.state.subscribeCheck === false ? (
                   <div className="wraperififoojfhr">
                     <div className="wraperjf-ffkfkr">
-                      <p>Subscribe to {this.state.profile.Username} </p>
+                      <p>Subscribe to {this.state.profile.username} </p>
                       <p>Select a subcription plan to view all the program </p>
                     </div>
                   </div>
@@ -340,7 +338,7 @@ class Myfitstapr extends Component {
           this.state.profile._id ? (
             <Subscribe
               closesubscribe={this.closesubscribe}
-              profile={this.state.profile.userid}
+              profile={this.state.profile.userId}
               subscribeBox={this.state.subscribeBox}
               plan={this.state.plan}
             />

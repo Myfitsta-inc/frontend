@@ -16,7 +16,7 @@ class ProfileModal extends Component {
     axios
       .get(`/api/profile/${this.props.user}`, { withCredentials: true })
       .then((res) => {
-        if (res.data.Username) {
+        if (res.data.username) {
           this.setState({
             //profile:res.data
           });
@@ -34,7 +34,7 @@ class ProfileModal extends Component {
             <IconProfile user={this.props.user} />
           </div>
           <div className="wraper-the-infrofjjsjnnnsn">
-            <div className="name-p">{this.props.profile.Username}</div>
+            <div className="name-p">{this.props.profile.username}</div>
             <div className="info-acctt">
               <div className="all">
                 <div className="number-post">
@@ -43,12 +43,12 @@ class ProfileModal extends Component {
                 <p>Post</p>
               </div>
               <div className="all">
-                <Link to={`user/${this.props.profile.Username}/follower`}>
+                <Link to={`user/${this.props.profile.username}/follower`}>
                   {this.props.profile.numberfollowers} Followers
                 </Link>
               </div>
               <div className="all">
-                <Link to={`user/${this.props.profile.Username}/following`}>
+                <Link to={`user/${this.props.profile.username}/following`}>
                   {this.props.profile.numberfollowings} Following
                 </Link>
               </div>
@@ -56,8 +56,8 @@ class ProfileModal extends Component {
           </div>
         </div>
         <div className="wroarr-homfhjfj">
-          <MessageButton friend={this.props.profile.userid} />
-          <ButtonFollow friend={this.props.profile.userid} />
+          <MessageButton friend={this.props.profile.userId} />
+          <ButtonFollow friend={this.props.profile.userId} />
         </div>
         <div className="holf-the-bio">
           <p dangerouslySetInnerHTML={{ __html: this.props.profile.bio }}></p>

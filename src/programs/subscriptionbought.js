@@ -11,7 +11,7 @@ class SubscriptionBougth extends Component {
   getProgram = (e) => {
     axios
       .get(
-        `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userid}`
+        `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userId}`
       )
       .then((res) => {
         if (res.data.length > 0) {
@@ -34,7 +34,7 @@ class SubscriptionBougth extends Component {
         this.state.list.length > 0 ? (
           <div className="row-0tjhat-hold-theprojhfnnf">
             {this.state.list.map((data, index) => {
-              return <ProgramBought programid={data.programId} key={index} />;
+              return <ProgramBought programId={data.programId} key={index} />;
             })}
           </div>
         ) : (

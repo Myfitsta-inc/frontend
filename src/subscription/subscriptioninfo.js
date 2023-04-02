@@ -26,7 +26,7 @@ class SubscriptionInfo extends Component {
     });
     let option = {
       User: this.state.data.User,
-      subScriber: this.state.data.subScriber,
+      subScriberId: this.state.data.subScriberId,
     };
     axios
       .post("/api/cancel-my-sub-scription-plan-for-programs", option, {
@@ -90,10 +90,10 @@ class SubscriptionInfo extends Component {
         <div className="header-oxn">
           <div className="wrpa4rt">
             <div className="icons-rnwjr">
-              <ProIcon user={this.state.profile.userid} />
+              <ProIcon user={this.state.profile.userId} />
             </div>
             <div className="dfjsjfirf">
-              <p>{this.state.profile.Username}</p>
+              <p>{this.state.profile.username}</p>
               <div>
                 <div>
                   <p>Next payment:</p>
@@ -112,13 +112,13 @@ class SubscriptionInfo extends Component {
               <div className="wraornjr">
                 <p>Programs</p>
                 <div className="boxnnsor">
-                  {this.state.profile.numberOfProgram}
+                  {this.state.profile.numberOfProgram ?? 0}
                 </div>
               </div>
               <div className="wraornjr">
                 <p>Subscribers</p>
                 <div className="boxnnsor">
-                  {this.state.profile.numberOfSubscriber}
+                  {this.state.profile.numberOfSubscriber ?? 0}
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ class SubscriptionInfo extends Component {
                 >
                   <IoCloseSharp />
                 </div>
-                <div>Unsubscribe {this.state.profile.Username}</div>
+                <div>Unsubscribe {this.state.profile.username}</div>
               </div>
               <div className="jfkjworf">
                 By unsubscribing to this account you will no longer have acces

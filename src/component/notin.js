@@ -6,7 +6,7 @@ class Notin extends Component {
   };
   check = () => {
     axios
-      .get(`/api/load-number-of-notification/${this.props.userid}`)
+      .get(`/api/load-number-of-notification/${this.props.userId}`)
       .then((result) => {
         if (result.data.succes === true) {
           this.setState({

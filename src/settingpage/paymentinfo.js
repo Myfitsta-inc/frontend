@@ -18,7 +18,7 @@ class PaymentInfo extends Component {
 
   removeCard = (data) => {
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
       item: data,
     };
     axios
@@ -34,7 +34,7 @@ class PaymentInfo extends Component {
   };
   getPaymentMethod = () => {
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
     };
     axios.post(`/api/my-payment-methode`, option).then((result) => {
       if (result.data._id) {

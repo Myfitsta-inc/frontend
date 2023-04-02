@@ -6,7 +6,7 @@ import ApiUrl from "../url";
 import { connect } from "react-redux";
 import axios from "axios";
 let program = null;
-let userid = "";
+let userId = "";
 class Field extends Component {
   state = {
     clientToken: null,
@@ -91,7 +91,7 @@ class Field extends Component {
             let option = {
               paymentMethodNonce: payload.nonce,
               program: program,
-              userid: userid,
+              userId: userId,
             };
             this.setState({
               loading: true,
@@ -114,7 +114,7 @@ class Field extends Component {
   componentDidMount = () => {
     this.getclient();
     program = this.props.item;
-    userid = this.props.users.userid;
+    userId = this.props.users.userId;
   };
   render() {
     return (

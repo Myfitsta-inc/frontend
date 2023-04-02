@@ -705,6 +705,19 @@ video:-webkit-media-controls-panel {
 .pay-with-card.active {
   width: 100%;
 }
+.hjtjtjtjnt {
+  width: 200px;
+
+  border: 1px solid red;
+}
+
+.his-neamerjjt p {
+  font-size: 25px;
+}
+.his-neamerjjt {
+  border: 1px solid red;
+  display: flex;
+}
 .card-that-hold-ifr {
   width: 100%;
   padding: 10px;
@@ -1630,7 +1643,7 @@ video:-webkit-media-controls-panel {
   display: flex;
   max-width: inherit;
   overflow: scroll;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .box-to-contain0foleol {
@@ -2042,6 +2055,7 @@ video:-webkit-media-controls-panel {
   display: none;
 }
 .box-that-that-hold-the-row {
+  min-height: 300px;
 }
 
 .wraorjrkncnfrh video {

@@ -15,7 +15,7 @@ class Rate extends Component {
 
   loadRate = () => {
     axios
-      .get(`/api/load-my-rate/${this.props.userid}/${this.props.programId}`)
+      .get(`/api/load-my-rate/${this.props.userId}/${this.props.programId}`)
       .then((res) => {
         if (res.data.AnthorId) {
           this.props.updateRating(res.data.star);
@@ -31,7 +31,7 @@ class Rate extends Component {
     if (this.props.review > 0) {
       document.querySelector(".rjfrjjrjr").innerText = "";
       let option = {
-        AnthorId: this.props.userid,
+        AnthorId: this.props.userId,
         programId: this.props.programId,
         star: this.props.review,
         review: this.state.review,

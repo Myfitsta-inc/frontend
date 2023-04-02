@@ -29,13 +29,13 @@ class OrderSubscription extends Component {
                     <div className="rjer3lwr3w">
                       <div className="jeirir">
                         <div className="chhfjf-sfufr">
-                          <IconProfile user={item.custumerid} />
+                          <IconProfile user={item.custumerId} />
                         </div>
-                        <Username user={item.custumerid} />
+                        <Username user={item.custumerId} />
                       </div>
                     </div>
                     <div className="rjer3lwr3w">
-                      <div className="fjeijsgijijf">{item.programid}</div>
+                      <div className="fjeijsgijijf">{item.programId}</div>
                     </div>
                     <div className="rjer3lwr3w">
                       {moment(item.date).format("L")}

@@ -348,9 +348,6 @@
 .wtapthensjjfjt {
   padding: 10px;
 
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, minmax(100px, 400px));
   grid-gap: 10px;
 }
 .wrpsjiirir-icocod svg path {
@@ -1156,10 +1153,6 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .wtapthensjjfjt {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(100px, 1fr));
-  }
   .wrapajiriri {
     grid-gap: 10px;
     place-content: center;

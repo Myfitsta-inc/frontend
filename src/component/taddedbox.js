@@ -78,7 +78,7 @@ class Tagggedbox extends Component {
             <div className="pjdjj">
               <div className="wrp-actt">
                 <LikeButton
-                  filename={this.state.data.filename}
+                  postId={this.state.data._id}
                   numberlike={this.state.data.numberlike}
                 />
                 <div className=" box-acc">

@@ -47,7 +47,7 @@ class ChangePassword extends Component {
         if (this.state.newPassword === this.state.confirmPassword) {
           if (StatePaword) {
             let option = {
-              username: this.props.users.Username,
+              username: this.props.users.username,
               oldPassword: this.state.currentPassword,
               newPassword: this.state.newPassword,
             };

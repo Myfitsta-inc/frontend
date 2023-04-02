@@ -22,7 +22,7 @@ class Routine extends Component {
   getRoutine = () => {
     axios
       .get(
-        `https://vast-cliffs-15160.herokuapp.com/myroutine/${this.props.user.userid}`,
+        `https://vast-cliffs-15160.herokuapp.com/myroutine/${this.props.user.userId}`,
         { cancelToken: source.token }
       )
       .then((res) => {

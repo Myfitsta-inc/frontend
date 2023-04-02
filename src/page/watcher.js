@@ -67,7 +67,7 @@ class Watcher extends Component {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
           content: this.state.message,
-          sender: this.props.user.userid,
+          sender: this.props.user.userId,
           icon: this.props.user.profile,
         });
         document.querySelector(".hold-message").innerText = "";
@@ -219,7 +219,7 @@ class Watcher extends Component {
     if (this.state.StateLive) {
       socket.emit("disconect-from-the-live", {
         room: this.state.id,
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       });
       this.peerConnection.close();
     }

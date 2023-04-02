@@ -16,9 +16,10 @@ class MenuComment extends Component {
   };
   removeComment = () => {
     let option = {
-      userid: this.props.item.Userdid,
-      filename: this.props.item.filename,
+      userId: this.props.item.userId,
+      postId: this.props.item.postId,
     };
+    console.log(option, "-09iuhbnmo");
     this.props.removecomment({ id: this.props.item._id });
     axios.post("/api/remove-this-comment", option).then((result) => {});
   };
@@ -88,7 +89,7 @@ class MenuComment extends Component {
         <div
           className={`tisjjrjrjr ${this.state.open === true ? "active" : ""}`}
         >
-          {this.props.users.userid === this.props.item.Userdid ? (
+          {this.props.users.userId === this.props.item.userId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />

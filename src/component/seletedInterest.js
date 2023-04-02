@@ -383,7 +383,7 @@ class SelctedInterest extends Component {
   handleNext = (data) => {
     if (this.state.selected.length <= 6) {
       let option = {
-        accountId: this.props.users.userid,
+        accountId: this.props.users.userId,
         tags: this.state.selected,
       };
       axios.post(`/api/save-Interest`, option).then((result) => {

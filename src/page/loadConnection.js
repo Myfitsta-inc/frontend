@@ -31,7 +31,7 @@ class LoadConnection extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.Username) {
+        if (res.data.username) {
           this.setState({
             profile: res.data,
           });
@@ -103,7 +103,7 @@ class LoadConnection extends Component {
                               Following
                             </Link>
                           </div>
-                          {this.state.profile.myfista === true ? (
+                          {this.state.profile.myfitstapro === true ? (
                             <div
                               className={`tsgfhjked ${
                                 this.props.match.params.data === "subscriber"
@@ -131,7 +131,7 @@ class LoadConnection extends Component {
                           >
                             {this.props.match.params.data === "follower" ? (
                               this.state.profile !== null ? (
-                                <Follower user={this.state.profile.userid} />
+                                <Follower user={this.state.profile.userId} />
                               ) : (
                                 ""
                               )
@@ -148,7 +148,7 @@ class LoadConnection extends Component {
                           >
                             {this.props.match.params.data === "following" ? (
                               this.state.profile !== null ? (
-                                <Following user={this.state.profile.userid} />
+                                <Following user={this.state.profile.userId} />
                               ) : (
                                 ""
                               )
@@ -157,7 +157,7 @@ class LoadConnection extends Component {
                             )}
                           </motion.div>
 
-                          {this.state.profile.myfista === true ? (
+                          {this.state.profile.myfitstapro === true ? (
                             <motion.div
                               className={`wfijiwrjwkjrnr ${
                                 this.props.match.params.data === "subscriber"
@@ -168,7 +168,7 @@ class LoadConnection extends Component {
                               {this.props.match.params.data === "subscriber" ? (
                                 this.state.profile !== null ? (
                                   <SubscriberList
-                                    user={this.state.profile.userid}
+                                    user={this.state.profile.userId}
                                   />
                                 ) : (
                                   ""

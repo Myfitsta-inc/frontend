@@ -53,7 +53,7 @@ class OptionComment extends Component {
         <div
           className={`tisjjrjrjr ${this.state.open === true ? "active" : ""}`}
         >
-          {this.props.users.userid === this.props.item.UserId ? (
+          {this.props.users.userId === this.props.item.UserId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />

@@ -92,7 +92,7 @@ class Visitpage extends Component {
 
   hispost = () => {
     axios
-      .get(`/api/profile/${this.state.profile.userid}`, {
+      .get(`/api/profile/${this.state.profile.userId}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -111,13 +111,13 @@ class Visitpage extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.Username) {
-          if (res.data.Username === this.props.user.Username) {
+        if (res.data.username) {
+          if (res.data.username === this.props.user.username) {
             this.props.history.push("/profile");
           } else {
             this.setState({
               profile: res.data,
-              file: res.data.userid,
+              file: res.data.userId,
             });
             this.hispost();
           }
@@ -151,7 +151,7 @@ class Visitpage extends Component {
                         <BiArrowBack />
                       </div>
                       <div className="name-pr">
-                        {this.state.profile.Username}
+                        {this.state.profile.username}
                         {this.state.profile.verified === true ? (
                           <div className="verified">
                             <i className="fas fa-check"></i>
@@ -205,7 +205,7 @@ class Visitpage extends Component {
                         <div className="actine-edit">
                           <div className="name-actionn">
                             <div className="name-prrr">
-                              {this.state.profile.Username}
+                              {this.state.profile.username}
                               {this.state.profile.verified === true ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
@@ -231,7 +231,7 @@ class Visitpage extends Component {
                                 <p>Post</p>
                               </div>
                               <Link
-                                to={`/user/${this.state.profile.Username}/follower`}
+                                to={`/user/${this.state.profile.username}/follower`}
                                 id="follower-nu"
                                 className="al"
                               >
@@ -246,7 +246,7 @@ class Visitpage extends Component {
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.Username}/following`}
+                                to={`/user/${this.state.profile.username}/following`}
                                 id="following-nu al"
                                 className="al"
                               >
@@ -263,26 +263,26 @@ class Visitpage extends Component {
                             </div>
                           </div>
                           <div className="action-follow-un-fo disps">
-                            {this.state.profile.userid ? (
+                            {this.state.profile.userId ? (
                               <MessageButton
-                                friend={this.state.profile.userid}
+                                friend={this.state.profile.userId}
                               />
                             ) : (
                               ""
                             )}
-                            {this.state.profile.userid ? (
+                            {this.state.profile.userId ? (
                               <ButtonFollow
-                                friend={this.state.profile.userid}
+                                friend={this.state.profile.userId}
                               />
                             ) : (
                               ""
                             )}
 
-                            {this.state.profile.myfista === true ? (
+                            {this.state.profile.myfitstapro === true ? (
                               <button className="flo">
                                 <Link
                                   className="llx"
-                                  to={`/myfitstapro/${this.state.profile.userid}`}
+                                  to={`/myfitstapro/${this.state.profile.userId}`}
                                 >
                                   PRO
                                 </Link>
@@ -323,26 +323,26 @@ class Visitpage extends Component {
                       </div>
                       <div className="action-follow-un-fo mobioe">
                         <div className="wraeoieke">
-                          {this.state.profile.userid ? (
-                            <MessageButton friend={this.state.profile.userid} />
+                          {this.state.profile.userId ? (
+                            <MessageButton friend={this.state.profile.userId} />
                           ) : (
                             ""
                           )}
-                          {this.state.profile.userid ? (
+                          {this.state.profile.userId ? (
                             <ButtonFollow
-                              user={this.props.user.userid}
-                              friend={this.state.profile.userid}
+                              user={this.props.user.userId}
+                              friend={this.state.profile.userId}
                             />
                           ) : (
                             ""
                           )}
                         </div>
 
-                        {this.state.profile.myfista === true ? (
+                        {this.state.profile.myfitstapro === true ? (
                           <button className="flo">
                             <Link
                               className="llx"
-                              to={`/myfitstapro/${this.state.profile.userid}`}
+                              to={`/myfitstapro/${this.state.profile.userId}`}
                             >
                               PRO
                             </Link>
@@ -375,7 +375,7 @@ class Visitpage extends Component {
                                 <p>Post</p>
                               </div>
                               <Link
-                                to={`/user/${this.state.profile.Username}/follower`}
+                                to={`/user/${this.state.profile.username}/follower`}
                                 id="follower-nu"
                                 className="al"
                               >
@@ -390,7 +390,7 @@ class Visitpage extends Component {
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.Username}/following`}
+                                to={`/user/${this.state.profile.username}/following`}
                                 id="following-nu al"
                                 className="al"
                               >
@@ -458,7 +458,7 @@ class Visitpage extends Component {
                       <div className="wraperjf-ffkfkr">
                         <p>No post</p>
                         <p>
-                          All {this.state.profile.Username} post will be listed
+                          All {this.state.profile.username} post will be listed
                           here{" "}
                         </p>
                       </div>
@@ -474,10 +474,10 @@ class Visitpage extends Component {
                     this.state.tagged === true ? "active" : ""
                   }`}
                 >
-                  {this.state.profile.userid ? (
+                  {this.state.profile.userId ? (
                     <TagggedPost
                       openBoxCollection={this.props.openBoxCollection}
-                      user={this.state.profile.userid}
+                      user={this.state.profile.userId}
                       tagged={this.state.tagged}
                     />
                   ) : (

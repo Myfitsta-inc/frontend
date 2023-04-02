@@ -132,7 +132,7 @@ class Myprogram extends Component {
   looadProgram = () => {
     axios
       .get(
-        `/api/loaddMyProgramContainer/${this.state.program.programId}/${this.props.user.userid}`,
+        `/api/loaddMyProgramContainer/${this.state.program.programId}/${this.props.user.userId}`,
         { cancelToken: source.token }
       )
       .then((res) => {
@@ -394,8 +394,8 @@ class Myprogram extends Component {
             updateReview={this.updateReview}
             profile={this.props.user.profile}
             programId={this.state.program.programId}
-            Username={this.props.user.Username}
-            userid={this.props.user.userid}
+            username={this.props.user.username}
+            userId={this.props.user.userId}
             updateRating={this.updateRating}
             review={this.state.review}
             openRate={this.openRate}

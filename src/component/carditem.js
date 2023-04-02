@@ -11,7 +11,7 @@ class CardItem extends Component {
 
   removeFromCard = (item) => {
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
       programId: item,
     };
     axios.post(`/api/remove-my-card-info`, option).then((result) => {
@@ -68,7 +68,7 @@ class CardItem extends Component {
         <div className="hokd-infof">
           <div className="holf-thatjrjr">
             <div className="titikrj">{this.state.item.title}</div>
-            <div className="privjn">${this.state.item.price}</div>
+            <div className="privjn">${this.state.item.price / 100}</div>
             <Rating rating={this.state.item.rating} />
           </div>
         </div>

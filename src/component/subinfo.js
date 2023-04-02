@@ -15,7 +15,7 @@ class Subinfo extends Component {
   checkconenction = () => {
     axios
       .get(
-        `/api/check-in-about-him/her/${this.props.user}/${this.props.users.userid}`
+        `/api/check-in-about-him/her/${this.props.user}/${this.props.users.userId}`
       )
       .then((res) => {
         console.log(res.data);

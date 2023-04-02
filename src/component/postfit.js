@@ -78,16 +78,13 @@ class Postfit extends Component {
           <div className="wrp-act">
             <LikeButton
               posterId={this.state.data.userId}
-              userid={this.props.user.userid}
-              filename={this.state.data.filename}
+              userId={this.props.user.userId}
+              postId={this.state.data._id}
               numberlike={this.state.data.numberlike}
             />
 
             <div className="comment box-ac">
-              <Link
-                className="linjgjc"
-                to={`/comment/${this.state.data.filename}`}
-              >
+              <Link className="linjgjc" to={`/comment/${this.state.data._id}`}>
                 <div className="icon">
                   <i className="far fa-comment"></i>
                 </div>

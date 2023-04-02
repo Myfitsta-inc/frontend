@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement, CardElement } from "@stripe/react-stripe-js";
 import LoadingSpin from "../component/loadingspin";
+import axios from "axios";
 
-function CheckoutForm() {
+function CheckoutForm({ plan, authorId, userId }) {
   const [loading, setLoading] = useState(false);
-  const [priceId, setPriceId] = useState("");
   const stripe = useStripe();
   const elements = useElements();
 
@@ -26,6 +26,15 @@ function CheckoutForm() {
     if (error) {
       console.log(error);
     } else if (paymentIntent && paymentIntent.status == "succeeded") {
+      let payload = {
+        planChoose: plan,
+        authorId,
+        userId,
+      };
+      await axios.post("/api/createSubscription", payload, {
+        withCredentials: true,
+      });
+
       window.location.reload();
     }
 

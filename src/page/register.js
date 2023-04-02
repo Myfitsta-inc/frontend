@@ -74,22 +74,13 @@ class Register extends Component {
 
   handleRegister = (e) => {
     e.preventDefault();
-    if (this.state.fullName.length > 0) {
-      this.setState({
-        messagefullname: "",
-      });
-    } else {
-      this.setState({
-        messagefullname: "Full name must not be empty",
-      });
-    }
     if (this.state.username.length > 2) {
       this.setState({
         messageusername: "",
       });
     } else {
       this.setState({
-        messageusername: "Username is too short",
+        messageusername: "username is too short",
       });
     }
 
@@ -115,7 +106,6 @@ class Register extends Component {
 
     if (
       this.state.email.length > 0 &&
-      this.state.fullName.length > 0 &&
       this.state.username.length > 2 &&
       Statepassword === true
     ) {
@@ -129,7 +119,7 @@ class Register extends Component {
       axios.post("/api/register", userinfo).then((res) => {
         console.log(res.data);
 
-        if (res.data === "Username already exist") {
+        if (res.data === "username already exist") {
           this.setState({
             messageusername: "😅 Sorry This username is already taken",
           });
@@ -161,11 +151,7 @@ class Register extends Component {
         password: e.target.value,
       });
     }
-    if (e.target.name === "fullName") {
-      this.setState({
-        fullName: e.target.value,
-      });
-    }
+
     if (e.target.name === "email") {
       this.setState({
         email: e.target.value.trim(),
@@ -187,7 +173,6 @@ class Register extends Component {
           <div className="wrapjrijrr">
             {this.state.step === 0 ? (
               <RegisterOne
-                fullName={this.state.fullName}
                 email={this.state.email}
                 handleNext={this.handleNext}
                 handleChange={this.handleChange}
@@ -202,7 +187,6 @@ class Register extends Component {
                 data={this.state}
                 handleNext={this.handleNext}
                 handleRegister={this.handleRegister}
-                handleRegister={this.props.handleRegister}
                 handleChange={this.handleChange}
               />
             )}

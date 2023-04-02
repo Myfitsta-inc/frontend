@@ -16,7 +16,7 @@ class PaymentOption extends Component {
   };
   componentDidMount() {
     let option = {
-      userid: "1",
+      userId: "1",
     };
     //axios.post("http://localhost:3500/pay-the-program",option).then((result)=>{
     //

@@ -25,7 +25,7 @@ class Myfitstapro extends Component {
     program: null,
     shareoption: false,
     sharebox: false,
-    file: this.props.user.userid,
+    file: this.props.user.userId,
   };
   constructor(props) {
     super(props);
@@ -61,7 +61,7 @@ class Myfitstapro extends Component {
 
   getProgram = (e) => {
     axios
-      .get(`/api/load-my-pwo/${this.props.user.userid}`, {
+      .get(`/api/load-my-pwo/${this.props.user.userId}`, {
         cancelToken: source.token,
       })
       .then((res) => {
@@ -93,7 +93,7 @@ class Myfitstapro extends Component {
                   <div onClick={this.goBack} className="close-that">
                     <BiArrowBack />
                   </div>
-                  <Username link={true} user={this.props.user.userid} />
+                  <Username link={true} user={this.props.user.userId} />
                   <div className="jjjrrrdd">
                     <button
                       onClick={() => this.handlOpen(true)}
@@ -140,7 +140,7 @@ class Myfitstapro extends Component {
                       <div className="actine-edit">
                         <div className="name-action">
                           <div className="name-pr">
-                            <p>{this.props.user.Username}</p>{" "}
+                            <p>{this.props.user.username}</p>{" "}
                             {this.props.user.verified === true ? (
                               <p className="cheh">
                                 <i className="fas fa-check"></i>
@@ -150,7 +150,7 @@ class Myfitstapro extends Component {
                             )}
                           </div>
                         </div>
-                        <p className="name-prr">@{this.props.user.Username}</p>
+                        <p className="name-prr">@{this.props.user.username}</p>
                         <div className="bio-sub-desciption rjjr">
                           <div className="info-acct">
                             <div id="post-nu " className="al">
@@ -191,7 +191,7 @@ class Myfitstapro extends Component {
                         <div className="info-acct vbvb">
                           <div id="post-nu " className="al ll">
                             <div id="number-post" className="number-post">
-                              {this.props.myfitstapro.numberOfProgram}
+                              {this.props.myfitstapro.numberOfProgram ?? 0}
                             </div>
                             <p>program</p>
                           </div>
@@ -200,7 +200,7 @@ class Myfitstapro extends Component {
                               id="number-followers"
                               className="number-followers"
                             >
-                              {this.props.myfitstapro.numberOfSubscriber}
+                              {this.props.myfitstapro.numberOfSubscriber ?? 0}
                             </div>
                             <p>subscribers</p>
                           </div>
@@ -269,7 +269,7 @@ class Myfitstapro extends Component {
                           );
                         })}{" "}
                       </div>
-                    ) : this.props.user.myfista ? (
+                    ) : this.props.user.myfitstapro ? (
                       <div className="wraperififoojfhr">
                         <div className="wraperjf-ffkfkr">
                           <p>Create a Program</p>

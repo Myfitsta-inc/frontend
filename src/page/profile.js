@@ -50,7 +50,7 @@ class Profile extends Component {
 
   mypost = (e) => {
     axios
-      .get(`/api/profile/${this.props.user.userid}`, {
+      .get(`/api/profile/${this.props.user.userId}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -136,7 +136,7 @@ class Profile extends Component {
                         <div className="actine-edit">
                           <div className="name-action">
                             <div className="name-pr">
-                              {this.props.user.Username}
+                              {this.props.user.username}
                               {this.props.user.verified === true ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
@@ -157,7 +157,7 @@ class Profile extends Component {
                             </div>
                           </div>
                           <p className="name-prr">
-                            @{this.props.user.Username}
+                            @{this.props.user.username}
                           </p>
 
                           <div className="bio-sub-desciption">
@@ -169,7 +169,7 @@ class Profile extends Component {
                                 <p>Post</p>
                               </div>
                               <Link
-                                to={`/user/${this.props.user.Username}/follower`}
+                                to={`/user/${this.props.user.username}/follower`}
                                 id="follower-nu"
                                 className="al"
                               >
@@ -184,7 +184,7 @@ class Profile extends Component {
                                 <p>followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.Username}/following`}
+                                to={`/user/${this.props.user.username}/following`}
                                 id="following-nu al"
                                 className="al"
                               >
@@ -246,7 +246,7 @@ class Profile extends Component {
                                 <p>Post</p>
                               </div>
                               <Link
-                                to={`/user/${this.props.user.Username}/follower`}
+                                to={`/user/${this.props.user.username}/follower`}
                                 id="follower-nu"
                                 className="al"
                               >
@@ -261,7 +261,7 @@ class Profile extends Component {
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.Username}/following`}
+                                to={`/user/${this.props.user.username}/following`}
                                 id="following-nu al"
                                 className="al"
                               >
@@ -355,7 +355,7 @@ class Profile extends Component {
                 >
                   <TagggedPost
                     openBoxCollection={this.props.openBoxCollection}
-                    user={this.props.user.userid}
+                    user={this.props.user.userId}
                   />
                 </div>
               </div>

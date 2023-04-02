@@ -9,7 +9,7 @@ class UnpaidEarning extends Component {
   };
   getdata = () => {
     axios
-      .get(`/api/find-my-earning/${this.props.user.userid}`)
+      .get(`/api/find-my-earning/${this.props.user.userId}`)
       .then((result) => {
         if (result.data !== "no") {
           this.setState({

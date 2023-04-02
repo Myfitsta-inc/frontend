@@ -18,7 +18,7 @@ class Boxcollection extends Component {
   createCollection = () => {
     if (this.state.newCollection.length > 0) {
       let detail = {
-        userId: this.props.user.userid,
+        userId: this.props.user.userId,
         collectionName: this.state.newCollection,
       };
 
@@ -50,7 +50,7 @@ class Boxcollection extends Component {
 
   removeToCollection = (data) => {
     let option = {
-      id: this.props.user.userid,
+      id: this.props.user.userId,
       collectionName: data,
       file: this.props.file,
     };
@@ -62,7 +62,7 @@ class Boxcollection extends Component {
   addtoCollection = (data) => {
     console.log(data);
     let option = {
-      userId: this.props.user.userid,
+      userId: this.props.user.userId,
       collectionName: data,
       workout: this.props.file,
     };
@@ -72,7 +72,7 @@ class Boxcollection extends Component {
   };
 
   getCollection = (e) => {
-    axios.get(`/api/myCollection/${this.props.user.userid}`).then((res) => {
+    axios.get(`/api/myCollection/${this.props.user.userId}`).then((res) => {
       if (res.data) {
         this.setState({
           list: res.data,
@@ -209,7 +209,7 @@ class Boxcollection extends Component {
                     type="text"
                   />
                 </div>
-                <p className="messsage" id="message-Username">
+                <p className="messsage" id="message-username">
                   {this.state.message}
                 </p>
               </div>

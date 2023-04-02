@@ -45,15 +45,12 @@ class PostBox extends Component {
           <div className="wrp-act">
             <LikeButton
               posterId={this.props.item.userId}
-              userid={this.props.users.userid}
-              filename={this.props.item.filename}
+              userId={this.props.users.userId}
+              postId={this.props.item._id}
               numberlike={this.props.item.numberlike}
             />
             <div className="comment box-ac">
-              <Link
-                className="linjgjc"
-                to={`/comment/${this.props.item.filename}`}
-              >
+              <Link className="linjgjc" to={`/comment/${this.props.item._id}`}>
                 <div className="icon">
                   <i className="far fa-comment"></i>
                 </div>

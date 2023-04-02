@@ -11,20 +11,20 @@ class Convercard extends Component {
     return (
       <div
         className={`box-hold-friend-totalkwith ${
-          this.props.item.userid === this.props.match.params.id ? "active" : ""
+          this.props.item.userId === this.props.match.params.id ? "active" : ""
         }`}
         key={this.props.data}
       >
         <Link
-          to={`/message/${this.props.item.userid}`}
+          to={`/message/${this.props.item.userId}`}
           className="redirec-toconver"
         ></Link>
         <div className="profie-img">
-          <IconProfile live={true} user={this.props.item.userid} />
+          <IconProfile live={true} user={this.props.item.userId} />
         </div>
         <div className="info-about-conversation">
           <div className="name-of-fiend">
-            <Username user={this.props.item.userid} />
+            <Username user={this.props.item.userId} />
             <p className="daytn"></p>
           </div>
           <div className="last-conversation">

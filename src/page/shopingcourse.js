@@ -56,7 +56,7 @@ class Shoping extends Component {
   getProgram = (e) => {
     axios
       .get(
-        `/api/load-my-active-pwo/${this.state.profile.userid}/to/${this.props.user.userid}`,
+        `/api/load-my-active-pwo/${this.state.profile.userId}/to/${this.props.user.userId}`,
         { cancelToken: source.token }
       )
       .then((res) => {
@@ -82,8 +82,8 @@ class Shoping extends Component {
   subscribe = (event) => {
     if (this.state.subscribe === true) {
       let option = {
-        User: this.state.profile.userid,
-        subScriber: this.props.user.userid,
+        User: this.state.profile.userId,
+        subScriberId: this.props.user.userId,
         PlanOfUser: "",
         typeofSubscription: this.state.profile.accountType,
       };
@@ -97,12 +97,12 @@ class Shoping extends Component {
 
   checkSubscription = () => {
     axios
-      .get(`/api/checkSubscriotion/account/${this.state.profile.userid}`, {
+      .get(`/api/checkSubscriotion/account/${this.state.profile.userId}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.subScriber) {
+        if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,
             subscribe: false,
@@ -125,8 +125,8 @@ class Shoping extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.userid) {
-          if (res.data.userid === this.props.user.userid) {
+        if (res.data.userId) {
+          if (res.data.userId === this.props.user.userId) {
             this.props.history.push("/myfitstapro");
           } else {
             this.setState({
@@ -161,7 +161,7 @@ class Shoping extends Component {
               <div onClick={this.goback} className="close-that">
                 <BiArrowBack />
               </div>
-              <Username link={true} user={this.state.profile.userid} />
+              <Username link={true} user={this.state.profile.userId} />
               <div className="wure">
                 <div className="back-button">
                   <Link to={"/card"}>
@@ -180,15 +180,15 @@ class Shoping extends Component {
               <div className="imga-profile-descp eexr">
                 <div className="pro-img-box">
                   <div className="pro-img">
-                    {this.state.profile.userid ? (
-                      <ProIcon user={this.state.profile.userid} />
+                    {this.state.profile.userId ? (
+                      <ProIcon user={this.state.profile.userId} />
                     ) : (
                       ""
                     )}
                   </div>
 
                   <div className="actine-edit">
-                    <Username user={this.state.profile.userid} />
+                    <Username user={this.state.profile.userId} />
 
                     <div className="bio-sub-desciption rjjr">
                       <div className="info-acct">
@@ -203,15 +203,15 @@ class Shoping extends Component {
                             id="number-followers"
                             className="number-followers"
                           >
-                            {this.state.profile.numberOfSubscriber}
+                            {this.state.profile.numberOfSubscriber ?? 0}
                           </div>
                           <p>Subscribers</p>
                         </div>
                       </div>
                     </div>
                     <div className="action-follow-un-fo disps">
-                      {this.state.profile.userid ? (
-                        <MessageButton friend={this.state.profile.userid} />
+                      {this.state.profile.userId ? (
+                        <MessageButton friend={this.state.profile.userId} />
                       ) : (
                         ""
                       )}
@@ -235,8 +235,8 @@ class Shoping extends Component {
                 </div>
                 <div className="action-follow-un-fo mobioe">
                   <div className="wraeoieke">
-                    {this.state.profile.userid ? (
-                      <MessageButton friend={this.state.profile.userid} />
+                    {this.state.profile.userId ? (
+                      <MessageButton friend={this.state.profile.userId} />
                     ) : (
                       ""
                     )}
@@ -261,13 +261,13 @@ class Shoping extends Component {
                     <div className="info-acct">
                       <div id="post-nu " className="al">
                         <div id="number-post" className="number-post">
-                          {this.state.profile.numberOfProgram}
+                          {this.state.profile.numberOfProgram ?? 0}
                         </div>
                         <p>Program</p>
                       </div>
                       <div id="follower-nu" className="al">
                         <div id="number-followers" className="number-followers">
-                          {this.state.profile.numberOfSubscriber}
+                          {this.state.profile.numberOfSubscriber ?? 0}
                         </div>
                         <p>Subscribers</p>
                       </div>
@@ -292,7 +292,7 @@ class Shoping extends Component {
             {this.state.subscribeCheck !== null ? (
               this.state.subscribeCheck === false ? (
                 <div className="wraperjf-ffkfkr">
-                  <p>Subscribe to {this.state.profile.Username} </p>
+                  <p>Subscribe to {this.state.profile.username} </p>
                   <p>
                     TO be able to see all the program relase by this accoount{" "}
                   </p>
@@ -325,7 +325,7 @@ class Shoping extends Component {
                   <div className="wraperjf-ffkfkr">
                     <p>No program</p>
                     <p>
-                      When {this.state.profile.Username} release a program it
+                      When {this.state.profile.username} release a program it
                       will be listed here{" "}
                     </p>
                   </div>

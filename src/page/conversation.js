@@ -44,14 +44,14 @@ class Conversation extends Component {
     if (file[0].type.includes("image")) {
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("UserId", this.props.user.userid);
+      formData.append("UserId", this.props.user.userId);
       formData.append("friend", this.props.match.params.id);
       formData.append("kind", file[0].type);
       axios.post(`/api/save-image-or-video-message`, formData).then((res) => {
         if (res.data._id) {
           let listt = [...this.props.inbox];
           let foundIndex = listt.findIndex(
-            (x) => x.userid === this.props.match.params.id
+            (x) => x.userId === this.props.match.params.id
           );
           if (foundIndex) {
             let message = this.props.inbox[foundIndex];
@@ -67,7 +67,7 @@ class Conversation extends Component {
           message.friend = this.props.match.params.id;
           socket.emit("new-message", message);
           socket.emit("run-that-conversation", [
-            this.props.users.userid,
+            this.props.users.userId,
             this.props.match.params.id,
           ]);
           this.setState({
@@ -95,7 +95,7 @@ class Conversation extends Component {
     });
     axios
       .get(
-        `/api/their-conversation/${this.state.friend.conversationId}/${this.props.user.userid}/${this.props.match.params.id}`,
+        `/api/their-conversation/${this.state.friend.conversationId}/${this.props.user.userId}/${this.props.match.params.id}`,
         { cancelToken: source.token }
       )
       .then((res) => {
@@ -151,13 +151,13 @@ class Conversation extends Component {
     });
     axios
       .get(
-        `/api/getinfocon/${this.props.user.userid}/with/${this.props.match.params.id}`,
+        `/api/getinfocon/${this.props.user.userId}/with/${this.props.match.params.id}`,
         { cancelToken: source.token }
       )
       .then((res) => {
         if (res.data.block) {
           this.setState({
-            friend: { userid: res.data.userid },
+            friend: { userId: res.data.userId },
             block: true,
           });
         } else {
@@ -197,10 +197,10 @@ class Conversation extends Component {
   sendmessage = (event) => {
     if (this.state.message.length > 0) {
       let option = {
-        UserId: this.props.user.userid,
+        UserId: this.props.user.userId,
         friend: this.props.match.params.id,
         message: {
-          sender: this.props.user.userid,
+          sender: this.props.user.userId,
           content: this.state.message,
           kind: "message",
         },
@@ -226,11 +226,11 @@ class Conversation extends Component {
     socket.on("your-new-message", (data) => {
       if (
         data.sender === this.props.match.params.id ||
-        data.sender === this.props.user.userid
+        data.sender === this.props.user.userId
       ) {
         let listt = [...this.props.inbox];
         let foundIndex = listt.findIndex(
-          (x) => x.userid === this.props.match.params.id
+          (x) => x.userId === this.props.match.params.id
         );
         if (foundIndex) {
           let message = this.props.inbox[foundIndex];
@@ -276,16 +276,16 @@ class Conversation extends Component {
                     <BiArrowBack />
                   </div>
                   <div className="showhis-pp">
-                    {this.state.friend.userid ? (
-                      <IconProfile user={this.state.friend.userid} />
+                    {this.state.friend.userId ? (
+                      <IconProfile user={this.state.friend.userId} />
                     ) : (
                       ""
                     )}
                   </div>
                   <div className="show-his-her-name">
                     <div className="rkfjrkfmffn">
-                      {this.state.friend.userid ? (
-                        <Username user={this.state.friend.userid} />
+                      {this.state.friend.userId ? (
+                        <Username user={this.state.friend.userId} />
                       ) : (
                         ""
                       )}
@@ -319,12 +319,12 @@ class Conversation extends Component {
                           <div
                             key={item._id}
                             className={`${
-                              item.sender === this.props.user.userid
+                              item.sender === this.props.user.userId
                                 ? "box-other-me"
                                 : "box-other-freind"
                             }`}
                           >
-                            {item.sender === this.props.user.userid ? (
+                            {item.sender === this.props.user.userId ? (
                               ""
                             ) : (
                               <div className="box-that-holf-theico">

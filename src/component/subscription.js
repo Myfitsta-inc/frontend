@@ -22,11 +22,6 @@ class Subscribe extends Component {
     }
   };
 
-  componentDidMount = () => {
-    console.log(this.props.plan[0]);
-    this.handleSelected(this.props.plan[0]);
-    this.handlenext();
-  };
   render() {
     return (
       <motion.div
@@ -47,13 +42,10 @@ class Subscribe extends Component {
               </button>
               <p>Subcribe</p>
             </div>
-
-            <p className="his-name"></p>
-            <p className="his-neame">Subscribe to this programs</p>
           </div>
           <div className="hold-thesubcribe">
             <p className="his-nreame">Select one subscription plan</p>
-            {this.state.tabNext === false ? (
+            {this.state.tabNext ? (
               ""
             ) : (
               <div className="wrajrkr-wosorr">
@@ -83,7 +75,9 @@ class Subscribe extends Component {
                           </div>
                           <div className="wharoor-the-amoiut">
                             <span>$</span>
-                            <p className="price-it">{item.price}</p> /{" "}
+                            <p className="price-it">
+                              {item.price / 100}
+                            </p> /{" "}
                             <p className="title-4hh4">
                               {item.planChoose === "Silver"
                                 ? "month"
@@ -106,15 +100,11 @@ class Subscribe extends Component {
               </div>
             )}
 
-            {this.state.tabNext === false ? (
+            {this.state.tabNext ? (
               <PaymentSub
                 handlenext={this.handlenext}
-                Authorid={this.props.profile}
-                item={{
-                  planChoose: "Silver",
-                  price: 553,
-                  _id: "64277e5dc1b459f13aef0548",
-                }}
+                authorId={this.props.profile}
+                item={this.state.selected}
               />
             ) : (
               ""

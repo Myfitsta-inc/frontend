@@ -14,16 +14,16 @@ class RegisterOne extends Component {
     let option = {
       email: this.props.email,
     };
-    if (this.props.fullName.length > 0) {
-      this.setState({
-        loading: true,
-      });
-      axios.post(`/api/recover-my-account`, option).then((result) => {
-        if (result.data.succes === true) {
-          this.props.handleNext(1);
-        }
-      });
-    }
+
+    this.setState({
+      loading: true,
+    });
+
+    axios.post(`/api/recover-my-account`, option).then((result) => {
+      if (result.data.succes === true) {
+        this.props.handleNext(1);
+      }
+    });
   };
   render() {
     return (
@@ -37,17 +37,6 @@ class RegisterOne extends Component {
           </div>{" "}
         </div>
         <div className="edit-box-profile">
-          <label htmlFor="username">Full Name</label>
-          <input
-            onChange={this.props.handleChange}
-            required
-            className="username-profile"
-            name="fullName"
-            placeholder="John Doe"
-            autoComplete="off"
-          />
-        </div>
-        <div className="edit-box-profile">
           <label htmlFor="username">Email</label>
           <input
             onChange={this.props.handleChange}
@@ -59,7 +48,7 @@ class RegisterOne extends Component {
             autoComplete="off"
           />
         </div>
-        <p className="messsage" id="message-Username">
+        <p className="messsage" id="message-username">
           {this.state.message}
         </p>
         {this.state.loading === false ? (

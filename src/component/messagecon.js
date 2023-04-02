@@ -13,7 +13,7 @@ class MessageCon extends Component {
   render() {
     return (
       <div className="fesjte">
-        {this.props.users.userid === this.props.message.sender ? (
+        {this.props.users.userId === this.props.message.sender ? (
           <div className="bfhehbfbhe">
             <MenuMessage
               handleRemove={this.props.handleRemove}

@@ -55,7 +55,7 @@ class Loadprogram extends Component {
       })
       .then((res) => {
         if (res.data.Author) {
-          if (res.data.AuthorId !== this.props.user.userid) {
+          if (res.data.AuthorId !== this.props.user.userId) {
             this.props.history.push("/home");
           } else {
             this.setState({
@@ -152,11 +152,11 @@ class Loadprogram extends Component {
                       <div className="box-the-hold-your-info">
                         <div className="rjfnvvbnf">
                           <div className="iconnrhrjrjjr">
-                            <ProIcon user={this.props.user.userid} />
+                            <ProIcon user={this.props.user.userId} />
                           </div>
                           <div className="info-about-him">
                             <p className="hfhrudru">
-                              {this.props.myfitstapro.Username}
+                              {this.props.myfitstapro.username}
                             </p>
                             <p className="hfhrurdru">
                               {this.props.myfitstapro.numberOfSubscriber}{" "}
@@ -169,7 +169,7 @@ class Loadprogram extends Component {
                           <button>
                             <NavLink
                               className="fjkjetj"
-                              to={`/user/${this.props.myfitstapro.Username}/subscriber`}
+                              to={`/user/${this.props.myfitstapro.username}/subscriber`}
                             >
                               Subscribers
                             </NavLink>
@@ -247,7 +247,7 @@ class Loadprogram extends Component {
                         <p>{this.state.media.numberofComments} Comment</p>
                       </div>
                       <CommentMedia
-                        userid={this.props.myfitstapro.userid}
+                        userId={this.props.myfitstapro.userId}
                         user={this.props.user}
                         media={this.state.media}
                       /> */}

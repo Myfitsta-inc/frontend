@@ -57,7 +57,7 @@ class Edit extends Component {
 
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("Userid", this.props.user.userid);
+      formData.append("userId", this.props.user.userId);
       axios.post(`/api/bannerimage`, formData).then((result) => {
         this.setState({
           previewBanner: result.data.banner,
@@ -72,7 +72,7 @@ class Edit extends Component {
         previewsIcon: null,
       });
       let option = {
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       };
       axios.post(`/api/remove-profile`, option).then((result) => {
         this.setState({
@@ -85,7 +85,7 @@ class Edit extends Component {
       });
 
       let option = {
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       };
       axios.post(`/api/remove-banner`, option).then((result) => {
         this.setState({
@@ -104,7 +104,7 @@ class Edit extends Component {
 
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("Userid", this.props.user.userid);
+      formData.append("userId", this.props.user.userId);
 
       axios.post(`/api/profileimage`, formData).then((result) => {
         this.setState({
@@ -155,7 +155,7 @@ class Edit extends Component {
     this.setState({
       loading: true,
     });
-    if (this.state.username !== this.props.user.Username) {
+    if (this.state.username !== this.props.user.username) {
       let option = {
         username: this.state.username,
         email: this.props.user.email,
@@ -182,7 +182,7 @@ class Edit extends Component {
         ) {
           if (this.validURL(this.state.website)) {
             let option = {
-              userid: this.props.user.userid,
+              userId: this.props.user.userId,
               fullName: this.state.fullName,
               website: this.state.website,
               bio: this.state.bio,
@@ -200,7 +200,7 @@ class Edit extends Component {
           }
         } else {
           let option = {
-            userid: this.props.user.userid,
+            userId: this.props.user.userId,
             fullName: this.state.fullName,
             website: this.state.website,
             bio: this.state.bio,
@@ -345,7 +345,7 @@ class Edit extends Component {
                   </div>
                 </div>
                 <div className="box-edit-two">
-                  <p>{this.props.user.Username}</p>
+                  <p>{this.props.user.username}</p>
                   <p>{this.props.user.fullName}</p>
                 </div>
               </div>
@@ -364,13 +364,13 @@ class Edit extends Component {
                 </div>
 
                 <div className="edit-box-profile">
-                  <label htmlFor="username">Username</label>
+                  <label htmlFor="username">username</label>
                   <input
                     onChange={this.handleChange}
                     className="username-profile"
                     type="text"
                     name="username"
-                    placeholder={this.props.user.Username}
+                    placeholder={this.props.user.username}
                     value={this.state.username}
                   />
                 </div>

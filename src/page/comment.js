@@ -35,6 +35,7 @@ class Comment extends Component {
     source = axios.CancelToken.source();
   }
   removecomment = (data) => {
+    console.log(data);
     let list = this.state.comments.filter((item) => item._id !== data.id);
     this.setState(
       {
@@ -43,7 +44,7 @@ class Comment extends Component {
       },
       () => {
         socket.emit("update-the-comment", {
-          filename: this.state.item.filename,
+          postId: this.state.item._id,
           count: this.state.counter,
         });
       }
@@ -52,27 +53,31 @@ class Comment extends Component {
 
   updatenotification = (data) => {
     let option = {
-      userid: this.state.item.userId,
+      userId: this.state.item.userId,
       type: "comment",
-      notifiyiId: this.props.user.userid,
-      media: this.state.item.filename,
+      notifiyiId: this.props.user.userId,
+      postId: this.state.item._id,
       date: moment().format(),
       extraInfo: this.state.comment,
     };
-    if (this.state.item.userId !== this.props.user.userid) {
+
+    if (this.state.item.userId !== this.props.user.userId) {
+      console.log(option, "tttttt");
       axios
         .post(`/api/update-notification`, option, {
           cancelToken: source.token,
         })
         .then((res) => {
+          console.log("uofjkkkf");
           socket.emit("update-the-comment", {
-            filename: this.state.item.filename,
+            postId: this.state.item._id,
             count: this.state.counter + 1,
           });
         });
     } else {
+      console.log(option, "okk");
       socket.emit("update-the-comment", {
-        filename: this.state.item.filename,
+        postId: this.state.item._id,
         count: this.state.counter + 1,
       });
     }
@@ -84,11 +89,12 @@ class Comment extends Component {
   postComment = () => {
     if (this.state.comment.length > 0) {
       let option = {
-        Userdid: this.props.user.userid,
-        filename: this.state.item.filename,
+        userId: this.props.user.userId,
+        postId: this.state.item._id,
         content: this.state.comment,
         date: moment().format(),
       };
+
       axios
         .post("/api/newcomment", option, { cancelToken: source.token })
         .then((res) => {
@@ -116,7 +122,7 @@ class Comment extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.filename) {
+        if (res.data._id) {
           this.setState({
             item: res.data,
             counter: res.data.numberofcomments,
@@ -165,10 +171,10 @@ class Comment extends Component {
 
   updatePost = (data) => {
     if (this.props.postList.length > 0) {
-      let Updated = this.props.postList.find((item) => item.filename === data);
+      let Updated = this.props.postList.find((item) => item.postId === data);
       if (Updated) {
         Updated.numberofcomments = this.state.counter;
-        let list = this.props.postList.filter((item) => item.filename !== data);
+        let list = this.props.postList.filter((item) => item.postId !== data);
         let sortted = [...list, Updated];
         this.props.addPost(sortted);
       } else {
@@ -177,13 +183,14 @@ class Comment extends Component {
   };
   componentDidMount = () => {
     socket.on("update-this-comment", (data) => {
-      if (data.filename === this.state.item.filename) {
+      console.log(data);
+      if (data.postId === this.state.item._id) {
         this.setState(
           {
             counter: data.count,
           },
           () => {
-            this.updatePost(data.filename);
+            this.updatePost(data.postId);
             this.loadComment(this.state.numberToLoad);
           }
         );
@@ -237,7 +244,7 @@ class Comment extends Component {
                         <div className="detail-abou-comment">
                           <div className="wraper-info-oc-post">
                             <div className="profile-usr-comment">
-                              {this.state.item.filename ? (
+                              {this.state.item._id ? (
                                 <IconProfile user={this.state.item.userId} />
                               ) : (
                                 ""
@@ -245,7 +252,7 @@ class Comment extends Component {
                             </div>
                             <div className="info-commet-detail">
                               <div className="name-pro-dut">
-                                {this.state.item.filename ? (
+                                {this.state.item._id ? (
                                   <Username user={this.state.item.userId} />
                                 ) : (
                                   ""

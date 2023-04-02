@@ -47,7 +47,7 @@ class TagggedPost extends Component {
             <div className="wraperififoojfhr">
               <div className="wraperjf-ffkfkr">
                 <p>No tags</p>
-                {this.props.user !== this.props.users.userid ? (
+                {this.props.user !== this.props.users.userId ? (
                   <p>This account was not be tagged yet</p>
                 ) : (
                   <p>When someone tag you in a post it will be listed here</p>

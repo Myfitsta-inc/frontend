@@ -101,13 +101,14 @@ class Lookprogram extends Component {
   };
 
   getProgramInfo = (data) => {
+    console.log("jjjjj");
     axios
       .get(`/api/accountt/program/workout/${this.props.match.params.id}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.bougth === true) {
+        if (res.data.bougth && res.data.program.publish) {
           this.setState({
             program: res.data.program,
           });
@@ -243,7 +244,7 @@ class Lookprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.publish === true ? (
+                {this.state.program.publish ? (
                   <p className="publish rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
@@ -255,7 +256,7 @@ class Lookprogram extends Component {
                       this.changetabs(true, false);
                     }}
                     className={`tabs-tonore ${
-                      this.state.tabsprogram === true ? "active" : ""
+                      this.state.tabsprogram ? "active" : ""
                     }`}
                   >
                     Content
@@ -265,7 +266,7 @@ class Lookprogram extends Component {
                       this.changetabs(false, true);
                     }}
                     className={`tabs-tonore ${
-                      this.state.reviewtabs === true ? "active" : ""
+                      this.state.reviewtabs ? "active" : ""
                     }`}
                   >
                     Reviews
@@ -308,8 +309,8 @@ class Lookprogram extends Component {
             updateReview={this.updateReview}
             profile={this.props.user.profile}
             programId={this.state.program.programId}
-            Username={this.props.user.Username}
-            userid={this.props.user.userid}
+            username={this.props.user.username}
+            userId={this.props.user.userId}
             updateRating={this.updateRating}
             review={this.state.review}
             openRate={this.openRate}

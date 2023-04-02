@@ -16,10 +16,10 @@ class ButtonFollow extends Component {
 
   updatenotification = () => {
     let option = {
-      userid: this.props.friend,
+      userId: this.props.friend,
       type: "follow",
-      notifiyiId: this.props.users.userid,
-      media: this.props.users.userid,
+      notifiyiId: this.props.users.userId,
+      media: this.props.users.userId,
       date: moment().format(),
       extraInfo: "",
     };
@@ -34,7 +34,7 @@ class ButtonFollow extends Component {
 
   follow = () => {
     let dataUser = {
-      User: this.props.users.userid,
+      User: this.props.users.userId,
       ToFollow: this.props.friend,
     };
     this.setState({
@@ -45,7 +45,7 @@ class ButtonFollow extends Component {
   };
   removeFollow = () => {
     let option = {
-      User: this.props.users.userid,
+      User: this.props.users.userId,
       ToUnfollow: this.props.friend,
     };
     this.activeFollow();
@@ -73,7 +73,7 @@ class ButtonFollow extends Component {
       axios
         .get(
           `/api/checkfollower/${
-            this.props.users.userid + "," + this.props.friend
+            this.props.users.userId + "," + this.props.friend
           }`,
           { withCredentials: true }
         )
@@ -109,7 +109,7 @@ class ButtonFollow extends Component {
     return (
       <div
         className={`wriffjjxif ${
-          this.props.users.userid === this.props.friend
+          this.props.users.userId === this.props.friend
             ? ""
             : this.state.follow !== null
             ? this.state.follow === true
@@ -125,7 +125,7 @@ class ButtonFollow extends Component {
         ) : (
           ""
         )}
-        {this.props.users.userid === this.props.friend ? (
+        {this.props.users.userId === this.props.friend ? (
           <button>
             <Link to="/profile">Profile</Link>{" "}
           </button>

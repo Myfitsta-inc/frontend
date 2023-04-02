@@ -21,7 +21,7 @@ class Username extends Component {
 
   username = () => {
     let userFind = this.props.usernameList.filter(
-      (item) => item.userid === this.props.user
+      (item) => item.userId === this.props.user
     );
     if (userFind.length > 0) {
       this.setState({
@@ -34,7 +34,7 @@ class Username extends Component {
         })
         .then((res) => {
           if (res.data !== "no" && this.state.monted) {
-            res.data.userid = this.props.user;
+            res.data.userId = this.props.user;
             this.setState({
               username: res.data,
             });
@@ -52,7 +52,7 @@ class Username extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.Username && this.state.monted) {
+        if (res.data.username && this.state.monted) {
           this.setState({
             profile: res.data,
           });
@@ -92,7 +92,7 @@ class Username extends Component {
         {this.state.username !== null ? (
           this.props.link === true ? (
             <div className="srjhsur">
-              {this.state.username.username === this.props.users.Username ? (
+              {this.state.username.username === this.props.users.username ? (
                 <Link
                   className={`rnwjrkwr ${
                     this.props.go !== undefined ? "active" : ""

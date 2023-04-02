@@ -2,7 +2,7 @@ import React, { Component } from "react";
 class RegistractionTwo extends Component {
   state = {
     user: {
-      userid: "",
+      userId: "",
       firstName: "",
       lastName: "",
       address: "",

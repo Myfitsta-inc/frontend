@@ -47,7 +47,7 @@ class MenuMessage extends Component {
   message = () => {
     axios
       .get(
-        `/api/add/${this.props.friend}/to/${this.props.user.userid}/conversattion`,
+        `/api/add/${this.props.friend}/to/${this.props.user.userId}/conversattion`,
         { withCredentials: true }
       )
       .then((result) => {

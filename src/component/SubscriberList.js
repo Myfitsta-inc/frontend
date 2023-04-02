@@ -106,7 +106,7 @@ class SubscriberList extends Component {
                   <motion.div
                     layout
                     className="wrprtit-peoplrkr"
-                    key={item.subScriber}
+                    key={item.subScriberId}
                   >
                     {this.state.list.length === index + 1 ? (
                       <InView
@@ -115,28 +115,28 @@ class SubscriberList extends Component {
                       >
                         <div className="jkrikskfjjr">
                           <div className="iconnf">
-                            <IconProfile user={item.subScriber} />
+                            <IconProfile user={item.subScriberId} />
                           </div>
                           <div className="wirjsjjfkkfkf">
-                            <Username link={true} user={item.subScriber} />
-                            {/*<Subinfo user={item.subScriber} />*/}
+                            <Username link={true} user={item.subScriberId} />
+                            {/*<Subinfo user={item.subScriberId} />*/}
                           </div>
                         </div>
                       </InView>
                     ) : (
                       <div className="jkrikskfjjr">
                         <div className="iconnf">
-                          <IconProfile user={item.subScriber} />
+                          <IconProfile user={item.subScriberId} />
                         </div>
                         <div className="wirjsjjfkkfkf">
-                          <Username link={true} user={item.subScriber} />
-                          {/*<Subinfo user={item.subScriber} />*/}
+                          <Username link={true} user={item.subScriberId} />
+                          {/*<Subinfo user={item.subScriberId} />*/}
                         </div>
                       </div>
                     )}
 
                     <div className="wrsokf">
-                      <ButtonFollow friend={item.subScriber} />
+                      <ButtonFollow friend={item.subScriberId} />
                     </div>
                   </motion.div>
                 );

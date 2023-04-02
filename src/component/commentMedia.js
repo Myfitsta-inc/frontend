@@ -24,7 +24,7 @@ class CommentMedia extends Component {
 
   postReply = (e, id) => {
     let option = {
-      UserId: this.props.user.userid,
+      UserId: this.props.user.userId,
       id: id,
       content: this.state.reply,
       numberoflike: 0,
@@ -68,7 +68,7 @@ class CommentMedia extends Component {
   postCommnet = () => {
     if (this.state.comment.length > 0) {
       let option = {
-        UserId: this.props.user.userid,
+        UserId: this.props.user.userId,
         mediaId: this.props.media.file,
         content: this.state.comment,
         numberoflike: 0,
@@ -100,7 +100,7 @@ class CommentMedia extends Component {
           <div className="whrhjioskmnrr">
             <div className="holfoof">
               <div className="iocnnf">
-                <IconProfile user={this.props.user.userid} />
+                <IconProfile user={this.props.user.userId} />
               </div>
             </div>
 

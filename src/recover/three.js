@@ -8,7 +8,7 @@ class Three extends Component {
     messagePassword: "",
     password: "",
     repassword: "",
-    messageUsername: "",
+    messageusername: "",
     loading: false,
   };
   CheckPassword = (inputtxt) => {
@@ -31,7 +31,7 @@ class Three extends Component {
       }
     } else {
       this.setState({
-        messageUsername: "😅 I known you can do better",
+        messageusername: "😅 I known you can do better",
       });
     }
 
@@ -84,8 +84,8 @@ class Three extends Component {
             placeholder=""
           />
         </div>
-        <p className="messsage" id="message-Username">
-          {this.state.messageUsername}
+        <p className="messsage" id="message-username">
+          {this.state.messageusername}
         </p>
 
         <div className="edit-box-profile">
@@ -99,7 +99,7 @@ class Three extends Component {
             placeholder=""
           />
         </div>
-        <p className="messsage" id="message-Username">
+        <p className="messsage" id="message-username">
           {this.state.messagePassword}
         </p>
         <input id="login" type="submit" name="submit" value="CHANGE PASSWORD" />

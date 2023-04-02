@@ -13,7 +13,7 @@ class Verification extends Component {
 
   getdata = () => {
     axios
-      .get(`/api/request-my-walelet-data/${this.props.user.userid}`)
+      .get(`/api/request-my-walelet-data/${this.props.user.userId}`)
       .then((result) => {
         if (result.data._id) {
           this.setState({
@@ -35,7 +35,7 @@ class Verification extends Component {
   };
   lanchVerification = () => {
     let data = {
-      Username: this.props.user.Username,
+      username: this.props.user.username,
       data: this.state.data.privateWallet[0],
     };
     this.setState({
@@ -46,7 +46,7 @@ class Verification extends Component {
 
   checkVerification = () => {
     let data = {
-      Username: this.props.user.Username,
+      username: this.props.user.username,
       data: this.state.data.privateWallet[0],
     };
     axios.post(`/api/verify-if-succes-indentity`, data).then((result) => {

@@ -29,9 +29,9 @@ class AddParticipant extends Component {
 
   selectedpeople = (e, data) => {
     let listp = [...this.state.selected];
-    if (listp.filter((e) => e.userid === data.userid).length > 0) {
+    if (listp.filter((e) => e.userId === data.userId).length > 0) {
       let list = this.state.selected.filter((item) => {
-        return item.userid !== data.userid;
+        return item.userId !== data.userId;
       });
       this.setState({
         selected: list,
@@ -90,16 +90,16 @@ class AddParticipant extends Component {
           <div className="dnjggjjgjjgg">
             <div className="hold-people-thst-hold-itj">
               {this.state.selected?.map((item) => {
-                if (item.userid !== this.props.user.userid) {
+                if (item.userId !== this.props.user.userId) {
                   return (
-                    <div className="people-iconfjjnrn " key={item.userid}>
+                    <div className="people-iconfjjnrn " key={item.userId}>
                       <div className="hold-the-icon">
-                        <IconProfile user={item.userid} />
+                        <IconProfile user={item.userId} />
                       </div>
-                      <Username user={item.userid} />
+                      <Username user={item.userId} />
                       <div
                         onClick={(e) => {
-                          this.selectedpeople(e, { userid: item.userid });
+                          this.selectedpeople(e, { userId: item.userId });
                         }}
                         className="hold-the-icon gjtjt"
                       >
@@ -113,14 +113,14 @@ class AddParticipant extends Component {
             <div className="box-that-reajfjjjrjrnjttf">
               {this.state.people?.map((item) => {
                 return this.props.group.members.some(
-                  (data) => data.userid === item.userid
+                  (data) => data.userId === item.userId
                 ) ? (
                   <div className={`list-peopkojr active `} key={item._id}>
                     <div className="inforisjjofjjr">
-                      <IconProfile user={item.userid} />
+                      <IconProfile user={item.userId} />
                     </div>
                     <div className="ksiiriijr">
-                      <Username user={item.userid} />
+                      <Username user={item.userId} />
                       <div className="fifiiioi">
                         <p className="rjri">is already a members</p>
                       </div>
@@ -134,20 +134,20 @@ class AddParticipant extends Component {
                 ) : (
                   <div
                     onClick={(e) => {
-                      this.selectedpeople(e, { userid: item.userid });
+                      this.selectedpeople(e, { userId: item.userId });
                     }}
                     className={`list-peopkojr ${
-                      this.state.selected.some((e) => e.userid === item.userid)
+                      this.state.selected.some((e) => e.userId === item.userId)
                         ? "active"
                         : ""
                     } `}
                     key={item._id}
                   >
                     <div className="inforisjjofjjr">
-                      <IconProfile user={item.userid} />
+                      <IconProfile user={item.userId} />
                     </div>
                     <div className="ksiiriijr">
-                      <Username user={item.userid} />
+                      <Username user={item.userId} />
                     </div>
                     <div className="inforisjjorfjjr">
                       <p className="pinntjsjdjj">

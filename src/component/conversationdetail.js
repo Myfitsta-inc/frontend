@@ -18,12 +18,12 @@ class ConversationDetail extends Component {
 
   handleDelete = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
       friend: this.props.match.params.id,
     };
     axios.post(`/api/delete-conversation`, option).then((result) => {
       let list = this.props.inbox.filter(
-        (item) => item.userid !== this.props.match.params.id
+        (item) => item.userId !== this.props.match.params.id
       );
       this.props.updateInbox(list);
       this.props.history.goBack();
@@ -32,7 +32,7 @@ class ConversationDetail extends Component {
 
   handleBlock = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
       blocked: this.props.match.params.id,
     };
     this.props.handleDetail(false);
@@ -42,7 +42,7 @@ class ConversationDetail extends Component {
 
   handleDeblock = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
       blocked: this.props.match.params.id,
     };
     this.props.handleDetail(false);
@@ -94,7 +94,7 @@ class ConversationDetail extends Component {
 
         <div className="box-thath-rhjdjnkjjrj">
           <Link
-            to={`/account/${this.state.friend.Username}`}
+            to={`/account/${this.state.friend.username}`}
             className="box-hold-prooof"
           >
             {this.state.friend.profile ? (
@@ -103,10 +103,10 @@ class ConversationDetail extends Component {
               <img src={profile} />
             )}
           </Link>
-          <div className="name-jrjnrn">{this.state.friend.Username}</div>
+          <div className="name-jrjnrn">{this.state.friend.username}</div>
           <div className="name-jrjnrn-nfoo">
-            {this.state.friend.userid ? (
-              <ButtonFollow friend={this.state.friend.userid} />
+            {this.state.friend.userId ? (
+              <ButtonFollow friend={this.state.friend.userId} />
             ) : (
               ""
             )}

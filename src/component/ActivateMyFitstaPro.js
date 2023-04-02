@@ -9,10 +9,10 @@ function ActivateMyFitstaPro({ user }) {
     setLoading(true);
 
     let option = {
-      userid: user.userid,
+      userId: user.userId,
     };
     axios.post(`/api/activate-myfit-sta-pro`, option).then((data) => {
-      if (data.data.succes === true) {
+      if (data.data.succes) {
         window.location.href = "/setup";
       } else {
       }
@@ -21,19 +21,15 @@ function ActivateMyFitstaPro({ user }) {
 
   return (
     <div>
-      {user.myfista == true ? (
+      {user.myfitstapro ? (
         ""
       ) : (
         <div className="activated-buttobox">
-          <div
-            className={`conte-thise-actionrb   ${
-              loading == true ? "" : "active"
-            }`}
-          >
+          <div className={`conte-thise-actionrb   ${loading ? "" : "active"}`}>
             <button onClick={activate} className={`create`}>
               {loading ? "" : "ACTIVATE MYFITSTAPRO"}
             </button>
-            {loading == true ? (
+            {loading ? (
               <div className="jietiooeo">
                 {" "}
                 <LoadingSpin />

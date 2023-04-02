@@ -9,7 +9,7 @@ class Field extends Component {
     clientToken: null,
     planchoose: null,
     loading: false,
-    Authorid: "",
+    authorId: "",
   };
 
   async getclient() {
@@ -90,8 +90,8 @@ class Field extends Component {
             let option = {
               paymentMethodNonce: payload.nonce,
               planChoose: this.state.planchoose,
-              Authorid: this.state.Authorid,
-              userid: this.props.users.userid,
+              authorId: this.state.authorId,
+              userId: this.props.users.userId,
             };
             this.setState({
               loading: true,
@@ -116,7 +116,7 @@ class Field extends Component {
   componentDidMount = () => {
     this.getclient();
     this.setState({
-      Authorid: this.props.Authorid,
+      authorId: this.props.authorId,
       planchoose: this.props.planChoose,
     });
   };

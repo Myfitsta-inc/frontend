@@ -21,7 +21,7 @@ class ConversationGroup extends Component {
   handeexitGroup = () => {
     let option = {
       conversationId: this.props.group.conversationId,
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
     };
     axios.post(`/api/exit-group`, option).then((result) => {
       this.props.handleDetail(false);
@@ -80,11 +80,11 @@ class ConversationGroup extends Component {
                 return (
                   <div className="pwoplekekr" key={item._id}>
                     <div className="iconcf">
-                      <IconProfile user={item.userid} />
+                      <IconProfile user={item.userId} />
                     </div>
                     <div className="name-rjrj">
                       <div className="thename">
-                        <Username user={item.userid} link={false} />
+                        <Username user={item.userId} link={false} />
                       </div>
                     </div>
                   </div>

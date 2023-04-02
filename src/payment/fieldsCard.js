@@ -12,7 +12,7 @@ class FieldCard extends Component {
     clientToken: null,
     planchoose: null,
     loading: false,
-    Authorid: "",
+    authorId: "",
   };
 
   async getclient() {
@@ -102,7 +102,7 @@ class FieldCard extends Component {
   handlePay = (data) => {
     let option = {
       program: this.props.item[itemCouter],
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
       paymentMethodNonce: data.paymentMethodNonce,
     };
     this.setState({
@@ -125,7 +125,7 @@ class FieldCard extends Component {
   componentDidMount = () => {
     this.getclient();
     this.setState({
-      Authorid: this.props.Authorid,
+      authorId: this.props.authorId,
       planchoose: this.props.planChoose,
     });
   };

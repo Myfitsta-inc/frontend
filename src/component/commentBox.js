@@ -13,11 +13,11 @@ class CommentBox extends Component {
       <div className="wrapwer-comment-post" key={this.props.item._id}>
         <div className="wjfjsnrt">
           <div className="hold-profile-url">
-            <IconProfile user={this.props.item.Userdid} />
+            <IconProfile user={this.props.item.userId} />
           </div>
           <div className="hold-comment">
             <div className="name-commenter">
-              <Username user={this.props.item.Userdid} />
+              <Username user={this.props.item.userId} />
               <MenuComment
                 removecomment={this.props.removecomment}
                 item={this.props.item}

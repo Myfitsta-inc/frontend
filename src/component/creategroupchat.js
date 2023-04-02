@@ -49,15 +49,15 @@ class CreatGroupChat extends Component {
 
   seachPeopplrrre = () => {
     if (this.props.user) {
-      if (this.props.user.Username) {
+      if (this.props.user.username) {
         axios
-          .get(`/api/Myfollowings/${this.props.user.userid}/myfitsta`)
+          .get(`/api/Myfollowings/${this.props.user.userId}/myfitsta`)
           .then((result) => {
             let list = [];
             if (result.data !== "no") {
               result.data.forEach((item) => {
                 list.push({
-                  userid: item.following,
+                  userId: item.following,
                   _id: Math.random() * 10000000000,
                 });
               });
@@ -72,9 +72,9 @@ class CreatGroupChat extends Component {
 
   selectedpeople = (e, data) => {
     let listp = [...this.state.selected];
-    if (listp.filter((e) => e.userid === data.userid).length > 0) {
+    if (listp.filter((e) => e.userId === data.userId).length > 0) {
       let list = this.state.selected.filter((item) => {
-        return item.userid !== data.userid;
+        return item.userId !== data.userId;
       });
       this.setState({
         selected: list,
@@ -108,8 +108,8 @@ class CreatGroupChat extends Component {
   createGroup = () => {
     if (this.state.name.length > 2) {
       let option = {
-        id: this.props.user.userid,
-        user: this.props.user.userid,
+        id: this.props.user.userId,
+        user: this.props.user.userId,
         type: "group",
         members: this.state.selected,
         name: this.state.name,
@@ -127,7 +127,7 @@ class CreatGroupChat extends Component {
   };
 
   componentDidMount = () => {
-    let option = [{ userid: this.props.user.userid }];
+    let option = [{ userId: this.props.user.userId }];
     this.setState({
       selected: option,
     });
@@ -178,19 +178,19 @@ class CreatGroupChat extends Component {
                 <div className="wrajrkrsr">
                   <div className="hold-people-thst-hold-itj">
                     {this.state.selected?.map((item) => {
-                      if (item.userid !== this.props.user.userid) {
+                      if (item.userId !== this.props.user.userId) {
                         return (
                           <div
                             className="people-iconfjjnrn  "
-                            key={item.userid}
+                            key={item.userId}
                           >
                             <div className="hold-the-icon">
-                              <IconProfile user={item.userid} />
+                              <IconProfile user={item.userId} />
                             </div>
-                            <Username user={item.userid} />
+                            <Username user={item.userId} />
                             <div
                               onClick={(e) => {
-                                this.selectedpeople(e, { userid: item.userid });
+                                this.selectedpeople(e, { userId: item.userId });
                               }}
                               className="hold-the-icon"
                             >
@@ -208,11 +208,11 @@ class CreatGroupChat extends Component {
                     return (
                       <div
                         onClick={(e) => {
-                          this.selectedpeople(e, { userid: item.userid });
+                          this.selectedpeople(e, { userId: item.userId });
                         }}
                         className={`list-peopkojr ${
                           this.state.selected.some(
-                            (e) => e.userid === item.userid
+                            (e) => e.userId === item.userId
                           )
                             ? "active"
                             : ""
@@ -220,10 +220,10 @@ class CreatGroupChat extends Component {
                         key={item._id}
                       >
                         <div className="inforisjjofjjr">
-                          <IconProfile user={item.userid} />
+                          <IconProfile user={item.userId} />
                         </div>
                         <div className="ksiiriijr">
-                          <Username user={item.userid} />
+                          <Username user={item.userId} />
                         </div>
                         <div className="inforisjjorfjjr">
                           <p className="pinntjsjdjj">

@@ -22,7 +22,7 @@ class Earning extends Component {
 
   getProfile = () => {
     axios
-      .get(`/api/myfitsta/account/${this.props.user.userid}`, {
+      .get(`/api/myfitsta/account/${this.props.user.userId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -35,8 +35,9 @@ class Earning extends Component {
   };
   getinfo = () => {
     axios
-      .get(`/api/get-my-earning-data/${this.props.user.userid}`)
+      .get(`/api/get-my-earning-data/${this.props.user.userId}`)
       .then((result) => {
+        console.log(result.data);
         if (result.data.length > 0) {
           this.setState({
             data: result.data,
@@ -65,7 +66,7 @@ class Earning extends Component {
           </div>
         </div>
 
-        {this.props.user.myfista === true ? (
+        {this.props.user.myfitstapro === true ? (
           this.state.data !== null ? (
             <div className="earningsf-boxnjf">
               <div className="hold-thegrapgjhs-jfhtf">
@@ -135,7 +136,7 @@ class Earning extends Component {
               <p>lock Earnings</p>
               <p>To be able unlock Earning you need to activate MyfitstaPro</p>
               <div className="wraper-thejr">
-                <Link className="dijroooeo" to={"/setting/myfistapro"}>
+                <Link className="dijroooeo" to={"/setting/myfitstapropro"}>
                   Check status
                 </Link>
               </div>

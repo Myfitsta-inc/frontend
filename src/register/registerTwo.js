@@ -64,7 +64,7 @@ class RegisterTwo extends Component {
             placeholder="000000"
           />
         </div>
-        <p className="messsage" id="message-Username">
+        <p className="messsage" id="message-username">
           {this.state.message}
         </p>
         {this.state.loading === false ? (

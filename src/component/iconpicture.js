@@ -28,7 +28,7 @@ class IconProfile extends Component {
 
   loadImage = () => {
     let userFind = this.props.iconList.filter(
-      (item) => item.userid === this.props.user
+      (item) => item.userId === this.props.user
     );
     if (userFind.length > 0) {
       this.setState({
@@ -41,7 +41,7 @@ class IconProfile extends Component {
             icon: res.data,
           });
 
-          let option = { userid: this.props.user, icon: res.data };
+          let option = { userId: this.props.user, icon: res.data };
           let list = [...this.props.iconList, option];
           this.props.UpdateList(list);
         }

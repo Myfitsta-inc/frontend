@@ -29,9 +29,9 @@ class OrderSales extends Component {
                     <div className="rjer3lwr3w">
                       <div className="jeirir">
                         <div className="chhfjf-sfufr">
-                          <IconProfile user={item.custumerid} />
+                          <IconProfile user={item.custumerId} />
                         </div>
-                        <Username user={item.custumerid} />
+                        <Username user={item.custumerId} />
                       </div>
                     </div>
                     <div className="rjer3lwr3w">

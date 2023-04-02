@@ -13,10 +13,10 @@ class LikeButton extends Component {
   };
 
   updatePost = (data) => {
-    let Updated = this.props.postList.find((item) => item.filename === data);
+    let Updated = this.props.postList.find((item) => item.postId === data);
     if (Updated) {
       Updated.numberlike = this.state.numberlike;
-      let list = this.props.postList.filter((item) => item.filename !== data);
+      let list = this.props.postList.filter((item) => item.postId !== data);
       let sortted = [...list, Updated];
       this.props.addPost(sortted);
     } else {
@@ -36,24 +36,25 @@ class LikeButton extends Component {
   };
   updatenotification = (data) => {
     let option = {
-      userid: this.props.posterId,
+      userId: this.props.posterId,
       type: "like",
-      notifiyiId: this.props.userid,
-      media: data.filename,
+      notifiyiId: this.props.userId,
+      media: data.postId,
       date: moment().format(),
       extraInfo: "",
     };
 
-    if (this.props.userid !== this.props.posterId) {
+    if (this.props.userId !== this.props.posterId) {
       axios.post(`/api/update-notification`, option).then((res) => {});
     }
     socket.emit("some-like-a-post", {
-      filename: data.filename,
+      postId: data.postId,
       numberlike: this.state.numberlike,
     });
   };
 
   handleLike = (e, data) => {
+    console.log(data, "oijnmkj");
     let like = e.currentTarget;
     let numberlikes = like.parentElement.children[1];
     if (like.classList.contains("active")) {
@@ -80,13 +81,14 @@ class LikeButton extends Component {
   };
 
   addLikes = (data) => {
+    console.log(data);
     const option = {
-      User: this.props.userid,
-      Post: data,
+      userId: this.props.userId,
+      postId: data,
     };
     let info = {
-      User: this.props.userid,
-      filename: data,
+      userId: this.props.userId,
+      postId: data,
       _id: uuid(),
     };
     let list = [...this.props.likes, info];
@@ -98,29 +100,30 @@ class LikeButton extends Component {
 
   removelike = (data) => {
     const option = {
-      User: this.props.userid,
-      Post: data,
+      userId: this.props.userId,
+      postId: data,
     };
-    let list = this.props.likes.filter((item) => item.filename !== data);
+    let list = this.props.likes.filter((item) => item.postId !== data);
     this.props.addLikes(list);
     axios.post("/api/removelike", option).then((res) => {});
     socket.emit("some-like-a-post", {
-      filename: this.props.filename,
+      postId: this.props.postId,
       numberlike: this.state.numberlike,
     });
   };
   componentDidMount = () => {
+    console.log(this.props.likes);
     this.setState({
       numberlike: this.props.numberlike,
     });
     socket.on("like-this-post", (data) => {
-      if (data.filename === this.props.filename) {
+      if (data.postId === this.props.postId) {
         this.setState(
           {
             numberlike: data.numberlike,
           },
           () => {
-            this.updatePost(data.filename);
+            this.updatePost(data.postId);
           }
         );
       }
@@ -132,13 +135,11 @@ class LikeButton extends Component {
   render() {
     return (
       <div className="lik box-ac">
-        {this.props.likes.some((i) =>
-          i.filename.includes(this.props.filename)
-        ) ? (
+        {this.props.likes.some((i) => i.postId.includes(this.props.postId)) ? (
           <Bounce>
             <div
               onClick={(e) => {
-                this.handleLike(e, this.props.filename);
+                this.handleLike(e, this.props.postId);
               }}
               className="icon lik active"
             >
@@ -148,7 +149,7 @@ class LikeButton extends Component {
         ) : (
           <div
             onClick={(e) => {
-              this.handleLike(e, this.props.filename);
+              this.handleLike(e, this.props.postId);
             }}
             className="icon"
           >

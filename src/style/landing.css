@@ -282,7 +282,7 @@ body {
   padding: 10px 10px;
 }
 .wraperjrjr {
-  display: none;
+  display: flex;
 }
 .wraperjrjr button:nth-child(1) {
   border: 2px solid #6f56e5;

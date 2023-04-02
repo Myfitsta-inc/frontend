@@ -231,6 +231,9 @@ input[type="number"] {
   margin: 2px;
   height: 80%;
 }
+.wharoor-the-amoiut input {
+  color: var(--text);
+}
 .wharoor-the-amoiut {
   width: 50%;
   align-items: center;

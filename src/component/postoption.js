@@ -37,7 +37,7 @@ class PostOption extends Component {
   message = () => {
     let option = {
       id: this.props.friend,
-      user: this.props.user.userid,
+      user: this.props.user.userId,
       profileGroup: "",
       type: "inbox",
       members: [],
@@ -112,7 +112,7 @@ class PostOption extends Component {
               Share post
             </button>
           </div>
-          {this.props.users.userid !== this.props.item.userId ? (
+          {this.props.users.userId !== this.props.item.userId ? (
             <div
               onClick={() => {
                 this.message();
@@ -128,7 +128,7 @@ class PostOption extends Component {
             ""
           )}
 
-          {this.props.users.userid === this.props.item.userId ? (
+          {this.props.users.userId === this.props.item.userId ? (
             <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <MdDelete />

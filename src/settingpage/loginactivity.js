@@ -17,7 +17,7 @@ class LoginActivity extends Component {
 
   checkLogin = () => {
     axios.get("/api/check-login", { withCredentials: true }).then((res) => {
-      if (res.data.userid) {
+      if (res.data.userId) {
         this.getlogetactivity();
       } else {
         window.location.reload();
@@ -32,7 +32,7 @@ class LoginActivity extends Component {
     axios
       .post("/api/remove/session", option, { withCredentials: true })
       .then((result) => {
-        socket.emit("check-thatlogind", this.props.users.userid);
+        socket.emit("check-thatlogind", this.props.users.userId);
       });
   };
 

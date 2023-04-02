@@ -28,7 +28,7 @@ class Navbom extends Component {
         </div>
         <NavLink to={"/notifications"} className="navvf">
           <div className="djrjnkrke">
-            <Notin userid={this.props.user.userid} />
+            <Notin userId={this.props.user.userId} />
             <i className="far fa-bell"></i>
           </div>
         </NavLink>

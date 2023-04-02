@@ -21,7 +21,7 @@ class Shopcard extends Component {
   check = () => {
     axios
       .get(
-        `/api/check-if-bougth/${this.props.user.userid}/${this.props.item.programId}`
+        `/api/check-if-bougth/${this.props.user.userId}/${this.props.item.programId}`
       )
       .then((result) => {
         this.setState({
@@ -74,7 +74,7 @@ class Shopcard extends Component {
           <Rating rating={this.props.item.rating} />
           <div className="action-post-desing">
             <div className="mmenu-act5fjjs">
-              <span>${this.props.item.price}</span>
+              <span>${this.props.item.price / 100}</span>
             </div>
           </div>
         </div>

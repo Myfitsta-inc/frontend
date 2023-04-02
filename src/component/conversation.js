@@ -56,7 +56,7 @@ class ConversationList extends Component {
   };
   getConversation = (e) => {
     axios
-      .get(`/api/my-conversation/${this.props.user.userid}`, {
+      .get(`/api/my-conversation/${this.props.user.userId}`, {
         cancelToken: source.token,
       })
       .then((res) => {

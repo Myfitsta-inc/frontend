@@ -39,8 +39,8 @@ class UploadInProgram extends Component {
         let formData = new FormData();
         formData.append("file", this.state.preview);
         formData.append("title", this.state.title);
-        formData.append("Author", this.props.user.Username);
-        formData.append("AuthorId", this.props.user.userid);
+        formData.append("Author", this.props.user.username);
+        formData.append("AuthorId", this.props.user.userId);
         formData.append("programId", this.props.program.programId);
         formData.append("description", this.state.description);
         this.setState({

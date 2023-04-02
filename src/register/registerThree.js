@@ -52,22 +52,13 @@ class RegisterThree extends Component {
   };
   handleRegister = (e) => {
     e.preventDefault();
-    if (this.props.data.fullName.length > 0) {
-      this.setState({
-        messagefullname: "",
-      });
-    } else {
-      this.setState({
-        messagefullname: "Full name must not be empty",
-      });
-    }
     if (this.props.data.username.length > 2) {
       this.setState({
         messageusername: "",
       });
     } else {
       this.setState({
-        messageusername: "Username is too short",
+        messageusername: "username is too short",
       });
     }
 
@@ -93,7 +84,6 @@ class RegisterThree extends Component {
 
     if (
       this.props.data.email.length > 0 &&
-      this.props.data.fullName.length > 0 &&
       this.props.data.username.length > 2 &&
       Statepassword === true
     ) {
@@ -109,7 +99,7 @@ class RegisterThree extends Component {
       });
 
       axios.post("/api/register", userinfo).then((res) => {
-        if (res.data === "Username already exist") {
+        if (res.data === "username already exist") {
           this.setState({
             messageusername: "😅 Sorry This username is already taken",
           });
@@ -153,7 +143,7 @@ class RegisterThree extends Component {
           </div>{" "}
         </div>
         <div className="edit-box-profile">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">username</label>
           <input
             onChange={this.props.handleChange}
             className="username-profile"

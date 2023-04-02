@@ -272,9 +272,9 @@ class Live extends Component {
       socket.emit("disconect-from-the-live", {
         id: socket.id,
         room: this.state.id,
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       });
-      socket.emit("live-broad-casting", this.props.user.userid);
+      socket.emit("live-broad-casting", this.props.user.userId);
     };
 
     socket.on("new-sms", (data) => {
@@ -293,7 +293,7 @@ class Live extends Component {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
           content: this.state.message,
-          sender: this.props.user.userid,
+          sender: this.props.user.userId,
           icon: this.props.user.profile,
         });
         this.setState({
@@ -335,16 +335,16 @@ class Live extends Component {
   };
   removeMyLiveSesssion = () => {
     let payload = {
-      broadcasterName: this.props.user.userid,
+      broadcasterName: this.props.user.userId,
       roomId: this.state.id,
     };
     axios.post("/api/end-live", payload).then((data) => {
       socket.emit("disconect-from-the-live", {
         id: socket.id,
         room: this.state.id,
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       });
-      socket.emit("live-broad-casting", this.props.user.userid);
+      socket.emit("live-broad-casting", this.props.user.userId);
       this.props.history.push("/home");
     });
   };
@@ -355,7 +355,7 @@ class Live extends Component {
     if (this.state.StateLive) {
       socket.emit("disconect-from-the-live", {
         room: this.state.id,
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       });
       const mediaStream = this.videoTag.current.srcObject;
       const tracks = mediaStream.getTracks();

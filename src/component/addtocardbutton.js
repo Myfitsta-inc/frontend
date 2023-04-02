@@ -29,7 +29,7 @@ class AddTocardButton extends Component {
     };
 
     let option = {
-      userid: this.props.users.userid,
+      userId: this.props.users.userId,
       item: item,
     };
 

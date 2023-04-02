@@ -13,8 +13,8 @@ class Banking extends Component {
 
   componentDidMount = () => {
     let data = this.state.data;
-    data.userid = this.props.users.userid;
-    data.username = this.props.users.Username;
+    data.userId = this.props.users.userId;
+    data.username = this.props.users.username;
     this.setState({
       data: data,
     });

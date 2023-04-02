@@ -60,7 +60,7 @@ class BoxAccount extends Component {
             )}
           </div>
           <div className="descrp-pr">
-            <p>{this.props.user.Username}</p>
+            <p>{this.props.user.username}</p>
             <p>{this.props.user.fullName}</p>
           </div>
           <div className="jjfjjfjfjjrjrr"></div>
@@ -82,7 +82,7 @@ class BoxAccount extends Component {
                   )}
                 </div>
                 <div className="descrp-pr">
-                  <p>{this.props.user.Username}</p>
+                  <p>{this.props.user.username}</p>
                   <p>{this.props.user.fullName}</p>
                 </div>
               </div>

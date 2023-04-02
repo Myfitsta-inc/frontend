@@ -44,7 +44,7 @@ class Discover extends Component {
     axios
       .get(
         `/api/discover-tags/${this.state.id.replace("#", "")}/${
-          this.props.user.userid
+          this.props.user.userId
         }/${number}`,
         { cancelToken: source.token }
       )
@@ -201,13 +201,14 @@ class Discover extends Component {
                               <div className="pjdjj">
                                 <div className="wrp-actt">
                                   <LikeButton
-                                    userid={this.props.user.userid}
+                                    userId={this.props.user.userId}
                                     filename={item.filename}
+                                    postId={item._id}
                                     numberlike={item.numberlike}
                                   />
                                   <Link
                                     className="rjetrjjrj"
-                                    to={`/comment/${item.filename}`}
+                                    to={`/comment/${item._id}`}
                                   >
                                     <div className="icon">
                                       <i className="far fa-comment"></i>
@@ -278,13 +279,13 @@ class Discover extends Component {
                               <div className="pjdjj">
                                 <div className="wrp-actt">
                                   <LikeButton
-                                    userid={this.props.user.userid}
+                                    userId={this.props.user.userId}
                                     filename={item.filename}
                                     numberlike={item.numberlike}
                                   />
                                   <Link
                                     className="rjetrjjrj"
-                                    to={`/comment/${item.filename}`}
+                                    to={`/comment/${item._id}`}
                                   >
                                     <div className="icon">
                                       <i className="far fa-comment"></i>

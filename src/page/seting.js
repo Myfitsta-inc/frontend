@@ -122,7 +122,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id === "myfistapro"
+                      ? this.props.match.params.id === "myfitstapropro"
                         ? "active "
                         : ""
                       : ""
@@ -131,7 +131,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <AiFillFire />
                   </div>
-                  <Link to={"/setting/myfistapro"}>MyFitstaPro</Link>
+                  <Link to={"/setting/myfitstapropro"}>MyFitstaPro</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>
@@ -379,11 +379,11 @@ class Setting extends Component {
                   ""
                 )}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id === "myfistapro" ? (
+                  this.props.match.params.id === "myfitstapropro" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id === "myfistapro"
+                          ? this.props.match.params.id === "myfitstapropro"
                             ? "active "
                             : ""
                           : ""

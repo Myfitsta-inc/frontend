@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { HiCheck } from "react-icons/hi";
 import axios from "axios";
+import ActivateMyFitstaPro from "../component/ActivateMyFitstaPro";
 import { BsArrowRepeat, BsGraphUp } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 import LoadingSpin from "../component/loadingspin";
@@ -29,7 +30,7 @@ class MyfistaProAc extends Component {
         loading: true,
       });
       let option = {
-        userid: this.props.users.userid,
+        userId: this.props.users.userId,
       };
       axios.post(`/api/activate-myfit-sta-pro`, option).then((data) => {
         if (data.data.succes === true) {
@@ -41,7 +42,7 @@ class MyfistaProAc extends Component {
   };
   componentDidUpdate(prevProps) {
     if (this.state.id !== this.props.match.params.id) {
-      if (this.props.match.params.id === "myfistapro") {
+      if (this.props.match.params.id === "myfitstapropro") {
       }
       this.setState({ id: this.props.match.params.id });
     }
@@ -49,7 +50,7 @@ class MyfistaProAc extends Component {
 
   componentDidMount = () => {
     //this.activate()
-    if (this.props.match.params.id === "myfistapro") {
+    if (this.props.match.params.id === "myfitstapropro") {
     }
     if (
       this.props.users.postnumber >= 10 &&
@@ -71,7 +72,7 @@ class MyfistaProAc extends Component {
             <p>MyFitstaPro</p>
           </div>
         </div>
-        {this.props.users.myfista === true ? (
+        {this.props.users.myfitstapro === true ? (
           <div className="fjejtietii">
             <div className="wrpajna-thetabshs">
               <div
@@ -79,7 +80,7 @@ class MyfistaProAc extends Component {
                   this.props.match.params.data === undefined ? "active" : ""
                 }`}
               >
-                <Link to={"/setting/myfistapro"}>Account</Link>
+                <Link to={"/setting/myfitstapropro"}>Account</Link>
               </div>
               <div
                 className={`tabshjjjr ${
@@ -90,7 +91,9 @@ class MyfistaProAc extends Component {
                     : ""
                 }`}
               >
-                <Link to={"/setting/myfistapro/subscriber"}>Subscriber</Link>
+                <Link to={"/setting/myfitstapropro/subscriber"}>
+                  Subscriber
+                </Link>
               </div>
               <div
                 className={`tabshjjjr ${
@@ -101,12 +104,12 @@ class MyfistaProAc extends Component {
                     : ""
                 } `}
               >
-                <Link to={"/setting/myfistapro/billing"}>Payment</Link>
+                <Link to={"/setting/myfitstapropro/billing"}>Payment</Link>
               </div>
             </div>
             {this.props.match.params.data ? (
               this.props.match.params.data === "subscriber" ? (
-                <SubscriberList user={this.props.users.userid} />
+                <SubscriberList user={this.props.users.userId} />
               ) : (
                 <Billing />
               )
@@ -117,10 +120,7 @@ class MyfistaProAc extends Component {
         ) : (
           <div className="wrpefrirrrj">
             <div className="tifiooif">What can you do with MyFitstapro?</div>
-            <div className="icondjnjr">
-              Hi {this.props.users.Username}, Please keep in mind that
-              MyfitstaPro will be released soon. Thank you
-            </div>
+
             <div className="wtapthensjjfjt">
               <div className="class-boxx">
                 <div className="eldtoo"></div>
@@ -159,118 +159,8 @@ class MyfistaProAc extends Component {
                   </div>
                 </div>
               </div>
-
-              <div className="class-boxx">
-                <div className="eldtoo"></div>
-                <div className="rrjjsjeje">
-                  <div className="wrieii">
-                    <div className="wrpsjiirir-icocod">
-                      <BsGraphUp />
-                    </div>
-                    <div className="djfrjir">Sell Programs</div>
-                  </div>
-                </div>
-                <div className="decrioirbe">
-                  <div className="wrapeiirr">
-                    <div className="fjsifojdisf">
-                      <HiCheck />
-                    </div>
-                    <div className="ksffkfkkf">
-                      Set your own pricing for each program
-                    </div>
-                  </div>
-                  <div className="wrapeiirr">
-                    <div className="fjsifojdisf">
-                      <HiCheck />
-                    </div>
-                    <div className="ksffkfkkf">
-                      Potentility to have more subscriber
-                    </div>
-                  </div>
-                  <div className="wrapeiirr">
-                    <div className="fjsifojdisf">
-                      <HiCheck />
-                    </div>
-                    <div className="ksffkfkkf">
-                      Quick and easy implimentation
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div className="progress-slekdkfk">
-              <div className="progremmsm">
-                <div className="fsjjjrijsjjr">Follower</div>
-                <div className="soeproro">
-                  <p>{this.props.users.numberfollowings}</p>
-                  <p>100</p>
-                </div>
-                <div className="progrshhhdif">
-                  <div
-                    style={{
-                      width: `${
-                        (this.props.users.numberfollowings * 100) / 100
-                      }%`,
-                    }}
-                    className="barbsfof"
-                  ></div>
-                </div>
-              </div>
-
-              <div className="progremmsm">
-                <div className="fsjjjrijsjjr">Post</div>
-                <div className="soeproro">
-                  <p>{this.props.users.postnumber}</p>
-                  <p>10</p>
-                </div>
-                <div className="progrshhhdif">
-                  <div
-                    style={{
-                      width: `${(this.props.users.postnumber * 100) / 10}%`,
-                    }}
-                    className="barbsfof"
-                  ></div>
-                </div>
-              </div>
-              {this.props.users.canActivate == true ? (
-                <div className={`activated-buttobox`}>
-                  <div className={`conte-thise-actionrb active`}>
-                    <button onClick={this.activate} className={`create`}>
-                      <Link to="/setup">SETUP YOUR ACCOUNT</Link>
-                    </button>
-                    {this.state.loading == true ? (
-                      <div className="jietiooeo">
-                        {" "}
-                        <LoadingSpin />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <div className={`activated-buttobox`}>
-                  <div
-                    className={`conte-thise-actionrb ${
-                      this.state.button == false ? "" : "active"
-                    }  ${this.state.loading == true ? "" : ""}`}
-                  >
-                    <button onClick={this.activate} className={`create`}>
-                      ACTIVATE
-                    </button>
-                    {this.state.loading == true ? (
-                      <div className="jietiooeo">
-                        {" "}
-                        <LoadingSpin />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
+            <ActivateMyFitstaPro user={this.props.users} />
           </div>
         )}
       </div>

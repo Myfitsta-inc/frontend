@@ -25,7 +25,7 @@ class Account extends Component {
 
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("Userid", this.props.user.userid);
+      formData.append("userId", this.props.user.userId);
       axios.post(`/api/bannerimagepro`, formData).then((result) => {
         this.setState({
           previewBanner: result.data.banner,
@@ -36,7 +36,7 @@ class Account extends Component {
 
   handleUpdate = () => {
     let option = {
-      userid: this.props.user.userid,
+      userId: this.props.user.userId,
       bio: this.state.bio,
     };
     this.setState({
@@ -62,7 +62,7 @@ class Account extends Component {
         previewsIcon: null,
       });
       let option = {
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       };
       axios.post(`/api/remove-profileprop`, option).then((result) => {
         this.setState({
@@ -74,7 +74,7 @@ class Account extends Component {
         previewBanner: null,
       });
       let option = {
-        userid: this.props.user.userid,
+        userId: this.props.user.userId,
       };
       axios.post(`/api/remove-bannerpro`, option).then((result) => {
         this.setState({
@@ -93,7 +93,7 @@ class Account extends Component {
       });
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("Userid", this.props.user.userid);
+      formData.append("userId", this.props.user.userId);
       axios.post(`/api/profileimagepro`, formData).then((result) => {
         this.setState({
           previewsIcon: result.data.profileUrl,
@@ -221,7 +221,7 @@ class Account extends Component {
             </div>
           </div>
           <div className="box-edit-two">
-            <p>{this.props.user.Username}</p>
+            <p>{this.props.user.username}</p>
             <p>{this.props.user.fullName}</p>
           </div>
         </div>

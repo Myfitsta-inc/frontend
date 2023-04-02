@@ -55,8 +55,8 @@ class Card extends Component {
       Ucards: list,
     });
     let option = {
-      programid: id,
-      userid: this.props.user.userid,
+      programId: id,
+      userId: this.props.user.userId,
       selected: !status,
     };
     axios
