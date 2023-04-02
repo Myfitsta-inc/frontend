@@ -1,30 +1,20 @@
-const ApiUrl = {
-  One: "http://localhost:8000/",
+let ApiUrl = null;
+const apiUrlProduction = {
+  One: "https://myfitsta-backend-app-server.herokuapp.com/",
   content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
-  network: "http://localhost:4000",
-  streaming: "http://localhost:9500/",
+  network: "https://realtimeserver.herokuapp.com/",
 };
 
-const ApiUrlOrigine = {
-  One: "http://localhost:8000/",
-  Two: "http://localhost:4000/",
-  Three: "http://localhost:4500/",
-  Messaging: "http://localhost:9000/",
+const apiUrlDevelopment = {
+  One: "http://localhost:8000",
   content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
-  Pay: "http://localhost:3500/",
-  Recover: "http://localhost:6500/",
-  network: "http://localhost:8000",
-  streaming: "http://localhost:9500/",
+  network: "http://localhost:4000",
 };
-const ApiUrlNew = {
-  One: "https://myfitsta-backend-app-server.herokuapp.com/",
-  Two: "https://servernine.herokuapp.com/",
-  Three: "https://serverthree.herokuapp.com/",
-  Messaging: "https://servermessaging.herokuapp.com/",
-  Pay: "https://serverpay.herokuapp.com/",
-  content: "https://myfitsta.s3.us-east-2.amazonaws.com/",
-  Recover: "https://serverrec.herokuapp.com/",
-  network: "https://realtimeserver.herokuapp.com",
-  streaming: "https://streamingwokout.herokuapp.com/",
-};
+
+if (process.env.NODE_ENV == "production") {
+  ApiUrl = apiUrlProduction;
+} else {
+  ApiUrl = apiUrlDevelopment;
+}
+
 export default ApiUrl;
