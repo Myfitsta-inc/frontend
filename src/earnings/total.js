@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { AiFillFolder } from "react-icons/ai";
-
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 class TotalEarning extends Component {
   state = {
     data: 0,
@@ -19,7 +19,9 @@ class TotalEarning extends Component {
           </div>
           <p>Total Earnings</p>
         </div>
-        <div className="fjnejt">${this.state.data.toFixed(2)}</div>
+        <div className="fjnejt">
+          ${convertFromStripe(this.state.data, "USD").toFixed(2)}
+        </div>
       </div>
     );
   }

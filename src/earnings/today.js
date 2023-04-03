@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { BsGraphUp } from "react-icons/bs";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 class TodayEarning extends Component {
   state = {
     number: 0,
@@ -30,7 +31,9 @@ class TodayEarning extends Component {
           </div>
           <p> Today Earnings</p>
         </div>
-        <div className="fjnejt">${this.state.number.toFixed(2)}</div>
+        <div className="fjnejt">
+          ${convertFromStripe(this.state.number, "USD").toFixed(2)}
+        </div>
       </div>
     );
   }

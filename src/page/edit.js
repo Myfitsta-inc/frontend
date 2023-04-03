@@ -219,7 +219,6 @@ class Edit extends Component {
     }
   };
   componentDidMount = () => {
-    console.log(this.props.user);
     const { email, fullName, username, website, bio } = this.props.user;
     this.setState({
       email,

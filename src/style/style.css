@@ -5344,6 +5344,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.ic.pro {
+  background: -webkit-linear-gradient(#ff0000, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .nav-lii button a:hover {
   color: var(--text);
 }

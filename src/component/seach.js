@@ -98,11 +98,13 @@ class Search extends Component {
   filterbar = (event) => {
     if (event.target.value.trim().length > 0) {
       this.setState({
-        query: event.target.value.trim(),
+        query: event.target.value.trim().toLowerCase(),
       });
       axios
         .get(
-          `/api/profilename/${event.target.value}/${this.state.loadPeople}`,
+          `/api/profilename/${event.target.value.toLowerCase()}/${
+            this.state.loadPeople
+          }`,
           { withCredentials: true }
         )
         .then((res) => {

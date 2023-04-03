@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { BsBarChartFill } from "react-icons/bs";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 class MonthEarning extends Component {
   state = {
     number: 0,
@@ -40,7 +41,9 @@ class MonthEarning extends Component {
           </div>
           <p> This Month Earnings</p>
         </div>
-        <div className="fjnejt">${this.state.number.toFixed(2)}</div>
+        <div className="fjnejt">
+          ${convertFromStripe(this.state.number, "USD").toFixed(2)}
+        </div>
       </div>
     );
   }

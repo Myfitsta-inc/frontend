@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import Username from "../component/username";
 import IconProfile from "../component/iconpicture";
-
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 class OrderSubscription extends Component {
   state = {
     list: null,
@@ -12,7 +12,7 @@ class OrderSubscription extends Component {
     return (
       <div className="hold-the-box-of-shit-bjf">
         <div className="the-theh-titklen-than">
-          <p>Orders</p>
+          <p>Subscriptions History</p>
         </div>
         <div className="rjrnjmrkesr sjrwkjrj">
           <div className="rjer3lwr3w">Subscriber</div>
@@ -42,7 +42,10 @@ class OrderSubscription extends Component {
                     </div>
                     <div className="rjer3lwr3w">
                       <span>$</span>
-                      {item.earn + item.takeCut}
+                      {convertFromStripe(
+                        item.earn + item.takeCut,
+                        "USD"
+                      ).toFixed(2)}
                     </div>
                   </div>
                 );

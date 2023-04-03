@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import logoone from "../logo/logo.png";
-import { motion } from "framer-motion";
 import BoxAccount from "../component/boxAccoount";
 import Notin from "../component/notin";
 class Nav extends Component {
@@ -79,7 +78,7 @@ class Nav extends Component {
                 className="nav-lii nav-infoo   "
                 data-tab-target="#account"
               >
-                <div className="ic">
+                <div className={`ic ${user.myfitstapro && "pro"}`}>
                   <i className="fas fa-fire-alt"></i>
                 </div>
                 <p>MyFitstapro</p>
@@ -112,16 +111,6 @@ class Nav extends Component {
 
                 <p to="/message">Setting</p>
               </NavLink>
-
-              {/*<div className="nav-lii nav-infoo">
-    <div className="ic">
-    
-    </div>
-    
-    <button onClick={this.logout}>
-      Log out
-    </button>
-</div>*/}
             </div>
           </div>
         </div>

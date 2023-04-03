@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { HiLockClosed } from "react-icons/hi";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 class UnpaidEarning extends Component {
   state = {
     number: 0,
@@ -31,7 +31,9 @@ class UnpaidEarning extends Component {
           </div>
           <p> Unpaid Earnings</p>
         </div>
-        <div className="fjnejt">${this.state.number.toFixed(2)}</div>
+        <div className="fjnejt">
+          ${convertFromStripe(this.state.number, "USD").toFixed(2)}
+        </div>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { AiFillBank } from "react-icons/ai";
 import axios from "axios";
 import Banking from "../bank/banking";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 
 class Billing extends Component {
   state = {
@@ -53,7 +54,9 @@ class Billing extends Component {
 
             <div className="wisjfjfhw">
               <span>$</span>
-              <p>{this.state.wallet.ToPay.toFixed(3)}</p>
+              <p>
+                {convertFromStripe(this.state.wallet.ToPay, "USD").toFixed(2)}
+              </p>
             </div>
           </div>
           <div className="sjfiejsfkjfj">

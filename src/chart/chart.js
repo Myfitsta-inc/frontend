@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -39,7 +40,6 @@ class Chart extends Component {
     let list = [];
     this.props.data.forEach((item) => {
       if (days.includes(moment(item.date).format("L"))) {
-        console.log("yes");
         list.push({
           date: moment(item.date).format("MMM Do"),
           value: item.earn,
@@ -93,7 +93,7 @@ class Chart extends Component {
     this.props.data.forEach((element) => {
       list.push({
         date: moment(element.date).format("MMM Do"),
-        value: element.earn,
+        value: convertFromStripe(element.earn, "USD").toFixed(2),
       });
     });
     this.setState({
@@ -140,6 +140,7 @@ class Chart extends Component {
                     </defs>
                     <Area dataKey="value" stroke="#6f56e5" fill="url(#color)" />
                     <XAxis
+                      tick={false}
                       dataKey="date"
                       axisLine={false}
                       tickLine={false}

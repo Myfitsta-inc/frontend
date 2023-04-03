@@ -55,78 +55,25 @@ class Setup extends Component {
         }
       });
   };
-  selectplan = (e) => {
-    let data = e.currentTarget;
-    let box = data.parentElement.parentElement;
-    let value = data.parentElement.parentElement.children[1].children[1].value;
-    let planChoose = data.parentElement.children[1].innerText;
-    if (box.classList.contains("adddeed")) {
-      let option = {
-        planChoose: planChoose,
-        price: parseInt(value),
-      };
-      let list = [...this.state.plan];
-      let removeIndex = list
-        .map(function (item) {
-          return item.price;
-        })
-        .indexOf(option.value);
-      list.splice(removeIndex, 1);
-
-      this.setState({
-        plan: list,
-      });
-      box.classList.remove("active");
-      box.classList.remove("adddeed");
-      data.classList.remove("active");
-    } else {
-      if (value.length > 0) {
-        if (parseInt(value) > 9999) {
-          data.parentElement.parentElement.parentElement.children[1].classList.add(
-            "active"
-          );
-          data.parentElement.parentElement.parentElement.children[1].innerText =
-            "The maximun is 9999 ";
-        } else {
-          data.parentElement.parentElement.parentElement.children[1].innerText =
-            "";
-          data.parentElement.parentElement.parentElement.children[1].classList.remove(
-            "active"
-          );
-        }
-      } else {
-        if (value.length === 0) {
-          data.parentElement.parentElement.parentElement.children[1].innerText =
-            "Enter a value";
-          data.parentElement.parentElement.parentElement.children[1].classList.add(
-            "active"
-          );
-        } else {
-          data.parentElement.parentElement.parentElement.children[1].innerText =
-            "";
-          data.parentElement.parentElement.parentElement.children[1].classList.remove(
-            "active"
-          );
-        }
-      }
-
-      if (parseInt(value) < 9999 && parseInt(value) > 0) {
-        box.classList.add("active");
-        data.classList.add("active");
-        box.classList.add("adddeed");
-        let option = {
-          planChoose: planChoose,
-          price: parseInt(value),
-        };
-        let array = [...this.state.plan, option];
-        this.setState({
-          plan: array,
-        });
-      } else {
-      }
-    }
+  selectplan = ({ planChoose, value }) => {
+    let option = {
+      planChoose: planChoose,
+      price: String(value),
+    };
+    let array = [...this.state.plan, option];
+    this.setState({
+      plan: array,
+    });
   };
 
+  removePlan = (planChoose) => {
+    let list = [...this.state.plan].filter(
+      (item) => item.planChoose !== planChoose
+    );
+    this.setState({
+      plan: list,
+    });
+  };
   Activatemyfitstapropro = () => {
     let option = {
       userId: this.props.user.userId,
@@ -266,6 +213,7 @@ class Setup extends Component {
                       goToNectAfterConfifiguration={
                         this.goToNectAfterConfifiguration
                       }
+                      removePlan={this.removePlan}
                       selectplan={this.selectplan}
                       next={this.next}
                     />

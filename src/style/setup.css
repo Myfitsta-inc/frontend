@@ -177,6 +177,7 @@ input[type="number"] {
 .asdd-sellect.active {
   background-color: #6f56e5;
 }
+
 .box-that-container-thecoursecro {
   width: 100%;
   max-width: 550px;
@@ -448,6 +449,5 @@ input[type="number"] {
 @media only screen and (max-width: 600px) {
   .hold-thewelcome0-courseroell {
     align-items: flex-start;
-    justify-content: center;
   }
 }
