@@ -49,7 +49,7 @@ class SubscriptionInfo extends Component {
 
   checkSubscription = () => {
     axios
-      .get(`/api/checkSubscriotion/account/${this.props.item.AuthorId}`, {
+      .get(`/api/checkSubscriotion/account/${this.props.item.authorId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -69,7 +69,7 @@ class SubscriptionInfo extends Component {
 
   getdata = () => {
     axios
-      .get(`/api/myfitstapro/${this.props.item.AuthorId}`, {
+      .get(`/api/myfitstapro/${this.props.item.authorId}`, {
         withCredentials: true,
       })
       .then((res) => {

@@ -48,7 +48,7 @@ class Subcription extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>Subscription & order</p>
+            <p>Subscriptions</p>
           </div>
         </div>
         <div className="wraper-boxx-for-siucn">

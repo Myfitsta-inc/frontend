@@ -129,9 +129,9 @@ class Setting extends Component {
                   }`}
                 >
                   <div className="back-buttont">
-                    <AiFillFire />
+                    <i className="fas fa-fire-alt"></i>
                   </div>
-                  <Link to={"/setting/myfitstapropro"}>MyFitstaPro</Link>
+                  <Link to={"/setting/myfitstapropro"}>MyFitstapro</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>
@@ -149,7 +149,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <BsArrowRepeat />
                   </div>
-                  <Link to={"/setting/subscription"}>Subscription & order</Link>
+                  <Link to={"/setting/subscription"}>Subscriptions</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>
@@ -183,7 +183,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <SiGooglemaps />
                   </div>
-                  <Link to={"/setting/loginActivity"}>Login Activity</Link>
+                  <Link to={"/setting/loginActivity"}>Login Activitys</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>

@@ -55,14 +55,14 @@ class Loadprogram extends Component {
       })
       .then((res) => {
         if (res.data.Author) {
-          if (res.data.AuthorId !== this.props.user.userId) {
+          if (res.data.authorId !== this.props.user.userId) {
             this.props.history.push("/home");
           } else {
             this.setState({
               media: res.data,
             });
             if (this.state.playing === false) {
-              this.loadRelater(res.data.programId, res.data.AuthorId);
+              this.loadRelater(res.data.programId, res.data.authorId);
               this.setState({
                 playing: true,
               });

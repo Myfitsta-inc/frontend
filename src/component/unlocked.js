@@ -18,16 +18,16 @@ class Unlocked extends Component {
       if (res.data !== "no") {
         let list = [];
         res.data.data.forEach((item) => {
-          let dataS = list.filter((info) => info.AuthorId === item.AuthorId);
+          let dataS = list.filter((info) => info.authorId === item.authorId);
           if (dataS.length > 0) {
             list.forEach((data) => {
-              if (data.AuthorId === item.AuthorId) {
+              if (data.authorId === item.authorId) {
                 data.list.push(item.programId);
               }
             });
           } else {
             list.push({
-              AuthorId: item.AuthorId,
+              authorId: item.authorId,
               kind: item.kind,
               list: [item.programId],
             });
@@ -59,14 +59,14 @@ class Unlocked extends Component {
                 return (
                   <div
                     className="box-that-that-hold-the-row"
-                    key={item.AuthorId}
+                    key={item.authorId}
                   >
                     <div className="box-that-holdname">
                       <div className="icon-usnrn">
-                        <ProIcon user={item.AuthorId} />
+                        <ProIcon user={item.authorId} />
                       </div>
                       <div className="namebox-that-holdname">
-                        <Username user={item.AuthorId} link={true} />
+                        <Username user={item.authorId} link={true} />
                       </div>
                     </div>
                     <div className="row-0tjhat-hold-theprojhfnnf">
@@ -80,17 +80,17 @@ class Unlocked extends Component {
                 return (
                   <div
                     className="box-that-that-hold-the-row"
-                    key={item.AuthorId}
+                    key={item.authorId}
                   >
                     <div className="box-that-holdname">
                       <div className="icon-usnrn">
-                        <ProIcon user={item.AuthorId} />
+                        <ProIcon user={item.authorId} />
                       </div>
                       <div className="namebox-that-holdname">
-                        <Username user={item.AuthorId} link={true} />
+                        <Username user={item.authorId} link={true} />
                       </div>
                     </div>
-                    <SubscriptionBougth user={item.AuthorId} />
+                    <SubscriptionBougth user={item.authorId} />
                   </div>
                 );
               }

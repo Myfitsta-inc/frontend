@@ -25,7 +25,6 @@ class Chart extends Component {
     let date = this.props.data.filter(
       (item) => moment(item.date).format("MMM Do YY") === curentdate
     );
-    console.log(date);
   };
 
   filterWeek = () => {
@@ -46,7 +45,6 @@ class Chart extends Component {
         });
       }
     });
-    console.log(list);
     this.setState({
       data: list,
     });

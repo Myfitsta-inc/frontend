@@ -180,7 +180,6 @@ class Comment extends Component {
   };
   componentDidMount = () => {
     socket.on("update-this-comment", (data) => {
-      console.log(data);
       if (data.postId === this.state.item._id) {
         this.setState(
           {

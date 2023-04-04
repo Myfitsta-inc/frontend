@@ -400,7 +400,7 @@ class Edit extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="edit-box-profile">
+                {/* <div className="edit-box-profile">
                   <label htmlFor="Website">Website</label>
                   <input
                     onChange={this.handleChange}
@@ -410,7 +410,7 @@ class Edit extends Component {
                     placeholder={this.props.user.website}
                     value={this.state.website}
                   />
-                </div>
+                </div> */}
                 <p className="messsage" id="message-password">
                   {this.state.websitemessage}
                 </p>

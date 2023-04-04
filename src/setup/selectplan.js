@@ -21,7 +21,7 @@ const SelectPlan = ({
     if (value == "") {
       return {
         isValid: false,
-        errorMessage: "Enter a between $0 to $999 value",
+        errorMessage: "Enter a value between $0 to $999",
       };
     }
     if (value > 0) {
@@ -34,7 +34,7 @@ const SelectPlan = ({
       if (value === 0) {
         return {
           isValid: false,
-          errorMessage: "Enter a between $0 to $999 value",
+          errorMessage: "Enter a value between $0 to $999",
         };
       } else {
         return { isValid: true };
@@ -98,10 +98,7 @@ const SelectPlan = ({
   return (
     <div className="wrpaeorrr">
       <div className="theslider">
-        <div className="close-that">
-          <BiArrowBack />
-        </div>
-        <div className="wwwr-text">Choose your subscrition plan</div>
+        <div className="wwwr-text">Create your subscrition plans</div>
       </div>
 
       <div className="sucbrcriotion-thatprice">
@@ -116,7 +113,7 @@ const SelectPlan = ({
           >
             <div className="div-wiri">
               <button className="asdd-sellect"></button>
-              <p>Silver</p>
+              <p>silver</p>
             </div>
             <div className="wharoor-the-amoiut">
               <p className="desd">$</p>
@@ -147,7 +144,7 @@ const SelectPlan = ({
           >
             <div className="div-wiri">
               <button className="asdd-sellect"></button>
-              <p>Platinium</p>
+              <p>platinium</p>
             </div>
             <div className="wharoor-the-amoiut">
               <p className="desd">$</p>
@@ -180,7 +177,7 @@ const SelectPlan = ({
           >
             <div className="div-wiri">
               <button className="asdd-sellect"></button>
-              <p>Gold</p>
+              <p>gold</p>
             </div>
             <div className="wharoor-the-amoiut">
               <p className="desd">$</p>

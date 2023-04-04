@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ProgramBought from "../programs/programbougth";
 import { connect } from "react-redux";
+import Username from "../component/username";
 
 class SubscriptionBougth extends Component {
   state = {
@@ -14,6 +15,7 @@ class SubscriptionBougth extends Component {
         `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userId}`
       )
       .then((res) => {
+        console.log(res.data);
         if (res.data.length > 0) {
           this.setState({
             list: res.data.reverse(),
@@ -49,7 +51,12 @@ class SubscriptionBougth extends Component {
         ""
       )
     ) : (
-      ""
+      <div className="wraperififoojfhr">
+        <div className="wraperjf-ffkfkr">
+          <p>No Program</p>
+          <p>No program was publish at the moment</p>
+        </div>
+      </div>
     );
   }
 }

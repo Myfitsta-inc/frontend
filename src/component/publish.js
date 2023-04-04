@@ -16,7 +16,7 @@ class Publish extends Component {
   publish = () => {
     if (this.state.canpublih) {
       let option = {
-        AuthorId: this.props.users.userId,
+        authorId: this.props.users.userId,
         programId: this.props.item.programId,
         publish: !this.state.publish,
         loading: true,

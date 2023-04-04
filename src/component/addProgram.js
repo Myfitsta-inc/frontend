@@ -18,7 +18,7 @@ class Addprogram extends Component {
     if (this.state.title.length > 0) {
       const program = {
         Author: this.props.user.username,
-        AuthorId: this.props.user.userId,
+        authorId: this.props.user.userId,
         title: this.state.title,
         description: this.state.description,
         type: this.props.type,

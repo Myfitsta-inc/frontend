@@ -60,7 +60,6 @@ class Boxcollection extends Component {
   };
 
   addtoCollection = (data) => {
-    console.log(data);
     let option = {
       userId: this.props.user.userId,
       collectionName: data,

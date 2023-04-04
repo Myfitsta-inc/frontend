@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import LoadingSpin from "../component/loadingspin";
 function ActivateMyFitstaPro({ user }) {
-  console.log(user);
   const [loading, setLoading] = useState(false);
   const activate = () => {
     setLoading(true);

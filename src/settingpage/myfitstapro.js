@@ -69,7 +69,7 @@ class MyfistaProAc extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>MyFitstaPro</p>
+            <p>MyFitstapro</p>
           </div>
         </div>
         {this.props.users.myfitstapro === true ? (

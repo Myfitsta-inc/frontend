@@ -35,7 +35,7 @@ class Myfitstapr extends Component {
   };
 
   subscribe = () => {
-    let order = ["Silver", "Platinium", "Gold"];
+    let order = ["silver", "platinium", "gold"];
     let sorted = _.sortBy(this.state.profile.plan, function (obj) {
       return _.indexOf(order, obj.planChoose);
     });

@@ -91,7 +91,7 @@ class Lookprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data[0].AuthorId) {
+        if (res.data[0].authorId) {
           this.setState({
             item: res.data,
           });
@@ -115,7 +115,7 @@ class Lookprogram extends Component {
 
           this.loadContainer(
             this.props.match.params.id,
-            res.data.program.AuthorId
+            res.data.program.authorId
           );
         } else {
           this.props.history.push("/");
@@ -229,14 +229,14 @@ class Lookprogram extends Component {
                     />
                     <div className="name-oftheowner0of-the-workout">
                       <div className="fjjekfke">
-                        {this.state.program.AuthorId ? (
-                          <ProIcon user={this.state.program.AuthorId} />
+                        {this.state.program.authorId ? (
+                          <ProIcon user={this.state.program.authorId} />
                         ) : (
                           ""
                         )}
                       </div>
-                      {this.state.program.AuthorId ? (
-                        <Username user={this.state.program.AuthorId} />
+                      {this.state.program.authorId ? (
+                        <Username user={this.state.program.authorId} />
                       ) : (
                         ""
                       )}

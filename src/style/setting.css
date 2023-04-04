@@ -590,6 +590,7 @@
   justify-content: center;
   color: var(--text);
   text-decoration: none;
+  font-weight: bold;
 }
 
 .tabshjjjr {
@@ -838,6 +839,7 @@
   font-size: 18px;
   padding-left: 10px;
   font-weight: 600;
+  text-transform: capitalize;
 }
 .wharoor-the-amoiutt p {
   margin-right: 3px;
@@ -990,6 +992,7 @@
   width: 25%;
 }
 .fjeijsgijijf {
+  text-transform: capitalize;
   display: -webkit-box;
   max-width: 100%;
   max-height: 40px;

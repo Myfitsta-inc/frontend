@@ -53,9 +53,9 @@ class PaymentSub extends Component {
                       </p>{" "}
                       /{" "}
                       <p className="title-4hh4">
-                        {this.props.item.planChoose === "Silver"
+                        {this.props.item.planChoose === "silver"
                           ? "month"
-                          : this.props.item.planChoose === "Platinium"
+                          : this.props.item.planChoose === "platinium"
                           ? "3 month"
                           : "Year"}
                       </p>

@@ -48,7 +48,7 @@ class ProgramMessage extends Component {
           <div className="header-post vbf ">
             <div className="icon0tjnnr">
               {this.state.program !== null ? (
-                <IconProfile user={this.state.program.AuthorId} />
+                <IconProfile user={this.state.program.authorId} />
               ) : (
                 ""
               )}
@@ -56,7 +56,7 @@ class ProgramMessage extends Component {
             <div className="usernamerrjjr">
               {" "}
               {this.state.program !== null ? (
-                <Username user={this.state.program.AuthorId} />
+                <Username user={this.state.program.authorId} />
               ) : (
                 ""
               )}

@@ -137,7 +137,7 @@ class Myprogram extends Component {
       )
       .then((res) => {
         if (res.data) {
-          if (res.data[0].AuthorId) {
+          if (res.data[0].authorId) {
             this.setState({
               item: res.data.reverse(),
             });

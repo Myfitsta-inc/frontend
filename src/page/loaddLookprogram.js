@@ -43,7 +43,7 @@ class LoadlookProgram extends Component {
             media: res.data,
           });
           if (this.state.playing === false) {
-            this.loadRelater(res.data.programId, res.data.AuthorId);
+            this.loadRelater(res.data.programId, res.data.authorId);
             this.setState({
               playing: true,
             });
@@ -138,15 +138,15 @@ class LoadlookProgram extends Component {
                       <div className="box-the-hold-your-info">
                         <div className="rjfnvvbnf">
                           <div className="iconnrhrjrjjr">
-                            {this.state.media.AuthorId ? (
-                              <ProIcon user={this.state.media.AuthorId} />
+                            {this.state.media.authorId ? (
+                              <ProIcon user={this.state.media.authorId} />
                             ) : (
                               ""
                             )}
                           </div>
                           <div className="info-about-him">
                             <Username
-                              user={this.state.media.AuthorId}
+                              user={this.state.media.authorId}
                               link={true}
                             />
                           </div>

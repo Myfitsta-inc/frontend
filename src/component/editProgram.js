@@ -19,7 +19,7 @@ class Editprogram extends Component {
   saveChange = () => {
     let formData = new FormData();
     formData.append("Author", this.props.user.username);
-    formData.append("AuthorId", this.props.user.userId);
+    formData.append("authorId", this.props.user.userId);
     if (this.state.title !== this.props.program.title) {
       formData.append("title", this.state.title);
     }
@@ -35,14 +35,14 @@ class Editprogram extends Component {
         option = {
           title: this.state.title,
           description: this.state.description,
-          AuthorId: this.props.user.userId,
+          authorId: this.props.user.userId,
           programId: this.props.program.programId,
           price: this.state.price,
         };
       } else {
         option = {
           description: this.state.description,
-          AuthorId: this.props.user.userId,
+          authorId: this.props.user.userId,
           programId: this.props.program.programId,
           price: this.state.price,
         };

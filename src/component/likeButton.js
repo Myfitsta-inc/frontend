@@ -81,7 +81,6 @@ class LikeButton extends Component {
   };
 
   addLikes = (data) => {
-    console.log(data);
     const option = {
       userId: this.props.userId,
       postId: data,

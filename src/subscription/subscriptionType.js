@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
 
 class SubscriptionType extends Component {
   state = {
@@ -35,13 +36,15 @@ class SubscriptionType extends Component {
         </div>
         <div className="wharoor-the-amoiutt">
           <p className="desd">$</p>
-          <p className="boififi">{this.props.plan.price}</p>
+          <p className="boififi">
+            {convertFromStripe(this.props.plan.price, "USD")}
+          </p>
           <span className="title-4hhf4">/</span>
           <p className="title-4hh4">
             {" "}
-            {this.props.plan.planChoose === "Silver"
+            {this.props.plan.planChoose === "silver"
               ? "month"
-              : this.props.plan.planChoose === "Platinium"
+              : this.props.plan.planChoose === "platinium"
               ? "3 month"
               : "Year"}
           </p>

@@ -6,8 +6,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 function Checkout({ user, plan, authorId }) {
-  const { email, username } = user;
-  const { priceId } = plan;
+  const { email, userId } = user;
+  const { price } = plan;
   const [stipePromise, setStipePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -23,9 +23,9 @@ function Checkout({ user, plan, authorId }) {
   useEffect(() => {
     const fetch = async () => {
       const payload = {
-        name: username,
+        name: userId,
         email,
-        priceId,
+        price,
       };
       const { data } = await axios.post(
         "/api/create-subscription-intent",

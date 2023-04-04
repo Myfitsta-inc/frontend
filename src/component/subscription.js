@@ -79,9 +79,9 @@ class Subscribe extends Component {
                               {item.price / 100}
                             </p> /{" "}
                             <p className="title-4hh4">
-                              {item.planChoose === "Silver"
+                              {item.planChoose === "silver"
                                 ? "month"
-                                : item.planChoose === "Platinium"
+                                : item.planChoose === "platinium"
                                 ? "3 month"
                                 : "Year"}
                             </p>
