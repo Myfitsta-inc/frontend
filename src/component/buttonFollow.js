@@ -149,9 +149,9 @@ class ButtonFollow extends Component {
                 </div>
                 <div className="fjjtutjsjr">
                   <p className="rkerr">Unfollow</p>{" "}
-                  <div className="fheijwhr">
+                  {/* <div className="fheijwhr">
                     <Username user={this.props.friend} />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="jfkjworf">

@@ -12,7 +12,7 @@ class EditPreviews extends Component {
     if (this.props.program.file.length > 0) {
       this.setState({
         preview: this.props.program.file,
-        kind: this.props.program.fileKind,
+        kind: this.props.program.fileType,
       });
     } else {
       this.setState({
@@ -27,6 +27,7 @@ class EditPreviews extends Component {
       let formData = new FormData();
       formData.append("file", file[0]);
       formData.append("programId", this.props.program.programId);
+      this.props.changeLoading(true);
       axios
         .post(`/api/update-my-program-detail-with-image`, formData)
         .then((res) => {

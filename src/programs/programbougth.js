@@ -26,7 +26,7 @@ class ProgramBought extends Component {
       this.state.item !== "no" ? (
         <div className="box-thsthstbb">
           <div className="boxrnfnfnbn">
-            {this.state.item.fileKind.includes("image") ? (
+            {this.state.item.fileType.includes("image") ? (
               <img src={`${ApiUrl.content}${this.state.item.file}`} />
             ) : (
               <VideoPost src={this.state.item.file} />

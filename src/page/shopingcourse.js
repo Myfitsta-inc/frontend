@@ -84,8 +84,8 @@ class Shoping extends Component {
       let option = {
         User: this.state.profile.userId,
         subScriberId: this.props.user.userId,
-        PlanOfUser: "",
-        typeofSubscription: this.state.profile.accountType,
+        planName: "",
+        subscriptionType: this.state.profile.accountType,
       };
 
       axios.post(`/api/newSubcribert`, option).then((res) => {
@@ -102,6 +102,7 @@ class Shoping extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
+        console.log(res.data);
         if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,

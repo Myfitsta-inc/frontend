@@ -29,9 +29,9 @@ class OrderSubscription extends Component {
                     <div className="rjer3lwr3w">
                       <div className="jeirir">
                         <div className="chhfjf-sfufr">
-                          <IconProfile user={item.custumerId} />
+                          <IconProfile user={item.customerId} />
                         </div>
-                        <Username user={item.custumerId} />
+                        <Username user={item.customerId} />
                       </div>
                     </div>
                     <div className="rjer3lwr3w">
@@ -43,7 +43,7 @@ class OrderSubscription extends Component {
                     <div className="rjer3lwr3w">
                       <span>$</span>
                       {convertFromStripe(
-                        item.earn + item.takeCut,
+                        item.earnings + item.takeCut,
                         "USD"
                       ).toFixed(2)}
                     </div>

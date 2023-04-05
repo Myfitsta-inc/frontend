@@ -54,15 +54,15 @@ class Loadprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.Author) {
-          if (res.data.authorId !== this.props.user.userId) {
+        if (res.data.author) {
+          if (res.data.publisherId !== this.props.user.userId) {
             this.props.history.push("/home");
           } else {
             this.setState({
               media: res.data,
             });
             if (this.state.playing === false) {
-              this.loadRelater(res.data.programId, res.data.authorId);
+              this.loadRelater(res.data.programId, res.data.publisherId);
               this.setState({
                 playing: true,
               });
@@ -123,8 +123,8 @@ class Loadprogram extends Component {
                 <div className="wrrpaorjwwko">
                   <div className="video--image-elmnebnt-player">
                     <div className="box-player-elment">
-                      {this.state.media.fileKind ? (
-                        this.state.media.fileKind.includes("image") ? (
+                      {this.state.media.fileType ? (
+                        this.state.media.fileType.includes("image") ? (
                           <img
                             src={`${ApiUrl.content}${this.state.media.file}`}
                           />
@@ -286,7 +286,7 @@ class Loadprogram extends Component {
                                   to={`/program/workout/course/${item.file}`}
                                   className="read-load"
                                 ></NavLink>
-                                {item.fileKind.includes("image") ? (
+                                {item.fileType.includes("image") ? (
                                   <img src={`${ApiUrl.content}${item.file}`} />
                                 ) : (
                                   <div className="wraprorpsmmr">

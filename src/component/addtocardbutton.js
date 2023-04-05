@@ -14,7 +14,6 @@ class AddTocardButton extends Component {
     axios.get("/api/my-card", { withCredentials: true }).then((res) => {
       if (res.data.item) {
         let list = [...res.data.item];
-        console.log(list);
         this.setState({
           card: list,
         });

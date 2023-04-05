@@ -38,7 +38,7 @@ class Lookformyfitstapro extends Component {
       .then((res) => {
         if (res.data.userId) {
           if (res.data.userId === this.props.user.userId) {
-            //this.props.history.push("/myfitstapro")
+            this.props.history.push("/myfitstapro");
           } else {
             this.setState({
               profile: res.data,

@@ -4,6 +4,8 @@ import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
 import { connect } from "react-redux";
 import AddMethod from "../payment/addmethod";
+import { GoPlus } from "react-icons/go";
+import LoadingSpin from "../component/loadingspin";
 
 class PaymentInfo extends Component {
   state = {
@@ -15,17 +17,23 @@ class PaymentInfo extends Component {
   goBack = () => {
     this.props.history.goBack();
   };
-
+  makeDefault = (data) => {
+    let option = {
+      userId: this.props.users.userId,
+      item: data,
+    };
+    axios.post("/api/update-payment-methode", option).then((result) => {
+      window.location.reload();
+    });
+  };
   removeCard = (data) => {
     let option = {
       userId: this.props.users.userId,
       item: data,
     };
-    axios
-      .post(`/api/api/braintree/v1/remove-payment-methode`, option)
-      .then((result) => {
-        window.location.reload();
-      });
+    axios.post("/api/remove-payment-methode", option).then((result) => {
+      window.location.reload();
+    });
   };
   hnddleclick = () => {
     this.setState({
@@ -41,11 +49,12 @@ class PaymentInfo extends Component {
         this.setState({
           acountD: result.data,
         });
-        if (result.data.paymentTokens.length > 0) {
+        if (result.data.paymentMethods.length > 0) {
           this.setState({
-            listCard: result.data.paymentTokens,
+            listCard: result.data.paymentMethods,
           });
         } else {
+          console.log("mmm");
           this.setState({
             listCard: "no",
           });
@@ -69,67 +78,72 @@ class PaymentInfo extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>PaymentInfo</p>
+            <p>Payment Methode</p>
           </div>
         </div>
         <div className="load-the-info-sjdjd"></div>
         <div className="sjcijrjnjir">
-          {this.state.listCard !== null
-            ? this.state.listCard !== "no"
-              ? this.state.listCard.map((item) => {
-                  return (
-                    <div key={item._id} className="wrapwediiriri">
-                      <div
-                        className={`wraskfkfofnj-crsfdnf ${
-                          item.default === true ? "active" : ""
-                        } `}
-                      >
-                        <div className="positf active">
-                          <button></button>
-                        </div>
-                        <div className="wiijsjfjjfjfj">
-                          <div className="sjsjjfkfkfk speoer">
-                            <div className="fsjjfjfjr">
-                              <div className="boldsfk">{item.kind}</div>
-                              <div className="boldsfk"></div>
-                              <div className="boldsfk"></div>
-                              <div className="boldsfk">
-                                {item.default === true ? "Default" : ""}
-                              </div>
-                            </div>
-                          </div>
-                          <div className="sjsjjfkfkfk">
-                            <div className="fsjjfjfjr">
-                              <div className="boldsfk">
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                              </div>
-                              <div className="boldsfk">
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                              </div>
-                              <div className="boldsfk">
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                                <button></button>
-                              </div>
-                              <div className="boldsfk">{item.ending}</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skfkfkrjjr"></div>
+          {this.state.listCard !== null ? (
+            this.state.listCard !== "no" ? (
+              this.state.listCard.map((item) => {
+                return (
+                  <div key={item._id} className="wrapwediiriri">
+                    <div
+                      className={`wraskfkfofnj-crsfdnf ${
+                        item.default === true ? "active" : ""
+                      } `}
+                    >
+                      <div className="positf">
+                        <button></button>
                       </div>
-                      <div className="tabsjdjdj">
+                      <div className="wiijsjfjjfjfj">
+                        <div className="sjsjjfkfkfk speoer">
+                          <div className="fsjjfjfjr">
+                            <div className="boldsfk">{item.brand}</div>
+                            <div className="boldsfk"></div>
+                            <div className="boldsfk"></div>
+                            <div className="boldsfk">
+                              {item.default && "Default"}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="sjsjjfkfkfk">
+                          <div className="fsjjfjfjr">
+                            <div className="boldsfk">
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                            </div>
+                            <div className="boldsfk">
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                            </div>
+                            <div className="boldsfk">
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                              <button></button>
+                            </div>
+                            <div className="boldsfk">{item.ending}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="skfkfkrjjr"></div>
+                    </div>
+                    <div className="tabsjdjdj">
+                      {!item.default && (
                         <button
-                          className={`${item.default === true ? "active" : ""}`}
+                          onClick={() => {
+                            this.makeDefault(item);
+                          }}
                         >
-                          {item.default === true ? "Default" : "Make Default"}
+                          Make Default
                         </button>
+                      )}
+                      {!item.default && (
                         <button
                           onClick={() => {
                             this.removeCard(item);
@@ -137,28 +151,23 @@ class PaymentInfo extends Component {
                         >
                           Remove
                         </button>
-                      </div>
+                      )}
                     </div>
-                  );
-                })
-              : ""
-            : ""}
-
-          {/*<div onClick={this.hnddleclick} className="skjfmfjjfnfn">
-<div className="back-buttorn">
-    <GoPlus/>
-</div>
-    <button>Add Payment Method</button>
-</div>*/}
+                  </div>
+                );
+              })
+            ) : (
+              <div className="wraperjf-ffkfkr">
+                <p>No Payment Methode Addded</p>
+                <p>Payment Methode are added on the checkout page</p>
+              </div>
+            )
+          ) : (
+            <div className="bdoorr">
+              <LoadingSpin />
+            </div>
+          )}
         </div>
-        {this.state.addcard === true ? (
-          <AddMethod
-            acountD={this.state.acountD}
-            hnddleclick={this.hnddleclick}
-          />
-        ) : (
-          ""
-        )}
       </div>
     );
   }

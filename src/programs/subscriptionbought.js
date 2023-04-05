@@ -15,8 +15,7 @@ class SubscriptionBougth extends Component {
         `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userId}`
       )
       .then((res) => {
-        console.log(res.data);
-        if (res.data.length > 0) {
+        if (res.data.length > 0 && Array.isArray(res.data)) {
           this.setState({
             list: res.data.reverse(),
           });
@@ -43,7 +42,7 @@ class SubscriptionBougth extends Component {
           <div className="wraperififoojfhr">
             <div className="wraperjf-ffkfkr">
               <p>No Programs</p>
-              <p>The Author did not publish any program yet</p>
+              <p>The author did not published any program yet</p>
             </div>
           </div>
         )
@@ -54,7 +53,7 @@ class SubscriptionBougth extends Component {
       <div className="wraperififoojfhr">
         <div className="wraperjf-ffkfkr">
           <p>No Program</p>
-          <p>No program was publish at the moment</p>
+          <p>No program was published at the moment</p>
         </div>
       </div>
     );

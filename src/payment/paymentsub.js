@@ -3,18 +3,23 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { FaRegCreditCard } from "react-icons/fa";
 import { HiOutlineChevronRight } from "react-icons/hi";
+import axios from "axios";
 import Checkout from "./Checkout";
 import FieldSub from "../payment/fieldSub";
+import PaymentMethodSub from "../payment/paymentMethodSub";
+import LoadingSpin from "../component/loadingspin";
 class PaymentSub extends Component {
   instance;
   state = {
     item: null,
     card: true,
-    option: true,
+    option: false,
+    loading: false,
     dropin: false,
+    paymentMethod: [],
   };
   componentDidMount() {
-    this.handlePaymentcard();
+    this.getPaymentMethod();
   }
 
   handleCard = () => {};
@@ -22,6 +27,42 @@ class PaymentSub extends Component {
   hideoption = () => {
     this.setState({
       card: false,
+    });
+  };
+
+  getPaymentMethod = () => {
+    let option = {
+      userId: this.props.users.userId,
+    };
+    this.setState({
+      loading: true,
+    });
+
+    axios.post(`/api/my-payment-methode`, option).then((result) => {
+      console.log(result);
+      if (result.data._id) {
+        if (result.data.paymentMethods.length > 0) {
+          let tochoose = result.data.paymentMethods.filter(
+            (item) => item.default === true
+          );
+          this.setState({
+            paymentMethod: tochoose[0],
+            card: true,
+            loading: false,
+            option: true,
+          });
+        } else {
+          this.setState({
+            dropin: true,
+            loading: false,
+          });
+        }
+      } else {
+        this.setState({
+          dropin: true,
+          loading: false,
+        });
+      }
     });
   };
 
@@ -45,7 +86,7 @@ class PaymentSub extends Component {
                     <button className="asdd-sellect"></button>
                   </div>
                   <div className="wraprjr0-rfjrj">
-                    <p className="frjrj">{this.props.item.planChoose}</p>
+                    <p className="frjrj">{this.props.item.planName}</p>
                     <div className="wharoor-the-amoiut">
                       <span>$</span>
                       <p className="price-itr">
@@ -53,9 +94,9 @@ class PaymentSub extends Component {
                       </p>{" "}
                       /{" "}
                       <p className="title-4hh4">
-                        {this.props.item.planChoose === "silver"
+                        {this.props.item.planName === "silver"
                           ? "month"
-                          : this.props.item.planChoose === "platinium"
+                          : this.props.item.planName === "platinum"
                           ? "3 month"
                           : "Year"}
                       </p>
@@ -71,33 +112,22 @@ class PaymentSub extends Component {
           </div>
         </div>
 
-        {this.state.option === true ? (
+        {this.state.option ? (
           <div className="payment-option">
             <div className="boixbfitjrj">Choose Payment Method</div>
-            {this.state.card === true ? (
+            {this.state.card ? (
               <div className="wroiriitiiir">
                 <div onClick={this.handlePaymentcard} className="pay-with-card">
                   <div className="wrtapr">
                     <div className="iconfte">
                       <FaRegCreditCard />
                     </div>
-                    <div className="titler">Credit / Debit card</div>
+                    <div className="titler">New Credit / Debit card</div>
                   </div>
                   <div className="rkieokr">
                     <HiOutlineChevronRight />
                   </div>
                 </div>
-                {/*    <div className="pay-with-card">
-                <div className="wrtapr">
-                <div className="iconfte"  >
-                     <FaPaypal/>
-                   </div>
-                   <div className="titler">Paypal</div>
-                </div>
-                <div className="rkieokr">
-                <HiOutlineChevronRight/>
-                </div>
-                </div>*/}
               </div>
             ) : (
               ""
@@ -106,22 +136,29 @@ class PaymentSub extends Component {
         ) : (
           ""
         )}
-        {/* 
-        <div className="holdnrkj-fjrkr">
-          {this.state.dropin === true ? (
-            <FieldSub
-              planChoose={this.props.item}
-              authorId={this.props.authorId}
-            />
-          ) : (
-            ""
-          )}
-        </div> */}
-        <Checkout
-          authorId={this.props.authorId}
-          plan={this.props.item}
-          user={this.props.users}
-        />
+        {this.state.loading && (
+          <div className="jietiooegggg">
+            {" "}
+            <LoadingSpin />
+          </div>
+        )}
+
+        {this.state.option && (
+          <PaymentMethodSub
+            user={this.props.users}
+            publisherId={this.props.publisherId}
+            plan={this.props.item}
+            paymentMethod={this.state.paymentMethod}
+          />
+        )}
+
+        {this.state.dropin && (
+          <Checkout
+            publisherId={this.props.publisherId}
+            plan={this.props.item}
+            user={this.props.users}
+          />
+        )}
       </div>
     );
   }

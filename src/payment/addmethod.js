@@ -9,8 +9,8 @@ class AddMethod extends Component {
   state = {
     listCard: null,
     button: false,
-    option: true,
-    field: false,
+    option: false,
+    field: true,
   };
 
   handlePaymentcard = () => {

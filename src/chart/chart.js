@@ -41,7 +41,7 @@ class Chart extends Component {
       if (days.includes(moment(item.date).format("L"))) {
         list.push({
           date: moment(item.date).format("MMM Do"),
-          value: item.earn,
+          value: item.earnings,
         });
       }
     });
@@ -61,7 +61,7 @@ class Chart extends Component {
       ) {
         list.push({
           date: moment(item.date).format("MMM Do"),
-          value: item.earn,
+          value: item.earnings,
         });
       } else {
       }
@@ -91,7 +91,7 @@ class Chart extends Component {
     this.props.data.forEach((element) => {
       list.push({
         date: moment(element.date).format("MMM Do"),
-        value: convertFromStripe(element.earn, "USD").toFixed(2),
+        value: convertFromStripe(element.earnings, "USD").toFixed(2),
       });
     });
     this.setState({

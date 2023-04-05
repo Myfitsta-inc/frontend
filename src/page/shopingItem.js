@@ -97,8 +97,8 @@ class ShopingItem extends Component {
 
                   <div className="banner-that-hold-the-information">
                     <div className="box-that-hold-theafihe-url">
-                      {this.state.program.fileKind ? (
-                        this.state.program.fileKind.includes("image") ? (
+                      {this.state.program.fileType ? (
+                        this.state.program.fileType.includes("image") ? (
                           <img
                             src={`${ApiUrl.content}${this.state.program.file}`}
                           />
@@ -118,11 +118,11 @@ class ShopingItem extends Component {
                       </div>
 
                       <Rating
-                        people={this.state.program.numberofpeopleRating}
+                        people={this.state.program.numberOfPeopleRating}
                         rating={this.state.program.rating}
                       />
                       <div className="name-oftheowner0of-the-workout">
-                        {this.state.program.Author}
+                        {this.state.program.author}
                       </div>
                       <p className="theutit">${this.state.program.price}.00</p>
                     </div>

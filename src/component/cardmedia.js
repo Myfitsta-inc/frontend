@@ -14,7 +14,7 @@ class Cardmdedia extends Component {
               }/program/workout/course/${data.file}`}
               className="read-load"
             ></Link>
-            {data.fileKind.includes("image") ? (
+            {data.fileType.includes("image") ? (
               <img src={`${ApiUrl.content}${data.file}`} />
             ) : (
               <div className="wraprorpsmmr">

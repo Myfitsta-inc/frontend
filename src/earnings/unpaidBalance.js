@@ -13,7 +13,7 @@ class UnpaidEarning extends Component {
       .then((result) => {
         if (result.data !== "no") {
           this.setState({
-            number: result.data.unpaid,
+            number: result.data.unpaidBalance,
           });
         } else {
         }

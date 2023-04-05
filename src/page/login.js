@@ -63,14 +63,14 @@ class Login extends Component {
           if (res.data === "This username do not exist") {
             this.setState({
               loading: false,
-              messageusername: "Sorry 😅 this email  does not exist",
+              messagepassword: "Sorry 😅 Invalid email or password",
             });
           }
 
           if (res.data === "Your password is incorect") {
             this.setState({
               loading: false,
-              messagepassword: "Sorry 😅 your password is incorrect",
+              messagepassword: "Sorry 😅 Invalid email or password",
             });
           }
 

@@ -46,7 +46,7 @@ import Watcher from "./page/watcher";
 import Lookprogram from "./page/lookprogram";
 import SeeCollection from "./page/seeCollection";
 import Myprogram from "./page/myprogram";
-import Setting from "./page/seting";
+import Setting from "./page/setting";
 import Visitpage from "./page/visitepage";
 import Loadprogram from "./page/loadprogram";
 import Edit from "./page/edit";
@@ -125,11 +125,6 @@ class App extends Component {
     localStorage.setItem("mode", theme);
   };
 
-  componentWillMount() {
-    this.props.history.listen((location, action) => {
-      console.log("on route change");
-    });
-  }
   componentDidMount() {
     socket.on("check-everone-login-activity", () => {
       this.checkLogin();

@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import Editable from "../component/editable";
 import EditPreviews from "../programs/editPreviews";
+import LoadingSpin from "./loadingspin";
 import ApiUrl from "../url";
 class Editprogram extends Component {
   state = {
@@ -15,11 +16,12 @@ class Editprogram extends Component {
     preview: null,
     price: null,
     kind: null,
+    loading: false,
   };
   saveChange = () => {
     let formData = new FormData();
-    formData.append("Author", this.props.user.username);
-    formData.append("authorId", this.props.user.userId);
+    formData.append("author", this.props.user.username);
+    formData.append("publisherId", this.props.user.userId);
     if (this.state.title !== this.props.program.title) {
       formData.append("title", this.state.title);
     }
@@ -35,29 +37,36 @@ class Editprogram extends Component {
         option = {
           title: this.state.title,
           description: this.state.description,
-          authorId: this.props.user.userId,
+          publisherId: this.props.user.userId,
           programId: this.props.program.programId,
           price: this.state.price,
         };
       } else {
         option = {
           description: this.state.description,
-          authorId: this.props.user.userId,
+          publisherId: this.props.user.userId,
           programId: this.props.program.programId,
           price: this.state.price,
         };
       }
-
+      this.setState({
+        loading: true,
+      });
       axios
         .post(`/api/update-my-program-detail-with-no-image`, option)
         .then((res) => {
           this.props.getProgramInfo();
+          this.props.handlOpen(false);
         });
     } else {
       this.props.handlOpen(false);
     }
   };
-
+  changeLoading = (value) => {
+    this.setState({
+      loading: value,
+    });
+  };
   handleChange = (event) => {
     this.setState({
       title: event.target.value,
@@ -104,6 +113,7 @@ class Editprogram extends Component {
             <p>Edit Program</p>
           </div>
           <EditPreviews
+            changeLoading={this.changeLoading}
             handlOpen={this.props.handlOpen}
             getProgramInfo={this.props.getProgramInfo}
             program={this.props.program}
@@ -156,10 +166,14 @@ class Editprogram extends Component {
           <div
             className={`conte-thise-action ${
               this.state.button === true ? "active" : ""
-            }`}
+            } ${this.state.loading && "loading"}`}
           >
-            <button onClick={this.saveChange} className="save">
-              Save Change
+            <button
+              disabled={this.state.loading}
+              onClick={this.saveChange}
+              className="save"
+            >
+              {this.state.loading ? <LoadingSpin /> : "Save Change"}
             </button>
           </div>
         </div>

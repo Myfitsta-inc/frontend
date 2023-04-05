@@ -63,8 +63,8 @@ class HomeLand extends Component {
                 <div className="smajkkrjr">
                   <Fade left cascade>
                     A platform that assists you with your fitness-related
-                    activities and helps you earn money from the comfort of your
-                    home
+                    activities and helps you earnings money from the comfort of
+                    your home
                   </Fade>
                 </div>
 

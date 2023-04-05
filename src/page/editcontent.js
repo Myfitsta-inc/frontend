@@ -102,8 +102,8 @@ class EditContent extends Component {
             </div>
             <div className="wraorrikrkjrjjjjjsjjj">
               <div className="wrsjjjjrjrjjjjh">
-                {this.state.media.fileKind ? (
-                  this.state.media.fileKind.includes("image") ? (
+                {this.state.media.fileType ? (
+                  this.state.media.fileType.includes("image") ? (
                     <img src={`${ApiUrl.content}${this.state.media.file}`} />
                   ) : (
                     <VideoProgram src={this.state.media.file} />

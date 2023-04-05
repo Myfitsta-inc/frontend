@@ -8,6 +8,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import Username from "../component/username";
 import IconProfile from "../component/iconpicture";
+import SearchAccount from "../component/searchAccount";
 class Search extends Component {
   state = {
     people: null,
@@ -21,20 +22,7 @@ class Search extends Component {
       tabs: data,
     });
   };
-  addToRecent = (data) => {
-    let option = {
-      User: this.props.user.userId,
-      name: data,
-    };
-    axios
-      .post("/api/add-profile-seach", option)
-      .then((res) => {
-        return;
-      })
-      .catch((err) => {
-        return;
-      });
-  };
+
   removerecent = (e, data) => {
     let target = e.currentTarget;
     let option = {
@@ -134,9 +122,9 @@ class Search extends Component {
       })
       .then((res) => {
         if (res.data) {
-          if (res.data.UserIDSave) {
+          if (res.data.savedUserIds) {
             this.setState({
-              people: res.data.UserIDSave.reverse(),
+              people: res.data.savedUserIds.reverse(),
               loading: false,
             });
           } else {
@@ -163,119 +151,12 @@ class Search extends Component {
           this.props.seach === false ? "" : "active"
         }`}
       >
-        <div className={`box-find ${this.state.tabs === true ? "active" : ""}`}>
-          <p>
-            <i className="fas fa-search"></i>
-          </p>
-          <input
-            onKeyUp={this.filterbar}
-            className="seach-prp"
-            type="text"
-            name="profile"
-            placeholder="Search..."
-          />
-          <div className="close-seaceh">
-            <button
-              onClick={() => {
-                this.props.openSearch(false);
-              }}
-            >
-              <IoCloseSharp />
-            </button>
-          </div>
-        </div>
-        <div
-          className={`box-profile-session ${
-            this.state.tabs === false ? "active" : ""
-          }`}
-        >
-          {this.state.people !== null ? (
-            this.state.people.length > 0 ? (
-              this.state.people.map((item, index) => {
-                if (this.state.people.length === index + 1) {
-                  return (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      layout
-                      className="profile-tofind"
-                      key={item._id}
-                    >
-                      <InView
-                        onChange={(inView) => this.loadMore(inView)}
-                        className="profile-tofindt"
-                      >
-                        <div className="image-pr">
-                          <IconProfile live={true} user={item.userId} />
-                        </div>
-                        <div className="inf-or">
-                          <div className="bfjirtnj"></div>
-                          <div onClick={() => this.addToRecent(item.userId)}>
-                            <Username link={true} user={item.userId} />
-                            {/* <Subinfo user={item.userId} />*/}
-                          </div>
-                        </div>
-                        <div
-                          onClick={(e) => {
-                            this.removerecent(e, item.userId);
-                          }}
-                          className="delc-pro"
-                        >
-                          <IoCloseSharp />
-                        </div>
-                      </InView>
-                    </motion.div>
-                  );
-                } else {
-                  return (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      layout
-                      className="profile-tofind"
-                      key={item._id}
-                    >
-                      <div className="image-pr">
-                        <IconProfile live={true} user={item.userId} />
-                      </div>
-                      <div className="inf-or">
-                        <div className="bfjirtnj"></div>
-                        <div onClick={() => this.addToRecent(item.userId)}>
-                          <Username link={true} user={item.userId} />
-                          {/*<Subinfo user={item.userId} />*/}
-                        </div>
-                      </div>
-                      <div
-                        onClick={(e) => {
-                          this.removerecent(e, item.userId);
-                        }}
-                        className="delc-pro"
-                      >
-                        <IoCloseSharp />
-                      </div>
-                    </motion.div>
-                  );
-                }
-              })
-            ) : (
-              <div className="wraperififoojfhr">
-                <div className="wraperjf-ffkfkr">
-                  <p>SEARCH ACCOUNT</p>
-                  <p>Search and look for any account</p>
-                </div>
-              </div>
-            )
-          ) : (
-            ""
-          )}
-          {this.state.loading ? (
-            <div className="bixnknfkfjkjrjr">
-              <LoadingSpin />
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
+        <SearchAccount
+          user={this.props.user}
+          openSearch={this.props.openSearch}
+          tabs={this.state.tabs}
+        />
+
         <Interest tabs={this.state.tabs} />
       </div>
     );
@@ -283,3 +164,96 @@ class Search extends Component {
 }
 
 export default Search;
+
+// {/* <div
+//           className={`box-profile-session ${
+//             this.state.tabs === false ? "active" : ""
+//           }`}
+//         >
+//           {this.state.people !== null ? (
+//             this.state.people.length > 0 ? (
+//               this.state.people.map((item, index) => {
+//                 if (this.state.people.length === index + 1) {
+//                   return (
+//                     <motion.div
+//                       initial={{ opacity: 0 }}
+//                       animate={{ opacity: 1 }}
+//                       layout
+//                       className="profile-tofind"
+//                       key={item._id}
+//                     >
+//                       <InView
+//                         onChange={(inView) => this.loadMore(inView)}
+//                         className="profile-tofindt"
+//                       >
+//                         <div className="image-pr">
+//                           <IconProfile live={true} user={item.userId} />
+//                         </div>
+//                         <div className="inf-or">
+//                           <div className="bfjirtnj"></div>
+//                           <div onClick={() => this.addToRecent(item.userId)}>
+//                             <Username link={true} user={item.userId} />
+//                             {/* <Subinfo user={item.userId} />*/}
+//                           </div>
+//                         </div>
+//                         <div
+//                           onClick={(e) => {
+//                             this.removerecent(e, item.userId);
+//                           }}
+//                           className="delc-pro"
+//                         >
+//                           <IoCloseSharp />
+//                         </div>
+//                       </InView>
+//                     </motion.div>
+//                   );
+//                 } else {
+//                   return (
+//                     <motion.div
+//                       initial={{ opacity: 0 }}
+//                       animate={{ opacity: 1 }}
+//                       layout
+//                       className="profile-tofind"
+//                       key={item._id}
+//                     >
+//                       <div className="image-pr">
+//                         <IconProfile live={true} user={item.userId} />
+//                       </div>
+//                       <div className="inf-or">
+//                         <div className="bfjirtnj"></div>
+//                         <div onClick={() => this.addToRecent(item.userId)}>
+//                           <Username link={true} user={item.userId} />
+//                           {/*<Subinfo user={item.userId} />*/}
+//                         </div>
+//                       </div>
+//                       <div
+//                         onClick={(e) => {
+//                           this.removerecent(e, item.userId);
+//                         }}
+//                         className="delc-pro"
+//                       >
+//                         <IoCloseSharp />
+//                       </div>
+//                     </motion.div>
+//                   );
+//                 }
+//               })
+//             ) : (
+//               <div className="wraperififoojfhr">
+//                 <div className="wraperjf-ffkfkr">
+//                   <p>SEARCH ACCOUNT</p>
+//                   <p>Search and look for any account</p>
+//                 </div>
+//               </div>
+//             )
+//           ) : (
+//             ""
+//           )}
+//           {this.state.loading ? (
+//             <div className="bixnknfkfjkjrjr">
+//               <LoadingSpin />
+//             </div>
+//           ) : (
+//             ""
+//           )}
+//         </div> */}

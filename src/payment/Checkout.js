@@ -5,7 +5,7 @@ import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
-function Checkout({ user, plan, authorId }) {
+function Checkout({ user, plan, publisherId }) {
   const { email, userId } = user;
   const { price } = plan;
   const [stipePromise, setStipePromise] = useState(null);
@@ -38,7 +38,11 @@ function Checkout({ user, plan, authorId }) {
   }, []);
   return stipePromise && clientSecret ? (
     <Elements stripe={stipePromise} options={{ clientSecret }}>
-      <CheckoutForm userId={user.userId} authorId={authorId} plan={plan} />
+      <CheckoutForm
+        userId={user.userId}
+        publisherId={publisherId}
+        plan={plan}
+      />
     </Elements>
   ) : (
     <div className="wraping-button">

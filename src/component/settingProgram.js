@@ -32,7 +32,7 @@ class Settingprogram extends Component {
           </div>
           <button
             onClick={() => this.props.handlepublish(true)}
-            className="publish-the-program"
+            className="published-the-program"
           >
             Report
           </button>

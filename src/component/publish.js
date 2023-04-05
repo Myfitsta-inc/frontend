@@ -8,22 +8,22 @@ import VideoPost from "./videopost";
 class Publish extends Component {
   state = {
     people: [],
-    publish: false,
+    published: false,
     canpublih: false,
     loading: false,
   };
 
-  publish = () => {
+  published = () => {
     if (this.state.canpublih) {
       let option = {
-        authorId: this.props.users.userId,
+        publisherId: this.props.users.userId,
         programId: this.props.item.programId,
-        publish: !this.state.publish,
+        published: !this.state.published,
         loading: true,
       };
 
       axios
-        .post(`/api/publish-a-program`, option)
+        .post(`/api/published-a-program`, option)
         .then((result) => {
           this.props.changePublichState();
           this.props.handlepublish(false);
@@ -36,7 +36,7 @@ class Publish extends Component {
   };
 
   checkPublich = () => {
-    if (this.state.publish === false) {
+    if (this.state.published === false) {
       if (this.props.type === 0) {
         if (this.props.title.length > 5 && this.props.description.length > 5) {
           this.setState({
@@ -62,8 +62,8 @@ class Publish extends Component {
 
   componentDidMount = () => {
     this.setState({
-      publish: this.props.item.publish,
-      canpublih: this.props.item.publish,
+      published: this.props.item.published,
+      canpublih: this.props.item.published,
     });
     this.checkPublich();
   };
@@ -71,7 +71,7 @@ class Publish extends Component {
     return (
       <div
         className={`box-sggbdd  ${
-          this.props.publish === false ? "" : "active"
+          this.props.published === false ? "" : "active"
         }`}
       >
         <div className="bodnfkror">
@@ -86,9 +86,9 @@ class Publish extends Component {
               <p>Publish Program</p>
             </div>
 
-            <div className="wrapiroirr">
-              {this.props.item.fileKind ? (
-                this.props.item.fileKind.includes("image") ? (
+            {/* <div className="wrapiroirr">
+              {this.props.item.fileType ? (
+                this.props.item.fileType.includes("image") ? (
                   <img src={`${ApiUrl.content}${this.props.item.file}`} />
                 ) : (
                   <VideoPost src={this.props.item.file} />
@@ -96,7 +96,7 @@ class Publish extends Component {
               ) : (
                 ""
               )}
-            </div>
+            </div> */}
           </div>
           <div className="wjfjrjjn">
             <div className="edit-box-profile">
@@ -122,9 +122,9 @@ class Publish extends Component {
             )}
           </div>
 
-          {this.state.publish === false ? (
+          {this.state.published === false ? (
             <div
-              onClick={this.publish}
+              onClick={this.published}
               className={`conte-thise-action  ${
                 this.state.canpublih === false ? "" : "active"
               }  ${this.state.loading === true ? "loading" : ""}`}
@@ -144,9 +144,9 @@ class Publish extends Component {
             ""
           )}
 
-          {this.state.publish === true ? (
+          {this.state.published === true ? (
             <div
-              onClick={this.publish}
+              onClick={this.published}
               className={`conte-thise-action  ${
                 this.state.canpublih === false ? "" : "activefjf"
               }  ${this.state.loading === true ? "loading" : ""}`}

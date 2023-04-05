@@ -27,7 +27,6 @@ class ReviewMenu extends Component {
     if (e != null) {
       if (e.currentTarget.parentElement.parentElement !== null) {
         let box = e.currentTarget.parentElement.parentElement;
-        console.log(window.innerHeight - box.getBoundingClientRect().bottom);
         if (window.innerHeight - box.getBoundingClientRect().bottom <= 200) {
           this.setState({
             top: false,
@@ -92,7 +91,7 @@ class ReviewMenu extends Component {
         >
           <div
             className={`box-that-hold-the-setting ${
-              this.props.item.AnthorId !== this.props.users.userId
+              this.props.item.userId !== this.props.users.userId
                 ? "disparais"
                 : ""
             }`}

@@ -52,7 +52,7 @@ class PaymentOption extends Component {
           {/*  <div className="wraper-hosmjfr-ifnf">
             <div className="iconjrr-of-profhrr">
 
-            {this.props.program.fileKind.includes("image")?<img className="pect-ppr" src={`https://wefitmedia.s3.us-east-2.amazonaws.com/${this.props.program.file}`} loading="lazy"/>:""}
+            {this.props.program.fileType.includes("image")?<img className="pect-ppr" src={`https://wefitmedia.s3.us-east-2.amazonaws.com/${this.props.program.file}`} loading="lazy"/>:""}
 
             </div>
             <div className="program-drtainr">

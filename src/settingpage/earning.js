@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import TodayEarning from "../earnings/today";
 import TotalEarning from "../earnings/total";
 import MonthEarning from "../earnings/month";
-import UnpaidEarning from "../earnings/unpaid";
+import UnpaidEarning from "../earnings/unpaidBalance";
 class Earning extends Component {
   state = {
     data: null,

@@ -35,7 +35,7 @@ class SubscriptionInfo extends Component {
       .then((result) => {
         if (result.data.succes === true) {
           let data = this.state.data;
-          data.activeSubscription = false;
+          data.hasActiveSubscription = false;
           this.setState({
             loadinUnb: false,
             unbscribe: false,
@@ -49,13 +49,13 @@ class SubscriptionInfo extends Component {
 
   checkSubscription = () => {
     axios
-      .get(`/api/checkSubscriotion/account/${this.props.item.authorId}`, {
+      .get(`/api/checkSubscriotion/account/${this.props.item.publisherId}`, {
         withCredentials: true,
       })
       .then((res) => {
         if (res.data._id) {
           let plansChoose = this.state.profile.plan.filter(
-            (item) => item.planChoose === res.data.PlanOfUser
+            (item) => item.planName === res.data.planName
           );
           if (plansChoose.length > 0 !== null) {
             this.setState({
@@ -69,7 +69,7 @@ class SubscriptionInfo extends Component {
 
   getdata = () => {
     axios
-      .get(`/api/myfitstapro/${this.props.item.authorId}`, {
+      .get(`/api/myfitstapro/${this.props.item.publisherId}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -99,7 +99,7 @@ class SubscriptionInfo extends Component {
                   <p>Next payment:</p>
                   <p className="sjfj">
                     {this.state.data !== null
-                      ? this.state.data.nextPayingdate
+                      ? this.state.data.lastPaymentDate
                       : ""}
                   </p>
                 </div>
@@ -133,7 +133,7 @@ class SubscriptionInfo extends Component {
 
         <div className="button-busnn-bossn">
           {this.state.data !== null ? (
-            this.state.data.activeSubscription === true ? (
+            this.state.data.hasActiveSubscription === true ? (
               <button onClick={this.cancelSubscription}>Unsubscribe</button>
             ) : (
               <button>Subscribe</button>
@@ -157,7 +157,9 @@ class SubscriptionInfo extends Component {
               <div className="jfkjworf">
                 By unsubscribing to this account you will no longer have acces
                 this account content starting{" "}
-                {this.state.data !== null ? this.state.data.nextPayingdate : ""}{" "}
+                {this.state.data !== null
+                  ? this.state.data.lastPaymentDate
+                  : ""}{" "}
               </div>
               <div className="conte-thise-actionrrr active">
                 {this.state.loadinUnb === true ? (

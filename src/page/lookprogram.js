@@ -91,7 +91,7 @@ class Lookprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data[0].authorId) {
+        if (res.data[0].publisherId) {
           this.setState({
             item: res.data,
           });
@@ -108,14 +108,14 @@ class Lookprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.bougth && res.data.program.publish) {
+        if (res.data.bougth && res.data.program.published) {
           this.setState({
             program: res.data.program,
           });
 
           this.loadContainer(
             this.props.match.params.id,
-            res.data.program.authorId
+            res.data.program.publisherId
           );
         } else {
           this.props.history.push("/");
@@ -152,8 +152,8 @@ class Lookprogram extends Component {
 
                 <div className="banner-that-hold-the-information">
                   <div className="box-that-hold-theafihe-url">
-                    {this.state.program.fileKind ? (
-                      this.state.program.fileKind.includes("image") ? (
+                    {this.state.program.fileType ? (
+                      this.state.program.fileType.includes("image") ? (
                         <img
                           src={`${ApiUrl.content}${this.state.program.file}`}
                         />
@@ -224,19 +224,19 @@ class Lookprogram extends Component {
                       {this.state.program.description}
                     </div>
                     <Rating
-                      people={this.state.program.numberofpeopleRating}
+                      people={this.state.program.numberOfPeopleRating}
                       rating={this.state.program.rating}
                     />
                     <div className="name-oftheowner0of-the-workout">
                       <div className="fjjekfke">
-                        {this.state.program.authorId ? (
-                          <ProIcon user={this.state.program.authorId} />
+                        {this.state.program.publisherId ? (
+                          <ProIcon user={this.state.program.publisherId} />
                         ) : (
                           ""
                         )}
                       </div>
-                      {this.state.program.authorId ? (
-                        <Username user={this.state.program.authorId} />
+                      {this.state.program.publisherId ? (
+                        <Username user={this.state.program.publisherId} />
                       ) : (
                         ""
                       )}
@@ -244,8 +244,8 @@ class Lookprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.publish ? (
-                  <p className="publish rr">Publish</p>
+                {this.state.program.published ? (
+                  <p className="published rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
                 )}

@@ -6,18 +6,20 @@ import "../style/setting.css";
 import Mode from "../settingpage/mode";
 import MyfistaProAc from "../settingpage/myfitstapro";
 import LoginActivity from "../settingpage/loginactivity";
+import PaymentInfo from "../settingpage/paymentinfo";
 import Earning from "../settingpage/earning";
 import { MdModeEdit } from "react-icons/md";
 import TermCondition from "../settingpage/termandcondition";
 import Subcription from "../settingpage/subscription";
 import ChangePassword from "../settingpage/changePassword";
-import Edit from "../page/edit";
+import Edit from "./edit";
 import { RiArrowRightSLine, RiLockPasswordFill } from "react-icons/ri";
-import { AiFillFire } from "react-icons/ai";
 import { SiGooglemaps } from "react-icons/si";
 import { BsArrowRepeat, BsBarChartFill, BsMoon } from "react-icons/bs";
 import { BiArrowBack, BiLogOut } from "react-icons/bi";
 import { FaClipboardList } from "react-icons/fa";
+import { MdPayment } from "react-icons/md";
+
 let source;
 source = axios.CancelToken.source();
 class Setting extends Component {
@@ -206,13 +208,23 @@ class Setting extends Component {
                   </div>
                 </div>
 
-                {/*<div className={`box-that0-hold-thetabsb-m ${this.props.match.params.id!==undefined? this.props.match.params.id=="paymentInfo"?"active ":"" :""}`}>
-<div className="back-buttont">
-    <MdPayment/>
-</div>
-<Link to={"/setting/paymentInfo"}>Payment Information</Link>
-    <div className="back-button"><RiArrowRightSLine/></div>
-</div>*/}
+                <div
+                  className={`box-that0-hold-thetabsb-m ${
+                    this.props.match.params.id !== undefined
+                      ? this.props.match.params.id == "paymentInfo"
+                        ? "active "
+                        : ""
+                      : ""
+                  }`}
+                >
+                  <div className="back-buttont">
+                    <MdPayment />
+                  </div>
+                  <Link to={"/setting/paymentInfo"}>Payment methode</Link>
+                  <div className="back-button">
+                    <RiArrowRightSLine />
+                  </div>
+                </div>
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
@@ -356,9 +368,25 @@ class Setting extends Component {
                 ) : (
                   ""
                 )}
-                {/*{this.props.match.params.id!==undefined? this.props.match.params.id=="paymentInfo"?<div className={`sub-wraprj-tabs ${this.props.match.params.id!==undefined? this.props.match.params.id=="paymentInfo"?"active ":"" :""}`} >
-   {<PaymentInfo/>}
-</div>:"" :""}*/}
+                {this.props.match.params.id !== undefined ? (
+                  this.props.match.params.id == "paymentInfo" ? (
+                    <div
+                      className={`sub-wraprj-tabs ${
+                        this.props.match.params.id !== undefined
+                          ? this.props.match.params.id == "paymentInfo"
+                            ? "active "
+                            : ""
+                          : ""
+                      }`}
+                    >
+                      {<PaymentInfo />}
+                    </div>
+                  ) : (
+                    ""
+                  )
+                ) : (
+                  ""
+                )}
                 {this.props.match.params.id !== undefined ? (
                   this.props.match.params.id === "termsCondition" ? (
                     <div

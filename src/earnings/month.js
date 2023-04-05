@@ -24,7 +24,7 @@ class MonthEarning extends Component {
     });
     if (list.length > 0) {
       this.setState({
-        number: list.reduce((n, { earn }) => n + earn, 0),
+        number: list.reduce((n, { earnings }) => n + earnings, 0),
       });
     } else {
     }

@@ -9,12 +9,12 @@ class TodayEarning extends Component {
 
   filterpay = () => {
     let curentdate = moment().format("MMM Do YY");
-    let earn = this.props.data.filter(
+    let earnings = this.props.data.filter(
       (item) => moment(item.date).format("MMM Do YY") === curentdate
     );
-    if (earn.length > 0) {
+    if (earnings.length > 0) {
       this.setState({
-        number: earn.reduce((n, { earn }) => n + earn, 0),
+        number: earnings.reduce((n, { earnings }) => n + earnings, 0),
       });
     }
   };

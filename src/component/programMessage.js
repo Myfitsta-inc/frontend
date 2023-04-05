@@ -24,7 +24,7 @@ class ProgramMessage extends Component {
           this.setState({
             program: res.data,
             file: res.data.file,
-            kind: [res.data.fileKind],
+            kind: [res.data.fileType],
             show: true,
           });
           document.querySelector(".box-hold-convertion").scrollTop =
@@ -48,7 +48,7 @@ class ProgramMessage extends Component {
           <div className="header-post vbf ">
             <div className="icon0tjnnr">
               {this.state.program !== null ? (
-                <IconProfile user={this.state.program.authorId} />
+                <IconProfile user={this.state.program.publisherId} />
               ) : (
                 ""
               )}
@@ -56,7 +56,7 @@ class ProgramMessage extends Component {
             <div className="usernamerrjjr">
               {" "}
               {this.state.program !== null ? (
-                <Username user={this.state.program.authorId} />
+                <Username user={this.state.program.publisherId} />
               ) : (
                 ""
               )}

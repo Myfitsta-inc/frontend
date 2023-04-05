@@ -38,12 +38,12 @@ class LoadlookProgram extends Component {
         { withCredentials: true, cancelToken: source.token }
       )
       .then((res) => {
-        if (res.data.Author) {
+        if (res.data.author) {
           this.setState({
             media: res.data,
           });
           if (this.state.playing === false) {
-            this.loadRelater(res.data.programId, res.data.authorId);
+            this.loadRelater(res.data.programId, res.data.publisherId);
             this.setState({
               playing: true,
             });
@@ -107,8 +107,8 @@ class LoadlookProgram extends Component {
                 <div className="wrrpaorjwwko">
                   <div className="video--image-elmnebnt-player">
                     <div className="box-player-elment">
-                      {this.state.media.fileKind ? (
-                        this.state.media.fileKind.includes("image") ? (
+                      {this.state.media.fileType ? (
+                        this.state.media.fileType.includes("image") ? (
                           <img
                             src={`${ApiUrl.content}${this.state.media.file}`}
                           />
@@ -138,15 +138,15 @@ class LoadlookProgram extends Component {
                       <div className="box-the-hold-your-info">
                         <div className="rjfnvvbnf">
                           <div className="iconnrhrjrjjr">
-                            {this.state.media.authorId ? (
-                              <ProIcon user={this.state.media.authorId} />
+                            {this.state.media.publisherId ? (
+                              <ProIcon user={this.state.media.publisherId} />
                             ) : (
                               ""
                             )}
                           </div>
                           <div className="info-about-him">
                             <Username
-                              user={this.state.media.authorId}
+                              user={this.state.media.publisherId}
                               link={true}
                             />
                           </div>
@@ -198,7 +198,7 @@ class LoadlookProgram extends Component {
                                   to={`/account/program/workout/course/${item.file}`}
                                   className="read-load"
                                 ></NavLink>
-                                {item.fileKind.includes("image") ? (
+                                {item.fileType.includes("image") ? (
                                   <img src={`${ApiUrl.content}${item.file}`} />
                                 ) : (
                                   <div className="wraprorpsmmr">

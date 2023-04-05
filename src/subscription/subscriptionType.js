@@ -14,7 +14,7 @@ class SubscriptionType extends Component {
       .then((res) => {
         if (res.data._id) {
           let plansChoose = this.props.plan.filter(
-            (item) => item.planChoose === res.data.PlanOfUser
+            (item) => item.planName === res.data.planName
           );
           if (plansChoose.length > 0) {
             this.setState({
@@ -32,7 +32,7 @@ class SubscriptionType extends Component {
     return this.props.plan !== null ? (
       <div className="wraper-the-plankr">
         <div className="div-wirii">
-          <p>{this.props.plan.planChoose}</p>
+          <p>{this.props.plan.planName}</p>
         </div>
         <div className="wharoor-the-amoiutt">
           <p className="desd">$</p>
@@ -42,9 +42,9 @@ class SubscriptionType extends Component {
           <span className="title-4hhf4">/</span>
           <p className="title-4hh4">
             {" "}
-            {this.props.plan.planChoose === "silver"
+            {this.props.plan.planName === "silver"
               ? "month"
-              : this.props.plan.planChoose === "platinium"
+              : this.props.plan.planName === "platinum"
               ? "3 month"
               : "Year"}
           </p>

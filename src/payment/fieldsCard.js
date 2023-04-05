@@ -10,9 +10,9 @@ let itemCouter = 0;
 class FieldCard extends Component {
   state = {
     clientToken: null,
-    planchoose: null,
+    planName: null,
     loading: false,
-    authorId: "",
+    publisherId: "",
   };
 
   async getclient() {
@@ -125,8 +125,8 @@ class FieldCard extends Component {
   componentDidMount = () => {
     this.getclient();
     this.setState({
-      authorId: this.props.authorId,
-      planchoose: this.props.planChoose,
+      publisherId: this.props.publisherId,
+      planName: this.props.planName,
     });
   };
   render() {

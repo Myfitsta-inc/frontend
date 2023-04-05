@@ -7,9 +7,9 @@ import axios from "axios";
 class Field extends Component {
   state = {
     clientToken: null,
-    planchoose: null,
+    planName: null,
     loading: false,
-    authorId: "",
+    publisherId: "",
   };
 
   async getclient() {
@@ -89,8 +89,8 @@ class Field extends Component {
             }
             let option = {
               paymentMethodNonce: payload.nonce,
-              planChoose: this.state.planchoose,
-              authorId: this.state.authorId,
+              planName: this.state.planName,
+              publisherId: this.state.publisherId,
               userId: this.props.users.userId,
             };
             this.setState({
@@ -116,8 +116,8 @@ class Field extends Component {
   componentDidMount = () => {
     this.getclient();
     this.setState({
-      authorId: this.props.authorId,
-      planchoose: this.props.planChoose,
+      publisherId: this.props.publisherId,
+      planName: this.props.planName,
     });
   };
   render() {

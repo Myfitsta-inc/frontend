@@ -62,11 +62,11 @@ class Reviews extends Component {
                   >
                     <div className="baoncnfff">
                       <div className="hold-the-sh">
-                        <IconProfile user={item.AnthorId} />
+                        <IconProfile user={item.userId} />
                       </div>
                       <div className="indorjrjr">
                         <div className="hold-thefirst-name">
-                          <Username user={item.AnthorId} />
+                          <Username user={item.userId} />
                         </div>
                         <div className="hold-thestaterating">
                           <Star rating={item.star} />

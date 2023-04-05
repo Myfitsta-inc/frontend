@@ -7,7 +7,7 @@ class TotalEarning extends Component {
   };
   componentDidMount = () => {
     this.setState({
-      data: this.props.data.reduce((n, { earn }) => n + earn, 0),
+      data: this.props.data.reduce((n, { earnings }) => n + earnings, 0),
     });
   };
   render() {

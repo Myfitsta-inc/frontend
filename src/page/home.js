@@ -12,7 +12,6 @@ import Menupost from "../component/menupost";
 import LoadingSpin from "../component/loadingspin.js";
 import Boxcollection from "../component/boxcollection";
 import ShareOption from "../component/shareoption";
-import ShowLive from "../component/showlive";
 import { GoPlus } from "react-icons/go";
 import Report from "../component/report";
 import DropOption from "../component/dropHome";

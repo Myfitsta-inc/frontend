@@ -221,11 +221,11 @@ class Myfitstapro extends Component {
                                 <div className="descplr-image-program-ui">
                                   <div className="hold-imf">
                                     <Link
-                                      to={`/program/workout/${item.programId}`}
+                                      to={`/program/workout/${item?.programId}`}
                                       className="link0-toorohran"
                                     ></Link>
                                     {item.file.length > 0 ? (
-                                      item.fileKind.includes("image") ? (
+                                      item?.fileType?.includes("image") ? (
                                         <img
                                           src={`${ApiUrl.content}${item.file}`}
                                         />
@@ -247,7 +247,6 @@ class Myfitstapro extends Component {
                                 <div className="title-of-workot">
                                   {item.title}
                                 </div>
-                                <Rating rating={item.rating} />
 
                                 <div className="action-postf-desing">
                                   {item.programType === 0 ? (
@@ -259,8 +258,8 @@ class Myfitstapro extends Component {
                                   )}
                                 </div>
 
-                                {item.publish === true ? (
-                                  <p className="publish">Publish</p>
+                                {item.published === true ? (
+                                  <p className="published">Publish</p>
                                 ) : (
                                   <p className="draft">Draft</p>
                                 )}

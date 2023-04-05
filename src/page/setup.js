@@ -55,9 +55,9 @@ class Setup extends Component {
         }
       });
   };
-  selectplan = ({ planChoose, value }) => {
+  selectplan = ({ planName, value }) => {
     let option = {
-      planChoose: planChoose,
+      planName: planName,
       price: String(value),
     };
     let array = [...this.state.plan, option];
@@ -66,9 +66,9 @@ class Setup extends Component {
     });
   };
 
-  removePlan = (planChoose) => {
+  removePlan = (planName) => {
     let list = [...this.state.plan].filter(
-      (item) => item.planChoose !== planChoose
+      (item) => item.planName !== planName
     );
     this.setState({
       plan: list,

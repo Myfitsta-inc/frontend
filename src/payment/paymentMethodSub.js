@@ -8,6 +8,7 @@ class PaymentmethodSub extends Component {
     payment: null,
     button: false,
     loading: false,
+    errorMessage: "",
   };
 
   handleclick = () => {
@@ -17,130 +18,96 @@ class PaymentmethodSub extends Component {
     this.props.hideoption();
   };
 
-  getPaymentMethod = () => {
-    let option = {
-      userId: this.props.users.userId,
-    };
-
-    axios.post(`/api/my-payment-methode`, option).then((result) => {
-      if (result.data._id) {
-        if (result.data.paymentTokens.length > 0) {
-          let tochoose = result.data.paymentTokens.filter(
-            (item) => item.default === true
-          );
-          this.setState({
-            payment: tochoose[0],
-          });
-        } else {
-          this.setState({
-            payment: "no",
-          });
-        }
-      } else {
-        this.setState({
-          payment: "no",
-        });
-      }
-    });
-  };
-
   handlePay = () => {
+    const { paymentMethod, plan, publisherId, user } = this.props;
+    console.log(paymentMethod, plan, user);
     let option = {
-      planChoose: this.props.planChoose,
-      authorId: this.props.authorId,
-      userId: this.props.users.userId,
+      token: paymentMethod.token,
+      planName: plan.planName,
+      publisherId: publisherId,
+      subScriberId: user.userId,
+      price: plan.price,
     };
 
     this.setState({
       loading: true,
     });
-    axios.post(`/api/api/braintree/subscription`, option).then((result) => {
-      if (result.data.success === true) {
-        window.location.reload();
-      } else {
-      }
-    });
-  };
-
-  componentDidMount = () => {
-    this.getPaymentMethod();
+    axios
+      .post("/api/subscription/intent", option)
+      .then((result) => {
+        if (result.data.success) {
+          window.location.reload();
+        } else {
+          console.log(result.data.errorMessage);
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   render() {
+    const { paymentMethod } = this.props;
     return (
       <div className="woffkorkr">
         <div className="wrapfjrr">
-          {this.state.payment !== null ? (
-            this.state.payment !== "no" ? (
-              <div
-                onClick={this.handleclick}
-                className={`wraskfkfofnj-crsfdnf ${
-                  this.state.button === true ? "active" : ""
-                } `}
+          <div
+            className={`wraskfkfofnj-crsfdnf ${
+              this.state.button === true ? "active" : ""
+            } `}
+          >
+            <div className="positf active">
+              <button></button>
+            </div>
+            <div className="wiijsjfjjfjfj">
+              <div className="sjsjjfkfkfk">{paymentMethod.brand}</div>
+              <div className="sjsjjfkfkfk">
+                <div className="fsjjfjfjr">
+                  <div className="boldsfk">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <div className="boldsfk">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <div className="boldsfk">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                  </div>
+                  <div className="boldsfk">{paymentMethod.ending}</div>
+                </div>
+              </div>
+            </div>
+            <div className="skfkfkrjjr"></div>
+          </div>
+
+          <div className="wraohririirii">
+            <div className="controil-theaction">
+              <button
+                onClick={this.handlePay}
+                className={`add-shch ${
+                  this.state.loading === true ? "active" : ""
+                }`}
               >
-                <div className="positf active">
-                  <button></button>
+                {this.state.loading === true ? "" : "SUBSCRIBE"}
+              </button>
+              {this.state.loading === true ? (
+                <div className="jietiooeo">
+                  {" "}
+                  <LoadingSpin />
                 </div>
-                <div className="wiijsjfjjfjfj">
-                  <div className="sjsjjfkfkfk">{this.state.payment.kind}</div>
-                  <div className="sjsjjfkfkfk">
-                    <div className="fsjjfjfjr">
-                      <div className="boldsfk">
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                      </div>
-                      <div className="boldsfk">
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                      </div>
-                      <div className="boldsfk">
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                      </div>
-                      <div className="boldsfk">{this.state.payment.ending}</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="skfkfkrjjr"></div>
-              </div>
-            ) : (
-              ""
-            )
-          ) : (
-            <div className="jietiooeoe">
-              <LoadingSpin />
+              ) : (
+                ""
+              )}
             </div>
-          )}
-          {this.state.button === true ? (
-            <div className="wraohririirii">
-              <div className="controil-theaction">
-                <button
-                  onClick={this.handlePay}
-                  className={`add-shch ${
-                    this.state.loading === true ? "active" : ""
-                  }`}
-                >
-                  {this.state.loading === true ? "" : "Subscribe"}
-                </button>
-                {this.state.loading === true ? (
-                  <div className="jietiooeo">
-                    {" "}
-                    <LoadingSpin />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
+          </div>
         </div>
       </div>
     );

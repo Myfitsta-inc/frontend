@@ -51,6 +51,9 @@ class TagPeople extends Component {
       });
     }
   };
+  componentDidMount() {
+    console.log(this.props);
+  }
   render() {
     return (
       <div className="wraper0the-box">

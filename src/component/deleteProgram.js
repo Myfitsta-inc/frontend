@@ -8,7 +8,7 @@ class DeleteProgram extends Component {
 
   deleteCollecion = () => {
     let option = {
-      authorId: this.props.program.authorId,
+      publisherId: this.props.program.publisherId,
       programId: this.props.program.programId,
     };
     axios.post(`/api/handle-the-delete-program`, option).then((result) => {

@@ -33,7 +33,7 @@ class Myprogram extends Component {
     program: {},
     item: [],
     save: false,
-    publish: false,
+    published: false,
     rate: false,
     review: 0,
     tabsprogram: true,
@@ -98,7 +98,7 @@ class Myprogram extends Component {
 
   changePublichState = () => {
     let program = this.state.program;
-    program.publish = !this.state.program.publish;
+    program.published = !this.state.program.published;
     this.setState({
       program: program,
     });
@@ -106,7 +106,7 @@ class Myprogram extends Component {
 
   handlepublish = (data) => {
     this.setState({
-      publish: data,
+      published: data,
       setting: false,
     });
   };
@@ -137,7 +137,7 @@ class Myprogram extends Component {
       )
       .then((res) => {
         if (res.data) {
-          if (res.data[0].authorId) {
+          if (res.data[0].publisherId) {
             this.setState({
               item: res.data.reverse(),
             });
@@ -195,8 +195,8 @@ class Myprogram extends Component {
 
                 <div className="banner-that-hold-the-information">
                   <div className="box-that-hold-theafihe-url">
-                    {this.state.program.fileKind ? (
-                      this.state.program.fileKind.includes("image") ? (
+                    {this.state.program.fileType ? (
+                      this.state.program.fileType.includes("image") ? (
                         <img
                           src={`${ApiUrl.content}${this.state.program.file}`}
                         />
@@ -284,18 +284,15 @@ class Myprogram extends Component {
                     <div className="deaciption-ofthe-program">
                       {this.state.program.description}
                     </div>
-                    <Rating
-                      people={this.state.program.numberofpeopleRating}
-                      rating={this.state.program.rating}
-                    />
+
                     <div className="name-oftheowner0of-the-workout">
-                      {this.state.program.Author}
+                      {this.state.program.author}
                     </div>
                   </div>
                 </div>
 
-                {this.state.program.publish === true ? (
-                  <p className="publish rr">Publish</p>
+                {this.state.program.published === true ? (
+                  <p className="published rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
                 )}
@@ -334,7 +331,7 @@ class Myprogram extends Component {
                       <div className="wraperififoojfhr">
                         <div className="wraperjf-ffkfkr">
                           <p>No Content</p>
-                          <p>Upload photos and video on you programs</p>
+                          <p>Upload your program content</p>
                           <div className="wraper-thejr">
                             <button
                               onClick={() => this.handlUpload(true)}
@@ -421,7 +418,7 @@ class Myprogram extends Component {
           ""
         )}
         {this.state.program.programId ? (
-          this.state.publish === true ? (
+          this.state.published === true ? (
             <Publish
               changePublichState={this.changePublichState}
               content={this.state.item}
@@ -431,7 +428,7 @@ class Myprogram extends Component {
               type={this.state.program.programType}
               price={this.state.program.price}
               handlepublish={this.handlepublish}
-              publish={this.state.publish}
+              published={this.state.published}
             />
           ) : (
             ""

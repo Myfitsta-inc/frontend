@@ -24,10 +24,9 @@ class Paymentmethod extends Component {
 
     axios.post(`/api/my-payment-methode`, option).then((result) => {
       if (result.data._id) {
-        if (result.data.paymentTokens.length > 0) {
-          let tochoose = result.data.paymentTokens.filter(
-            (item) => item.default === true
-          );
+        const { paymentMethods } = result.data;
+        if (paymentMethods.length > 0) {
+          let tochoose = paymentMethods.filter((item) => item.default === true);
           this.setState({
             payment: tochoose[0],
           });

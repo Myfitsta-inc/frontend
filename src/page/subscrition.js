@@ -35,9 +35,9 @@ class Myfitstapr extends Component {
   };
 
   subscribe = () => {
-    let order = ["silver", "platinium", "gold"];
+    let order = ["silver", "platinum", "gold"];
     let sorted = _.sortBy(this.state.profile.plan, function (obj) {
-      return _.indexOf(order, obj.planChoose);
+      return _.indexOf(order, obj.planName);
     });
     this.setState({
       plan: sorted,
@@ -85,6 +85,7 @@ class Myfitstapr extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
+        console.log(res.data);
         if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,
@@ -287,7 +288,7 @@ class Myfitstapr extends Component {
                                   ></Link>
 
                                   {item.file.length > 0 ? (
-                                    item.fileKind.includes("image") ? (
+                                    item.fileType.includes("image") ? (
                                       <img
                                         src={`${ApiUrl.content}${item.file}`}
                                       />
@@ -308,7 +309,6 @@ class Myfitstapr extends Component {
                               <div className="title-of-workot">
                                 {item.title}
                               </div>
-                              <Rating rating={item.rating} />
                             </div>
                           </div>
                         );
@@ -318,7 +318,7 @@ class Myfitstapr extends Component {
                     <div className="wraperififoojfhr">
                       <div className="wraperjf-ffkfkr">
                         <p>No Program</p>
-                        <p>No program was not publish in this account yet</p>
+                        <p>No program was not published in this account yet</p>
                       </div>
                     </div>
                   )

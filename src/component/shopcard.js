@@ -55,7 +55,7 @@ class Shopcard extends Component {
                 ></Link>
               )}
               {this.props.item.file.length > 0 ? (
-                this.props.item.fileKind.includes("image") ? (
+                this.props.item.fileType.includes("image") ? (
                   <img src={`${ApiUrl.content}${this.props.item.file}`} />
                 ) : (
                   <video>

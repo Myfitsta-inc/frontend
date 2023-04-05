@@ -179,7 +179,6 @@
 }
 
 .tabsjdjdj {
-  min-height: 40px;
   display: flex;
   align-self: flex-end;
   width: calc(100% - 0px);
@@ -293,6 +292,9 @@
   border-radius: 50%;
   border: 0;
   background-color: var(--main-bg-cool-rgb);
+}
+.positf.active button {
+  background-color: #6f56e5;
 }
 .sjsjjfkfkfk.speoer {
   justify-content: space-between;

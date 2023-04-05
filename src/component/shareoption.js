@@ -22,7 +22,7 @@ class ShareOption extends Component {
             <p>Share</p>
           </div>
           <div className="wraprkrkrrrr">
-            <div className="box-that-hold-the-setting">
+            {/* <div className="box-that-hold-the-setting">
               <div className="hold-thatiocom">
                 <i className="far fa-envelope"></i>
               </div>
@@ -34,7 +34,7 @@ class ShareOption extends Component {
               >
                 Send via Direct Message
               </button>
-            </div>
+            </div> */}
             <CopyLinks />
           </div>
         </div>

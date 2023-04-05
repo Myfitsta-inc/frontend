@@ -165,7 +165,7 @@ class Collection extends Component {
                                 <div className="bold-media">
                                   <div className="box-media-show">
                                     {item.data[0] ? (
-                                      item.data[0].fileKind.includes(
+                                      item.data[0].fileType.includes(
                                         "image"
                                       ) ? (
                                         <img
@@ -188,7 +188,7 @@ class Collection extends Component {
                                   </div>
                                   <div className="box-media-show">
                                     {item.data[1] ? (
-                                      item.data[1].fileKind.includes(
+                                      item.data[1].fileType.includes(
                                         "image"
                                       ) ? (
                                         <img
@@ -211,7 +211,7 @@ class Collection extends Component {
                                   </div>
                                   <div className="box-media-show">
                                     {item.data[2] ? (
-                                      item.data[2].fileKind.includes(
+                                      item.data[2].fileType.includes(
                                         "image"
                                       ) ? (
                                         <img
@@ -234,7 +234,7 @@ class Collection extends Component {
                                   </div>
                                   <div className="box-media-show">
                                     {item.data[3] ? (
-                                      item.data[3].fileKind.includes(
+                                      item.data[3].fileType.includes(
                                         "image"
                                       ) ? (
                                         <img

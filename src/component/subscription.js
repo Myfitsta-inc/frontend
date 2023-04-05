@@ -62,8 +62,7 @@ class Subscribe extends Component {
                         <div
                           className={`wrepr-arounbd0the-plan ${
                             this.state.selected !== null
-                              ? item.planChoose ==
-                                this.state.selected.planChoose
+                              ? item.planName == this.state.selected.planName
                                 ? "active"
                                 : ""
                               : ""
@@ -71,7 +70,7 @@ class Subscribe extends Component {
                         >
                           <div className="div-wiri">
                             <button className="asdd-sellect"></button>
-                            <p>{item.planChoose}</p>
+                            <p>{item.planName}</p>
                           </div>
                           <div className="wharoor-the-amoiut">
                             <span>$</span>
@@ -79,9 +78,9 @@ class Subscribe extends Component {
                               {item.price / 100}
                             </p> /{" "}
                             <p className="title-4hh4">
-                              {item.planChoose === "silver"
+                              {item.planName === "silver"
                                 ? "month"
-                                : item.planChoose === "platinium"
+                                : item.planName === "platinum"
                                 ? "3 month"
                                 : "Year"}
                             </p>
@@ -103,7 +102,7 @@ class Subscribe extends Component {
             {this.state.tabNext ? (
               <PaymentSub
                 handlenext={this.handlenext}
-                authorId={this.props.profile}
+                publisherId={this.props.profile}
                 item={this.state.selected}
               />
             ) : (

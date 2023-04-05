@@ -6,7 +6,7 @@ const SelectPlan = ({
   goToNectAfterConfifiguration,
 }) => {
   const [silver, setsilver] = useState(0);
-  const [platinium, setPlatinium] = useState(0);
+  const [platinum, setPlatinium] = useState(0);
   const [gold, setGold] = useState(0);
 
   const [isSilverPlanSelected, setisSilverPlanSelected] = useState(false);
@@ -50,8 +50,8 @@ const SelectPlan = ({
         setter: setisSilverPlanSelected,
       },
       {
-        name: "platinium",
-        value: platinium,
+        name: "platinum",
+        value: platinum,
         selected: isPlatiniumPlanSelected,
         setter: setIsPlatiniumPlanSelected,
       },
@@ -78,7 +78,7 @@ const SelectPlan = ({
       }
       setErrorMessage(plan, "");
       setter(true);
-      selectplan({ planChoose: plan, value });
+      selectplan({ planName: plan, value });
     } else {
       setter(false);
       removePlan(plan);
@@ -88,7 +88,7 @@ const SelectPlan = ({
   const setErrorMessage = (plan, message) => {
     if (plan === "silver") {
       setSilverErrorMessage(message);
-    } else if (plan === "platinium") {
+    } else if (plan === "platinum") {
       setPlatiniumErrorMessage(message);
     } else if (plan === "gold") {
       setGoldErrorMessage(message);
@@ -136,7 +136,7 @@ const SelectPlan = ({
         <div className="wraper-thesubscriotion">
           <div
             onClick={() => {
-              addPlan("platinium");
+              addPlan("platinum");
             }}
             className={`wrepr-arounbd0the-plan ${
               isPlatiniumPlanSelected && "active"
@@ -144,7 +144,7 @@ const SelectPlan = ({
           >
             <div className="div-wiri">
               <button className="asdd-sellect"></button>
-              <p>platinium</p>
+              <p>platinum</p>
             </div>
             <div className="wharoor-the-amoiut">
               <p className="desd">$</p>

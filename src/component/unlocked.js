@@ -18,16 +18,18 @@ class Unlocked extends Component {
       if (res.data !== "no") {
         let list = [];
         res.data.data.forEach((item) => {
-          let dataS = list.filter((info) => info.authorId === item.authorId);
+          let dataS = list.filter(
+            (info) => info.publisherId === item.publisherId
+          );
           if (dataS.length > 0) {
             list.forEach((data) => {
-              if (data.authorId === item.authorId) {
+              if (data.publisherId === item.publisherId) {
                 data.list.push(item.programId);
               }
             });
           } else {
             list.push({
-              authorId: item.authorId,
+              publisherId: item.publisherId,
               kind: item.kind,
               list: [item.programId],
             });
@@ -59,19 +61,19 @@ class Unlocked extends Component {
                 return (
                   <div
                     className="box-that-that-hold-the-row"
-                    key={item.authorId}
+                    key={item.publisherId}
                   >
                     <div className="box-that-holdname">
                       <div className="icon-usnrn">
-                        <ProIcon user={item.authorId} />
+                        <ProIcon user={item.publisherId} />
                       </div>
                       <div className="namebox-that-holdname">
-                        <Username user={item.authorId} link={true} />
+                        <Username user={item.publisherId} link={true} />
                       </div>
                     </div>
                     <div className="row-0tjhat-hold-theprojhfnnf">
                       {item.list.map((data, index) => {
-                        return <ProgramBought programId={data} key={index} />;
+                        return <ProgramBought programId={data} key={data} />;
                       })}
                     </div>
                   </div>
@@ -80,17 +82,17 @@ class Unlocked extends Component {
                 return (
                   <div
                     className="box-that-that-hold-the-row"
-                    key={item.authorId}
+                    key={item.publisherId}
                   >
                     <div className="box-that-holdname">
                       <div className="icon-usnrn">
-                        <ProIcon user={item.authorId} />
+                        <ProIcon user={item.publisherId} />
                       </div>
                       <div className="namebox-that-holdname">
-                        <Username user={item.authorId} link={true} />
+                        <Username user={item.publisherId} link={true} />
                       </div>
                     </div>
-                    <SubscriptionBougth user={item.authorId} />
+                    <SubscriptionBougth user={item.publisherId} />
                   </div>
                 );
               }

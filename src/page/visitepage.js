@@ -104,6 +104,21 @@ class Visitpage extends Component {
         }
       });
   };
+
+  addToRecent = (data) => {
+    let option = {
+      userId: this.props.user.userId,
+      name: data,
+    };
+    axios
+      .post("/api/add-profile-seach", option)
+      .then((res) => {
+        return;
+      })
+      .catch((err) => {
+        return;
+      });
+  };
   getprofile = (e) => {
     axios
       .get(`/api/accountt/${this.props.match.params.id}`, {
@@ -120,6 +135,7 @@ class Visitpage extends Component {
               file: res.data.userId,
             });
             this.hispost();
+            this.addToRecent(res.data.userId);
           }
         } else {
           this.props.history.push("/home");

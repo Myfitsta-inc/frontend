@@ -53,6 +53,7 @@
 .lod-out-thdfjrj:hover {
   background-color: var(--main-bg-cool-rgb);
 }
+
 .lod-out-thdfjrj {
   cursor: pointer;
   height: 50px;
@@ -1384,7 +1385,10 @@ video:-webkit-media-controls-panel {
   display: block;
   width: 100%;
 }
-.title-of--thise-action {
+.jietiooegggg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .boxmrjrjerjrjnue .title-of--thise-action {
   display: flex;
@@ -5167,7 +5171,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--text);
 }
 #upbox p {
   text-transform: uppercase;
@@ -5188,8 +5191,13 @@ body {
   align-items: center;
   justify-content: center;
 }
+.bdoorr {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #upbox {
-  background: var(--main-bg-cool-rgb);
   min-width: 70px;
   min-height: 70px;
   display: flex;
@@ -5197,8 +5205,9 @@ body {
   align-items: center;
   flex-direction: column;
   margin-right: 10px;
-
   z-index: 1000000;
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(10px);
 }
 #file-input {
   display: none;
