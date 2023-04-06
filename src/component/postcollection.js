@@ -62,7 +62,7 @@ class PostCollection extends Component {
     if (this.props.postList.length > 0) {
       let Updated = this.props.postList.find((item) => item.filename === data);
       if (Updated) {
-        Updated.numberofcomments = count;
+        Updated.numberofComments = count;
         let list = this.props.postList.filter((item) => item.filename !== data);
         let sortted = [...list, Updated];
         this.setState(
@@ -78,6 +78,7 @@ class PostCollection extends Component {
     }
   };
   componentDidMount = () => {
+    console.log(this.props)
     socket.on("update-this-comment", (data) => {
       if (data.filename === this.props.item) {
         this.updatePost(data.filename, data.count);
@@ -107,7 +108,7 @@ class PostCollection extends Component {
         </div>
         <BoxMedia
           file={this.state.data.filename}
-          kind={this.state.data.mediakind}
+          kind={this.state.data.mediaKind}
         />
         <div className="action">
           <div className="wrp-act">
@@ -115,7 +116,7 @@ class PostCollection extends Component {
               posterId={this.state.data.userId}
               userId={this.props.user.userId}
               postId={this.state.data._id}
-              numberlike={this.state.data.numberlike}
+              numberOfLike={this.state.data.numberOfLike}
             />
 
             <div className="comment box-ac">
@@ -123,7 +124,7 @@ class PostCollection extends Component {
                 <div className="icon">
                   <i className="far fa-comment"></i>
                 </div>
-                <p>{this.nFormatter(this.state.data.numberofcomments)}</p>
+                <p>{this.nFormatter(this.state.data.numberofComments)}</p>
               </Link>
             </div>
             <div

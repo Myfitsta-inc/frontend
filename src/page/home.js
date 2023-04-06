@@ -183,7 +183,7 @@ class Home extends Component {
                       drop={this.state.drop}
                     />
                   </div>
-                  {/* <ShowLive user={this.props.user} /> */}
+                  
                   {this.state.post !== null ? (
                     this.state.post.length > 0 ? (
                       <Post
@@ -275,40 +275,8 @@ class Home extends Component {
         )}
 
         <div>
-          {/*	<div id="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
+          
 
-            <li><a href="#">Menu 1</a>
-                <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Submenu</a>
-                        <ul>
-                            <li><a href="#">Link1</a></li>
-                            <li><a href="#">Link2</a></li>
-                    </ul>
-                    </li>
-                </ul>
-            </li>
-			
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Menu 2</a>
-                <ul>
-                    <li><a href="#">Link1</a></li>
-                    <li><a href="#">Submenu1</a>
-                        <ul>
-                            <li><a href="#">Link1</a></li>
-                            <li><a href="#">Link2</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Link2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Link 2</a></li>
-        </ul>
-    </div>*/}
         </div>
       </div>
     );

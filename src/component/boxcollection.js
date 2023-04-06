@@ -116,7 +116,7 @@ class Boxcollection extends Component {
               >
                 <IoCloseSharp />
               </button>
-              <p>Collection</p>
+              <p>PostCollection</p>
             </div>
             <div className="hold-my-collection">
               {this.state.list !== null ? (
@@ -196,12 +196,12 @@ class Boxcollection extends Component {
                   >
                     <BiArrowBack />
                   </div>
-                  <p>New Collection</p>
+                  <p>New PostCollection</p>
                 </div>
               </div>
               <div className="input-to-name-of-new-collection">
                 <div className="edit-box-profile">
-                  <label htmlFor="username">Collection Name</label>
+                  <label htmlFor="username">PostCollection Name</label>
                   <input
                     onChange={this.hangleNewCollection}
                     className="input-fornew-collection"

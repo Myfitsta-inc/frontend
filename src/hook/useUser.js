@@ -1,13 +1,20 @@
-import { connect } from "react-redux";
-const useUser = (props) => {
-  console.log(props);
-  return "jkjj";
+import { useReducer } from "react";
+
+const reducer = (state, action) => {
+  let { type } = action || {};
+  switch (type) {
+    case "UPDATE_USER":
+      return { ...state, blurValue: action.value };
+    default:
+      throw new Error("Did you misspell an action type?");
+  }
 };
 
-const mapstateToProps = (state) => {
+function useUser() {
+  const [state, dispatch] = useReducer(reducer, { blurValue: 0 });
   return {
-    users: state.user,
+    state,
+    dispatch,
   };
-};
-
-export default connect(mapstateToProps, null)(useUser);
+}
+export default useUser;

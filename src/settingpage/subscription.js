@@ -18,7 +18,6 @@ class Subcription extends Component {
       userId: this.props.user.userId,
     };
     axios.post("/api/get-my-subscription", option).then((res) => {
-      console.log(res.data);
       if (res.data !== "no") {
         let list = res.data.filter((item) => item.subscriptionType === 0);
         if (list.length > 0) {

@@ -56,7 +56,7 @@ class Tagggedbox extends Component {
           )}
           <div className="box-that-hold-the-media">
             <div className="wraorjrkncnfrh">
-              {this.state.data.mediakind[0].includes("image") ? (
+              {this.state.data.mediaKind[0].includes("image") ? (
                 <img
                   src={`${ApiUrl.content}${
                     this.state.data.filename.split(",")[0]
@@ -79,13 +79,13 @@ class Tagggedbox extends Component {
               <div className="wrp-actt">
                 <LikeButton
                   postId={this.state.data._id}
-                  numberlike={this.state.data.numberlike}
+                  numberOfLike={this.state.data.numberOfLike}
                 />
                 <div className=" box-acc">
                   <div className="icon">
                     <i className="far fa-comment"></i>
                   </div>
-                  <p>{this.nFormatter(this.state.data.numberofcomments)}</p>
+                  <p>{this.nFormatter(this.state.data.numberofComments)}</p>
                 </div>
               </div>
             </div>

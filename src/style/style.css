@@ -142,6 +142,9 @@ img {
 }
 .fhknrbhfiknrbhj {
   background-color: var(--main-bg-side);
+  border-radius: 10px;
+
+margin-top: 5px;
 }
 .jjrrrtjjtjtt {
   z-index: 10000000;
@@ -319,7 +322,7 @@ img {
   color: var(--text);
 }
 .nejrrrjr {
-  border-bottom: 2px solid var(--main-bg-cool-rgb);
+
 }
 .fjjtutjsjr {
   display: inline-flex;
@@ -3689,8 +3692,10 @@ body {
   border-radius: 5px;
   height: 15px;
   width: 70%;
+  max-width: 200px;
   position: relative;
   overflow: hidden;
+
 }
 
 .uisiiirjr::before {

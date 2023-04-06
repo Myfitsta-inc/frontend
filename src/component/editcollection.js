@@ -66,7 +66,7 @@ class EditCollection extends Component {
           </div>
           <div className="input-to-name-of-new-collection">
             <div className="edit-box-profile">
-              <label htmlFor="username">Collection Name</label>
+              <label htmlFor="username">PostCollection Name</label>
               <input
                 onChange={this.handleChange}
                 autoComplete="off"

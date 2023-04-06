@@ -85,7 +85,6 @@ class Account extends Component {
   };
 
   handleChangeIncon = (event) => {
-    console.log("fkfoffo");
     let file = event.target.files;
     if (file[0].type.includes("image")) {
       this.setState({

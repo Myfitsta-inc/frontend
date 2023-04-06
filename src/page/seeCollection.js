@@ -169,14 +169,14 @@ class SeeCollection extends Component {
                         this.optionchange(false, true);
                       }}
                     >
-                      Edit Collection
+                      Edit PostCollection
                     </button>
                     <button
                       onClick={() => {
                         this.optionchange(true, false);
                       }}
                     >
-                      Delete Collection
+                      Delete PostCollection
                     </button>
                   </div>
 

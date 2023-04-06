@@ -13,7 +13,7 @@ class DeleteCollection extends Component {
       id: this.props.collection.userId,
       collectionName: this.props.collection.collectionName,
     };
-    axios.post(`/api/delete/Collection`, option).then((res) => {
+    axios.post(`/api/delete/PostCollection`, option).then((res) => {
       window.location.reload();
     });
   };
@@ -35,7 +35,7 @@ class DeleteCollection extends Component {
             >
               <IoCloseSharp />
             </div>
-            <p>Delete Collection</p>
+            <p>Delete PostCollection</p>
           </div>
           <p className="rteisjr">
             Are you sure you want to delete this collection ?{" "}

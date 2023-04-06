@@ -62,7 +62,7 @@ const SelectPlan = ({
         setter: setIsGoldPlanSelected,
       },
     ];
-    console.log(plans);
+
     const selectedPlan = plans.find((p) => p.name === plan);
 
     if (!selectedPlan) return;

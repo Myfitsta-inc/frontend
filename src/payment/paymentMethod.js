@@ -60,7 +60,7 @@ class Paymentmethod extends Component {
 
   componentDidMount = () => {
     this.getPaymentMethod();
-    console.log(this.props);
+
   };
 
   render() {

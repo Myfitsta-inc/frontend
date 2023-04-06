@@ -44,7 +44,8 @@ class Subscribe extends Component {
             </div>
           </div>
           <div className="hold-thesubcribe">
-            <p className="his-nreame">Select one subscription plan</p>
+            {!this.state.tabNext&& <p className="his-nreame">Select one subscription plan</p>}
+           
             {this.state.tabNext ? (
               ""
             ) : (
@@ -92,7 +93,7 @@ class Subscribe extends Component {
                 </div>
                 <p className="hold-that-mess"></p>
                 <div className="controil-theaction">
-                  <button onClick={this.handlenext} className="add-shch">
+                  <button onClick={this.handlenext} className={`add-shch ${!this.state.selected&&"active"}`}>
                     CONTINUE
                   </button>
                 </div>

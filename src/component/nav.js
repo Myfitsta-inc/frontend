@@ -93,7 +93,7 @@ class Nav extends Component {
                   <i className="fas fa-folder-plus"></i>
                 </div>
 
-                <p>Collection</p>
+                <p>PostCollection</p>
               </NavLink>
 
               <NavLink to="/message" className="nav-lii nav-infoo">

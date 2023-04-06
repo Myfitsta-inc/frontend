@@ -9,13 +9,13 @@ import socket from "../socketConfig";
 import { connect } from "react-redux";
 class LikeButton extends Component {
   state = {
-    numberlike: 0,
+    numberOfLike: 0,
   };
 
   updatePost = (data) => {
     let Updated = this.props.postList.find((item) => item.postId === data);
     if (Updated) {
-      Updated.numberlike = this.state.numberlike;
+      Updated.numberOfLike = this.state.numberOfLike;
       let list = this.props.postList.filter((item) => item.postId !== data);
       let sortted = [...list, Updated];
       this.props.addPost(sortted);
@@ -49,18 +49,17 @@ class LikeButton extends Component {
     }
     socket.emit("some-like-a-post", {
       postId: data.postId,
-      numberlike: this.state.numberlike,
+      numberOfLike: this.state.numberOfLike,
     });
   };
 
   handleLike = (e, data) => {
-    console.log(data, "oijnmkj");
     let like = e.currentTarget;
     let numberlikes = like.parentElement.children[1];
     if (like.classList.contains("active")) {
       this.setState(
         {
-          numberlike: this.state.numberlike - 1,
+          numberOfLike: this.state.numberOfLike - 1,
         },
         () => {
           this.removelike(data);
@@ -70,7 +69,7 @@ class LikeButton extends Component {
     } else {
       this.setState(
         {
-          numberlike: this.state.numberlike + 1,
+          numberOfLike: this.state.numberOfLike + 1,
         },
         () => {
           this.addLikes(data);
@@ -107,19 +106,19 @@ class LikeButton extends Component {
     axios.post("/api/removelike", option).then((res) => {});
     socket.emit("some-like-a-post", {
       postId: this.props.postId,
-      numberlike: this.state.numberlike,
+      numberOfLike: this.state.numberOfLike,
     });
   };
   componentDidMount = () => {
     console.log(this.props.likes);
     this.setState({
-      numberlike: this.props.numberlike,
+      numberOfLike: this.props.numberOfLike,
     });
     socket.on("like-this-post", (data) => {
       if (data.postId === this.props.postId) {
         this.setState(
           {
-            numberlike: data.numberlike,
+            numberOfLike: data.numberOfLike,
           },
           () => {
             this.updatePost(data.postId);
@@ -155,7 +154,7 @@ class LikeButton extends Component {
             <FaRegHeart />
           </div>
         )}
-        <p>{this.nFormatter(this.state.numberlike)}</p>
+        <p>{this.nFormatter(this.state.numberOfLike)}</p>
       </div>
     );
   }

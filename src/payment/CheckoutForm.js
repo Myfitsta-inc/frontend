@@ -7,13 +7,16 @@ function CheckoutForm({ plan, publisherId, userId }) {
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+  const [errorMessage,setErrorMessage]=useState("");
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     if (!stripe || !elements) {
       return;
     }
     setLoading(true);
+    setErrorMessage("")
 
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
@@ -23,7 +26,7 @@ function CheckoutForm({ plan, publisherId, userId }) {
       redirect: "if_required",
     });
     if (error) {
-      console.log(error);
+      setErrorMessage(error.message)
     } else if (paymentIntent && paymentIntent.status == "succeeded") {
       const { payment_method } = paymentIntent;
       let payload = {
@@ -38,13 +41,13 @@ function CheckoutForm({ plan, publisherId, userId }) {
 
       window.location.reload();
     }
-
     setLoading(false);
   };
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement className="payment-element" />
       <div className="button-container">
+      {errorMessage.length?<p className="hold-that-mess active">{errorMessage}</p>:""}
         <input
           disabled={loading}
           type="submit"

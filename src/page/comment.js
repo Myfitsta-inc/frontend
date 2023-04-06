@@ -122,7 +122,7 @@ class Comment extends Component {
         if (res.data._id) {
           this.setState({
             item: res.data,
-            counter: res.data.numberofcomments,
+            counter: res.data.numberofComments,
           });
           this.loadComment(this.state.numberToLoad);
         }
@@ -170,7 +170,7 @@ class Comment extends Component {
     if (this.props.postList.length > 0) {
       let Updated = this.props.postList.find((item) => item.postId === data);
       if (Updated) {
-        Updated.numberofcomments = this.state.counter;
+        Updated.numberofComments = this.state.counter;
         let list = this.props.postList.filter((item) => item.postId !== data);
         let sortted = [...list, Updated];
         this.props.addPost(sortted);
@@ -221,7 +221,7 @@ class Comment extends Component {
                   {this.state.item.userId ? (
                     <BoxMedia
                       file={this.state.item.filename}
-                      kind={this.state.item.mediakind}
+                      kind={this.state.item.mediaKind}
                     />
                   ) : (
                     ""

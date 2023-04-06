@@ -39,7 +39,6 @@ class PaymentSub extends Component {
     });
 
     axios.post(`/api/my-payment-methode`, option).then((result) => {
-      console.log(result);
       if (result.data._id) {
         if (result.data.paymentMethods.length > 0) {
           let tochoose = result.data.paymentMethods.filter(

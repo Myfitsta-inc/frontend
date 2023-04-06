@@ -29,6 +29,8 @@
   --main-bg--side-white: #fff;
   --text-light: #191919;
   --main-bg-cool-rgb-white: rgba(0, 0, 0, 0.2);
+  --main-bg-cool-rgb-over-dark:rgba(255, 255, 255, 0.5);
+  --main-bg-cool-rgb-over-white:rgba(0, 0, 0, 0.5);
 }
 
 [color-scheme="dark"] {
@@ -36,8 +38,9 @@
   --text: var(--text-dark);
   --main-bg-box: var(--main-bg-box-dark);
   --main-bg-box-item: var(--main-bg-box-item-dark);
-  --main-bg-cool-rgb: var(var(--main-bg-cool-rgb-dark));
-  --main-bg-pagebox: var(var(--main-bg-pagebox-dark));
+  --main-bg-cool-rgb: var(--main-bg-cool-rgb-dark);
+  --main-bg-pagebox: var(--main-bg-pagebox-dark);
+  --main-bg-cool-rgb-over:var(--main-bg-cool-rgb-over-dark)
 }
 [color-scheme="light"] {
   --main-bg-side: var(--main-bg--side-white);
@@ -45,7 +48,8 @@
   --main-bg-box: var(--main-bg-box-white);
   --main-bg-box-item: var(--main-bg-box-item-white);
   --main-bg-cool-rgb: var(--main-bg-cool-rgb-white);
-  --main-bg-pagebox: var(var(--main-bg-pagebox-white));
+  --main-bg-pagebox: var(--main-bg-pagebox-white);
+  --main-bg-cool-rgb-over:var(--main-bg-cool-rgb-over-white)
 }
 .sho-ico {
   margin-right: 15px;
@@ -719,8 +723,9 @@
   justify-content: center;
   align-items: center;
   z-index: 100000;
-  background-color: var(--main-bg-cool-rgb);
+  background-color: var(--main-bg-cool-rgb-over);
   display: none;
+  backdrop-filter: blur(1px);
 }
 .draft {
   width: 100%;

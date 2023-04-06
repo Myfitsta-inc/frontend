@@ -39,7 +39,7 @@ class PostBox extends Component {
         </div>
         <BoxMedia
           file={this.props.item.filename}
-          kind={this.props.item.mediakind}
+          kind={this.props.item.mediaKind}
         />
         <div className="action">
           <div className="wrp-act">
@@ -47,14 +47,14 @@ class PostBox extends Component {
               posterId={this.props.item.userId}
               userId={this.props.users.userId}
               postId={this.props.item._id}
-              numberlike={this.props.item.numberlike}
+              numberOfLike={this.props.item.numberOfLike}
             />
             <div className="comment box-ac">
               <Link className="linjgjc" to={`/comment/${this.props.item._id}`}>
                 <div className="icon">
                   <i className="far fa-comment"></i>
                 </div>
-                <p>{this.props.item.numberofcomments}</p>
+                <p>{this.props.item.numberofComments}</p>
               </Link>
             </div>
             <div

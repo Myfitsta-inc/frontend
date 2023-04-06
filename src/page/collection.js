@@ -11,7 +11,7 @@ import DropHomeUp from "../component/dropHomeUp";
 import Unlocked from "../component/unlocked";
 let source;
 source = axios.CancelToken.source();
-class Collection extends Component {
+class PostCollection extends Component {
   state = {
     collection: null,
     mycollection: true,
@@ -109,7 +109,7 @@ class Collection extends Component {
           <div id="body-tabs">
             <div className="wraper-collection ">
               <div className="title-coc">
-                <p className="col-tit">Collection</p>
+                <p className="col-tit">PostCollection</p>
                 {this.props.location.pathname === "/collection/program" ? (
                   ""
                 ) : (
@@ -333,11 +333,11 @@ class Collection extends Component {
                       <IoCloseSharp />
                     </div>
 
-                    <p>New Collection</p>
+                    <p>New PostCollection</p>
                   </div>
                   <div className="input-to-name-of-new-collection">
                     <div className="edit-box-profile">
-                      <label htmlFor="username">Collection Name</label>
+                      <label htmlFor="username">PostCollection Name</label>
                       <input
                         onChange={this.hangleNewCollection}
                         className="input-fornew-collection"
@@ -365,4 +365,4 @@ class Collection extends Component {
   }
 }
 
-export default withRouter(Collection);
+export default withRouter(PostCollection);

@@ -54,11 +54,11 @@ class Discover extends Component {
         });
         let list = [];
         res.data.forEach((element) => {
-          element.percentage = element.numberofcomments * element.numberlike;
+          element.engagementScore = element.numberofComments * element.numberOfLike;
           list.push(element);
         });
         let updated = list.sort((a, b) => {
-          return parseInt(b.percentage) - parseInt(a.percentage);
+          return parseInt(b.engagementScore) - parseInt(a.engagementScore);
         });
         this.setState({
           post: updated,
@@ -174,7 +174,7 @@ class Discover extends Component {
                             )}
                             <div className="box-that-hold-the-media">
                               <div className="wraorjrkncnfrh">
-                                {item.mediakind[0].includes("image") ? (
+                                {item.mediaKind[0].includes("image") ? (
                                   <img
                                     src={`${ApiUrl.content}${
                                       item.filename.split(",")[0]
@@ -204,7 +204,7 @@ class Discover extends Component {
                                     userId={this.props.user.userId}
                                     filename={item.filename}
                                     postId={item._id}
-                                    numberlike={item.numberlike}
+                                    numberOfLike={item.numberOfLike}
                                   />
                                   <Link
                                     className="rjetrjjrj"
@@ -213,7 +213,7 @@ class Discover extends Component {
                                     <div className="icon">
                                       <i className="far fa-comment"></i>
                                     </div>
-                                    <p>{item.numberofcomments}</p>
+                                    <p>{item.numberofComments}</p>
                                   </Link>
                                 </div>
                               </div>
@@ -252,7 +252,7 @@ class Discover extends Component {
                             )}
                             <div className="box-that-hold-the-media">
                               <div className="wraorjrkncnfrh">
-                                {item.mediakind[0].includes("image") ? (
+                                {item.mediaKind[0].includes("image") ? (
                                   <img
                                     src={`${ApiUrl.content}${
                                       item.filename.split(",")[0]
@@ -281,7 +281,7 @@ class Discover extends Component {
                                   <LikeButton
                                     userId={this.props.user.userId}
                                     filename={item.filename}
-                                    numberlike={item.numberlike}
+                                    numberOfLike={item.numberOfLike}
                                   />
                                   <Link
                                     className="rjetrjjrj"
@@ -291,7 +291,7 @@ class Discover extends Component {
                                       <i className="far fa-comment"></i>
                                     </div>
                                     <p>
-                                      {this.nFormatter(item.numberofcomments)}
+                                      {this.nFormatter(item.numberofComments)}
                                     </p>
                                   </Link>
                                 </div>

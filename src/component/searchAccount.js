@@ -54,7 +54,6 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
   };
 
   useEffect(() => {
-    console.log(loadPeople);
     const controller = new AbortController();
     const signal = controller.signal;
     const fetchData = async () => {
@@ -149,7 +148,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
                       <div className="bfjirtnj"></div>
                       <div>
                         <Username link={true} user={item.userId} />
-                        {/*<Subinfo user={item.userId} />*/}
+                        
                       </div>
                     </div>
                     <div
@@ -165,7 +164,8 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
               }
             })
           ) : (
-            <div className="wraperififoojfhr">
+    
+            !loading&&<div className="wraperififoojfhr">
               <div className="wraperjf-ffkfkr">
                 <p>SEARCH ACCOUNT</p>
                 <p>Search and look for any account</p>
@@ -182,6 +182,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
         ) : (
           ""
         )}
+
       </div>
     </>
   );

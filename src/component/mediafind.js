@@ -40,7 +40,7 @@ class Mediafind extends Component {
         )}
         <div className="wraorjrkncnfrh">
           {this.state.data !== null ? (
-            this.state.data.mediakind[0].includes("image") ? (
+            this.state.data.mediaKind[0].includes("image") ? (
               <img
                 src={`${ApiUrl.content}${
                   this.state.data.filename.split(",")[0]

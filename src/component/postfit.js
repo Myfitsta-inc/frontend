@@ -19,11 +19,11 @@ class Postfit extends Component {
       userId: "6191fc57e7e60916aec12b6b",
       format: "post",
       tags: ["gym", "workout"],
-      numberlike: 3,
-      numberofcomments: 0,
+      numberOfLike: 3,
+      numberofComments: 0,
       filename:
         "b68fc3c3-5c35-46b0-b57e-58bd1bfda618.mp4,51469d9a-32c1-48b4-820e-7f2621e6031b.mp4",
-      mediakind: ["video/mp4", "video/mp4"],
+      mediaKind: ["video/mp4", "video/mp4"],
       caption: "",
       profileUrl: "54c43745-1fd3-427a-9f60-d5325fb12198.jpeg",
       date: "2021-11-15T12:08:37-05:00",
@@ -80,7 +80,7 @@ class Postfit extends Component {
               posterId={this.state.data.userId}
               userId={this.props.user.userId}
               postId={this.state.data._id}
-              numberlike={this.state.data.numberlike}
+              numberOfLike={this.state.data.numberOfLike}
             />
 
             <div className="comment box-ac">
@@ -88,7 +88,7 @@ class Postfit extends Component {
                 <div className="icon">
                   <i className="far fa-comment"></i>
                 </div>
-                <p>{this.nFormatter(this.state.data.numberofcomments)}</p>
+                <p>{this.nFormatter(this.state.data.numberofComments)}</p>
               </Link>
             </div>
             <div

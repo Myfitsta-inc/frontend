@@ -64,7 +64,7 @@ class LikedNotification extends Component {
               className="div-that-wraper-the-imga3"
             >
               {this.state.media !== null ? (
-                this.state.media.mediakind[0].includes("image") ? (
+                this.state.media.mediaKind[0].includes("image") ? (
                   <img
                     src={`${ApiUrl.content}${
                       this.state.media.filename.split(",")[0]

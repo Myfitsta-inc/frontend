@@ -20,7 +20,7 @@ class PaymentmethodSub extends Component {
 
   handlePay = () => {
     const { paymentMethod, plan, publisherId, user } = this.props;
-    console.log(paymentMethod, plan, user);
+
     let option = {
       token: paymentMethod.token,
       planName: plan.planName,
@@ -38,7 +38,7 @@ class PaymentmethodSub extends Component {
         if (result.data.success) {
           window.location.reload();
         } else {
-          console.log(result.data.errorMessage);
+
         }
       })
       .catch((error) => {

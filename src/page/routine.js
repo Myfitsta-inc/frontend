@@ -96,7 +96,7 @@ class Routine extends Component {
         <div id="app">
           <div id="body-tabs">
             <div className="title-coc">
-              <p className="col-tit">Collection</p>
+              <p className="col-tit">PostCollection</p>
 
               <div className="other-action">
                 <div className="curent-collection-type">Routine</div>
@@ -115,7 +115,7 @@ class Routine extends Component {
           <div className="workout-routine-card">
             <div className="ttiel-of-rot-add-card">Add a Routine</div>
             <input
-              placeholder="Collection name"
+              placeholder="PostCollection name"
               text="text"
               className="routine-add-ollectooionf-namnrffhr"
             />

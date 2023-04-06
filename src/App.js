@@ -33,7 +33,7 @@ import Login from "./page/login";
 import Discover from "./page/discover";
 import Group from "./messaging/group";
 import Upload from "./page/upload";
-import Collection from "./page/collection";
+import PostCollection from "./page/collection";
 import NoFound from "./page/nofound";
 import LoadDiscover from "./page/loaddiscover";
 import Comment from "./page/comment";
@@ -303,7 +303,7 @@ class App extends Component {
               <Route exact path="/collection/program">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    <Collection
+                    <PostCollection
                       file={this.state.file}
                       openBoxCollection={this.openBoxCollection}
                       boxCollection={this.state.boxCollection}
@@ -319,7 +319,7 @@ class App extends Component {
               <Route exact path="/collection">
                 {this.state.user !== null ? (
                   this.state.user.email.length > 0 ? (
-                    <Collection user={this.state.user} />
+                    <PostCollection user={this.state.user} />
                   ) : (
                     <Redirect to="/login" />
                   )
