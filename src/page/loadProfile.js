@@ -9,6 +9,7 @@ import ShareOption from "components/shareoption";
 import { withRouter } from "react-router-dom";
 import Report from "components/report";
 import LoadingSpin from "components/loadingspin";
+import UserPost from "components/userPost";
 import { BiArrowBack } from "react-icons/bi";
 let source;
 source = axios.CancelToken.source();
@@ -138,13 +139,7 @@ class LoadProfile extends Component {
                   </div>
                   <div className="rfjkernjk">
                     {this.state.post !== null ? (
-                      <PostCollection
-                        handleSetting={this.handleSetting}
-                        handlOpen={this.handlOpen}
-                        user={this.props.user}
-                        openBoxCollection={this.props.openBoxCollection}
-                        item={this.state.post}
-                      />
+                      <UserPost postId={this.state.post} />
                     ) : (
                       ""
                     )}

@@ -70,11 +70,11 @@ const Home = () => {
         if (res.data) {
           if (res.data.length > 0) {
             if (post !== null) {
-              let list = [...res.data, ...post];
+              let list = [...new Set([...res.data, ...post])];
               setLoading(false);
               setPost(list);
             } else {
-              let list = [...res.data];
+              let list = [...new Set([...res.data])];
               setLoading(false);
               setPost(list);
             }

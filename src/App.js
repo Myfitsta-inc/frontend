@@ -204,7 +204,7 @@ function App() {
             <Route path="/profile/:id/:data">
               {user !== null ? (
                 user.email.length > 0 ? (
-                  <LoadProfile />
+                  <LoadProfile user={user} />
                 ) : (
                   <Redirect to="/login" />
                 )
