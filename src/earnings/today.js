@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { BsGraphUp } from "react-icons/bs";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 class TodayEarning extends Component {
   state = {
     number: 0,

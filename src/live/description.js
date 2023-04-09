@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import LoadingSpin from "../component/loadingspin.js";
-import Editable from "../component/editable";
+import LoadingSpin from "components/loadingspin.js";
+import Editable from "components/editable.js";
 class Description extends Component {
   render() {
     return (

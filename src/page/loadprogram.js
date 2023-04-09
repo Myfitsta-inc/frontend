@@ -1,227 +1,191 @@
-import React, { Component } from "react";
-import Nav from "../component/nav";
+import React, { useState, useEffect } from "react";
+import Nav from "components/nav";
 import axios from "axios";
-import "../style/loadp.css";
+import "style/loadp.css";
 import { MdModeEdit } from "react-icons/md";
-import LikeProgram from "../component/likeProgram";
+import LikeProgram from "components/likeProgram";
 import { withRouter, NavLink } from "react-router-dom";
-import Video from "../component/video";
-import LoadingSpin from "../component/loadingspin";
+import Video from "components/video";
+import LoadingSpin from "components/loadingspin";
 import { GrPlayFill } from "react-icons/gr";
-import ProIcon from "../programs/proicon";
+import ProIcon from "programs/proicon";
 import { BiArrowBack } from "react-icons/bi";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 import { AiFillDelete } from "react-icons/ai";
-import DeleteContent from "../component/deleteContentP";
-import CommentMedia from "../component/commentMedia";
-let source;
-source = axios.CancelToken.source();
-class Loadprogram extends Component {
-  state = {
-    playing: false,
-    media: {},
-    relaterd: null,
-    id: this.props.match.params.id,
-    comment: false,
-    lecture: true,
-    deleteContent: false,
-  };
-  constructor(props) {
-    super(props);
-    source = axios.CancelToken.source();
-  }
+import DeleteContent from "components/deleteContentP";
+import CommentMedia from "components/commentMedia";
+import { useParams } from "react-router-dom";
+import useUser from "hooks/useUser";
+function Loadprogram({ history }) {
+  const { id } = useParams();
+  const { user, myfitstapro } = useUser();
+  const [playing, setPlaying] = useState(false);
+  const [media, setMedia] = useState({});
+  const [related, setRelated] = useState(null);
+  const [comment, setComment] = useState(false);
+  const [lecture, setLecture] = useState(true);
+  const [deleteContent, setDeleteContent] = useState(false);
 
-  optionchangeP = (data) => {
-    this.setState({
-      deleteContent: data,
-    });
+  const optionchangeP = (data) => {
+    setDeleteContent(data);
   };
-  goBack = (e) => {
-    this.props.history.goBack();
+  const goBack = (e) => {
+    history.goBack();
   };
 
-  changlepage = (one, two) => {
-    this.setState({
-      comment: one,
-      lecture: two,
-    });
+  const changlepage = (one, two) => {
+    setComment(one);
+    setLecture(two);
   };
 
-  getProgramInfo = () => {
+  const getProgramInfo = () => {
     axios
-      .get(`/api/program/workoutt/course/${this.props.match.params.id}`, {
+      .get(`/api/program/workoutt/course/${id}`, {
         withCredentials: true,
-        cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.author) {
-          if (res.data.publisherId !== this.props.user.userId) {
-            this.props.history.push("/home");
+        if (res.data.publisherId) {
+          if (res.data.publisherId !== user.userId) {
+            history.push("/home");
           } else {
-            this.setState({
-              media: res.data,
-            });
-            if (this.state.playing === false) {
-              this.loadRelater(res.data.programId, res.data.publisherId);
-              this.setState({
-                playing: true,
-              });
+            setMedia(res.data);
+
+            if (playing === false) {
+              loadRelater(res.data.programId, res.data.publisherId);
+              setPlaying(true);
             }
           }
         } else {
-          this.props.history.push("/home");
+          history.push("/home");
         }
       });
   };
 
-  loadRelater = (programId, user) => {
+  const loadRelater = (programId, user) => {
     axios
-      .get(`/api/loaddMyProgramContainer/${programId}/${user}`, {
-        cancelToken: source.token,
-      })
+      .get(`/api/loaddMyProgramContainer/${programId}/${user}`, {})
       .then((res) => {
-        this.setState({
-          relaterd: res.data.reverse(),
-        });
+        setRelated(res.data.reverse());
       });
   };
 
-  componentDidMount = () => {
+  useEffect(() => {
     window.scrollTo(0, 0);
-    this.getProgramInfo();
-  };
-  componentDidUpdate(prevProps) {
-    if (this.state.id !== this.props.match.params.id) {
-      window.scrollTo(0, 0);
-      this.getProgramInfo();
-      this.setState({ id: this.props.match.params.id });
-    }
-  }
+    getProgramInfo();
+    // setState({ id: id });
+  }, [id]);
 
-  componentWillUnmount = () => {
-    if (source) {
-      source.cancel("Landing Component got unmounted");
-    }
-  };
-  render() {
-    return (
-      <div className="conatiner">
-        <Nav user={this.props.user} />
-        <div id="app">
-          <div id="body-tabs">
-            {this.state.media._id ? (
-              <div className="hold-the-program-player-coterrool">
-                <div className="control-back tobabrbfb">
-                  <div className="wrieii">
-                    <div onClick={this.goBack} className="close-that">
-                      <BiArrowBack />
-                    </div>
-                    <p>Program</p>
+  return (
+    <div className="conatiner">
+      <Nav user={user} />
+      <div id="app">
+        <div id="body-tabs">
+          {media._id ? (
+            <div className="hold-the-program-player-coterrool">
+              <div className="control-back tobabrbfb">
+                <div className="wrieii">
+                  <div onClick={goBack} className="close-that">
+                    <BiArrowBack />
                   </div>
+                  <p>Program</p>
                 </div>
-                <div className="gjrdkjgkf"></div>
-                <div className="wrrpaorjwwko">
-                  <div className="video--image-elmnebnt-player">
-                    <div className="box-player-elment">
-                      {this.state.media.fileType ? (
-                        this.state.media.fileType.includes("image") ? (
-                          <img
-                            src={`${ApiUrl.content}${this.state.media.file}`}
-                          />
-                        ) : (
-                          <Video data={this.state.media.file} />
-                        )
+              </div>
+              <div className="gjrdkjgkf"></div>
+              <div className="wrrpaorjwwko">
+                <div className="video--image-elmnebnt-player">
+                  <div className="box-player-elment">
+                    {media?.mediaInfo?.mediaType ? (
+                      media?.mediaInfo?.mediaType.includes("image") ? (
+                        <img
+                          src={`${apiUrl.content}${media.mediaInfo.mediaUrl}`}
+                        />
                       ) : (
-                        ""
-                      )}
-                    </div>
+                        <Video data={media.mediaInfo.mediaUrl} />
+                      )
+                    ) : (
+                      ""
+                    )}
+                  </div>
 
-                    <div className="ejtcondigjojr">
-                      <div className="iondoftjkfjjf">
-                        <div className="hoilt-tje-titlem">
-                          {this.state.media.title}
-                        </div>
-                        <div className="rjengtnjr4">
-                          <div className="wraprjttrjr-infofo"></div>
-                        </div>
+                  <div className="ejtcondigjojr">
+                    <div className="iondoftjkfjjf">
+                      <div className="hoilt-tje-titlem">{media.title}</div>
+                      <div className="rjengtnjr4">
+                        <div className="wraprjttrjr-infofo"></div>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="ejwkjrtngnej"></div>
-                    <div className="info-abour-thedub">
-                      <div className="box-the-hold-your-info">
-                        <div className="rjfnvvbnf">
-                          <div className="iconnrhrjrjjr">
-                            <ProIcon user={this.props.user.userId} />
-                          </div>
-                          <div className="info-about-him">
-                            <p className="hfhrudru">
-                              {this.props.myfitstapro.username}
-                            </p>
-                            <p className="hfhrurdru">
-                              {this.props.myfitstapro.numberOfSubscriber}{" "}
-                              subscribers
-                            </p>
-                          </div>
+                  <div className="ejwkjrtngnej"></div>
+                  <div className="info-abour-thedub">
+                    <div className="box-the-hold-your-info">
+                      <div className="rjfnvvbnf">
+                        <div className="iconnrhrjrjjr">
+                          <ProIcon user={user.userId} />
                         </div>
-
-                        <div className="wrsk-follow">
-                          <button>
-                            <NavLink
-                              className="fjkjetj"
-                              to={`/user/${this.props.myfitstapro.username}/subscriber`}
-                            >
-                              Subscribers
-                            </NavLink>
-                          </button>
+                        <div className="info-about-him">
+                          <p className="hfhrudru">{myfitstapro.username}</p>
+                          <p className="hfhrurdru">
+                            {myfitstapro.numberOfSubscriber} subscribers
+                          </p>
                         </div>
                       </div>
+
+                      <div className="wrsk-follow">
+                        <button>
+                          <NavLink
+                            className="fjkjetj"
+                            to={`/user/${myfitstapro.username}/subscriber`}
+                          >
+                            Subscribers
+                          </NavLink>
+                        </button>
+                      </div>
                     </div>
+                  </div>
 
-                    <div className="the-boxjjrjr">
-                      {this.state.media.description.length > 0 ? (
-                        <div className="holthw">
-                          {this.state.media.description}
-                        </div>
-                      ) : (
-                        ""
-                      )}
+                  <div className="the-boxjjrjr">
+                    {media.description.length > 0 ? (
+                      <div className="holthw">{media.description}</div>
+                    ) : (
+                      ""
+                    )}
 
-                      <div className="bar-tha-th4botomnn">
-                        <div className="two-onnrnn">
-                          {
-                            <NavLink
-                              to={`/program/workout/course/edit/${this.state.media.file}`}
-                              className="Wtrpsrirjtns"
-                            >
-                              <div className="iocnidjnn">
-                                <MdModeEdit />
-                              </div>
-                              <p>EDIT</p>
-                            </NavLink>
-                          }
-                          <div
-                            onClick={() => {
-                              this.optionchangeP(true);
-                            }}
+                    <div className="bar-tha-th4botomnn">
+                      <div className="two-onnrnn">
+                        {
+                          <NavLink
+                            to={`/program/myfitsta/course/edit/${media._id}`}
                             className="Wtrpsrirjtns"
                           >
                             <div className="iocnidjnn">
-                              <AiFillDelete />
+                              <MdModeEdit />
                             </div>
-                            <p>DELETE</p>
+                            <p>EDIT</p>
+                          </NavLink>
+                        }
+                        <div
+                          onClick={() => {
+                            optionchangeP(true);
+                          }}
+                          className="Wtrpsrirjtns"
+                        >
+                          <div className="iocnidjnn">
+                            <AiFillDelete />
                           </div>
+                          <p>DELETE</p>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    {/* <div className="tabhsjfj-jr">
+                  {/* <div className="tabhsjfj-jr">
                       <div
                         onClick={() => {
-                          this.changlepage(false, true);
+                          changlepage(false, true);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.lecture===true ? "active" : ""
+                          lecture===true ? "active" : ""
                         }`}
                       >
                         Content
@@ -229,120 +193,119 @@ class Loadprogram extends Component {
 
                       <div
                         onClick={() => {
-                          this.changlepage(true, false);
+                          changlepage(true, false);
                         }}
                         className={`tabs-vjoor  ${
-                          this.state.comment===true ? "active" : ""
+                          comment===true ? "active" : ""
                         }`}
                       >
                         Comment
                       </div>
                     </div> */}
-                    <div
-                      className={`commnentnjntjn ${
-                        this.state.comment === true ? "active" : ""
-                      }`}
-                    >
-                      {/* <div className="load-the-comnent-title">
-                        <p>{this.state.media.numberofComments} Comment</p>
-                      </div>
-                      <CommentMedia
-                        userId={this.props.myfitstapro.userId}
-                        user={this.props.user}
-                        media={this.state.media}
-                      /> */}
-                    </div>
-                  </div>
-
                   <div
-                    className={`showthebar-of-theother-element-player ${
-                      this.state.lecture === true ? "active" : ""
+                    className={`commnentnjntjn ${
+                      comment === true ? "active" : ""
                     }`}
                   >
-                    <div className="fjejdgrrfje">
-                      <div className="titketntkjej">Up Next</div>
-                    </div>
-                    <div className="load-sjjkr">
-                      {this.state.relaterd !== null ? (
-                        this.state.relaterd.map((item) => {
-                          return (
-                            <div
-                              className={`box-that-hold-theinfo-next-program-c ${
-                                item.file === this.props.match.params.id
-                                  ? "active"
-                                  : ""
-                              }`}
-                              key={item._id}
-                            >
-                              <div className="info-afachi">
-                                <NavLink
-                                  className="infjgjttgjjff"
-                                  to={`/program/workout/course/edit/${item.file}`}
-                                >
-                                  <MdModeEdit />
-                                </NavLink>
-                                <div className="rro4gjgjjgttjrr"></div>
-                                <NavLink
-                                  to={`/program/workout/course/${item.file}`}
-                                  className="read-load"
-                                ></NavLink>
-                                {item.fileType.includes("image") ? (
-                                  <img src={`${ApiUrl.content}${item.file}`} />
-                                ) : (
-                                  <div className="wraprorpsmmr">
-                                    <video>
-                                      <source
-                                        src={`${ApiUrl.content}${item.file}`}
-                                      />
-                                    </video>
-                                    <div className="jfjfnnerbb">
-                                      <GrPlayFill
-                                        style={{ fill: "white" }}
-                                        size={20}
-                                      />
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
+                    {/* <div className="load-the-comnent-title">
+                        <p>{media.numberOfComments} Comment</p>
+                      </div>
+                      <CommentMedia
+                        userId={myfitstapro.userId}
+                        user={user}
+                        media={media}
+                      /> */}
+                  </div>
+                </div>
 
-                              <div className="prohram-description">
-                                <div className="rhrjjrjr-of-workot ">
-                                  <p className="title-of-workot fbfjjr">
-                                    {" "}
-                                    {item.title}
-                                  </p>
+                <div
+                  className={`showthebar-of-theother-element-player ${
+                    lecture === true ? "active" : ""
+                  }`}
+                >
+                  <div className="fjejdgrrfje">
+                    <div className="titketntkjej">Up Next</div>
+                  </div>
+                  <div className="load-sjjkr">
+                    {related !== null ? (
+                      related.map((item) => {
+                        return (
+                          <div
+                            className={`box-that-hold-theinfo-next-program-c ${
+                              item.file === id ? "active" : ""
+                            }`}
+                            key={item._id}
+                          >
+                            <div className="info-afachi">
+                              <NavLink
+                                className="infjgjttgjjff"
+                                to={`/program/myfitsta/course/edit/${item._id}`}
+                              >
+                                <MdModeEdit />
+                              </NavLink>
+                              <div className="rro4gjgjjgttjrr"></div>
+                              <NavLink
+                                to={`/program/myfitsta/course/${item._id}`}
+                                className="read-load"
+                              ></NavLink>
+                              {item.mediaInfo.mediaType.includes("image") ? (
+                                <img
+                                  src={`${apiUrl.content}${item.mediaInfo.mediaUrl}`}
+                                />
+                              ) : (
+                                <div className="wraprorpsmmr">
+                                  <video>
+                                    <source
+                                      src={`${apiUrl.content}${item.mediaInfo.mediaUrl}`}
+                                    />
+                                  </video>
+                                  <div className="jfjfnnerbb">
+                                    <GrPlayFill
+                                      style={{ fill: "white" }}
+                                      size={20}
+                                    />
+                                  </div>
                                 </div>
-                                <div className="hold-descroptionr-rn">
-                                  {item.description}
-                                </div>
+                              )}
+                            </div>
+
+                            <div className="prohram-description">
+                              <div className="rhrjjrjr-of-workot ">
+                                <p className="title-of-workot fbfjjr">
+                                  {" "}
+                                  {item.title}
+                                </p>
+                              </div>
+                              <div className="hold-descroptionr-rn">
+                                {item.description}
                               </div>
                             </div>
-                          );
-                        })
-                      ) : (
-                        <div className="bixnknfkfjkjrjr">
-                          <LoadingSpin />
-                        </div>
-                      )}
-                    </div>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div className="bixnknfkfjkjrjr">
+                        <LoadingSpin />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="bixnknfkfjkjrjr">
-                <LoadingSpin />
-              </div>
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="bixnknfkfjkjrjr">
+              <LoadingSpin />
+            </div>
+          )}
         </div>
-
-        <DeleteContent
-          optionchangeP={this.optionchangeP}
-          deleteContent={this.state.deleteContent}
-        />
       </div>
-    );
-  }
+
+      <DeleteContent
+        optionchangeP={optionchangeP}
+        deleteContent={deleteContent}
+      />
+    </div>
+  );
 }
 
 export default withRouter(Loadprogram);

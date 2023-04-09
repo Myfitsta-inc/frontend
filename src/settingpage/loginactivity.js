@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
-import DataPost from "../component/datePost";
+import DataPost from "components/datePost";
 import { motion } from "framer-motion";
 import { SiGooglemaps } from "react-icons/si";
-import socket from "../socketConfig";
+import socket from "socketConfig";
 import { connect } from "react-redux";
 class LoginActivity extends Component {
   state = {

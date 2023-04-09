@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { connect } from "react-redux";
 class Paymentmethod extends Component {
   state = {
@@ -60,7 +60,6 @@ class Paymentmethod extends Component {
 
   componentDidMount = () => {
     this.getPaymentMethod();
-
   };
 
   render() {

@@ -91,53 +91,54 @@ class ChangePassword extends Component {
             <p>Change Password</p>
           </div>
         </div>
+        <div className="wraeprprrrr">
+          <div className="wrpaer-divngjrj">
+            <div className="edit-box-profile">
+              <p>Current Password</p>
+              <input
+                onChange={this.handleCurrent}
+                placeholder="Current Password"
+                className="fullname-profile"
+                type="text"
+                name="username"
+              />
+            </div>
 
-        <div className="wrpaer-divngjrj">
-          <div className="edit-box-profile">
-            <p>Current Password</p>
-            <input
-              onChange={this.handleCurrent}
-              placeholder="Current Password"
-              className="fullname-profile"
-              type="text"
-              name="username"
-            />
+            <div className="wfjkwsnf-fjedj">
+              <Link to={"/recover"}>Forget your Password?</Link>
+            </div>
+            <p className="messsage" id="message-password">
+              {this.state.oldPasswordm}
+            </p>
           </div>
-
-          <div className="wfjkwsnf-fjedj">
-            <Link to={"/recover"}>Forget your Password?</Link>
+          <div className="wrpaer-divngjrj">
+            <div className="edit-box-profile">
+              <p>New Password</p>
+              <input
+                onChange={this.handlenew}
+                placeholder="New Password"
+                className="fullname-profile"
+                type="text"
+                name="username"
+              />
+            </div>
+            <p className="messsage" id="message-password">
+              {this.state.newPasswordm}
+            </p>
+            <div className="edit-box-profile">
+              <p>Confirm Password</p>
+              <input
+                onChange={this.handleConfirm}
+                placeholder="Confirm Password"
+                className="fullname-profile"
+                type="text"
+                name="username"
+              />
+            </div>
+            <p className="messsage" id="message-password">
+              {this.state.confoimM}
+            </p>
           </div>
-          <p className="messsage" id="message-password">
-            {this.state.oldPasswordm}
-          </p>
-        </div>
-        <div className="wrpaer-divngjrj">
-          <div className="edit-box-profile">
-            <p>New Password</p>
-            <input
-              onChange={this.handlenew}
-              placeholder="New Password"
-              className="fullname-profile"
-              type="text"
-              name="username"
-            />
-          </div>
-          <p className="messsage" id="message-password">
-            {this.state.newPasswordm}
-          </p>
-          <div className="edit-box-profile">
-            <p>Confirm Password</p>
-            <input
-              onChange={this.handleConfirm}
-              placeholder="Confirm Password"
-              className="fullname-profile"
-              type="text"
-              name="username"
-            />
-          </div>
-          <p className="messsage" id="message-password">
-            {this.state.confoimM}
-          </p>
         </div>
 
         <div className={`save-option`}>

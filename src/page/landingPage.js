@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../style/landing.css";
-import HomeLand from "../landing/home";
+import "style/landing.css";
+import HomeLand from "landing/home";
 class Landing extends Component {
   state = {
     username: "",

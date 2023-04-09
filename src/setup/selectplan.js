@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
+import { SLIVER_PLAN, PLATINUM_PLAN, GOLD_PLAN } from "productOptions/plan";
 const SelectPlan = ({
   selectplan,
   removePlan,
@@ -44,19 +45,19 @@ const SelectPlan = ({
   const addPlan = (plan) => {
     const plans = [
       {
-        name: "silver",
+        name: SLIVER_PLAN,
         value: silver,
         selected: isSilverPlanSelected,
         setter: setisSilverPlanSelected,
       },
       {
-        name: "platinum",
+        name: PLATINUM_PLAN,
         value: platinum,
         selected: isPlatiniumPlanSelected,
         setter: setIsPlatiniumPlanSelected,
       },
       {
-        name: "gold",
+        name: GOLD_PLAN,
         value: gold,
         selected: isGoldPlanSelected,
         setter: setIsGoldPlanSelected,
@@ -86,11 +87,11 @@ const SelectPlan = ({
   };
 
   const setErrorMessage = (plan, message) => {
-    if (plan === "silver") {
+    if (plan === SLIVER_PLAN) {
       setSilverErrorMessage(message);
-    } else if (plan === "platinum") {
+    } else if (plan === PLATINUM_PLAN) {
       setPlatiniumErrorMessage(message);
-    } else if (plan === "gold") {
+    } else if (plan === GOLD_PLAN) {
       setGoldErrorMessage(message);
     }
   };
@@ -105,7 +106,7 @@ const SelectPlan = ({
         <div className="wraper-thesubscriotion">
           <div
             onClick={() => {
-              addPlan("silver");
+              addPlan(SLIVER_PLAN);
             }}
             className={`wrepr-arounbd0the-plan ${
               isSilverPlanSelected && "active"
@@ -136,7 +137,7 @@ const SelectPlan = ({
         <div className="wraper-thesubscriotion">
           <div
             onClick={() => {
-              addPlan("platinum");
+              addPlan(PLATINUM_PLAN);
             }}
             className={`wrepr-arounbd0the-plan ${
               isPlatiniumPlanSelected && "active"
@@ -169,7 +170,7 @@ const SelectPlan = ({
         <div className="wraper-thesubscriotion">
           <div
             onClick={() => {
-              addPlan("gold");
+              addPlan(GOLD_PLAN);
             }}
             className={`wrepr-arounbd0the-plan ${
               isGoldPlanSelected && "active"

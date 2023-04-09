@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
-import Search from "../component/seach";
-import PostCollection from "../component/postcollection";
+import Nav from "components/nav";
+import Search from "components/seach";
+import PostCollection from "components/postcollection";
 import axios from "axios";
-import SharePost from "../component/sharepost";
-import Boxcollection from "../component/boxcollection";
-import ShareOption from "../component/shareoption";
+import SharePost from "components/sharepost";
+import Boxcollection from "components/boxcollection";
+import ShareOption from "components/shareoption";
 import { withRouter } from "react-router-dom";
-import Report from "../component/report";
-import LoadingSpin from "../component/loadingspin";
+import Report from "components/report";
+import LoadingSpin from "components/loadingspin";
 import { BiArrowBack } from "react-icons/bi";
 let source;
 source = axios.CancelToken.source();
@@ -143,7 +143,6 @@ class LoadProfile extends Component {
                         handlOpen={this.handlOpen}
                         user={this.props.user}
                         openBoxCollection={this.props.openBoxCollection}
-                        user={this.props.user}
                         item={this.state.post}
                       />
                     ) : (
@@ -181,7 +180,7 @@ class LoadProfile extends Component {
         />
         <Boxcollection
           user={this.props.user}
-          file={this.props.file}
+          postId={this.props.postId}
           openBoxCollection={this.props.openBoxCollection}
           boxCollection={this.props.boxCollection}
         />

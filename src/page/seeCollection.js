@@ -1,18 +1,19 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import SharePost from "../component/sharepost";
-import ShareOption from "../component/shareoption";
-import LoadingSpin from "../component/loadingspin.js";
+import SharePost from "components/sharepost";
+import ShareOption from "components/shareoption";
+import LoadingSpin from "components/loadingspin.js";
 import { InView } from "react-intersection-observer";
-import PostCollection from "../component/postcollection";
-import Search from "../component/seach";
-import Boxcollection from "../component/boxcollection";
-import DeleteCollection from "../component/deleteCollection";
-import EditCollection from "../component/editcollection";
+import PostCollection from "components/postcollection";
+import Search from "components/seach";
+import Boxcollection from "components/boxcollection";
+import DeleteCollection from "components/deleteCollection";
+import EditCollection from "components/editcollection";
 import { withRouter } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
-import Report from "../component/report";
+import UserPost from "components/userPost";
+import Report from "components/report";
 let source;
 source = axios.CancelToken.source();
 class SeeCollection extends Component {
@@ -23,7 +24,7 @@ class SeeCollection extends Component {
     editCollection: false,
     shareoption: false,
     sharebox: false,
-    file: "",
+    _id: "",
     loading: true,
     number: 10,
   };
@@ -42,13 +43,13 @@ class SeeCollection extends Component {
     this.setState({
       sharebox: data,
     });
-    this.handleSettingg(false, this.state.file);
+    this.handleSettingg(false, this.state._id);
   };
 
-  handleSettingg = (data, file) => {
+  handleSettingg = (data, _id) => {
     this.setState({
       shareoption: data,
-      file: file,
+      _id: _id,
     });
   };
 
@@ -82,9 +83,7 @@ class SeeCollection extends Component {
       });
   };
 
-  handleChange = (event) => {
-    console.log(event);
-  };
+  handleChange = (event) => {};
 
   checkLoad = (data) => {
     if (data === true) {
@@ -111,29 +110,19 @@ class SeeCollection extends Component {
     }
   };
   render() {
-    let media = this.state.collection.data?.map((item, index) => {
-      if (this.state.collection.data.length === index + 1) {
+    let media = this.state.collection.collectionList?.map((item, index) => {
+      if (this.state.collection.collectionList.length === index + 1) {
         return (
           <InView>
-            <PostCollection
-              item={item.file}
-              user={this.props.user}
-              openBoxCollection={this.props.openBoxCollection}
+            <UserPost
               handleSetting={this.handleSettingg}
-              key={item._id}
+              key={item}
+              postId={item}
             />
           </InView>
         );
       } else {
-        return (
-          <PostCollection
-            item={item.file}
-            user={this.props.user}
-            openBoxCollection={this.props.openBoxCollection}
-            handleSetting={this.handleSettingg}
-            key={item._id}
-          />
-        );
+        return <UserPost key={item} postId={item} />;
       }
     });
 
@@ -157,9 +146,9 @@ class SeeCollection extends Component {
                   <div className="hold-colletion-if-of-collection ">
                     <p className="info-about-colle">
                       {this.state.collection.collectionName
-                        ? this.state.collection.data.length
+                        ? this.state.collection.collectionList.length
                         : ""}{" "}
-                      Workout
+                      Post
                     </p>
                   </div>
 
@@ -201,7 +190,7 @@ class SeeCollection extends Component {
             </div>
             <Boxcollection
               user={this.props.user}
-              file={this.props.file}
+              postId={this.props.postId}
               openBoxCollection={this.props.openBoxCollection}
               boxCollection={this.props.boxCollection}
             />
@@ -212,7 +201,7 @@ class SeeCollection extends Component {
             />
             <SharePost
               user={this.props.user}
-              file={this.state.file}
+              _id={this.state._id}
               handlOpenS={this.handlOpenS}
               sharebox={this.state.sharebox}
               kind={"post"}
@@ -253,3 +242,13 @@ class SeeCollection extends Component {
 }
 
 export default withRouter(SeeCollection);
+
+{
+  /* <PostCollection
+            item={item}
+            user={this.props.user}
+            openBoxCollection={this.props.openBoxCollection}
+            handleSetting={this.handleSettingg}
+            
+          /> */
+}

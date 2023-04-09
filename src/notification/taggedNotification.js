@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import VideoPost from "../component/videopost";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import DataPost from "../component/datePost";
-import ApiUrl from "../url";
+import VideoPost from "components/videopost";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import DataPost from "components/datePost";
+import apiUrl from "apiUrl/url";
 class TaggedNotification extends Component {
   state = {
     username: null,
@@ -66,9 +66,9 @@ class TaggedNotification extends Component {
               className="div-that-wraper-the-imga3"
             >
               {this.state.media !== null ? (
-                this.state.media.mediaKind[0].includes("image") ? (
+                this.state.media.mediaDetails[0].includes("image") ? (
                   <img
-                    src={`${ApiUrl.content}${
+                    src={`${apiUrl.content}${
                       this.state.media.filename.split(",")[0]
                     }`}
                     loading="lazy"

@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
-import Search from "../component/seach";
-import Boxcollection from "../component/boxcollection";
-import ShareOption from "../component/shareoption";
-import SharePost from "../component/sharepost";
-import RelatedPost from "../component/relatedpost";
+import Nav from "components/nav";
+import Search from "components/seach";
+import Boxcollection from "components/boxcollection";
+import ShareOption from "components/shareoption";
+import SharePost from "components/sharepost";
+import RelatedPost from "components/relatedpost";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import PostBox from "../component/postbox";
+import PostBox from "components/postbox";
 import { BiArrowBack } from "react-icons/bi";
-import Report from "../component/report";
+import Report from "components/report";
+import UserPost from "components/userPost";
 let source;
 source = axios.CancelToken.source();
 class LoadDiscover extends Component {
@@ -121,12 +122,7 @@ class LoadDiscover extends Component {
                 </div>
                 <div className="rfjkernjk">
                   {this.state.post !== null ? (
-                    <PostBox
-                      openBoxCollection={this.props.openBoxCollection}
-                      handleSetting={this.handleSettingg}
-                      user={this.props.user}
-                      item={this.state.post}
-                    />
+                    <UserPost postId={this.state.post._id} />
                   ) : (
                     ""
                   )}
@@ -152,7 +148,7 @@ class LoadDiscover extends Component {
         </div>
         <Boxcollection
           user={this.props.user}
-          file={this.props.file}
+          postId={this.props.postId}
           openBoxCollection={this.props.openBoxCollection}
           boxCollection={this.props.boxCollection}
         />

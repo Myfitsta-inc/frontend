@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import EditGroupProfile from "../messaging/editgroupProfile";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import EditGroupProfile from "messaging/editgroupProfile";
 import { IoCloseSharp, IoFlagSharp, IoExitOutline } from "react-icons/io5";
-import EditName from "../messaging/editname";
+import EditName from "messaging/editname";
 import { GoPlus } from "react-icons/go";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 import { connect } from "react-redux";
 class ConversationGroup extends Component {
   state = {

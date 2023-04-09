@@ -28,9 +28,9 @@ export function TermsWraper() {
       <h2>Interpretation</h2>
       <p>
         The words of which the initial letter is capitalized have meanings
-        defined under the following conditions. The following definitions shall
-        have the same meaning regardless of whether they appear in singular or
-        in plural.
+        defined under the followingId conditions. The followingId definitions
+        shall have the same meaning regardless of whether they appear in
+        singular or in plural.
       </p>
       <h2>Definitions</h2>
       <p>For the purposes of these Terms and Conditions:</p>
@@ -103,8 +103,8 @@ export function TermsWraper() {
             <strong>Website</strong> refers to Myfitsta, accessible from{" "}
             <a
               href="https://myfitsta.com/"
-              rel="external nofollow noopener"
               target="_blank"
+              rel="noopener noreferrer"
             >
               https://myfitsta.com/
             </a>
@@ -215,7 +215,7 @@ export function TermsWraper() {
         You may not transmit any Content that is unlawful, offensive, upsetting,
         intended to disgust, threatening, libelous, defamatory, obscene or
         otherwise objectionable. Examples of such objectionable Content include,
-        but are not limited to, the following:
+        but are not limited to, the followingId:
       </p>
       <ul>
         <li>Unlawful or promoting unlawful activity.</li>
@@ -306,8 +306,9 @@ export function TermsWraper() {
       <h2>DMCA Notice and DMCA Procedure for Copyright Infringement Claims</h2>
       <p>
         You may submit a notification pursuant to the Digital Millennium
-        Copyright Act (DMCA) by providing our Copyright Agent with the following
-        information in writing (see 17 U.S.C 512(c)(3) for further detail):
+        Copyright Act (DMCA) by providing our Copyright Agent with the
+        followingId information in writing (see 17 U.S.C 512(c)(3) for further
+        detail):
       </p>
       <ul>
         <li>

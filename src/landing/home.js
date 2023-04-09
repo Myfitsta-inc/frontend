@@ -1,4 +1,4 @@
-import big from "../media/cool.svg";
+import big from "media/cool.svg";
 import Navland from "./Navland";
 import React, { Component } from "react";
 import { motion } from "framer-motion";

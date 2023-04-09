@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import DataPost from "../component/datePost";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import DataPost from "components/datePost";
 class ProSubscription extends Component {
   state = {
     username: null,

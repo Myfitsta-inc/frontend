@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CheckoutForm from "./CheckoutForm";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";

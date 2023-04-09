@@ -3,9 +3,9 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
 import { connect } from "react-redux";
-import AddMethod from "../payment/addmethod";
+import AddMethod from "payment/addmethod";
 import { GoPlus } from "react-icons/go";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 
 class PaymentInfo extends Component {
   state = {
@@ -54,7 +54,6 @@ class PaymentInfo extends Component {
             listCard: result.data.paymentMethods,
           });
         } else {
-          console.log("mmm");
           this.setState({
             listCard: "no",
           });

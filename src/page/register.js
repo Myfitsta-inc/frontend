@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "../style/login.css";
-import RegisterOne from "../register/registerOne";
-import RegisterTwo from "../register/registerTwo";
-import RegisterThree from "../register/registerThree";
-import Navland from "../landing/Navland";
+import "style/login.css";
+import RegisterOne from "register/registerOne";
+import RegisterTwo from "register/registerTwo";
+import RegisterThree from "register/registerThree";
+import Navland from "landing/Navland";
 import axios from "axios";
 let source;
 source = axios.CancelToken.source();
@@ -117,8 +117,6 @@ class Register extends Component {
       };
 
       axios.post("/api/register", userinfo).then((res) => {
-        console.log(res.data);
-
         if (res.data === "username already exist") {
           this.setState({
             messageusername: "😅 Sorry This username is already taken",
@@ -138,7 +136,7 @@ class Register extends Component {
           });
         }
 
-        if (res.data.User) {
+        if (res.data.userId) {
           window.location.reload();
         }
       });

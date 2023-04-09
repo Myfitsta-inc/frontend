@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Navland from "../landing/Navland";
-import image from "../image/nofound.svg";
+import Navland from "landing/Navland";
+import image from "image/nofound.svg";
 import Fade from "react-reveal/Fade";
 class NoFound extends Component {
   switchToggle = () => {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 import { withRouter } from "react-router-dom";
-import VideoProgram from "../component/videoProgram";
+import VideoProgram from "components/videoProgram";
 import { BiArrowBack } from "react-icons/bi";
 let source;
 source = axios.CancelToken.source();
@@ -42,7 +42,7 @@ class EditContent extends Component {
     ) {
       if (this.state.title.length > 4 || this.state.description.length > 4) {
         let option = {
-          file: this.state.media.file,
+          id: this.state.media._id,
           title: this.state.title,
           description: this.state.description,
         };
@@ -102,11 +102,13 @@ class EditContent extends Component {
             </div>
             <div className="wraorrikrkjrjjjjjsjjj">
               <div className="wrsjjjjrjrjjjjh">
-                {this.state.media.fileType ? (
-                  this.state.media.fileType.includes("image") ? (
-                    <img src={`${ApiUrl.content}${this.state.media.file}`} />
+                {this.state.media?.mediaInfo?.mediaType ? (
+                  this.state.media.mediaInfo.mediaType.includes("image") ? (
+                    <img
+                      src={`${apiUrl.content}${this.state.media.mediaInfo.mediaUrl}`}
+                    />
                   ) : (
-                    <VideoProgram src={this.state.media.file} />
+                    <VideoProgram src={this.state.media.mediaInfo.mediaUrl} />
                   )
                 ) : (
                   ""

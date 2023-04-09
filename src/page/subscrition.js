@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import "../style/ui.css";
+import "style/ui.css";
 import _ from "lodash";
-import profile from "../profile.webp";
+import profile from "profile.webp";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
-import Username from "../component/username";
-import ApiUrl from "../url";
-import LoadingSpin from "../component/loadingspin.js";
+import Username from "components/username";
+import apiUrl from "apiUrl/url";
+import LoadingSpin from "components/loadingspin.js";
 import { BiArrowBack } from "react-icons/bi";
-import Rating from "../component/rating";
-import Subscribe from "../component/subscription";
-import MessageButton from "../component/messageSomeone";
-import SettingMyfiststapro from "../component/settingMyfitstapro";
+import Rating from "components/rating";
+import Subscribe from "components/subscription";
+import MessageButton from "components/messageSomeone";
+import SettingMyfiststapro from "components/settingMyfitstapro";
 let source;
 source = axios.CancelToken.source();
 class Myfitstapr extends Component {
@@ -70,9 +70,10 @@ class Myfitstapr extends Component {
         { cancelToken: source.token }
       )
       .then((res) => {
-        if (res.data !== "no") {
+        if (res.data.success) {
+          console.log(res.data.result);
           this.setState({
-            program: res.data,
+            program: res.data.result,
           });
         }
       });
@@ -85,7 +86,6 @@ class Myfitstapr extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,
@@ -162,7 +162,7 @@ class Myfitstapr extends Component {
                       {this.state.profile.profileUrl ? (
                         <img
                           className="pect-ppr"
-                          src={`${ApiUrl.content}${this.state.profile.profileUrl}`}
+                          src={`${apiUrl.content}${this.state.profile.profileUrl}`}
                           loading="lazy"
                         />
                       ) : (
@@ -287,20 +287,23 @@ class Myfitstapr extends Component {
                                     to={`/program/unlock/${item.programId}`}
                                   ></Link>
 
-                                  {item.file.length > 0 ? (
-                                    item.fileType.includes("image") ? (
+                                  {item.previewProgram.previewType.length >
+                                  0 ? (
+                                    item.previewProgram.previewType.includes(
+                                      "image"
+                                    ) ? (
                                       <img
-                                        src={`${ApiUrl.content}${item.file}`}
+                                        src={`${apiUrl.content}${item.previewProgram.previewUrl}`}
                                       />
                                     ) : (
                                       <video>
                                         <source
-                                          src={`${ApiUrl.content}${item.file}`}
+                                          src={`${apiUrl.content}${item.previewProgram.previewUrl}`}
                                         />
                                       </video>
                                     )
                                   ) : (
-                                    <img src="https://i.ytimg.com/vi/xRZB5KBLdOA/maxresdefault.jpg" />
+                                    ""
                                   )}
                                 </div>
                               </div>

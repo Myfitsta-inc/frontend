@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { connect } from "react-redux";
 class PaymentmethodSub extends Component {
   state = {
@@ -38,7 +38,6 @@ class PaymentmethodSub extends Component {
         if (result.data.success) {
           window.location.reload();
         } else {
-
         }
       })
       .catch((error) => {

@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
 import { connect } from "react-redux";
-import SubscriptionInfo from "../subscription/subscriptioninfo";
+import SubscriptionInfo from "subscription/subscriptioninfo";
 class Subcription extends Component {
   state = {
     loading: true,

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LoadingSpin from "../component/loadingspin";
-import RegistractionTwo from "../setup/registrationtwo";
-import BaxBar from "../component/barbox";
+import LoadingSpin from "components/loadingspin";
+import RegistractionTwo from "setup/registrationtwo";
+import BaxBar from "components/barbox";
 import { connect } from "react-redux";
-import Sila from "../silaconfig";
+import Sila from "silaconfig";
 class Registraction extends Component {
   state = {
     user: {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import socket from "../socketConfig";
-import ApiUrl from "../url";
+import socket from "socketConfig";
+import apiUrl from "apiUrl/url";
 class LastMessageGroup extends Component {
   state = {
     lastMessage: null,

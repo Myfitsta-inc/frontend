@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import ButtonFollow from "../component/buttonFollow";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import ButtonFollow from "components/buttonFollow";
 class FollowNotification extends Component {
   state = {
     username: null,

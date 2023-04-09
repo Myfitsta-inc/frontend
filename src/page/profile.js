@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import TagggedPost from "../component/taggedPost";
-import profile from "../profile.webp";
+import TagggedPost from "components/taggedPost";
+import profile from "profile.webp";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../logo.png";
-import ApiUrl from "../url";
-import Boxcollection from "../component/boxcollection";
-import LoadingSpin from "../component/loadingspin.js";
+import logo from "logo.png";
+import apiUrl from "apiUrl/url";
+import Boxcollection from "components/boxcollection";
+import LoadingSpin from "components/loadingspin.js";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
-import PostVue from "../component/postvue";
+import PostVue from "components/postvue";
 let source;
 source = axios.CancelToken.source();
 class Profile extends Component {
@@ -48,6 +48,18 @@ class Profile extends Component {
     });
   };
 
+  collectionUserPost() {
+    axios
+      .get(`/api/post/${this.props.user.userId}`, {
+        withCredentials: true,
+        cancelToken: source.token,
+      })
+      .then((res) => {
+        this.setState({
+          posted: res.data.reverse(),
+        });
+      });
+  }
   mypost = (e) => {
     axios
       .get(`/api/profile/${this.props.user.userId}`, {
@@ -55,9 +67,7 @@ class Profile extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        this.setState({
-          posted: res.data.post.reverse(),
-        });
+        this.collectionUserPost();
       });
   };
   nFormatter = (num) => {
@@ -111,7 +121,7 @@ class Profile extends Component {
                     {this.props.user.banner.length > 0 ? (
                       <img
                         className="pect-ppr"
-                        src={`${ApiUrl.content}${this.props.user.banner}`}
+                        src={`${apiUrl.content}${this.props.user.banner}`}
                         loading="lazy"
                       />
                     ) : (
@@ -125,7 +135,7 @@ class Profile extends Component {
                           {this.props.user.profile.length > 0 ? (
                             <img
                               className="pect-ppr"
-                              src={`${ApiUrl.content}${this.props.user.profile}`}
+                              src={`${apiUrl.content}${this.props.user.profile}`}
                               loading="lazy"
                             />
                           ) : (
@@ -164,7 +174,9 @@ class Profile extends Component {
                             <div className="info-acct">
                               <div id="post-nu " className="al">
                                 <div id="number-post" className="number-post">
-                                  {this.nFormatter(this.props.user.postnumber)}
+                                  {this.nFormatter(
+                                    this.props.user.numberOfPosts
+                                  )}
                                 </div>
                                 <p>Post</p>
                               </div>
@@ -178,25 +190,25 @@ class Profile extends Component {
                                   className="number-followers"
                                 >
                                   {this.nFormatter(
-                                    this.props.user.numberfollowers
+                                    this.props.user.numberOfFollowers
                                   )}
                                 </div>
                                 <p>followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.username}/following`}
-                                id="following-nu al"
+                                to={`/user/${this.props.user.username}/followingId`}
+                                id="followingId-nu al"
                                 className="al"
                               >
                                 <div
-                                  id="number-following"
-                                  className="number-following"
+                                  id="number-followingId"
+                                  className="number-followingId"
                                 >
                                   {this.nFormatter(
-                                    this.props.user.numberfollowings
+                                    this.props.user.numberOfFollowings
                                   )}
                                 </div>
-                                <p>following</p>
+                                <p>Following</p>
                               </Link>
                             </div>
                           </div>
@@ -241,7 +253,9 @@ class Profile extends Component {
                             <div className="info-acct">
                               <div id="post-nu " className="al">
                                 <div id="number-post" className="number-post">
-                                  {this.nFormatter(this.props.user.postnumber)}
+                                  {this.nFormatter(
+                                    this.props.user.numberOfPosts
+                                  )}
                                 </div>
                                 <p>Post</p>
                               </div>
@@ -255,25 +269,25 @@ class Profile extends Component {
                                   className="number-followers"
                                 >
                                   {this.nFormatter(
-                                    this.props.user.numberfollowers
+                                    this.props.user.numberOfFollowers
                                   )}
                                 </div>
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.username}/following`}
-                                id="following-nu al"
+                                to={`/user/${this.props.user.username}/followingId`}
+                                id="followingId-nu al"
                                 className="al"
                               >
                                 <div
-                                  id="number-following"
-                                  className="number-following"
+                                  id="number-followingId"
+                                  className="number-followingId"
                                 >
                                   {this.nFormatter(
-                                    this.props.user.numberfollowings
+                                    this.props.user.numberOfFollowings
                                   )}
                                 </div>
-                                <p>following</p>
+                                <p>Following</p>
                               </Link>
                             </div>
                           </div>
@@ -364,7 +378,7 @@ class Profile extends Component {
         </div>
         <Boxcollection
           user={this.props.user}
-          file={this.props.file}
+          postId={this.props.postId}
           openBoxCollection={this.props.openBoxCollection}
           boxCollection={this.props.boxCollection}
         />

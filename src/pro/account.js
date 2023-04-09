@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { connect } from "react-redux";
 import axios from "axios";
-import LoadingSpin from "../component/loadingspin.js";
-import Editable from "../component/editable";
-import profile from "../profile.webp";
+import LoadingSpin from "components/loadingspin.js";
+import Editable from "components/editable.js";
+import profile from "profile.webp";
 import { AiFillDelete } from "react-icons/ai";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url.js";
 class Account extends Component {
   state = {
     previewBanner: null,
@@ -160,7 +160,7 @@ class Account extends Component {
             {this.state.previewBanner !== null ? (
               this.state.previewBanner.length > 0 ? (
                 <img
-                  src={`${ApiUrl.content}${this.state.previewBanner}`}
+                  src={`${apiUrl.content}${this.state.previewBanner}`}
                   loading="lazy"
                 />
               ) : (
@@ -208,7 +208,7 @@ class Account extends Component {
               {this.state.previewsIcon !== null ? (
                 this.state.previewsIcon.length > 0 ? (
                   <img
-                    src={`${ApiUrl.content}${this.state.previewsIcon}`}
+                    src={`${apiUrl.content}${this.state.previewsIcon}`}
                     loading="lazy"
                   />
                 ) : (

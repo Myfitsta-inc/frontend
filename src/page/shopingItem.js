@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import Rating from "../component/rating";
+import Rating from "components/rating";
 import { withRouter } from "react-router-dom";
-import "../style/program.css";
-import Nav from "../component/nav";
-import Cardmdedia from "../component/cardmedia";
+import "style/program.css";
+import Nav from "components/nav";
+import Cardmdedia from "components/cardmedia";
 import axios from "axios";
-import ApiUrl from "../url";
-import PaymentOption from "../payment/paymentBox";
-import AddTocardButton from "../component/addtocardbutton";
+import apiUrl from "apiUrl/url";
+import PaymentOption from "payment/paymentBox";
+import AddTocardButton from "components/addtocardbutton";
 import { BiArrowBack } from "react-icons/bi";
-import VideoProgram from "../component/videoProgram";
-import Reviews from "../component/reviews";
-import SettingHisProgram from "../component/settinghisprogram";
+import VideoProgram from "components/videoProgram";
+import Reviews from "components/reviews";
+import SettingHisProgram from "components/settinghisprogram";
 let source;
 source = axios.CancelToken.source();
 class ShopingItem extends Component {
@@ -42,7 +42,7 @@ class ShopingItem extends Component {
 
   getProgramInfo = (data) => {
     axios
-      .get(`/api/accountt/program/workout/${this.props.match.params.id}`, {
+      .get(`/api/accountt/program/myfitsta/${this.props.match.params.id}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -100,7 +100,7 @@ class ShopingItem extends Component {
                       {this.state.program.fileType ? (
                         this.state.program.fileType.includes("image") ? (
                           <img
-                            src={`${ApiUrl.content}${this.state.program.file}`}
+                            src={`${apiUrl.content}${this.state.program.file}`}
                           />
                         ) : (
                           <VideoProgram src={this.state.program.file} />

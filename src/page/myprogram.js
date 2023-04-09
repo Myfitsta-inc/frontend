@@ -1,28 +1,28 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import "../style/program.css";
-import ShareOption from "../component/shareoption";
-import SharePost from "../component/sharepost";
-import Publish from "../component/publish";
-import Nav from "../component/nav";
+import "style/program.css";
+import ShareOption from "components/shareoption";
+import SharePost from "components/sharepost";
+import Publish from "components/publish";
+import Nav from "components/nav";
 import { AiOutlineStar } from "react-icons/ai";
 import { FiUpload } from "react-icons/fi";
-import Cardmdedia from "../component/cardmedia";
+import Cardmdedia from "components/cardmedia";
 import axios from "axios";
-import ApiUrl from "../url";
-import Rating from "../component/rating";
-import Rate from "../component/rate";
-import Report from "../component/report";
-import UploadInProgram from "../component/uploadProgram";
-import Editprogram from "../component/editProgram";
-import VideoProgram from "../component/videoProgram";
+import apiUrl from "apiUrl/url";
+import Rating from "components/rating";
+import Rate from "components/rate";
+import Report from "components/report";
+import UploadInProgram from "components/uploadProgram";
+import Editprogram from "components/editProgram";
+import VideoProgram from "components/videoProgram";
 import { MdModeEdit } from "react-icons/md";
-import DeleteProgram from "../component/deleteProgram";
+import DeleteProgram from "components/deleteProgram";
 import { BiArrowBack, BiRocket } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import { IoIosShareAlt } from "react-icons/io";
 import { connect } from "react-redux";
-import Reviews from "../component/reviews";
+import Reviews from "components/reviews";
 let source;
 source = axios.CancelToken.source();
 class Myprogram extends Component {
@@ -117,6 +117,7 @@ class Myprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
+        console.log(res.data, "jjjjjjjj");
         if (res.data.programId) {
           this.setState({
             program: res.data,
@@ -195,13 +196,17 @@ class Myprogram extends Component {
 
                 <div className="banner-that-hold-the-information">
                   <div className="box-that-hold-theafihe-url">
-                    {this.state.program.fileType ? (
-                      this.state.program.fileType.includes("image") ? (
+                    {this.state.program?.previewProgram?.previewType ? (
+                      this.state.program.previewProgram.previewType.includes(
+                        "image"
+                      ) ? (
                         <img
-                          src={`${ApiUrl.content}${this.state.program.file}`}
+                          src={`${apiUrl.content}${this.state.program.previewProgram.previewUrl}`}
                         />
                       ) : (
-                        <VideoProgram src={this.state.program.file} />
+                        <VideoProgram
+                          src={this.state.program.previewProgram.previewUrl}
+                        />
                       )
                     ) : (
                       ""

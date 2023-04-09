@@ -29,8 +29,8 @@
   --main-bg--side-white: #fff;
   --text-light: #191919;
   --main-bg-cool-rgb-white: rgba(0, 0, 0, 0.2);
-  --main-bg-cool-rgb-over-dark:rgba(255, 255, 255, 0.5);
-  --main-bg-cool-rgb-over-white:rgba(0, 0, 0, 0.5);
+  --main-bg-cool-rgb-over-dark: rgba(255, 255, 255, 0.5);
+  --main-bg-cool-rgb-over-white: rgba(0, 0, 0, 0.5);
 }
 
 [color-scheme="dark"] {
@@ -40,7 +40,7 @@
   --main-bg-box-item: var(--main-bg-box-item-dark);
   --main-bg-cool-rgb: var(--main-bg-cool-rgb-dark);
   --main-bg-pagebox: var(--main-bg-pagebox-dark);
-  --main-bg-cool-rgb-over:var(--main-bg-cool-rgb-over-dark)
+  --main-bg-cool-rgb-over: var(--main-bg-cool-rgb-over-dark);
 }
 [color-scheme="light"] {
   --main-bg-side: var(--main-bg--side-white);
@@ -49,7 +49,7 @@
   --main-bg-box-item: var(--main-bg-box-item-white);
   --main-bg-cool-rgb: var(--main-bg-cool-rgb-white);
   --main-bg-pagebox: var(--main-bg-pagebox-white);
-  --main-bg-cool-rgb-over:var(--main-bg-cool-rgb-over-white)
+  --main-bg-cool-rgb-over: var(--main-bg-cool-rgb-over-white);
 }
 .sho-ico {
   margin-right: 15px;
@@ -807,6 +807,9 @@
 .title-of--thise-action p {
   font-weight: 600;
   color: var(--text);
+}
+.title-of--thise-action.gjtjtjtj {
+  justify-content: space-between;
 }
 .box-of-detsil input {
   width: 100%;

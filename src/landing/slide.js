@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import bask from "../image/bask.svg";
-import soccer from "../image/soccer.svg";
-import baseball from "../image/baseball.svg";
-import meditation from "../image/meditation.svg";
-import training from "../image/training.svg";
-import healt from "../image/healt.svg";
-import tracker from "../image/tracker.svg";
-import run from "../image/run.svg";
-import hike from "../image/hike.svg";
-import boarding from "../image/boarding.svg";
-import golf from "../image/golf.svg";
-import yoga from "../image/yogo.svg";
+import bask from "image/bask.svg";
+import soccer from "image/soccer.svg";
+import baseball from "image/baseball.svg";
+import meditation from "image/meditation.svg";
+import training from "image/training.svg";
+import healt from "image/healt.svg";
+import tracker from "image/tracker.svg";
+import run from "image/run.svg";
+import hike from "image/hike.svg";
+import boarding from "image/boarding.svg";
+import golf from "image/golf.svg";
+import yoga from "image/yogo.svg";
 class Slide extends Component {
   componentDidMount = () => {
     const root = document.documentElement;

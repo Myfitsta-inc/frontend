@@ -4,9 +4,9 @@ import { IoCloseSharp } from "react-icons/io5";
 import axios from "axios";
 import { BiCheck } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import ApiUrl from "../url";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import apiUrl from "apiUrl/url";
 
 class AddParticipant extends Component {
   state = {
@@ -62,9 +62,6 @@ class AddParticipant extends Component {
     }
   };
 
-  componentDidMount = () => {
-    console.log();
-  };
   render() {
     return (
       <div className="wjfntjnntt-opver">

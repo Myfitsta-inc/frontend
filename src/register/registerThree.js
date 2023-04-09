@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import logoone from "../logo/logo.png";
+import logoone from "logo/logo.png";
 import Fade from "react-reveal/Fade";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 class RegisterThree extends Component {
   state = {
     email: "",
@@ -118,7 +118,7 @@ class RegisterThree extends Component {
           });
         }
 
-        if (res.data.User) {
+        if (res.data.userId) {
           window.location.reload();
         } else {
           this.setState({

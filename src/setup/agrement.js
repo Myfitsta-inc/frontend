@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { BiArrowBack } from "react-icons/bi";
 
 class Agreement extends Component {
@@ -41,9 +41,9 @@ class Agreement extends Component {
               <h2>Interpretation</h2>
               <p>
                 The words of which the initial letter is capitalized have
-                meanings defined under the following conditions. The following
-                definitions shall have the same meaning regardless of whether
-                they appear in singular or in plural.
+                meanings defined under the followingId conditions. The
+                followingId definitions shall have the same meaning regardless
+                of whether they appear in singular or in plural.
               </p>
               <h2>Definitions</h2>
               <p>For the purposes of these Terms and Conditions:</p>
@@ -237,7 +237,7 @@ class Agreement extends Component {
                 upsetting, intended to disgust, threatening, libelous,
                 defamatory, obscene or otherwise objectionable. Examples of such
                 objectionable Content include, but are not limited to, the
-                following:
+                followingId:
               </p>
               <ul>
                 <li>Unlawful or promoting unlawful activity.</li>
@@ -339,7 +339,7 @@ class Agreement extends Component {
               <p>
                 You may submit a notification pursuant to the Digital Millennium
                 Copyright Act (DMCA) by providing our Copyright Agent with the
-                following information in writing (see 17 U.S.C 512(c)(3) for
+                followingId information in writing (see 17 U.S.C 512(c)(3) for
                 further detail):
               </p>
               <ul>

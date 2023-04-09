@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-import LastMessage from "../component/lastmessage";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
+import LastMessage from "components/lastmessage";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
 
 class Convercard extends Component {
   componentDidMount = () => {};

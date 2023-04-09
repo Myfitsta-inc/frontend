@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-import LastMessageGroup from "../messaging/lastmessageGroup";
-import socket from "../socketConfig";
+import LastMessageGroup from "messaging/lastmessageGroup";
+import socket from "socketConfig";
 import { BsPeopleFill } from "react-icons/bs";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 
 class Groupcard extends Component {
   state = {
@@ -59,7 +59,7 @@ class Groupcard extends Component {
         >
           {this.state.profileGroup.length > 0 ? (
             <img
-              src={`${ApiUrl.content}${this.state.profileGroup} `}
+              src={`${apiUrl.content}${this.state.profileGroup} `}
               loading="lazy"
             />
           ) : (

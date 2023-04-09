@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import { GoCheck } from "react-icons/go";
-import socket from "../socketConfig";
-import ApiUrl from "../url";
+import socket from "socketConfig";
+import apiUrl from "apiUrl/url";
 import { MdModeEdit } from "react-icons/md";
 class EditName extends Component {
   state = {

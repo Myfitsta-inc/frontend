@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 import {
   ResponsiveContainer,
   AreaChart,

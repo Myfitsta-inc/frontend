@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PaymentmethodCard from "../payment/PaymentMethodeCard";
+import PaymentmethodCard from "payment/PaymentMethodeCard";
 import { IoCloseSharp } from "react-icons/io5";
 import FieldsCard from "./fieldsCard";
 import { motion } from "framer-motion";

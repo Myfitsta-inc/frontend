@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-import video from "../media/video3.mp4";
+import video from "media/video3.mp4";
 import ReactPlayer from "react-player";
 
 class Info extends Component {

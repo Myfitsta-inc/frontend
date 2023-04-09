@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { HiLockClosed } from "react-icons/hi";
 import { connect } from "react-redux";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 class UnpaidEarning extends Component {
   state = {
     number: 0,

@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import "../style/loadp.css";
+import "style/loadp.css";
 import { withRouter, NavLink } from "react-router-dom";
-import Video from "../component/video";
-import Username from "../component/username";
+import Video from "components/video";
+import Username from "components/username";
 import { BiArrowBack } from "react-icons/bi";
-import LoadingSpin from "../component/loadingspin";
-import ApiUrl from "../url";
+import LoadingSpin from "components/loadingspin";
+import apiUrl from "apiUrl/url";
 import { GrPlayFill } from "react-icons/gr";
-import ProIcon from "../programs/proicon";
-import Report from "../component/report";
+import ProIcon from "programs/proicon";
+import Report from "components/report";
 import { connect } from "react-redux";
 let source;
 source = axios.CancelToken.source();
@@ -38,7 +38,7 @@ class LoadlookProgram extends Component {
         { withCredentials: true, cancelToken: source.token }
       )
       .then((res) => {
-        if (res.data.author) {
+        if (res.data.publisherId) {
           this.setState({
             media: res.data,
           });
@@ -107,13 +107,15 @@ class LoadlookProgram extends Component {
                 <div className="wrrpaorjwwko">
                   <div className="video--image-elmnebnt-player">
                     <div className="box-player-elment">
-                      {this.state.media.fileType ? (
-                        this.state.media.fileType.includes("image") ? (
+                      {this.state.media.mediaInfo.mediaType ? (
+                        this.state.media.mediaInfo.mediaType.includes(
+                          "image"
+                        ) ? (
                           <img
-                            src={`${ApiUrl.content}${this.state.media.file}`}
+                            src={`${apiUrl.content}${this.state.media.mediaInfo.mediaUrl}`}
                           />
                         ) : (
-                          <Video data={this.state.media.file} />
+                          <Video data={this.state.media.mediaInfo.mediaUrl} />
                         )
                       ) : (
                         ""
@@ -185,7 +187,7 @@ class LoadlookProgram extends Component {
                           return (
                             <div
                               className={`box-that-hold-theinfo-next-program-c ${
-                                item.file === this.props.match.params.id
+                                item._id === this.props.match.params.id
                                   ? "active"
                                   : ""
                               }`}
@@ -195,16 +197,18 @@ class LoadlookProgram extends Component {
                                 <div className="rro4jrr"></div>
 
                                 <NavLink
-                                  to={`/account/program/workout/course/${item.file}`}
+                                  to={`/account/program/myfitsta/course/${item._id}`}
                                   className="read-load"
                                 ></NavLink>
-                                {item.fileType.includes("image") ? (
-                                  <img src={`${ApiUrl.content}${item.file}`} />
+                                {item.mediaInfo.mediaType.includes("image") ? (
+                                  <img
+                                    src={`${apiUrl.content}${item.mediaInfo.mediaUrl}`}
+                                  />
                                 ) : (
                                   <div className="wraprorpsmmr">
                                     <video>
                                       <source
-                                        src={`${ApiUrl.content}${item.file}`}
+                                        src={`${apiUrl.content}${item.mediaInfo.mediaUrl}`}
                                       />
                                     </video>
                                     <div className="jfjfnnerbb">

@@ -3,7 +3,7 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { connect } from "react-redux";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 class MenuMessage extends Component {
   container = React.createRef();
   state = {

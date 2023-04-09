@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import braintree from "braintree-web";
-import LoadingSpin from "../component/loadingspin";
-import ApiUrl from "../url";
+import LoadingSpin from "components/loadingspin";
+import apiUrl from "apiUrl/url";
 import { connect } from "react-redux";
 import axios from "axios";
 let program = null;
@@ -100,7 +100,6 @@ class Field extends Component {
               if (result.data.success === true) {
                 this.props.history.push(`/program/unlock/${program.programId}`);
               } else {
-                console.log(result.data);
               }
             });
           });

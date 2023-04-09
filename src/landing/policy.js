@@ -28,9 +28,9 @@ class Policy extends Component {
           <h2>Interpretation</h2>
           <p>
             The words of which the initial letter is capitalized have meanings
-            defined under the following conditions. The following definitions
-            shall have the same meaning regardless of whether they appear in
-            singular or in plural.
+            defined under the followingId conditions. The followingId
+            definitions shall have the same meaning regardless of whether they
+            appear in singular or in plural.
           </p>
           <h2>Definitions</h2>
           <p>For the purposes of this Privacy Policy:</p>
@@ -282,7 +282,7 @@ class Policy extends Component {
             section of our Privacy Policy.
           </p>
           <h2>Use of Your Personal Data</h2>
-          <p>The Company may use Personal Data for the following purposes:</p>
+          <p>The Company may use Personal Data for the followingId purposes:</p>
           <ul>
             <li>
               <p>
@@ -354,7 +354,8 @@ class Policy extends Component {
             </li>
           </ul>
           <p>
-            We may share Your personal information in the following situations:
+            We may share Your personal information in the followingId
+            situations:
           </p>
           <ul>
             <li>
@@ -483,7 +484,7 @@ class Policy extends Component {
             We may use Your Personal Data to contact You with newsletters,
             marketing or promotional materials and other information that may be
             of interest to You. You may opt-out of receiving any, or all, of
-            these communications from Us by following the unsubscribe link or
+            these communications from Us by followingId the unsubscribe link or
             instructions provided in any email We send or by contacting Us.
           </p>
           <p>

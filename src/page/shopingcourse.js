@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import Shopcard from "../component/shopcard";
-import Setting from "../component/settinglookMyfista";
+import Shopcard from "components/shopcard";
+import Setting from "components/settinglookMyfista";
 import axios from "axios";
-import ProIcon from "../programs/proicon";
-import Username from "../component/username";
-import LoadingSpin from "../component/loadingspin";
-import PersoCard from "../component/persocard";
+import ProIcon from "programs/proicon";
+import Username from "components/username";
+import LoadingSpin from "components/loadingspin";
+import PersoCard from "components/persocard";
 import { BiArrowBack } from "react-icons/bi";
 import { withRouter, Link } from "react-router-dom";
-import MessageButton from "../component/messageSomeone";
-import "../style/setup.css";
+import MessageButton from "components/messageSomeone";
+import "style/setup.css";
 let source;
 source = axios.CancelToken.source();
 class Shoping extends Component {
@@ -60,7 +60,6 @@ class Shoping extends Component {
         { cancelToken: source.token }
       )
       .then((res) => {
-        console.log(res.data);
         if (res.data.length > 0) {
           this.setState({
             program: res.data.reverse(),
@@ -82,7 +81,7 @@ class Shoping extends Component {
   subscribe = (event) => {
     if (this.state.subscribe === true) {
       let option = {
-        User: this.state.profile.userId,
+        pusblisherId: this.state.profile.userId,
         subScriberId: this.props.user.userId,
         planName: "",
         subscriptionType: this.state.profile.accountType,
@@ -102,7 +101,6 @@ class Shoping extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data.subScriberId) {
           this.setState({
             subscribeCheck: true,

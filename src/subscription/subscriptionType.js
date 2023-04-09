@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 
 class SubscriptionType extends Component {
   state = {

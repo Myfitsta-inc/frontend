@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
-import Search from "../component/seach";
-import SubscriberList from "../component/SubscriberList";
-import Following from "../component/following";
+import Nav from "components/nav";
+import Search from "components/seach";
+import SubscriberList from "components/SubscriberList";
+import Following from "components/following";
 import { motion } from "framer-motion";
-import Follower from "../component/follower";
+import Follower from "components/follower";
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
@@ -92,13 +92,13 @@ class LoadConnection extends Component {
                           </div>
                           <div
                             className={`tsgfhjked ${
-                              this.props.match.params.data === "following"
+                              this.props.match.params.data === "followingId"
                                 ? "active"
                                 : ""
                             }`}
                           >
                             <Link
-                              to={`/user/${this.props.match.params.id}/following`}
+                              to={`/user/${this.props.match.params.id}/followingId`}
                             >
                               Following
                             </Link>
@@ -141,12 +141,12 @@ class LoadConnection extends Component {
                           </motion.div>
                           <motion.div
                             className={`wfijiwrjwkjrnr ${
-                              this.props.match.params.data === "following"
+                              this.props.match.params.data === "followingId"
                                 ? "active"
                                 : ""
                             }`}
                           >
-                            {this.props.match.params.data === "following" ? (
+                            {this.props.match.params.data === "followingId" ? (
                               this.state.profile !== null ? (
                                 <Following user={this.state.profile.userId} />
                               ) : (

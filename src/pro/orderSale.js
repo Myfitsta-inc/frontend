@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
-import Username from "../component/username";
-import IconProfile from "../component/iconpicture";
+import Username from "components/username";
+import IconProfile from "components/iconpicture";
 class OrderSales extends Component {
   state = {
     list: null,

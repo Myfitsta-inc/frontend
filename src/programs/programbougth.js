@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Rating from "../component/rating";
+import Rating from "components/rating";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import VideoPost from "../component/videopost";
-import ApiUrl from "../url";
+import VideoPost from "components/videopost";
+import apiUrl from "apiUrl/url";
 class ProgramBought extends Component {
   state = {
     item: null,
@@ -26,15 +26,16 @@ class ProgramBought extends Component {
       this.state.item !== "no" ? (
         <div className="box-thsthstbb">
           <div className="boxrnfnfnbn">
-            {this.state.item.fileType.includes("image") ? (
-              <img src={`${ApiUrl.content}${this.state.item.file}`} />
+            {this.state.item?.previewProgram?.previewType.includes("image") ? (
+              <img
+                src={`${apiUrl.content}${this.state.item?.previewProgram?.previewUrl}`}
+              />
             ) : (
-              <VideoPost src={this.state.item.file} />
+              <VideoPost src={this.state.item?.previewProgram?.previewUrl} />
             )}
           </div>
           <div className="boxrnfnfnbebnsnnnrn">
             <div className="title-of-workot">{this.state.item.title}</div>
-            <Rating rating={this.state.item.rating} />
           </div>
           <Link
             className="box-that-link"

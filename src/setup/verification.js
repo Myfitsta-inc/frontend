@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import BaxBar from "../component/barbox";
+import BaxBar from "components/barbox";
 import { connect } from "react-redux";
 
 let x;

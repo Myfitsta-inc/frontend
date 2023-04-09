@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
 import { IoCloseSharp } from "react-icons/io5";
 import { GoPlus } from "react-icons/go";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { Link, withRouter } from "react-router-dom";
-import Navbom from "../component/navbom";
-import ApiUrl from "../url";
-import DropHomeUp from "../component/dropHomeUp";
-import Unlocked from "../component/unlocked";
+import Navbom from "components/navbom";
+import apiUrl from "apiUrl/url";
+import DropHomeUp from "components/dropHomeUp";
+import Unlocked from "components/unlocked";
+import CollectionContent from "components/collectionContent";
 let source;
 source = axios.CancelToken.source();
 class PostCollection extends Component {
@@ -74,7 +75,7 @@ class PostCollection extends Component {
 
   mypost = (e) => {
     axios
-      .get(`/api/myCollection/${this.props.user.userId}`, {
+      .get("/api/myCollection", {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -109,7 +110,7 @@ class PostCollection extends Component {
           <div id="body-tabs">
             <div className="wraper-collection ">
               <div className="title-coc">
-                <p className="col-tit">PostCollection</p>
+                <p className="col-tit">Collection</p>
                 {this.props.location.pathname === "/collection/program" ? (
                   ""
                 ) : (
@@ -159,114 +160,12 @@ class PostCollection extends Component {
                   >
                     {this.state.collection !== null
                       ? this.state.collection !== "no"
-                        ? this.state.collection.map((item) => {
+                        ? this.state.collection.map((collection) => {
                             return (
-                              <div className="card-contain-info" key={item._id}>
-                                <div className="bold-media">
-                                  <div className="box-media-show">
-                                    {item.data[0] ? (
-                                      item.data[0].fileType.includes(
-                                        "image"
-                                      ) ? (
-                                        <img
-                                          src={`${ApiUrl.content}${
-                                            item.data[0].file.split(",")[0]
-                                          }`}
-                                        />
-                                      ) : (
-                                        <video>
-                                          <source
-                                            src={`${ApiUrl.content}${
-                                              item.data[0].file.split(",")[0]
-                                            }`}
-                                          />
-                                        </video>
-                                      )
-                                    ) : (
-                                      ""
-                                    )}
-                                  </div>
-                                  <div className="box-media-show">
-                                    {item.data[1] ? (
-                                      item.data[1].fileType.includes(
-                                        "image"
-                                      ) ? (
-                                        <img
-                                          src={`${ApiUrl.content}${
-                                            item.data[1].file.split(",")[0]
-                                          }`}
-                                        />
-                                      ) : (
-                                        <video>
-                                          <source
-                                            src={`${ApiUrl.content}${
-                                              item.data[1].file.split(",")[0]
-                                            }`}
-                                          />
-                                        </video>
-                                      )
-                                    ) : (
-                                      ""
-                                    )}
-                                  </div>
-                                  <div className="box-media-show">
-                                    {item.data[2] ? (
-                                      item.data[2].fileType.includes(
-                                        "image"
-                                      ) ? (
-                                        <img
-                                          src={`${ApiUrl.content}${
-                                            item.data[2].file.split(",")[0]
-                                          }`}
-                                        />
-                                      ) : (
-                                        <video>
-                                          <source
-                                            src={`${ApiUrl.content}${
-                                              item.data[2].file.split(",")[0]
-                                            }`}
-                                          />
-                                        </video>
-                                      )
-                                    ) : (
-                                      ""
-                                    )}
-                                  </div>
-                                  <div className="box-media-show">
-                                    {item.data[3] ? (
-                                      item.data[3].fileType.includes(
-                                        "image"
-                                      ) ? (
-                                        <img
-                                          src={`${ApiUrl.content}${
-                                            item.data[3].file.split(",")[0]
-                                          }`}
-                                        />
-                                      ) : (
-                                        <video>
-                                          <source
-                                            src={`${ApiUrl.content}${
-                                              item.data[3].file.split(",")[0]
-                                            }`}
-                                          />
-                                        </video>
-                                      )
-                                    ) : (
-                                      ""
-                                    )}
-                                  </div>
-                                </div>
-                                <Link
-                                  className="linkToCol"
-                                  to={`collection/${item._id}`}
-                                ></Link>
-                                <div className="info-about-media">
-                                  <p className="title-of-coll">
-                                    {item.collectionName}
-                                  </p>
-                                  <p>{item.data.length} workout</p>
-                                </div>
-                              </div>
+                              <CollectionContent
+                                key={collection.collectionName}
+                                collection={collection}
+                              />
                             );
                           })
                         : ""

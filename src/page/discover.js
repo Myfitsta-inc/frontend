@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { FaRegClone } from "react-icons/fa";
 import axios from "axios";
-import Username from "../component/username";
-import LoadingSpin from "../component/loadingspin";
-import IconProfile from "../component/iconpicture";
+import Username from "components/username";
+import LoadingSpin from "components/loadingspin";
+import IconProfile from "components/iconpicture";
 import { GoPlus } from "react-icons/go";
-import LikeButton from "../component/likeButton";
-import VideoPost from "../component/videopost";
-import Nav from "../component/nav";
-import ApiUrl from "../url";
+import LikeButton from "components/likeButton";
+import VideoPost from "components/videopost";
+import Nav from "components/nav";
+import apiUrl from "apiUrl/url";
 import { BiArrowBack } from "react-icons/bi";
-import Navtop from "../component/navtop";
-import Navbom from "../component/navbom";
-import Boxcollection from "../component/boxcollection";
-import UpdateDiscover from "../component/updatediscover";
-import "../style/discover.css";
-import DropHomeUp from "../component/dropHomeUp";
+import Navtop from "components/navtop";
+import Navbom from "components/navbom";
+import Boxcollection from "components/boxcollection";
+import UpdateDiscover from "components/updatediscover";
+import "style/discover.css";
+import DropHomeUp from "components/dropHomeUp";
 import { InView } from "react-intersection-observer";
 import { Link, withRouter } from "react-router-dom";
 let source;
@@ -54,7 +54,8 @@ class Discover extends Component {
         });
         let list = [];
         res.data.forEach((element) => {
-          element.engagementScore = element.numberofComments * element.numberOfLike;
+          element.engagementScore =
+            element.numberOfComments * element.numberOfLikes;
           list.push(element);
         });
         let updated = list.sort((a, b) => {
@@ -161,11 +162,11 @@ class Discover extends Component {
               <div className="wraperrrfnnf-efnv">
                 {this.state.post.length > 0 ? (
                   <div className="contiantien-post">
-                    {this.state.post?.map((item, index) => {
+                    {this.state.post?.map((post, index) => {
                       if (this.state.post.length === index + 1) {
                         return (
-                          <div key={item._id} className="box-media-box">
-                            {item.filename.split(",").length > 1 ? (
+                          <div key={post._id} className="box-media-box">
+                            {post.mediaDetails.length > 1 ? (
                               <div className="box-thjjsjjjr">
                                 <FaRegClone />
                               </div>
@@ -174,65 +175,60 @@ class Discover extends Component {
                             )}
                             <div className="box-that-hold-the-media">
                               <div className="wraorjrkncnfrh">
-                                {item.mediaKind[0].includes("image") ? (
+                                {post.mediaDetails[0].mimetype.includes(
+                                  "image"
+                                ) ? (
                                   <img
-                                    src={`${ApiUrl.content}${
-                                      item.filename.split(",")[0]
-                                    }`}
+                                    src={`${apiUrl.content}${post.mediaDetails[0].key}`}
                                     loading="lazy"
                                   />
                                 ) : (
-                                  <VideoPost
-                                    src={item.filename.split(",")[0]}
-                                  />
+                                  <VideoPost src={post.mediaDetails[0].key} />
                                 )}
                               </div>
                             </div>
                             <div className="info-about-the-person">
                               <div className="ifinsfkifkr">
                                 <div className="icon-of-people">
-                                  <IconProfile live={true} user={item.userId} />
+                                  <IconProfile live={true} user={post.userId} />
                                 </div>
                                 <div className="particular-info-about-the-person">
-                                  <Username user={item.userId} />
+                                  <Username user={post.userId} />
                                 </div>
                               </div>
 
                               <div className="pjdjj">
-                                <div className="wrp-actt">
+                                {/* <div className="wrp-actt">
                                   <LikeButton
                                     userId={this.props.user.userId}
-                                    filename={item.filename}
-                                    postId={item._id}
-                                    numberOfLike={item.numberOfLike}
+                                    mediaDetails={post.mediaDetails}
+                                    postId={post._id}
+                                    numberOfLikes={post.numberOfLikes}
                                   />
                                   <Link
                                     className="rjetrjjrj"
-                                    to={`/comment/${item._id}`}
+                                    to={`/comment/${post._id}`}
                                   >
                                     <div className="icon">
                                       <i className="far fa-comment"></i>
                                     </div>
-                                    <p>{item.numberofComments}</p>
+                                    <p>{post.numberOfComments}</p>
                                   </Link>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                             <Link
                               className="rj0ojrj-rjosl"
-                              to={`/dis/${item.filename}`}
+                              to={`/dis/${post._id}`}
                             ></Link>
-                            <button
+                            {/* <button
                               onClick={() => {
-                                this.props.openBoxCollection(
-                                  true,
-                                  item.filename
-                                );
+                                this.props.openBoxCollection(true, post._id);
                               }}
                               className="alodjrr"
                             >
                               <GoPlus />
-                            </button>
+                            </button> */}
                             <InView
                               onChange={(inView, entry) =>
                                 this.checkLoad(inView)
@@ -242,8 +238,8 @@ class Discover extends Component {
                         );
                       } else {
                         return (
-                          <div className="box-media-box" key={item._id}>
-                            {item.filename.split(",").length > 1 ? (
+                          <div className="box-media-box" key={post._id}>
+                            {post.mediaDetails.length > 1 ? (
                               <div className="box-thjjsjjjr">
                                 <FaRegClone />
                               </div>
@@ -252,66 +248,61 @@ class Discover extends Component {
                             )}
                             <div className="box-that-hold-the-media">
                               <div className="wraorjrkncnfrh">
-                                {item.mediaKind[0].includes("image") ? (
+                                {post.mediaDetails[0].mimetype.includes(
+                                  "image"
+                                ) ? (
                                   <img
-                                    src={`${ApiUrl.content}${
-                                      item.filename.split(",")[0]
-                                    }`}
+                                    src={`${apiUrl.content}${post.mediaDetails[0].key}`}
                                     loading="lazy"
                                   />
                                 ) : (
-                                  <VideoPost
-                                    src={item.filename.split(",")[0]}
-                                  />
+                                  <VideoPost src={post.mediaDetails[0].key} />
                                 )}
                               </div>
                             </div>
                             <div className="info-about-the-person">
                               <div className="ifinsfkifkr">
                                 <div className="icon-of-people">
-                                  <IconProfile live={true} user={item.userId} />
+                                  <IconProfile live={true} user={post.userId} />
                                 </div>
                                 <div className="particular-info-about-the-person">
-                                  <Username user={item.userId} />
+                                  <Username user={post.userId} />
                                 </div>
                               </div>
 
                               <div className="pjdjj">
-                                <div className="wrp-actt">
+                                {/* <div className="wrp-actt">
                                   <LikeButton
                                     userId={this.props.user.userId}
-                                    filename={item.filename}
-                                    numberOfLike={item.numberOfLike}
+                                    mediaDetails={post.mediaDetails}
+                                    numberOfLikes={post.numberOfLikes}
                                   />
                                   <Link
                                     className="rjetrjjrj"
-                                    to={`/comment/${item._id}`}
+                                    to={`/comment/${post._id}`}
                                   >
                                     <div className="icon">
                                       <i className="far fa-comment"></i>
                                     </div>
                                     <p>
-                                      {this.nFormatter(item.numberofComments)}
+                                      {this.nFormatter(post.numberOfComments)}
                                     </p>
                                   </Link>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                             <Link
                               className="rj0ojrj-rjosl"
-                              to={`/dis/${item.filename}`}
+                              to={`/dis/${post._id}`}
                             ></Link>
-                            <button
+                            {/* <button
                               onClick={() => {
-                                this.props.openBoxCollection(
-                                  true,
-                                  item.filename
-                                );
+                                this.props.openBoxCollection(true, post._id);
                               }}
                               className="alodjrr"
                             >
                               <GoPlus />
-                            </button>
+                            </button> */}
                           </div>
                         );
                       }
@@ -338,7 +329,7 @@ class Discover extends Component {
             <Navbom handloption={this.handloption} />
             <Boxcollection
               user={this.props.user}
-              file={this.props.file}
+              postId={this.props.postId}
               openBoxCollection={this.props.openBoxCollection}
               boxCollection={this.props.boxCollection}
             />

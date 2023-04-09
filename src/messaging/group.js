@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Nav from "../component/nav";
-import ProfilePromessage from "../component/profilepromessage";
+import Nav from "components/nav";
+import ProfilePromessage from "components/profilepromessage";
 import axios from "axios";
-import ApiUrl from "../url";
-import ProgramMessage from "../component/programMessage";
-import ConversationList from "../component/conversation";
+import apiUrl from "apiUrl/url";
+import ProgramMessage from "components/programMessage";
+import ConversationList from "components/conversation";
 import { BsFillInfoCircleFill, BsPeopleFill } from "react-icons/bs";
-import IconProfile from "../component/iconpicture";
+import IconProfile from "components/iconpicture";
 import { IoSendSharp } from "react-icons/io5";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
-import Profilemessage from "../component/profilemessage";
-import PostMessage from "../component/postmessage";
-import ConversationGroup from "../messaging/conversationgroup";
-import MessageCon from "../component/messagecon";
-import socket from "../socketConfig";
-import AddParticipant from "../messaging/addparticipant";
+import Profilemessage from "components/profilemessage";
+import PostMessage from "components/postmessage";
+import ConversationGroup from "messaging/conversationgroup";
+import MessageCon from "components/messagecon";
+import socket from "socketConfig";
+import AddParticipant from "messaging/addparticipant";
 import { connect } from "react-redux";
 class Group extends Component {
   state = {
@@ -114,7 +114,7 @@ class Group extends Component {
   sendmessage = (event) => {
     if (this.state.message.length > 0) {
       let option = {
-        UserId: this.props.user.userId,
+        userId: this.props.user.userId,
         conversationId: this.props.match.params.id,
         message: {
           sender: this.props.user.userId,
@@ -220,7 +220,7 @@ class Group extends Component {
                     {this.state.group !== null ? (
                       this.state.group.profileGroup.length > 0 ? (
                         <img
-                          src={`${ApiUrl.content}${this.state.group.profileGroup}`}
+                          src={`${apiUrl.content}${this.state.group.profileGroup}`}
                           loading="lazy"
                         />
                       ) : (

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { AiFillBank } from "react-icons/ai";
 import axios from "axios";
-import Banking from "../bank/banking";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import Banking from "bank/banking";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 
 class Billing extends Component {
   state = {

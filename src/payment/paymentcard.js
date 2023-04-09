@@ -15,7 +15,6 @@ class PaymentCard extends Component {
       // Send the nonce to your server
       const { nonce } = await this.instance.requestPaymentMethod();
       const response = await axios.post(`/api/api/braintree/v1/sandbox`, nonce);
-      console.log(response);
     } catch (err) {
       console.error(err);
     }

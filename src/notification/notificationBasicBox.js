@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { InView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import LikedNotification from "../notification/likednotifiction";
-import CommentNotification from "../notification/commentNotification";
-import TaggedNotification from "../notification/taggedNotification";
-import FollowNotification from "../notification/followNotification";
-import LoadingSpin from "../component/loadingspin.js";
-import ApiUrl from "../url";
+import LikedNotification from "notification/likednotifiction";
+import CommentNotification from "notification/commentNotification";
+import TaggedNotification from "notification/taggedNotification";
+import FollowNotification from "notification/followNotification";
+import LoadingSpin from "components/loadingspin.js";
+import apiUrl from "apiUrl/url";
 import axios from "axios";
 let source;
 source = axios.CancelToken.source();
@@ -53,7 +53,7 @@ class NotificationBasicBox extends Component {
           if (this.state.mouted) {
             this.setState({
               loading: false,
-              basic: res.data.data,
+              basic: res.data.notificationList,
             });
           }
         } else {

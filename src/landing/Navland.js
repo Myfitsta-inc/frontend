@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { VscChromeClose } from "react-icons/vsc";
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../logo/logo.png";
+import logo from "logo/logo.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BsMoon } from "react-icons/bs";

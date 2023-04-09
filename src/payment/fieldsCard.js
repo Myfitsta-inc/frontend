@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import braintree from "braintree-web";
-import LoadingSpin from "../component/loadingspin";
-import ApiUrl from "../url";
+import LoadingSpin from "components/loadingspin";
+import apiUrl from "apiUrl/url";
 import { connect } from "react-redux";
 import axios from "axios";
 
@@ -117,7 +117,6 @@ class FieldCard extends Component {
           this.handlePay(data);
         }
       } else {
-        console.log(result.data);
       }
     });
   };

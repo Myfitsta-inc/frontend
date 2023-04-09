@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import Username from "../component/username";
-import IconProfile from "../component/iconpicture";
+import Username from "components/username";
+import IconProfile from "components/iconpicture";
 import { Link } from "react-router-dom";
-import BoxMedia from "../component/boxmedia";
+import BoxMedia from "components/boxmedia";
 import { InView } from "react-intersection-observer";
-import Editable from "../component/editable";
-import LoadingSpin from "../component/loadingspin.js";
+import Editable from "components/editable";
+import LoadingSpin from "components/loadingspin.js";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { BiArrowBack } from "react-icons/bi";
 import { IoSendSharp } from "react-icons/io5";
-import Report from "../component/report";
+import Report from "components/report";
 import moment from "moment";
-import socket from "../socketConfig";
-import CommentBox from "../component/commentBox";
+import socket from "socketConfig";
+import CommentBox from "components/commentBox";
 let source;
 source = axios.CancelToken.source();
 class Comment extends Component {
@@ -48,31 +48,28 @@ class Comment extends Component {
     );
   };
 
-  updatenotification = () => {
+  updatenotification = (comment) => {
     let option = {
-      userId: this.state.item.userId,
+      userIdToNotify: this.state.item.userId,
       type: "comment",
       notifiyiId: this.props.user.userId,
       postId: this.state.item._id,
       date: moment().format(),
-      extraInfo: this.state.comment,
+      extraInfo: comment,
     };
 
     if (this.state.item.userId !== this.props.user.userId) {
-      console.log(option, "tttttt");
       axios
         .post(`/api/update-notification`, option, {
           cancelToken: source.token,
         })
         .then((res) => {
-          console.log("uofjkkkf");
           socket.emit("update-the-comment", {
             postId: this.state.item._id,
             count: this.state.counter + 1,
           });
         });
     } else {
-      console.log(option, "okk");
       socket.emit("update-the-comment", {
         postId: this.state.item._id,
         count: this.state.counter + 1,
@@ -95,7 +92,7 @@ class Comment extends Component {
       axios
         .post("/api/newcomment", option, { cancelToken: source.token })
         .then((res) => {
-          this.updatenotification();
+          this.updatenotification(res.data?.comment);
         });
 
       this.setState({
@@ -122,7 +119,7 @@ class Comment extends Component {
         if (res.data._id) {
           this.setState({
             item: res.data,
-            counter: res.data.numberofComments,
+            counter: res.data.numberOfComments,
           });
           this.loadComment(this.state.numberToLoad);
         }
@@ -170,7 +167,7 @@ class Comment extends Component {
     if (this.props.postList.length > 0) {
       let Updated = this.props.postList.find((item) => item.postId === data);
       if (Updated) {
-        Updated.numberofComments = this.state.counter;
+        Updated.numberOfComments = this.state.counter;
         let list = this.props.postList.filter((item) => item.postId !== data);
         let sortted = [...list, Updated];
         this.props.addPost(sortted);
@@ -221,7 +218,7 @@ class Comment extends Component {
                   {this.state.item.userId ? (
                     <BoxMedia
                       file={this.state.item.filename}
-                      kind={this.state.item.mediaKind}
+                      mediaDetails={this.state.item.mediaDetails}
                     />
                   ) : (
                     ""
@@ -350,7 +347,7 @@ const mapstateToProps = (state) => {
   return {
     likes: state.likes,
     users: state.user,
-    postList: state.postData,
+    postList: state.postList,
   };
 };
 
@@ -360,7 +357,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch({ type: "ADD_LIKES", data: data });
     },
     addPost: (data) => {
-      dispatch({ type: "UPDATE_POSTDATA", data: data });
+      dispatch({ type: "UPDATE_postList", data: data });
     },
   };
 };

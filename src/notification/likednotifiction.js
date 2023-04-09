@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import ApiUrl from "../url";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import VideoPost from "../component/videopost";
-import DataPost from "../component/datePost";
+import apiUrl from "apiUrl/url";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import VideoPost from "components/videopost";
+import DataPost from "components/datePost";
 class LikedNotification extends Component {
   state = {
     username: null,
@@ -25,7 +25,7 @@ class LikedNotification extends Component {
       });
   };
   componentDidMount = () => {
-    this.getmedia();
+    // this.getmedia();
   };
   render() {
     return (
@@ -64,9 +64,9 @@ class LikedNotification extends Component {
               className="div-that-wraper-the-imga3"
             >
               {this.state.media !== null ? (
-                this.state.media.mediaKind[0].includes("image") ? (
+                this.state.media.mediaDetails[0].includes("image") ? (
                   <img
-                    src={`${ApiUrl.content}${
+                    src={`${apiUrl.content}${
                       this.state.media.filename.split(",")[0]
                     }`}
                     loading="lazy"

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import "../style/setup.css";
-import Myfitstapr from "../page/subscrition";
-import Shoping from "../page/shopingcourse";
+import "style/setup.css";
+import Myfitstapr from "page/subscrition";
+import Shoping from "page/shopingcourse";
 import _ from "lodash";
 let source;
 source = axios.CancelToken.source();
@@ -36,6 +36,7 @@ class Lookformyfitstapro extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
+        console.log(res.data);
         if (res.data.userId) {
           if (res.data.userId === this.props.user.userId) {
             this.props.history.push("/myfitstapro");
@@ -45,6 +46,7 @@ class Lookformyfitstapro extends Component {
             });
           }
         } else {
+          console.log("kkkkk");
           /// this.props.history.push("/");
         }
       });

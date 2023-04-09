@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { IoCloseSharp } from "react-icons/io5";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { connect } from "react-redux";
 import SubscriptionType from "./subscriptionType";
-import ProIcon from "../programs/proicon";
+import ProIcon from "programs/proicon";
 class SubscriptionInfo extends Component {
   state = {
     profile: null,
@@ -25,26 +25,27 @@ class SubscriptionInfo extends Component {
       loadinUnb: true,
     });
     let option = {
-      User: this.state.data.User,
+      pusblisherId: this.state.data.userID,
       subScriberId: this.state.data.subScriberId,
     };
-    axios
-      .post("/api/cancel-my-sub-scription-plan-for-programs", option, {
-        withCredentials: true,
-      })
-      .then((result) => {
-        if (result.data.succes === true) {
-          let data = this.state.data;
-          data.hasActiveSubscription = false;
-          this.setState({
-            loadinUnb: false,
-            unbscribe: false,
-            data: data,
-          });
-        } else {
-          window.location.reload();
-        }
-      });
+    console.log(option);
+    // axios
+    //   .post("/api/cancel-my-sub-scription-plan-for-programs", option, {
+    //     withCredentials: true,
+    //   })
+    //   .then((result) => {
+    //     if (result.data.succes === true) {
+    //       let data = this.state.data;
+    //       data.hasActiveSubscription = false;
+    //       this.setState({
+    //         loadinUnb: false,
+    //         unbscribe: false,
+    //         data: data,
+    //       });
+    //     } else {
+    //       window.location.reload();
+    //     }
+    //   });
   };
 
   checkSubscription = () => {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { AiFillFolder } from "react-icons/ai";
-import { convertFromStripe } from "../currencyFlow/formatMoneyTopayment";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 class TotalEarning extends Component {
   state = {
     data: 0,

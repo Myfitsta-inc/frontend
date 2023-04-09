@@ -1,0 +1,88 @@
+import React, { Component } from "react";
+import axios from "axios";
+import apiUrl from "apiUrl/url";
+import IconProfile from "./iconpicture";
+import ButtonFollow from "./buttonFollow";
+import { connect } from "react-redux";
+
+class SuggectionBox extends Component {
+  state = {
+    list: [],
+  };
+
+  callAi = () => {
+    axios
+      .get(`/api/suggstion-for-you/${this.props.users.userId}`)
+      .then((res) => {
+        if (res.data !== "no") {
+          let list = [...this.state.list, ...res.data];
+          let uniqueChars = [...new Set(list)].slice(0, 4);
+
+          this.setState({
+            list: uniqueChars,
+          });
+        }
+      });
+  };
+
+  componentDidMount = () => {
+    this.callAi();
+  };
+  render() {
+    return (
+      <div className="wrapejrhjrhh">
+        {this.state.list.length > 0 ? (
+          <div className="wrpaartt-peoplet">
+            <div className="title-wjrjr">Suggestion</div>
+
+            <div className="wraperrjdjtt-foloro">
+              {this.state.list?.map((item) => {
+                return (
+                  <div className="box-to-contain0foleol" key={item._id}>
+                    <div className="closrentjrr">
+                      <div className="closerfjr"></div>
+                    </div>
+                    <div
+                      className={`bander-top ${
+                        item.banner.length > 0 ? "" : "active"
+                      }`}
+                    >
+                      {item.banner.length > 0 ? (
+                        <img
+                          src={`${apiUrl.content}${item.banner}`}
+                          loading="lazy"
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <div className="icon-info">
+                      <div className="iconfnrr">
+                        <IconProfile user={item.userId} />
+                      </div>
+                    </div>
+                    <div className="wrparrs-info">
+                      <p>{item.username}</p>
+                    </div>
+                    <div className="wraprrrt-follror">
+                      <ButtonFollow friend={item.userId} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+    );
+  }
+}
+
+const mapstateToProps = (state) => {
+  return {
+    users: state.user,
+  };
+};
+export default connect(mapstateToProps)(SuggectionBox);

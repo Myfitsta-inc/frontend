@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import axios from "axios";
 import braintree from "braintree-web";
 import { connect } from "react-redux";
@@ -90,7 +90,7 @@ class AddField extends Component {
               acountD: this.props.acountD,
               userId: this.props.users.userId,
             };
-            console.log(option);
+
             this.setState({
               loading: true,
             });

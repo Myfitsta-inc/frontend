@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 import { Link } from "react-router-dom";
 let source;
 source = axios.CancelToken.source();

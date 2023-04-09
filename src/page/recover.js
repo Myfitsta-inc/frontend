@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../style/login.css";
-import Navland from "../landing/Navland";
-import One from "../recover/one";
-import Two from "../recover/two";
-import Three from "../recover/three";
+import "style/login.css";
+import Navland from "landing/Navland";
+import One from "recover/one";
+import Two from "recover/two";
+import Three from "recover/three";
 
 let source;
 source = axios.CancelToken.source();

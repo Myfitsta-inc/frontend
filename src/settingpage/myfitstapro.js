@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { HiCheck } from "react-icons/hi";
 import axios from "axios";
-import ActivateMyFitstaPro from "../component/ActivateMyFitstaPro";
+import ActivateMyFitstaPro from "components/ActivateMyFitstaPro";
 import { BsArrowRepeat, BsGraphUp } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
-import LoadingSpin from "../component/loadingspin";
-import Account from "../pro/account";
+import LoadingSpin from "components/loadingspin";
+import Account from "pro/account";
 import { connect } from "react-redux";
-import Billing from "../pro/billing";
-import SubscriberList from "../component/SubscriberList";
+import Billing from "pro/billing";
+import SubscriberList from "components/SubscriberList";
 class MyfistaProAc extends Component {
   state = {
     edit: false,
@@ -23,8 +23,8 @@ class MyfistaProAc extends Component {
 
   activate = () => {
     if (
-      this.props.users.postnumber >= 0 &&
-      this.props.users.numberfollowings >= 0
+      this.props.users.numberOfPosts >= 0 &&
+      this.props.users.numberOfFollowings >= 0
     ) {
       this.setState({
         loading: true,
@@ -53,8 +53,8 @@ class MyfistaProAc extends Component {
     if (this.props.match.params.id === "myfitstapropro") {
     }
     if (
-      this.props.users.postnumber >= 10 &&
-      this.props.users.numberfollowings >= 100
+      this.props.users.numberOfPosts >= 10 &&
+      this.props.users.numberOfFollowings >= 100
     ) {
       this.setState({
         button: true,

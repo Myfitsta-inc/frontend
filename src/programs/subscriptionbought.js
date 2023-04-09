@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ProgramBought from "../programs/programbougth";
+import ProgramBought from "programs/programbougth";
 import { connect } from "react-redux";
-import Username from "../component/username";
+import Username from "components/username";
 
 class SubscriptionBougth extends Component {
   state = {
@@ -15,9 +15,9 @@ class SubscriptionBougth extends Component {
         `/api/load-my-active-pwo/${this.props.user}/to/${this.props.users.userId}`
       )
       .then((res) => {
-        if (res.data.length > 0 && Array.isArray(res.data)) {
+        if (res.data.success && Array.isArray(res.data.result)) {
           this.setState({
-            list: res.data.reverse(),
+            list: res.data.result.reverse(),
           });
         } else {
           this.setState({

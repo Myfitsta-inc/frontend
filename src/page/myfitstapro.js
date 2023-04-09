@@ -1,332 +1,304 @@
-import React, { Component } from "react";
-import "../style/ui.css";
-import Nav from "../component/nav";
-import SharePost from "../component/sharepost";
-import ShareOption from "../component/shareoption";
+import React, { useState, useEffect } from "react";
+import "style/ui.css";
+import Nav from "components/nav";
+import SharePost from "components/sharepost";
+import ShareOption from "components/shareoption";
 import { Link, withRouter } from "react-router-dom";
-import Rating from "../component/rating";
 import axios from "axios";
 import { GoPlus } from "react-icons/go";
-import profile from "../profile.webp";
-import Username from "../component/username";
-import ApiUrl from "../url";
-import LoadingSpin from "../component/loadingspin.js";
-import Addprogram from "../component/addProgram";
+import profile from "profile.webp";
+import Username from "components/username";
+import apiUrl from "apiUrl/url";
+import LoadingSpin from "components/loadingspin.js";
+import Addprogram from "components/addProgram";
 import { BiArrowBack } from "react-icons/bi";
-import ActivateMyfitsta from "../component/ActivateMyFitstaPro";
-import SettingMyfiststapro from "../component/settingMyfitstapro";
-import { connect } from "react-redux";
-let source;
-source = axios.CancelToken.source();
-class Myfitstapro extends Component {
-  state = {
-    setting: false,
-    open: false,
-    program: null,
-    shareoption: false,
-    sharebox: false,
-    file: this.props.user.userId,
-  };
-  constructor(props) {
-    super(props);
-    source = axios.CancelToken.source();
-  }
-  goBack = (e) => {
-    this.props.history.goBack();
+import ActivateMyfitsta from "components/ActivateMyFitstaPro";
+import SettingMyfiststapro from "components/settingMyfitstapro";
+import useUser from "hooks/useUser";
+
+function Myfitstapro({ history }) {
+  const [setting, setSetting] = useState(false);
+  const { user, myfitstapro } = useUser();
+  const [open, setOpen] = useState(false);
+  const [program, setProgram] = useState(null);
+  const [shareOption, setShareOption] = useState(false);
+  const [shareBox, setShareBox] = useState(false);
+
+  const goBack = (e) => {
+    history.goBack();
   };
 
-  handleSettingg = (data) => {
-    this.setState({
-      shareoption: data,
+  const handleSettingg = (data) => {
+    setShareOption(data);
+  };
+
+  const handlOpenS = (data) => {
+    setShareBox(data);
+
+    handleSettingg(false);
+  };
+  const handleSetting = (data) => {
+    setSetting(data);
+  };
+
+  const handlOpen = (data) => {
+    setOpen(data);
+  };
+
+  const getProgram = (e) => {
+    axios.get(`/api/load-my-pwo/${user.userId}`, {}).then((res) => {
+      setProgram(res.data.reverse());
     });
   };
 
-  handlOpenS = (data) => {
-    this.setState({
-      sharebox: data,
-    });
-    this.handleSettingg(false);
-  };
-  handleSetting = (data) => {
-    this.setState({
-      setting: data,
-    });
-  };
+  useEffect(() => {
+    getProgram();
+  }, []);
 
-  handlOpen = (data) => {
-    this.setState({
-      open: data,
-    });
-  };
-
-  getProgram = (e) => {
-    axios
-      .get(`/api/load-my-pwo/${this.props.user.userId}`, {
-        cancelToken: source.token,
-      })
-      .then((res) => {
-        this.setState({
-          program: res.data.reverse(),
-        });
-      });
-  };
-
-  componentDidMount = (e) => {
-    this.getProgram();
-  };
-
-  componentWillUnmount = () => {
-    if (source) {
-      source.cancel("Landing Component got unmounted");
-    }
-  };
-
-  render() {
-    return (
-      <div className="conatiner">
-        <Nav user={this.props.user} />
-        <div id="app">
-          <div id="body-tabs">
-            <div className="wraper-it-baom">
-              <div id="profile-box-mone-mak-seach-dude">
-                <div className="title-of-prodf">
-                  <div onClick={this.goBack} className="close-that">
-                    <BiArrowBack />
-                  </div>
-                  <Username link={true} user={this.props.user.userId} />
-                  <div className="jjjrrrdd">
-                    <button
-                      onClick={() => this.handlOpen(true)}
-                      className="close-that"
-                    >
-                      {" "}
-                      <GoPlus />
-                    </button>
-                  </div>
+  return (
+    <div className="conatiner">
+      <Nav user={user} />
+      <div id="app">
+        <div id="body-tabs">
+          <div className="wraper-it-baom">
+            <div id="profile-box-mone-mak-seach-dude">
+              <div className="title-of-prodf">
+                <div onClick={goBack} className="close-that">
+                  <BiArrowBack />
                 </div>
-                <SettingMyfiststapro
-                  handlOpen={this.handlOpen}
-                  handleSettingg={this.handleSettingg}
-                  handleSetting={this.handleSetting}
-                  setting={this.state.setting}
-                  user={this.props.user}
-                />
-                <div className="barnner-propfde">
-                  {this.props.pro.banner?.length > 0 ? (
-                    <img
-                      className="pect-ppr"
-                      src={`${ApiUrl.content}${this.props.pro.banner}`}
-                      loading="lazy"
-                    />
-                  ) : (
-                    ""
-                  )}
+                <Username link={true} user={user.userId} />
+                <div className="jjjrrrdd">
+                  <button
+                    onClick={() => handlOpen(true)}
+                    className="close-that"
+                  >
+                    {" "}
+                    <GoPlus />
+                  </button>
                 </div>
+              </div>
+              <SettingMyfiststapro
+                handlOpen={handlOpen}
+                handleSettingg={handleSettingg}
+                handleSetting={handleSetting}
+                setting={setting}
+                user={user}
+              />
+              <div className="barnner-propfde">
+                {myfitstapro.banner?.length > 0 ? (
+                  <img
+                    className="pect-ppr"
+                    src={`${apiUrl.content}${myfitstapro.banner}`}
+                    loading="lazy"
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
 
-                <div className="cover-box-on">
-                  <div className="imga-profile-descp eexr">
-                    <div className="pro-img-box">
-                      <div className="pro-img">
-                        {this.props.pro.profileUrl?.length > 0 ? (
-                          <img
-                            className="imag-pro"
-                            src={`${ApiUrl.content}${this.props.pro.profileUrl}`}
-                          />
-                        ) : (
-                          <img className="imag-pro" src={profile} />
-                        )}
-                      </div>
-
-                      <div className="actine-edit">
-                        <div className="name-action">
-                          <div className="name-pr">
-                            <p>{this.props.user.username}</p>{" "}
-                            {this.props.user.verified === true ? (
-                              <p className="cheh">
-                                <i className="fas fa-check"></i>
-                              </p>
-                            ) : (
-                              ""
-                            )}
-                          </div>
-                        </div>
-                        <p className="name-prr">@{this.props.user.username}</p>
-                        <div className="bio-sub-desciption rjjr">
-                          <div className="info-acct">
-                            <div id="post-nu " className="al">
-                              <div id="number-post" className="number-post">
-                                {this.props.myfitstapro.numberOfProgram ?? 0}
-                              </div>
-                              <p>program</p>
-                            </div>
-                            <div id="follower-nu" className="al">
-                              <div
-                                id="number-followers"
-                                className="number-followers"
-                              >
-                                {this.props.myfitstapro.numberOfSubscriber ?? 0}
-                              </div>
-                              <p>subscribers</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="bio-info">
-                          <p
-                            dangerouslySetInnerHTML={{
-                              __html: this.props.pro.bio,
-                            }}
-                          ></p>
-                        </div>
-                      </div>
+              <div className="cover-box-on">
+                <div className="imga-profile-descp eexr">
+                  <div className="pro-img-box">
+                    <div className="pro-img">
+                      {myfitstapro.profileUrl?.length > 0 ? (
+                        <img
+                          className="imag-pro"
+                          src={`${apiUrl.content}${myfitstapro.profileUrl}`}
+                        />
+                      ) : (
+                        <img className="imag-pro" src={profile} />
+                      )}
                     </div>
-                    <div className="bioo-info">
-                      <div className="hol-thieinformation">
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html: this.props.pro.bio,
-                          }}
-                        ></p>
+
+                    <div className="actine-edit">
+                      <div className="name-action">
+                        <div className="name-pr">
+                          <p>{user.username}</p>{" "}
+                          {user.verified === true ? (
+                            <p className="cheh">
+                              <i className="fas fa-check"></i>
+                            </p>
+                          ) : (
+                            ""
+                          )}
+                        </div>
                       </div>
-                      <div className="bioo-sub-desciption">
-                        <div className="info-acct vbvb">
-                          <div id="post-nu " className="al ll">
+                      <p className="name-prr">@{user.username}</p>
+                      <div className="bio-sub-desciption rjjr">
+                        <div className="info-acct">
+                          <div id="post-nu " className="al">
                             <div id="number-post" className="number-post">
-                              {this.props.myfitstapro.numberOfProgram ?? 0}
+                              {myfitstapro.numberOfProgram ?? 0}
                             </div>
                             <p>program</p>
                           </div>
-                          <div id="follower-nu" className="al ll">
+                          <div id="follower-nu" className="al">
                             <div
                               id="number-followers"
                               className="number-followers"
                             >
-                              {this.props.myfitstapro.numberOfSubscriber ?? 0}
+                              {myfitstapro.numberOfSubscriber ?? 0}
                             </div>
                             <p>subscribers</p>
                           </div>
                         </div>
                       </div>
+                      <div className="bio-info">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: myfitstapro.bio,
+                          }}
+                        ></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bioo-info">
+                    <div className="hol-thieinformation">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: myfitstapro.bio,
+                        }}
+                      ></p>
+                    </div>
+                    <div className="bioo-sub-desciption">
+                      <div className="info-acct vbvb">
+                        <div id="post-nu " className="al ll">
+                          <div id="number-post" className="number-post">
+                            {myfitstapro.numberOfProgram ?? 0}
+                          </div>
+                          <p>program</p>
+                        </div>
+                        <div id="follower-nu" className="al ll">
+                          <div
+                            id="number-followers"
+                            className="number-followers"
+                          >
+                            {myfitstapro.numberOfSubscriber ?? 0}
+                          </div>
+                          <p>subscribers</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="wosjfijitjid">
-                  {this.state.program != null ? (
-                    this.state.program.length > 0 ? (
-                      <div className="hold-your-work-program active">
-                        {this.state.program.map((item) => {
-                          return (
-                            <div className="card-box-program" key={item._id}>
-                              <div className="statqusre">
-                                <div className="descplr-image-program-ui">
-                                  <div className="hold-imf">
-                                    <Link
-                                      to={`/program/workout/${item?.programId}`}
-                                      className="link0-toorohran"
-                                    ></Link>
-                                    {item.file.length > 0 ? (
-                                      item?.fileType?.includes("image") ? (
-                                        <img
-                                          src={`${ApiUrl.content}${item.file}`}
-                                        />
-                                      ) : (
-                                        <video>
-                                          <source
-                                            src={`${ApiUrl.content}${item.file}`}
-                                          />
-                                        </video>
-                                      )
+              <div className="wosjfijitjid">
+                {program != null ? (
+                  program.length > 0 ? (
+                    <div className="hold-your-work-program active">
+                      {program.map((item) => {
+                        return (
+                          <div className="card-box-program" key={item._id}>
+                            <div className="statqusre">
+                              <div className="descplr-image-program-ui">
+                                <div className="hold-imf">
+                                  <Link
+                                    to={`/program/myfitsta/${item?.programId}`}
+                                    className="link0-toorohran"
+                                  ></Link>
+                                  {item.previewProgram.previewType.length >
+                                  0 ? (
+                                    item.previewProgram.previewType?.includes(
+                                      "image"
+                                    ) ? (
+                                      <img
+                                        src={`${apiUrl.content}${item.previewProgram.previewUrl}`}
+                                      />
                                     ) : (
-                                      <div className="wkffkfkjkf"></div>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div className="waorornngrkrr">
-                                <div className="title-of-workot">
-                                  {item.title}
-                                </div>
-
-                                <div className="action-postf-desing">
-                                  {item.programType === 0 ? (
-                                    ""
+                                      <video>
+                                        <source
+                                          src={`${apiUrl.content}${item.previewProgram.previewUrl}`}
+                                        />
+                                      </video>
+                                    )
                                   ) : (
-                                    <div className="mmenu-act5">
-                                      <span>${item.price}</span>
-                                    </div>
+                                    <div className="wkffkfkjkf"></div>
                                   )}
                                 </div>
-
-                                {item.published === true ? (
-                                  <p className="published">Publish</p>
-                                ) : (
-                                  <p className="draft">Draft</p>
-                                )}
                               </div>
                             </div>
-                          );
-                        })}{" "}
-                      </div>
-                    ) : this.props.user.myfitstapro ? (
-                      <div className="wraperififoojfhr">
-                        <div className="wraperjf-ffkfkr">
-                          <p>Create a Program</p>
-                          <p>
-                            {" "}
-                            Create your program and publish it to the world
-                          </p>
-                          <div className="wraper-thejr">
-                            <button
-                              onClick={() => this.handlOpen(true)}
-                              className="dijroooeo"
-                              to={"/post"}
-                            >
-                              Add Program
-                            </button>
+
+                            <div className="waorornngrkrr">
+                              <div className="title-of-workot">
+                                {item.title}
+                              </div>
+
+                              <div className="action-postf-desing">
+                                {item.programType === 0 ? (
+                                  ""
+                                ) : (
+                                  <div className="mmenu-act5">
+                                    <span>${item.price}</span>
+                                  </div>
+                                )}
+                              </div>
+
+                              {item.published === true ? (
+                                <p className="published">Publish</p>
+                              ) : (
+                                <p className="draft">Draft</p>
+                              )}
+                            </div>
                           </div>
+                        );
+                      })}{" "}
+                    </div>
+                  ) : user.myfitstapro ? (
+                    <div className="wraperififoojfhr">
+                      <div className="wraperjf-ffkfkr">
+                        <p>Create a Program</p>
+                        <p> Create your program and publish it to the world</p>
+                        <div className="wraper-thejr">
+                          <button
+                            onClick={() => handlOpen(true)}
+                            className="dijroooeo"
+                            to={"/post"}
+                          >
+                            Add Program
+                          </button>
                         </div>
                       </div>
-                    ) : (
-                      <ActivateMyfitsta user={this.props.user} />
-                    )
-                  ) : (
-                    <div className="bixnknfkfjkjrjr">
-                      <LoadingSpin />
                     </div>
-                  )}
-                </div>
+                  ) : (
+                    <ActivateMyfitsta user={user} />
+                  )
+                ) : (
+                  <div className="bixnknfkfjkjrjr">
+                    <LoadingSpin />
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
-        <Addprogram
-          type={this.props.myfitstapro.accountType}
-          user={this.props.user}
-          handlOpen={this.handlOpen}
-          open={this.state.open}
-        />
-        <ShareOption
-          handlOpenS={this.handlOpenS}
-          handleSetting={this.handleSettingg}
-          shareoption={this.state.shareoption}
-        />
-        <SharePost
-          user={this.props.user}
-          file={this.state.file}
-          handlOpenS={this.handlOpenS}
-          sharebox={this.state.sharebox}
-          kind={"profilepro"}
-        />
       </div>
-    );
-  }
+      <Addprogram
+        type={myfitstapro.accountType}
+        user={user}
+        handlOpen={handlOpen}
+        open={open}
+      />
+      <ShareOption
+        handlOpenS={handlOpenS}
+        handleSetting={handleSettingg}
+        shareoption={shareOption}
+      />
+      <SharePost
+        user={user}
+        file={"tttt"}
+        handlOpenS={handlOpenS}
+        sharebox={shareBox}
+        kind={"profilepro"}
+      />
+    </div>
+  );
 }
 
-const mapstateToProps = (state) => {
-  return {
-    pro: state.pro,
-  };
-};
+// const mapstateToProps = (state) => {
+//   return {
+//     pro: state.pro,
+//   };
+// };
 
-export default connect(mapstateToProps)(withRouter(Myfitstapro));
+export default withRouter(Myfitstapro);

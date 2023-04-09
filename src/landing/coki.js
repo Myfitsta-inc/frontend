@@ -34,9 +34,9 @@ class Cookies extends Component {
           <h2>Interpretation</h2>
           <p>
             The words of which the initial letter is capitalized have meanings
-            defined under the following conditions. The following definitions
-            shall have the same meaning regardless of whether they appear in
-            singular or in plural.
+            defined under the followingId conditions. The followingId
+            definitions shall have the same meaning regardless of whether they
+            appear in singular or in plural.
           </p>
           <h2>Definitions</h2>
           <p>For the purposes of this Cookies Policy:</p>

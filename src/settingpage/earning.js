@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
-import Chart from "../chart/chart.js";
+import Chart from "chart/chart.js";
 import { BiArrowBack } from "react-icons/bi";
-import OrderSales from "../pro/orderSale";
-import LoadingSpin from "../component/loadingspin.js";
-import OrderSubscription from "../pro/orderSubscription";
+import OrderSales from "pro/orderSale";
+import LoadingSpin from "components/loadingspin.js";
+import OrderSubscription from "pro/orderSubscription";
 import { connect } from "react-redux";
-import TodayEarning from "../earnings/today";
-import TotalEarning from "../earnings/total";
-import MonthEarning from "../earnings/month";
-import UnpaidEarning from "../earnings/unpaidBalance";
+import TodayEarning from "earnings/today";
+import TotalEarning from "earnings/total";
+import MonthEarning from "earnings/month";
+import UnpaidEarning from "earnings/unpaidBalance";
 class Earning extends Component {
   state = {
     data: null,
@@ -37,7 +37,6 @@ class Earning extends Component {
     axios
       .get(`/api/get-my-earning-data/${this.props.user.userId}`)
       .then((result) => {
-
         if (result.data.length > 0) {
           this.setState({
             data: result.data,

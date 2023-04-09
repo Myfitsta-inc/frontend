@@ -3,11 +3,11 @@ import axios from "axios";
 import { MdModeEdit } from "react-icons/md";
 import { withRouter } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
-import profile from "../profile.webp";
-import LoadingSpin from "../component/loadingspin";
+import profile from "profile.webp";
+import LoadingSpin from "components/loadingspin";
 import { AiFillDelete } from "react-icons/ai";
-import Editable from "../component/editable";
-import ApiUrl from "../url";
+import Editable from "components/editable";
+import apiUrl from "apiUrl/url";
 let source;
 source = axios.CancelToken.source();
 class Edit extends Component {
@@ -284,7 +284,7 @@ class Edit extends Component {
                   {this.state.previewBanner !== null ? (
                     this.state.previewBanner.length > 0 ? (
                       <img
-                        src={`${ApiUrl.content}${this.state.previewBanner}`}
+                        src={`${apiUrl.content}${this.state.previewBanner}`}
                         loading="lazy"
                       />
                     ) : (
@@ -332,7 +332,7 @@ class Edit extends Component {
                     {this.state.previewsIcon !== null ? (
                       this.state.previewsIcon.length > 0 ? (
                         <img
-                          src={`${ApiUrl.content}${this.state.previewsIcon}`}
+                          src={`${apiUrl.content}${this.state.previewsIcon}`}
                           loading="lazy"
                         />
                       ) : (

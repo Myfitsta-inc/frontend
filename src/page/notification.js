@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
-import NotificationBasicBox from "../notification/notificationBasicBox";
-import NotificationProBox from "../notification/noticationProBox";
+import NotificationBasicBox from "notification/notificationBasicBox";
+import NotificationProBox from "notification/noticationProBox";
 import { withRouter } from "react-router-dom";
-import Search from "../component/seach";
+import Search from "components/seach";
 import { BiArrowBack } from "react-icons/bi";
-import ApiUrl from "../url";
-import Navbom from "../component/navbom";
-import DropHomeUp from "../component/dropHomeUp";
+import apiUrl from "apiUrl/url";
+import Navbom from "components/navbom";
+import DropHomeUp from "components/dropHomeUp";
 
 let source;
 source = axios.CancelToken.source();
@@ -52,7 +52,7 @@ class Notification extends Component {
         if (res.data !== "no") {
           if (this.state.mouted) {
             this.setState({
-              basic: res.data.data,
+              basic: res.data.notificationList,
             });
           }
         } else {
@@ -108,6 +108,7 @@ class Notification extends Component {
     }
   };
   componentDidMount = () => {
+    this.loadNotification();
     this.loadNotificationPro();
     this.handleUpdateCount();
   };
@@ -138,7 +139,7 @@ class Notification extends Component {
                         this.state.tabsDeafalt === true ? "active" : ""
                       }`}
                     >
-                      All
+                      MyFista
                     </div>
                     <div
                       onClick={() => {

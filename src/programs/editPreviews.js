@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import VideoPost from "../component/videopost";
+import VideoPost from "components/videopost";
 import axios from "axios";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 class EditPreviews extends Component {
   state = {
     preview: null,
@@ -9,10 +9,10 @@ class EditPreviews extends Component {
   };
 
   componentDidMount = () => {
-    if (this.props.program.file.length > 0) {
+    if (this.props.program.previewProgram.previewUrl.length > 0) {
       this.setState({
-        preview: this.props.program.file,
-        kind: this.props.program.fileType,
+        preview: this.props.program.previewProgram.previewUrl,
+        kind: this.props.program.previewProgram.previewType,
       });
     } else {
       this.setState({
@@ -49,7 +49,7 @@ class EditPreviews extends Component {
             this.state.preview !== "no" ? (
               this.state.kind.includes("image") ? (
                 <img
-                  src={`${ApiUrl.content}${this.state.preview}`}
+                  src={`${apiUrl.content}${this.state.preview}`}
                   loading="lazy"
                 />
               ) : (

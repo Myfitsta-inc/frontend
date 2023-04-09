@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
 import adapter from "webrtc-adapter";
-import "../style/live.css";
+import "style/live.css";
 import webrtc from "wrtc";
-import ApiUrl from "../url";
-import EndLive from "../live/endLive";
-import IconProfile from "../component/iconpicture";
-import Username from "../component/username";
-import Description from "../live/description";
+import apiUrl from "apiUrl/url";
+import EndLive from "live/endLive";
+import IconProfile from "components/iconpicture";
+import Username from "components/username";
+import Description from "live/description";
 import { withRouter } from "react-router-dom";
 import { IoSendSharp } from "react-icons/io5";
-import Schedule from "../live/schedule";
+import Schedule from "live/schedule";
 import { GrSchedulePlay, GrFormNext, GrNext } from "react-icons/gr";
 import { AiOutlineEye } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
-import socket from "../socketConfig";
+import socket from "socketConfig";
 let source;
 source = axios.CancelToken.source();
 class Live extends Component {
@@ -174,7 +174,6 @@ class Live extends Component {
           if (data.data.instant === false) {
             window.location.reload();
           } else {
-            console.log(data.data.roomId);
             this.peerConnection = this.createPeer(data.data.roomId);
             this.runtraks(stream);
             this.isLive();

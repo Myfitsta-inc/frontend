@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Nav from "../component/nav";
-import ProfilePromessage from "../component/profilepromessage";
+import Nav from "components/nav";
+import ProfilePromessage from "components/profilepromessage";
 import axios from "axios";
-import ApiUrl from "../url";
-import ProgramMessage from "../component/programMessage";
-import ConversationDetail from "../component/conversationdetail";
-import ConversationList from "../component/conversation";
+import apiUrl from "apiUrl/url";
+import ProgramMessage from "components/programMessage";
+import ConversationDetail from "components/conversationdetail";
+import ConversationList from "components/conversation";
 import { BsFillInfoCircleFill } from "react-icons/bs";
-import VideoMessage from "../component/videomessage";
-import Username from "../component/username";
-import IconProfile from "../component/iconpicture";
+import VideoMessage from "components/videomessage";
+import Username from "components/username";
+import IconProfile from "components/iconpicture";
 import { IoSendSharp } from "react-icons/io5";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
-import ImageMessage from "../component/imagemessage";
-import Profilemessage from "../component/profilemessage";
-import PostMessage from "../component/postmessage";
-import LoadingSpin from "../component/loadingspin";
-import MessageCon from "../component/messagecon";
-import socket from "../socketConfig";
+import ImageMessage from "components/imagemessage";
+import Profilemessage from "components/profilemessage";
+import PostMessage from "components/postmessage";
+import LoadingSpin from "components/loadingspin";
+import MessageCon from "components/messagecon";
+import socket from "socketConfig";
 import { connect } from "react-redux";
 let source;
 source = axios.CancelToken.source();
@@ -44,7 +44,7 @@ class Conversation extends Component {
     if (file[0].type.includes("image")) {
       let formData = new FormData();
       formData.append("file", event.target.files[0]);
-      formData.append("UserId", this.props.user.userId);
+      formData.append("userId", this.props.user.userId);
       formData.append("friend", this.props.match.params.id);
       formData.append("kind", file[0].type);
       axios.post(`/api/save-image-or-video-message`, formData).then((res) => {
@@ -197,7 +197,7 @@ class Conversation extends Component {
   sendmessage = (event) => {
     if (this.state.message.length > 0) {
       let option = {
-        UserId: this.props.user.userId,
+        userId: this.props.user.userId,
         friend: this.props.match.params.id,
         message: {
           sender: this.props.user.userId,
@@ -210,7 +210,6 @@ class Conversation extends Component {
           let message = res.data.message[res.data.message.length - 1];
           message.friend = this.props.match.params.id;
           socket.emit("new-message", message);
-
           this.setState({
             message: "",
           });
@@ -224,6 +223,7 @@ class Conversation extends Component {
 
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
+      console.log("kkkkkk");
       if (
         data.sender === this.props.match.params.id ||
         data.sender === this.props.user.userId
@@ -457,7 +457,7 @@ const mapstateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateInbox: (data) => {
-      dispatch({ type: "UPDATE_INBOX", data: data });
+      dispatch({ type: "UPDATE_INBOX", value: data });
     },
   };
 };

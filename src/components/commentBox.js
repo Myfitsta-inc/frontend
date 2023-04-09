@@ -1,0 +1,36 @@
+import React, { Component } from "react";
+import MenuComment from "./menucommnet";
+import Username from "./username";
+import IconProfile from "./iconpicture";
+import DataPost from "./datePost";
+
+class CommentBox extends Component {
+  render() {
+    return (
+      <div className="wrapwer-comment-post" key={this.props.item._id}>
+        <div className="wjfjsnrt">
+          <div className="hold-profile-url">
+            <IconProfile user={this.props.item.userId} />
+          </div>
+          <div className="hold-comment">
+            <div className="name-commenter">
+              <Username user={this.props.item.userId} />
+              <MenuComment
+                removecomment={this.props.removecomment}
+                item={this.props.item}
+              />
+            </div>
+            <div className="actuel-comment">{this.props.item.content}</div>
+          </div>
+        </div>
+
+        <div className="wrepr-cjf">
+          <div className="tjtrj">
+            <DataPost date={this.props.item.date} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+export default CommentBox;

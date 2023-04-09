@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import LoadingSpin from "../component/loadingspin";
+import LoadingSpin from "components/loadingspin";
 
 class EndLive extends Component {
   state = {

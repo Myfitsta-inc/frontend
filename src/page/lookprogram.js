@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import "../style/program.css";
-import Nav from "../component/nav";
-import Cardmdedia from "../component/cardmedia";
+import "style/program.css";
+import Nav from "components/nav";
+import Cardmdedia from "components/cardmedia";
 import axios from "axios";
-import Username from "../component/username";
-import ShareOption from "../component/shareoption";
-import SharePost from "../component/sharepost";
+import Username from "components/username";
+import ShareOption from "components/shareoption";
+import SharePost from "components/sharepost";
 import { AiOutlineStar } from "react-icons/ai";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 import { IoIosShareAlt } from "react-icons/io";
-import ProIcon from "../programs/proicon";
+import ProIcon from "programs/proicon";
 import { BiArrowBack } from "react-icons/bi";
-import VideoProgram from "../component/videoProgram";
-import Reviews from "../component/reviews";
-import Rate from "../component/rate";
-import Report from "../component/report";
+import VideoProgram from "components/videoProgram";
+import Reviews from "components/reviews";
+import Rate from "components/rate";
+import Report from "components/report";
 import { connect } from "react-redux";
-import Rating from "../component/rating";
+import Rating from "components/rating";
 let source;
 source = axios.CancelToken.source();
 class Lookprogram extends Component {
@@ -101,9 +101,8 @@ class Lookprogram extends Component {
   };
 
   getProgramInfo = (data) => {
-    console.log("jjjjj");
     axios
-      .get(`/api/accountt/program/workout/${this.props.match.params.id}`, {
+      .get(`/api/accountt/program/myfitsta/${this.props.match.params.id}`, {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -152,13 +151,17 @@ class Lookprogram extends Component {
 
                 <div className="banner-that-hold-the-information">
                   <div className="box-that-hold-theafihe-url">
-                    {this.state.program.fileType ? (
-                      this.state.program.fileType.includes("image") ? (
+                    {this.state.program?.previewProgram?.previewType ? (
+                      this.state.program.previewProgram.previewType.includes(
+                        "image"
+                      ) ? (
                         <img
-                          src={`${ApiUrl.content}${this.state.program.file}`}
+                          src={`${apiUrl.content}${this.state.program.previewProgram.previewUrl}`}
                         />
                       ) : (
-                        <VideoProgram src={this.state.program.file} />
+                        <VideoProgram
+                          src={this.state.program.previewProgram.previewUrl}
+                        />
                       )
                     ) : (
                       ""
@@ -347,10 +350,10 @@ const mapstateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateReviews: (data) => {
-      dispatch({ type: "UPDATE_REVIEW", data: data });
+      dispatch({ type: "UPDATE_REVIEW", value: data });
     },
     updataReport: (data) => {
-      dispatch({ type: "UPDATE_REPORT", data: data });
+      dispatch({ type: "UPDATE_REPORT", value: data });
     },
   };
 };

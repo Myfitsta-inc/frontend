@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { BsPeopleFill } from "react-icons/bs";
-import socket from "../socketConfig";
-import ApiUrl from "../url";
+import socket from "socketConfig";
+import apiUrl from "apiUrl/url";
 import { MdModeEdit } from "react-icons/md";
 
 class EditGroupProfile extends Component {
@@ -49,7 +49,7 @@ class EditGroupProfile extends Component {
         <div className="icoofiff">
           {this.state.group !== null ? (
             this.state.group.profileGroup.length > 0 ? (
-              <img src={`${ApiUrl.content}${this.state.group.profileGroup}`} />
+              <img src={`${apiUrl.content}${this.state.group.profileGroup}`} />
             ) : (
               <div className="fnensfr">
                 <BsPeopleFill />

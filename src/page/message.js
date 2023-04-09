@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
 import { GoPlus } from "react-icons/go";
-import ConversationList from "../component/conversation";
-import "../style/message.css";
-import Newmessage from "../component/newmessage";
+import ConversationList from "components/conversation";
+import "style/message.css";
+import Newmessage from "components/newmessage";
 let source = axios.CancelToken.source();
 class Message extends Component {
   state = {

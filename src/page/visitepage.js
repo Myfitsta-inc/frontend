@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import ShareOption from "../component/shareoption";
-import SharePost from "../component/sharepost";
+import ShareOption from "components/shareoption";
+import SharePost from "components/sharepost";
 import { withRouter, Link } from "react-router-dom";
-import ButtonFollow from "../component/buttonFollow";
-import Nav from "../component/nav";
+import ButtonFollow from "components/buttonFollow";
+import Nav from "components/nav";
 import axios from "axios";
-import Username from "../component/username";
-import ApiUrl from "../url";
-import LoadingSpin from "../component/loadingspin";
-import profile from "../profile.webp";
-import Boxcollection from "../component/boxcollection";
-import TagggedPost from "../component/taggedPost";
-import MessageButton from "../component/messageSomeone";
-import PostVue from "../component/postvue";
+import Username from "components/username";
+import apiUrl from "apiUrl/url";
+import LoadingSpin from "components/loadingspin";
+import profile from "profile.webp";
+import Boxcollection from "components/boxcollection";
+import TagggedPost from "components/taggedPost";
+import MessageButton from "components/messageSomeone";
+import PostVue from "components/postvue";
 import { BiArrowBack } from "react-icons/bi";
 let source;
 source = axios.CancelToken.source();
@@ -90,6 +90,19 @@ class Visitpage extends Component {
     this.props.history.goBack();
   };
 
+  collectionUserPost() {
+    axios
+      .get(`/api/post/${this.state.profile.userId}`, {
+        withCredentials: true,
+        cancelToken: source.token,
+      })
+      .then((res) => {
+        this.setState({
+          posted: res.data.reverse(),
+        });
+      });
+  }
+
   hispost = () => {
     axios
       .get(`/api/profile/${this.state.profile.userId}`, {
@@ -97,11 +110,7 @@ class Visitpage extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        if (res.data.post) {
-          this.setState({
-            posted: res.data.post.reverse(),
-          });
-        }
+        this.collectionUserPost();
       });
   };
 
@@ -193,7 +202,7 @@ class Visitpage extends Component {
                       this.state.profile.banner.length > 0 ? (
                         <img
                           className="pect-ppr"
-                          src={`${ApiUrl.content}${this.state.profile.banner}`}
+                          src={`${apiUrl.content}${this.state.profile.banner}`}
                           loading="lazy"
                         />
                       ) : (
@@ -210,7 +219,7 @@ class Visitpage extends Component {
                           {this.state.profile.profile ? (
                             <img
                               className="pect-ppr"
-                              src={`${ApiUrl.content}${this.state.profile.profile}`}
+                              src={`${apiUrl.content}${this.state.profile.profile}`}
                               loading="lazy"
                             />
                           ) : (
@@ -241,7 +250,7 @@ class Visitpage extends Component {
                               <div id="post-nu " className="al">
                                 <div id="number-post" className="number-post">
                                   {this.nFormatter(
-                                    this.state.profile.postnumber
+                                    this.state.profile.numberOfPosts
                                   )}
                                 </div>
                                 <p>Post</p>
@@ -256,25 +265,25 @@ class Visitpage extends Component {
                                   className="number-followers"
                                 >
                                   {this.nFormatter(
-                                    this.state.profile.numberfollowers
+                                    this.state.profile.numberOfFollowers
                                   )}
                                 </div>
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.username}/following`}
-                                id="following-nu al"
+                                to={`/user/${this.state.profile.username}/followingId`}
+                                id="followingId-nu al"
                                 className="al"
                               >
                                 <div
-                                  id="number-following"
-                                  className="number-following"
+                                  id="number-followingId"
+                                  className="number-followingId"
                                 >
                                   {this.nFormatter(
-                                    this.state.profile.numberfollowings
+                                    this.state.profile.numberOfFollowings
                                   )}
                                 </div>
-                                <p>following</p>
+                                <p>Following</p>
                               </Link>
                             </div>
                           </div>
@@ -385,7 +394,7 @@ class Visitpage extends Component {
                               <div id="post-nu " className="al">
                                 <div id="number-post" className="number-post">
                                   {this.nFormatter(
-                                    this.state.profile.postnumber
+                                    this.state.profile.numberOfPosts
                                   )}
                                 </div>
                                 <p>Post</p>
@@ -400,25 +409,25 @@ class Visitpage extends Component {
                                   className="number-followers"
                                 >
                                   {this.nFormatter(
-                                    this.state.profile.numberfollowers
+                                    this.state.profile.numberOfFollowers
                                   )}
                                 </div>
                                 <p>Followers</p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.username}/following`}
-                                id="following-nu al"
+                                to={`/user/${this.state.profile.username}/followingId`}
+                                id="followingId-nu al"
                                 className="al"
                               >
                                 <div
-                                  id="number-following"
-                                  className="number-following"
+                                  id="number-followingId"
+                                  className="number-followingId"
                                 >
                                   {this.nFormatter(
-                                    this.state.profile.numberfollowings
+                                    this.state.profile.numberOfFollowings
                                   )}
                                 </div>
-                                <p>following</p>
+                                <p>Following</p>
                               </Link>
                             </div>
                           </div>
@@ -524,7 +533,7 @@ class Visitpage extends Component {
         />
         <Boxcollection
           user={this.props.user}
-          file={this.props.file}
+          postId={this.props.postId}
           openBoxCollection={this.props.openBoxCollection}
           boxCollection={this.props.boxCollection}
         />

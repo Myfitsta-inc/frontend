@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ApiUrl from "../url";
+import apiUrl from "apiUrl/url";
 import { Link } from "react-router-dom";
-import profile from "../profile.webp";
+import profile from "profile.webp";
 class ProIcon extends Component {
   state = {
     icon: null,
@@ -44,7 +44,7 @@ class ProIcon extends Component {
       >
         {this.state.icon !== null ? (
           this.state.icon.length > 0 ? (
-            <img src={`${ApiUrl.content}${this.state.icon}`} loading="lazy" />
+            <img src={`${apiUrl.content}${this.state.icon}`} loading="lazy" />
           ) : (
             <img src={profile} loading="lazy" />
           )

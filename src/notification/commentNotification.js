@@ -1,31 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import IconProfile from "../component/iconpicture";
-import VideoPost from "../component/videopost";
-import Username from "../component/username";
-import ApiUrl from "../url";
-import DataPost from "../component/datePost";
+import IconProfile from "components/iconpicture";
+import VideoPost from "components/videopost";
+import Username from "components/username";
+import apiUrl from "apiUrl/url";
+import DataPost from "components/datePost";
 class CommentNotification extends Component {
   state = {
     username: null,
-    media: null,
+    postDetails: null,
   };
 
   getmedia = () => {
     axios
-      .get(`/api/imageinfo/${this.props.item.media}`, { withCredentials: true })
+      .get(`/api/imageinfo/${this.props.item.postId}`, {
+        withCredentials: true,
+      })
       .then((res) => {
-        if (res.data.filename) {
+        if (res.data) {
           this.setState({
-            media: res.data,
+            postDetails: res.data,
           });
         } else {
         }
       });
   };
   componentDidMount = () => {
-    this.getmedia();
+    // this.getmedia();
   };
   render() {
     return (
@@ -56,21 +58,23 @@ class CommentNotification extends Component {
               </div>
             </div>
           </div>
-          {this.state.media !== null ? (
+          {this.state.postDetails !== null ? (
             <Link
-              to={`/profile/${this.state.media.userId}/${this.state.media.filename}`}
+              to={`/profile/${this.props.item._id}/${this.state.postDetails?.userId}`}
               className="div-that-wraper-the-imga3"
             >
-              {this.state.media !== null ? (
-                this.state.media.mediaKind[0].includes("image") ? (
+              {this.state.postDetails?.mediaDetails !== null ? (
+                this.state.postDetails?.mediaDetails[0].mimetype.includes(
+                  "image"
+                ) ? (
                   <img
-                    src={`${ApiUrl.content}${
-                      this.state.media.filename.split(",")[0]
-                    }`}
+                    src={`${apiUrl.content}${this.state.postDetails?.mediaDetails[0].key}`}
                     loading="lazy"
                   />
                 ) : (
-                  <VideoPost src={this.state.media.filename.split(",")[0]} />
+                  <VideoPost
+                    src={this.state.postDetails?.mediaDetails[0].key}
+                  />
                 )
               ) : (
                 ""
@@ -80,10 +84,6 @@ class CommentNotification extends Component {
             ""
           )}
         </div>
-
-        {/*<div className="itjejmsmf">
-            <button><i className="fas fa-ellipsis-v"></i></button>
-        </div>*/}
       </div>
     );
   }

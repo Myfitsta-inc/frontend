@@ -1,109 +1,67 @@
-const initState = {
-  user: {},
-  pro: {},
-  post: [],
-  listCollection: [],
-  likes: [],
-  interest: null,
-  counterReview: 0,
-  report: {
-    open: false,
-    file: "",
-    kind: "",
-  },
-  deletePost: {
-    open: false,
-    file: "",
-  },
+import store from "store/store";
 
-  peopleRecent: [],
-  inbox: null,
-  usernameList: [],
-  iconList: [],
-  followList: [],
-  postData: [],
-};
-const rootReducer = (state = initState, action) => {
-  if (action.type === "ADD_LIKES") {
-    return {
-      ...state,
-      likes: action.data,
-    };
+const rootReducer = (state = store, action) => {
+  let { type, value } = action || {};
+  switch (type) {
+    case "UPDATE_COLECTION_BOX":
+      return { ...state, listCollection: value };
+    case "UPDATE_USER":
+      return { ...state, user: value };
+    case "UPDATE_BOXCOLLECTION":
+      return { ...state, isboxCollectionOpen: value };
+    case "UPDATE_SELECTED_POSTID":
+      return { ...state, postId: value };
+    case "ADD_LIKES":
+      return { ...state, likes: value };
+    case "UPDATE_PRO":
+      return { ...state, myfitstapro: value };
+    case "ADD_TO_COLLECTION":
+      return { ...state, listCollection: value };
+    case "ADD_TO_INTEREST":
+      return { ...state, interest: value };
+    case "UPDATE_REVIEW":
+      return {
+        ...state,
+        counterReview: value,
+      };
+    case "UPDATE_REPORT":
+      return {
+        ...state,
+        report: value,
+      };
+    case "DELETE_POST":
+      return {
+        ...state,
+        report: value,
+      };
+    case "UPDATE_INBOX":
+      return {
+        ...state,
+        inbox: value,
+      };
+    case "UPDATE_USERNAME":
+      return {
+        ...state,
+        usernameLists: value,
+      };
+    case "UPDATE_ICON":
+      return {
+        ...state,
+        iconList: value,
+      };
+    case "UPDATE_FOLLOWER":
+      return {
+        ...state,
+        followLists: value,
+      };
+    case "UPDATE_POSTIST":
+      return {
+        ...state,
+        postList: value,
+      };
+    default:
+      return state;
   }
-  if (action.type === "LOGIN") {
-    return {
-      ...state,
-      user: action.data,
-    };
-  }
-  if (action.type === "PRO") {
-    return {
-      ...state,
-      pro: action.data,
-    };
-  }
-  if (action.type === "ADD_TO_COLLECTION") {
-    return {
-      ...state,
-      listCollection: action.data,
-    };
-  }
-
-  if (action.type === "ADD_TO_INTEREST") {
-    return {
-      ...state,
-      interest: action.data,
-    };
-  }
-  if (action.type === "UPDATE_REVIEW") {
-    return {
-      ...state,
-      counterReview: action.data,
-    };
-  }
-  if (action.type === "UPDATE_REPORT") {
-    return {
-      ...state,
-      report: action.data,
-    };
-  }
-  if (action.type === "DELETE_POST") {
-    return {
-      ...state,
-      report: action.data,
-    };
-  }
-  if (action.type === "UPDATE_INBOX") {
-    return {
-      ...state,
-      inbox: action.data,
-    };
-  }
-  if (action.type === "UPDATE_USERNAME") {
-    return {
-      ...state,
-      usernameList: action.data,
-    };
-  }
-  if (action.type === "UPDATE_ICON") {
-    return {
-      ...state,
-      iconList: action.data,
-    };
-  }
-  if (action.type === "UPDATE_FOLLOWER") {
-    return {
-      ...state,
-      followList: action.data,
-    };
-  }
-  if (action.type === "UPDATE_POSTDATA") {
-    return {
-      ...state,
-      postData: action.data,
-    };
-  }
-  return state;
 };
 
 export default rootReducer;

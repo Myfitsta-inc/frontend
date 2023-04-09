@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Nav from "../component/nav";
+import Nav from "components/nav";
 import axios from "axios";
 import moment from "moment";
-import ApiUrl from "../url";
-import TagPeople from "../component/tagsPeople";
+import apiUrl from "apiUrl/url";
+import TagPeople from "components/tagsPeople";
 import { IoCloseSharp } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
-import PreviewPost from "../video/previewPost";
-import LoadingSpin from "../component/loadingspin";
-import "../style/style.css";
+import PreviewPost from "video/previewPost";
+import LoadingSpin from "components/loadingspin";
+import "style/style.css";
 let source;
 source = axios.CancelToken.source();
 let people = 0;
@@ -93,7 +93,7 @@ class Upload extends Component {
         }
       }
       for (let i = 0; i < this.state.tags.length; i++) {
-        formData.append("kind", this.state.tags[i]);
+        formData.append("tags", this.state.tags[i]);
       }
       axios.post(`/api/upload`, formData).then((res) => {
         this.props.history.push("/home");
@@ -149,7 +149,7 @@ class Upload extends Component {
     if (file[0].type.includes("image") || file[0].type.includes("video")) {
       for (var i = 0; i <= file.length - 1; i++) {
         let list = [...this.state.fileArray, file[i]];
-        console.log(file);
+
         this.setState({
           fileArray: list,
         });
