@@ -153,7 +153,7 @@
   background-color: var(--main-bg-box);
   max-width: 430px;
   min-height: 300px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
   animation: slideInUp;
   animation-duration: 0.3s;
@@ -186,7 +186,7 @@
   letter-spacing: 1px;
   color: #fff;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .canc-the-active {
   background-color: var(--main-bg-cool-rgb);
@@ -285,7 +285,7 @@
   background-color: var(--main-bg-box);
   box-shadow: 0px 0px 5px var(--main-bg-cool-rgb);
   z-index: 10000000;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: scroll;
 }
 .box-that-hold-the-setting.active {
@@ -331,7 +331,7 @@
   display: flex;
   flex-direction: column;
 
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
 }
@@ -360,7 +360,7 @@
 
   width: calc(100% - 400px);
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   background: var(--main-bg-pagebox);
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
@@ -419,7 +419,7 @@
   position: relative;
   width: calc(100% - 10px);
   min-height: 45px;
-  border-radius: 5px;
+  border-radius: 10px;
 
   display: flex;
   justify-content: center;
@@ -518,7 +518,7 @@
   text-transform: uppercase;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .fjjeerb {
   height: 35px;
@@ -535,7 +535,7 @@
   min-width: 35px;
   display: flex;
   color: var(--text);
-  border-radius: 5px;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
   height: 35px;
@@ -580,7 +580,7 @@
   height: 40px;
   width: 100%;
   max-width: 300px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-transform: capitalize;
   font-size: 15px;
   display: flex;
@@ -595,7 +595,7 @@
   height: 40px;
   background: var(--main-bg-cool-rgb);
   border: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   font-weight: bold;
   font-size: 23px;

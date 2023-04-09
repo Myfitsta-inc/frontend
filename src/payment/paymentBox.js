@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import Field from "payment/fields";
 import Paymentmethod from "payment/paymentMethod";
 import { motion } from "framer-motion";
 import { withRouter } from "react-router-dom";
@@ -110,14 +109,6 @@ class PaymentOption extends Component {
           ) : (
             ""
           )}
-
-          <div className="holdnrkj-fjrkr">
-            {this.state.dropin === true ? (
-              <Field item={this.props.program} />
-            ) : (
-              ""
-            )}
-          </div>
         </div>
       </motion.div>
     );

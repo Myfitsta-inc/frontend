@@ -75,7 +75,7 @@
   height: 60px;
   padding-left: 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   padding-right: 20px;
   display: flex;
   margin: 0 auto;
@@ -94,7 +94,7 @@
   max-width: 500px;
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
   background-color: var(--main-bg-side);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
 }
 .sjcijrjnjir {
@@ -131,7 +131,7 @@
   display: flex;
   margin-top: 30px;
   border: 1px solid #6f56e5;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 50px;
   cursor: pointer;
   display: flex;
@@ -157,7 +157,7 @@
 }
 .wraricjfri {
   border: 2px solid var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
 }
 .wlofnssfjr {
@@ -206,7 +206,7 @@
   background-color: var(--main-bg-cool-rgb);
   color: var(--text);
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 5px;
   border: 0;
   height: 40px;
@@ -235,7 +235,7 @@
 }
 .wraskfkfofnj-crsfdnf {
   border: 2px solid var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   display: flex;
   height: 80px;
@@ -362,7 +362,7 @@
   width: 60px;
   color: rgb(111, 86, 229, 1);
   height: 60px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: rgb(111, 86, 229, 0.1);
 }
 .class-boxx {
@@ -371,7 +371,7 @@
   margin: 0 auto;
   cursor: pointer;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .class-boxx.active {
   background-color: rgb(111, 86, 229, 1);
@@ -420,7 +420,7 @@
   background-color: var(--main-bg-pagebox);
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
 
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .wrpajna-thetabshs {
   border-bottom: 1px solid var(--main-bg-cool-rgb);
@@ -432,7 +432,7 @@
 
   background-color: var(--main-bg-pagebox);
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .wraknnfjrjrj {
   width: 95%;
@@ -440,11 +440,11 @@
   margin-top: 30px;
   border: 1px solid var(--main-bg-cool-rgb);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .billing-tabss {
   display: flex;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
 }
 .tabs-wra-this-hsotosrir {
@@ -454,7 +454,7 @@
   margin-top: 20px;
   height: 60px;
   display: flex;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .fkskfkk div {
@@ -626,7 +626,7 @@
   height: 40px;
 
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
 }
 .conte-thise-actionrb.active {
@@ -687,7 +687,7 @@
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   flex-direction: column;
   min-height: 50px;
@@ -745,7 +745,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .holt-theinfi-jjr {
   position: relative;
@@ -755,7 +755,7 @@
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-side);
   box-shadow: 2px 2px 15px var(--main-bg-cool-rgb);
 }
@@ -796,7 +796,7 @@
   height: 65px;
   display: flex;
 
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 10px;
   background-color: var(--main-bg-cool-rgb);
 }
@@ -805,7 +805,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .wraornjr p {
   font-size: 15px;
@@ -828,7 +828,7 @@
   width: 100%;
   color: var(--text);
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -905,7 +905,7 @@
   padding: 15px;
   margin-right: 5px;
 
-  border-radius: 5px;
+  border-radius: 10px;
   display: inline-flex;
   flex-direction: column;
   border: 1px solid var(--main-bg-cool-rgb);
@@ -932,7 +932,7 @@
   width: 100%;
   border-radius: 1px;
 
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .hold-the-box-of-shit-bjf {
@@ -968,7 +968,7 @@
   display: flex;
   width: 98%;
   border: 1px solid var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
   flex-direction: column;
   margin: 0 auto;
   overflow: scroll;
@@ -978,7 +978,7 @@
 .rjrnjmrkesr {
   position: relative;
   display: flex;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
   height: 60px;
 }
@@ -1007,7 +1007,7 @@
   display: flex;
   margin-top: 10px;
   min-height: 60px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 2px solid var(--main-bg-cool-rgb);
 }
 
@@ -1075,7 +1075,7 @@
   width: 98%;
   margin: 0 auto;
   border: 1px solid var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .boififi {
 }

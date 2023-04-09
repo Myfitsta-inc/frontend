@@ -56,7 +56,7 @@
 }
 
 .contiantien-postt div {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .box-media-boxx:before {
 }
@@ -92,7 +92,7 @@
   margin-right: 5px;
 }
 .video-post video {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .box-media-box:hover .alodjrr {
   opacity: 1;
@@ -130,7 +130,7 @@
 
   top: 0;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   z-index: 1000;
   justify-content: flex-end;
@@ -229,7 +229,7 @@
   object-fit: cover;
   position: absolute;
   top: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
 }

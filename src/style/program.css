@@ -35,7 +35,7 @@
 
 #card-number.braintree-hosted-fields-focused {
   border-color: #6f56e5;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .demo-frame {
@@ -59,7 +59,7 @@
   box-shadow: none;
   font-weight: 600;
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 10px;
 
   line-height: 20px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -151,7 +151,7 @@
   border: 1px solid #6f56e5;
   border-radius: 1px;
   background-position: left bottom;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .braintree-hosted-fields-invalid {
@@ -429,7 +429,7 @@
   cursor: pointer;
   border: 0;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .add-to-card {
@@ -513,7 +513,7 @@
 .box-that-hold-the-setting:hover {
   background-color: var(--main-bg-cool-rgb);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .box-that-hold-the-setting button {
   width: calc(100% - 50px);
@@ -693,12 +693,12 @@
 .box-that-hold-theafihe-url {
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
 .previews img {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 #upbox {
   background-color: var(--main-bg-cool-rgb);
@@ -706,7 +706,7 @@
 
 .box-that-hold-theafihe-url {
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .box-hod-theinfomation {
   height: 100%;
@@ -800,7 +800,7 @@
   font-weight: 600;
   border: 0;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 40px;
 }
 
@@ -880,7 +880,7 @@
 .hold-thedesign-affiche {
   position: relative;
   border-radius: 1px;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
 }

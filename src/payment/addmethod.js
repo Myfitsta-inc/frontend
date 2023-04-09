@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import AddField from "payment/addField";
 import apiUrl from "apiUrl/url";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaRegCreditCard, FaPaypal } from "react-icons/fa";
@@ -60,11 +59,6 @@ class AddMethod extends Component {
                 </div>
                 </div>*/}
             </div>
-          ) : (
-            ""
-          )}
-          {this.state.field === true ? (
-            <AddField acountD={this.props.acountD} />
           ) : (
             ""
           )}

@@ -5,7 +5,6 @@ import { FaRegCreditCard } from "react-icons/fa";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import axios from "axios";
 import Checkout from "./Checkout";
-import FieldSub from "payment/fieldSub";
 import PaymentMethodSub from "payment/paymentMethodSub";
 import LoadingSpin from "components/loadingspin";
 class PaymentSub extends Component {

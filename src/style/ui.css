@@ -260,7 +260,7 @@
   border: 0;
   background-color: #6f56e5;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 600;
@@ -294,7 +294,7 @@
   border: 3px solid var(--main-bg-cool-rgb);
   display: flex;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
   margin: 0 auto;
   margin-bottom: 5px;
@@ -684,7 +684,7 @@
   max-width: 500px;
   height: auto;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   background: var(--main-bg-box);
 }
 .banner-t0-tell-you-that-you-have-to-scruscriob p {
@@ -750,7 +750,7 @@
   max-width: 420px;
   background-color: var(--main-bg-side);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   animation: fadeInUp;
   transition: all 0.2s ease;
   animation-duration: 0.3s;
@@ -785,7 +785,7 @@
   width: 70px;
   height: 70px;
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
   z-index: 100;
 }
 .afichet-of-0the-presentation:before {
@@ -798,7 +798,7 @@
 
   position: relative;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
 }
 .title-of--thise-action {
@@ -874,7 +874,7 @@
   width: 95%;
   height: 95%;
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .create.active {
   background-color: #6f56e5;
@@ -1108,7 +1108,7 @@
   height: 250px;
   padding: 15px;
   background-color: var(--main-bg-side);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .hold-your-work-program.active {
   display: grid;
@@ -1373,7 +1373,7 @@
   height: 200px;
   margin-top: 10px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
 }
 
@@ -1458,7 +1458,7 @@
 
 @media only screen and (max-width: 900px) {
   .statqusre {
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
   }
   .boxrnfnfnbebnsnnnrn {

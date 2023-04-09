@@ -28,7 +28,7 @@ class MessageProgramCon extends Component {
 
 const mapstateToProps = (state) => {
   return {
-    users: user.state,
+    users: state.user,
   };
 };
 
