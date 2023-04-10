@@ -483,7 +483,7 @@
   text-transform: uppercase;
   font-weight: bolder;
   max-width: 190px;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 .billing-tabss div {
   width: 100%;
@@ -511,7 +511,7 @@
   height: 40px;
   margin-top: 20px;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
   background-color: #6f56e5;
   color: white;
   font-weight: bolder;
@@ -727,7 +727,7 @@
   padding-left: 10px;
   padding-right: 10px;
   font-size: 15px;
-  border-radius: 3px;
+  border-radius: 10px;
   color: var(--text);
   background-color: var(--main-bg-cool-rgb);
 }
@@ -859,7 +859,7 @@
   border: 1px solid #6f56e5;
   background-color: transparent;
   color: var(--text);
-  border-radius: 3px;
+  border-radius: 10px;
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 600;
