@@ -112,7 +112,9 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 .hold-that-mess.active {
-  height: 30px;
+  display: block;
+  padding: 3px;
+  max-height: 100px;
 }
 .describe-ite-simple {
   max-width: 600px;
@@ -146,7 +148,7 @@ input[type="number"] {
   border-radius: 10px;
 }
 .hold-that-mess {
-  height: 0px;
+  max-height: 0px;
   overflow: hidden;
   display: flex;
   align-items: center;

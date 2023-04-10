@@ -26,7 +26,7 @@ function CheckoutForm({ plan, publisherId, userId }) {
     });
     if (error) {
       setErrorMessage(error.message);
-    } else if (paymentIntent && paymentIntent.status == "succeeded") {
+    } else if (paymentIntent && paymentIntent.status === "succeeded") {
       const { payment_method } = paymentIntent;
       let payload = {
         planName: plan,
