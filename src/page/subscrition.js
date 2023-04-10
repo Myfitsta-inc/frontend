@@ -8,7 +8,6 @@ import Username from "components/username";
 import apiUrl from "apiUrl/url";
 import LoadingSpin from "components/loadingspin.js";
 import { BiArrowBack } from "react-icons/bi";
-import Rating from "components/rating";
 import Subscribe from "components/subscription";
 import MessageButton from "components/messageSomeone";
 import SettingMyfiststapro from "components/settingMyfitstapro";

@@ -3,7 +3,6 @@ import Nav from "components/nav";
 import axios from "axios";
 import "style/loadp.css";
 import { MdModeEdit } from "react-icons/md";
-import LikeProgram from "components/likeProgram";
 import { withRouter, NavLink } from "react-router-dom";
 import Video from "components/video";
 import LoadingSpin from "components/loadingspin";
@@ -13,7 +12,6 @@ import { BiArrowBack } from "react-icons/bi";
 import apiUrl from "apiUrl/url";
 import { AiFillDelete } from "react-icons/ai";
 import DeleteContent from "components/deleteContentP";
-import CommentMedia from "components/commentMedia";
 import { useParams } from "react-router-dom";
 import useUser from "hooks/useUser";
 function Loadprogram({ history }) {

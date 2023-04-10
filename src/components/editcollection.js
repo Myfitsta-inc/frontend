@@ -3,8 +3,6 @@ import axios from "axios";
 import { IoCloseSharp } from "react-icons/io5";
 import { withRouter } from "react-router-dom";
 
-import apiUrl from "apiUrl/url";
-
 class EditCollection extends Component {
   state = {
     save: false,

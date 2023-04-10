@@ -5,7 +5,6 @@ import { withRouter, Link } from "react-router-dom";
 import ButtonFollow from "components/buttonFollow";
 import Nav from "components/nav";
 import axios from "axios";
-import Username from "components/username";
 import apiUrl from "apiUrl/url";
 import LoadingSpin from "components/loadingspin";
 import profile from "profile.webp";

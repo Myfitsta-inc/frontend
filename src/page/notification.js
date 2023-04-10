@@ -6,7 +6,6 @@ import NotificationProBox from "notification/noticationProBox";
 import { withRouter } from "react-router-dom";
 import Search from "components/seach";
 import { BiArrowBack } from "react-icons/bi";
-import apiUrl from "apiUrl/url";
 import Navbom from "components/navbom";
 import DropHomeUp from "components/dropHomeUp";
 

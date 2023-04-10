@@ -9,7 +9,6 @@ import ShareOption from "components/shareoption";
 import SharePost from "components/sharepost";
 import { AiOutlineStar } from "react-icons/ai";
 import apiUrl from "apiUrl/url";
-import { IoIosShareAlt } from "react-icons/io";
 import ProIcon from "programs/proicon";
 import { BiArrowBack } from "react-icons/bi";
 import VideoProgram from "components/videoProgram";

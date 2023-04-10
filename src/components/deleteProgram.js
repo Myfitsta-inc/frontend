@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
-import apiUrl from "apiUrl/url";
+
 class DeleteProgram extends Component {
   state = {};
 

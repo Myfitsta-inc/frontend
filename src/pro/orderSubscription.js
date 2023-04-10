@@ -53,11 +53,8 @@ class OrderSubscription extends Component {
             ) : (
               <div className="wraperififoojfhr">
                 <div className="wraperjf-ffkfkr">
-                  <p>Create a new post</p>
-                  <p>
-                    Share with your community your best workout or fitness
-                    activity
-                  </p>
+                  <p>No Subscriptions History</p>
+                  <p>All new subscriber history will be listed here</p>
                 </div>
               </div>
             )

@@ -7,7 +7,6 @@ import Cardmdedia from "components/cardmedia";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import PaymentOption from "payment/paymentBox";
-import AddTocardButton from "components/addtocardbutton";
 import { BiArrowBack } from "react-icons/bi";
 import VideoProgram from "components/videoProgram";
 import Reviews from "components/reviews";

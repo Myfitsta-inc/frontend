@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import Nav from "components/nav";
 import axios from "axios";
 import moment from "moment";
-import apiUrl from "apiUrl/url";
 import TagPeople from "components/tagsPeople";
 import { IoCloseSharp } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";

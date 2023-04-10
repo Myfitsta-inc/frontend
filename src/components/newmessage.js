@@ -4,7 +4,6 @@ import Username from "./username";
 import IconProfile from "./iconpicture";
 import { withRouter } from "react-router-dom";
 import { BiCheck } from "react-icons/bi";
-import apiUrl from "apiUrl/url";
 import LoadingSpin from "./loadingspin";
 import socket from "socketConfig";
 import { AiOutlineSearch } from "react-icons/ai";

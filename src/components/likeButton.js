@@ -3,10 +3,8 @@ import axios from "axios";
 import uuid from "react-uuid";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import moment from "moment";
-import apiUrl from "apiUrl/url";
 import Bounce from "react-reveal/Bounce";
 import socket from "socketConfig";
-import { connect } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 function LikeButton({ numberOfLikes, userId, posterId, postId }) {
   const [numberOfLikesForThisPost, setNumberOfLikesForThisPost] =
@@ -36,7 +34,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
   const updatePost = (data) => {
     let Updated = postList.find((item) => item.postId === data);
     if (Updated) {
-      Updated.numberOfLikes = numberOfLikes;
+      Updated.numberOfLikes = numberOfLikesForThisPost;
       let list = postList.filter((item) => item.postId !== data);
       let sortted = [...list, Updated];
       addPost(sortted);
@@ -70,7 +68,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
     }
     socket.emit("some-like-a-post", {
       postId: data.postId,
-      numberOfLikes: numberOfLikes,
+      numberOfLikes: numberOfLikesForThisPost,
     });
   };
 
@@ -109,7 +107,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
       }
     });
     return () => socket.off("like-this-post");
-  }, []);
+  }, [postId]);
 
   return (
     <div className="lik box-ac">

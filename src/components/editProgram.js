@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import Editable from "./editable";
 import EditPreviews from "programs/editPreviews";
 import LoadingSpin from "./loadingspin";
-import apiUrl from "apiUrl/url";
 class Editprogram extends Component {
   state = {
     open: false,

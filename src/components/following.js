@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Subinfo from "./subinfo";
-import apiUrl from "apiUrl/url";
 import LoadingSpin from "./loadingspin";
 import { InView } from "react-intersection-observer";
 import ButtonFollow from "./buttonFollow";

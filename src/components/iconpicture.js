@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+
 import apiUrl from "apiUrl/url";
 import profile from "profile.webp";
-import socket from "socketConfig";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useIcon from "hooks/useIcon";
 function IconProfile({ user }) {

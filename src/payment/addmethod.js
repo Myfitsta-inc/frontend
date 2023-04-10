@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import apiUrl from "apiUrl/url";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaRegCreditCard, FaPaypal } from "react-icons/fa";
 import { HiOutlineChevronRight } from "react-icons/hi";

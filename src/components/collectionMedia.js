@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import usePost from "hooks/usePost";
 import apiUrl from "apiUrl/url";
 const CollectionMedia = ({ postId }) => {

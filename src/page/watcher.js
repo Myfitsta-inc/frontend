@@ -12,7 +12,6 @@ import { IoSendSharp } from "react-icons/io5";
 import { AiOutlineEye } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import socket from "socketConfig";
-import apiUrl from "apiUrl/url";
 import { IoCloseSharp } from "react-icons/io5";
 let source;
 source = axios.CancelToken.source();

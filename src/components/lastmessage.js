@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import socket from "socketConfig";
-import apiUrl from "apiUrl/url";
 class LastMessage extends Component {
   state = {
     lastMessage: null,
