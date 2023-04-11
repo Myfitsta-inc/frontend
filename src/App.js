@@ -63,7 +63,7 @@ function App() {
   const checkLike = (e) => {
     axios.get("/api/likeonpost", { withCredentials: true }).then((res) => {
       if (res.data.length > 0) {
-        dispatch({ type: "ADD_LIKES", value: res.data });
+        dispatch({ type: "UPDATE_LIKES", value: res.data });
       }
     });
   };

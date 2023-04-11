@@ -54,7 +54,7 @@ class Newmessage extends Component {
 
   addPeoppe = () => {
     let option = {
-      id: this.state.selected[people].userId,
+      friend: this.state.selected[people].userId,
       user: this.props.users.userId,
       profileGroup: "",
       type: "inbox",

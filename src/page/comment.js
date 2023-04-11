@@ -354,10 +354,10 @@ const mapstateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addLikes: (data) => {
-      dispatch({ type: "ADD_LIKES", data: data });
+      dispatch({ type: "UPDATE_LIKES", data: data });
     },
     addPost: (data) => {
-      dispatch({ type: "UPDATE_postList", data: data });
+      dispatch({ type: "UPDATE_POSTIST", data: data });
     },
   };
 };

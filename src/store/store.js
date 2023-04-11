@@ -18,7 +18,7 @@ const store = {
   postId: "",
   isboxCollectionOpen: false,
   peopleRecent: [],
-  inbox: null,
+  inbox: [],
   usernameLists: [],
   iconList: [],
   postList: [],

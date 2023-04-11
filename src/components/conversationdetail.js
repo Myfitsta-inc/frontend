@@ -176,7 +176,7 @@ const mapstateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateInbox: (data) => {
-      dispatch({ type: "UPDATE_INBOX", data: data });
+      dispatch({ type: "UPDATE_INBOX", value: data });
     },
   };
 };

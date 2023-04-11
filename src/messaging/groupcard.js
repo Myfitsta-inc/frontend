@@ -72,7 +72,7 @@ class Groupcard extends Component {
             <p className="daytn"></p>
           </div>
           <div className="last-conversation">
-            <LastMessageGroup item={this.props.item} />
+            {/* <LastMessageGroup item={this.props.item} /> */}
           </div>
         </div>
       </div>

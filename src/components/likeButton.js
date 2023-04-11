@@ -12,6 +12,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
   const dispatch = useDispatch();
   const postList = useSelector((state) => state.postList);
   const likes = useSelector((state) => state.likes);
+
   const saveLikes = (data) => {
     const option = {
       userId: userId,
@@ -23,13 +24,13 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
       _id: uuid(),
     };
     let list = [...likes, info];
-    dispatch({ type: "ADD_LIKES", value: list });
+    dispatch({ type: "UPDATE_LIKES", value: list });
     axios.post("/api/likedpost", option).then((res) => {
       updatenotification(res.data);
     });
   };
   const addPost = (data) => {
-    dispatch({ type: "UPDATE_postList", value: data });
+    dispatch({ type: "UPDATE_POSTIST", value: data });
   };
   const updatePost = (data) => {
     let Updated = postList.find((item) => item.postId === data);
@@ -72,17 +73,12 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
     });
   };
 
-  const handleLike = (e, data) => {
-    let like = e.currentTarget;
-    if (like.classList.contains("active")) {
-      setNumberOfLikesForThisPost(numberOfLikesForThisPost - 1);
-      removelike(data);
-      updatePost(data);
-    } else {
+  const handleLike = ( data) => {
+  
       setNumberOfLikesForThisPost(numberOfLikesForThisPost + 1);
       saveLikes(data);
       updatePost(data);
-    }
+    
   };
 
   const removelike = (data) => {
@@ -90,12 +86,13 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
       userId: userId,
       postId: data,
     };
+    setNumberOfLikesForThisPost(numberOfLikesForThisPost - 1);
     let list = likes.filter((item) => item.postId !== data);
-    dispatch({ type: "ADD_LIKES", value: list });
+    dispatch({ type: "UPDATE_LIKES", value: list });
     axios.post("/api/removelike", option).then((res) => {});
     socket.emit("some-like-a-post", {
       postId: postId,
-      numberOfLikes: numberOfLikes,
+      numberOfLikes: numberOfLikesForThisPost - 1,
     });
   };
 
@@ -115,7 +112,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
         <Bounce>
           <div
             onClick={(e) => {
-              handleLike(e, postId);
+              removelike(postId);
             }}
             className="icon lik active"
           >
@@ -125,7 +122,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
       ) : (
         <div
           onClick={(e) => {
-            handleLike(e, postId);
+            handleLike( postId);
           }}
           className="icon"
         >

@@ -11,7 +11,7 @@ const rootReducer = (state = store, action) => {
       return { ...state, isboxCollectionOpen: value };
     case "UPDATE_SELECTED_POSTID":
       return { ...state, postId: value };
-    case "ADD_LIKES":
+    case "UPDATE_LIKES":
       return { ...state, likes: value };
     case "UPDATE_PRO":
       return { ...state, myfitstapro: value };

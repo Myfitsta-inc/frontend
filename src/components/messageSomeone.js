@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 class MessageButton extends Component {
   message = () => {
     let option = {
-      id: this.props.friend,
+      friend: this.props.friend,
       user: this.props.users.userId,
       profileGroup: "",
       type: "inbox",

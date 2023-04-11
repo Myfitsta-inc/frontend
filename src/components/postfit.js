@@ -132,7 +132,7 @@ class Postfit extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addPost: (data) => {
-      dispatch({ type: "UPDATE_postList", data: data });
+      dispatch({ type: "UPDATE_POSTIST", data: data });
     },
   };
 };

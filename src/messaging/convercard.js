@@ -24,11 +24,12 @@ class Convercard extends Component {
         </div>
         <div className="info-about-conversation">
           <div className="name-of-fiend">
+    
             <Username user={this.props.item.userId} />
             <p className="daytn"></p>
           </div>
           <div className="last-conversation">
-            <LastMessage item={this.props.item} />
+            {/* <LastMessage item={this.props.item} /> */}
           </div>
         </div>
       </div>

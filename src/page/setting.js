@@ -185,7 +185,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <SiGooglemaps />
                   </div>
-                  <Link to={"/setting/loginActivity"}>Login Activitys</Link>
+                  <Link to={"/setting/loginActivity"}>Login Activities</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>

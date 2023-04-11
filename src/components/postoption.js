@@ -32,6 +32,7 @@ const PostOption = ({ friend, item, userId, history }) => {
       name: "",
       conversationId: "",
     };
+    console.log(friend)
 
     axios
       .post(`/api/add/to/conversattion`, option, { withCredentials: true })
