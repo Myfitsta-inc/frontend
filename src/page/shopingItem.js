@@ -150,7 +150,7 @@ class ShopingItem extends Component {
         </div>
 
         {this.state.program._id ? (
-          this.state.paybox === true ? (
+          this.state.paybox  ? (
             <PaymentOption
               handlePay={this.handlePay}
               program={this.state.program}

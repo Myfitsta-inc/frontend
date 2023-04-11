@@ -60,7 +60,7 @@ class MenuMessage extends Component {
       this.container.current &&
       !this.container.current.contains(event.target)
     ) {
-      if (this.state.open === true) {
+      if (this.state.open ) {
         this.handleclick(false, null);
       }
     } else {
@@ -77,7 +77,7 @@ class MenuMessage extends Component {
     return (
       <div
         className={`boxmrjrjerjrjnue ${
-          this.state.top === true ? "top" : "bottom"
+          this.state.top  ? "top" : "bottom"
         }`}
         ref={this.container}
       >
@@ -87,7 +87,7 @@ class MenuMessage extends Component {
           </button>
         </div>
         <div
-          className={`tisjjrjrjr ${this.state.open === true ? "active" : ""}`}
+          className={`tisjjrjrjr ${this.state.open  ? "active" : ""}`}
         >
           <div className="box-that-hold-the-setting">
             <div className="hold-thatiocom">

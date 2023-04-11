@@ -82,12 +82,12 @@ class Banking extends Component {
               type="submit"
               onClick={this.savedetail}
               className={`button button--small button--green ${
-                this.state.loading === true ? "loading" : ""
+                this.state.loading  ? "loading" : ""
               }`}
-              value={`${this.state.loading === true ? "" : "Save Email"}`}
+              value={`${this.state.loading  ? "" : "Save Email"}`}
               id="submit"
             />
-            {this.state.loading === true ? (
+            {this.state.loading  ? (
               <div className="jietiooeo">
                 {" "}
                 <LoadingSpin />

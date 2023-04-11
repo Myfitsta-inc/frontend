@@ -184,7 +184,7 @@ body {
 .wraprkrroor button {
   height: 50px;
   width: 130px;
-  border-radius: 2px;
+  border-radius: 10px;
   color: var(--text);
   font-size: 17px;
   border: 0;
@@ -550,7 +550,7 @@ body {
   -moz-user-select: none; /* Firefox all */
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
-  border-radius: 2px;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px royalblue;
 }
 .enter-emaildjkdj {
@@ -577,7 +577,7 @@ body {
   font-size: 20px;
   outline: none;
   background-color: var(--main-bg-cool-rgb);
-  border-radius: 2px;
+  border-radius: 10px;
 }
 .fjsfieiitwire {
   position: relative;

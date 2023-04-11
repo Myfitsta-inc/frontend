@@ -36,7 +36,7 @@ class PreviewVideo extends Component {
 
         <div className="control-video">
           <div onClick={this.playvideo} className="play-video">
-            {this.state.playing === true ? (
+            {this.state.playing  ? (
               ""
             ) : (
               <div className="jfjfnnerbb">

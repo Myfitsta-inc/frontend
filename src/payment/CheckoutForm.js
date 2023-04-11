@@ -55,12 +55,12 @@ function CheckoutForm({ plan, publisherId, userId }) {
           disabled={loading}
           type="submit"
           className={`button button--small button--green ${
-            loading === true ? "loading" : ""
+            loading  ? "loading" : ""
           }`}
-          value={`${loading === true ? "" : "SUBSCRIBE"}`}
+          value={`${loading  ? "" : "SUBSCRIBE"}`}
           id="submit"
         />
-        {loading === true ? (
+        {loading  ? (
           <div className="jietiooeo">
             {" "}
             <LoadingSpin />

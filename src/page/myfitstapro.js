@@ -114,7 +114,7 @@ function Myfitstapro({ history }) {
                       <div className="name-action">
                         <div className="name-pr">
                           <p>{user.username}</p>{" "}
-                          {user.verified === true ? (
+                          {user.verified  ? (
                             <p className="cheh">
                               <i className="fas fa-check"></i>
                             </p>
@@ -234,7 +234,7 @@ function Myfitstapro({ history }) {
                                 )}
                               </div>
 
-                              {item.published === true ? (
+                              {item.published  ? (
                                 <p className="published">Publish</p>
                               ) : (
                                 <p className="draft">Draft</p>

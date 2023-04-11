@@ -20,7 +20,7 @@ class DeleteProgram extends Component {
     return (
       <div
         className={`overlayrjhhntufbghjdjhb ${
-          this.props.deleteProgram === true ? "active" : ""
+          this.props.deleteProgram  ? "active" : ""
         }`}
       >
         <div className="delete-the-colletion">

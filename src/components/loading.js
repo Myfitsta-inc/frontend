@@ -6,7 +6,7 @@ class Loading extends Component {
   render() {
     return (
       <div
-        className={`loading  ${this.props.loading === true ? "active" : ""}`}
+        className={`loading  ${this.props.loading  ? "active" : ""}`}
       >
         <motion.img
           layout

@@ -132,7 +132,7 @@ class ConversationDetail extends Component {
           </div>
         </div>
         <div className="bosnjrjr-persofm">
-          {this.props.block === true ? (
+          {this.props.block  ? (
             <div onClick={this.handleDeblock} className="bloafjfkfjj">
               <div className="iconjgjjgj">
                 <BiBlock />

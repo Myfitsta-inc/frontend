@@ -238,7 +238,7 @@ input[type="number"] {
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
-  border-radius: 6px;
+  border-radius: 10px;
   flex-direction: column;
   width: 100%;
 

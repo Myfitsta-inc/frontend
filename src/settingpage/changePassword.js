@@ -145,10 +145,10 @@ class ChangePassword extends Component {
           <button
             onClick={this.handlecheck}
             className={`update-profile ${
-              this.state.active === true ? "active" : ""
+              this.state.active  ? "active" : ""
             }`}
           >
-            {this.state.succes === true ? "PASSWORD CHANGE" : "SAVE CHANGE"}
+            {this.state.succes  ? "PASSWORD CHANGE" : "SAVE CHANGE"}
           </button>
         </div>
       </div>

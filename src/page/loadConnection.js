@@ -103,7 +103,7 @@ class LoadConnection extends Component {
                               Following
                             </Link>
                           </div>
-                          {/* {this.state.profile.myfitstapro === true ? (
+                          {/* {this.state.profile.myfitstapro  ? (
                             <div
                               className={`tsgfhjked ${
                                 this.props.match.params.data === "subscriber"
@@ -157,7 +157,7 @@ class LoadConnection extends Component {
                             )}
                           </motion.div>
 
-                          {/* {this.state.profile.myfitstapro === true ? (
+                          {/* {this.state.profile.myfitstapro  ? (
                             <motion.div
                               className={`wfijiwrjwkjrnr ${
                                 this.props.match.params.data === "subscriber"

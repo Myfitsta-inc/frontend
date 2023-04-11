@@ -85,7 +85,7 @@ class RegisterThree extends Component {
     if (
       this.props.data.email.length > 0 &&
       this.props.data.username.length > 2 &&
-      Statepassword === true
+      Statepassword 
     ) {
       const userinfo = {
         email: this.props.data.email.trim(),
@@ -191,10 +191,10 @@ class RegisterThree extends Component {
         ) : (
           <button
             className={`next agreen   ${
-              this.state.loading === true ? "loading" : ""
+              this.state.loading  ? "loading" : ""
             }  `}
           >
-            {this.state.loading === true ? <LoadingSpin /> : ""}
+            {this.state.loading  ? <LoadingSpin /> : ""}
           </button>
         )}
         <div id="agreement">

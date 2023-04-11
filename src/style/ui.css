@@ -778,10 +778,11 @@
   width: 100%;
   height: 100%;
   top: 0;
-
   display: flex;
   align-items: center;
+  border-radius: 10px;
   justify-content: center;
+  overflow: hidden;
 }
 #upbox {
   width: 70px;
@@ -802,6 +803,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
+  overflow: hidden;
 }
 .title-of--thise-action {
   padding: 10px;
@@ -848,8 +850,8 @@
   height: 100%;
   border: 1px solid ridge;
   object-fit: contain;
-
   background-color: var(--main-bg-cool-rgb);
+
 }
 .toppe {
   position: absolute;
@@ -1144,7 +1146,7 @@
   border: 0;
   color: white;
   font-weight: 600;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 16px;
 }
 .wraper-tit {

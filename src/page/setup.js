@@ -43,7 +43,7 @@ class Setup extends Component {
     axios
       .post("/api/create-the-wallet", { step: 3 }, { withCredentials: true })
       .then((result) => {
-        if (result.data.succes === true) {
+        if (result.data.succes ) {
           this.setState({
             loadingButtton: false,
           });
@@ -107,7 +107,7 @@ class Setup extends Component {
     axios
       .get("/api/created-wallet", { withCredentials: true })
       .then((result) => {
-        if (result.data.succes === true) {
+        if (result.data.succes ) {
           this.setState({
             created: true,
             step: result.data.step,
@@ -188,10 +188,10 @@ class Setup extends Component {
                       <button
                         onClick={() => this.createWallet()}
                         className={`next agreen   ${
-                          this.state.loadingButtton === true ? "loading" : ""
+                          this.state.loadingButtton  ? "loading" : ""
                         }  `}
                       >
-                        {this.state.loadingButtton === true ? (
+                        {this.state.loadingButtton  ? (
                           <LoadingSpin />
                         ) : (
                           "NEXT"

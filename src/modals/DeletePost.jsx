@@ -29,7 +29,7 @@ function DeletePost() {
   };
 
   return (
-    <div className={`overlayrjhhntufbghjdjhb ${open === true ? "active" : ""}`}>
+    <div className={`overlayrjhhntufbghjdjhb ${open  ? "active" : ""}`}>
       <div className="delete-the-colletion">
         <div className="Create-a-new-list-title">
           <div

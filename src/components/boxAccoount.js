@@ -65,7 +65,7 @@ class BoxAccount extends Component {
           </div>
           <div className="jjfjjfjfjjrjrr"></div>
         </div>
-        {this.state.open === true ? (
+        {this.state.open  ? (
           <div ref={this.container} className="wraprrr-rrrj">
             <div className="boxnfjjr"></div>
             <div className="jjrrrtjjtjtt">

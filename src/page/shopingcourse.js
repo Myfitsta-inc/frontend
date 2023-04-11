@@ -79,7 +79,7 @@ class Shoping extends Component {
   };
 
   subscribe = (event) => {
-    if (this.state.subscribe === true) {
+    if (this.state.subscribe ) {
       let option = {
         pusblisherId: this.state.profile.userId,
         subScriberId: this.props.user.userId,
@@ -300,7 +300,7 @@ class Shoping extends Component {
                 this.state.program !== "no" ? (
                   <div
                     className={`hold-your-work-program ${
-                      this.state.tabsprogram === true ? "active" : ""
+                      this.state.tabsprogram  ? "active" : ""
                     }`}
                   >
                     {this.state.program !== null
@@ -340,7 +340,7 @@ class Shoping extends Component {
 
             <div
               className={`hiold-my-programs ${
-                this.state.tabscard === true ? "active" : ""
+                this.state.tabscard  ? "active" : ""
               }`}
             >
               <PersoCard />

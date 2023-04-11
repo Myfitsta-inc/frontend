@@ -89,7 +89,7 @@ class PaymentInfo extends Component {
                   <div key={item._id} className="wrapwediiriri">
                     <div
                       className={`wraskfkfofnj-crsfdnf ${
-                        item.default === true ? "active" : ""
+                        item.default  ? "active" : ""
                       } `}
                     >
                       <div className="positf">

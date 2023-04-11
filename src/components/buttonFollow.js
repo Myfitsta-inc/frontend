@@ -49,7 +49,6 @@ function ButtonFollow({ friend, activeBox }) {
     axios
       .post("/api/unfollowrequest", option, { withCredentials: true })
       .then((result) => {
-        console.log(result);
         let list = followLists.slice().filter((item) => item !== friend);
         updataFollow(list);
       });

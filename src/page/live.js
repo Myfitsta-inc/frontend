@@ -287,7 +287,7 @@ class Live extends Component {
   };
 
   sendmessage = () => {
-    if (this.state.StateLive === true) {
+    if (this.state.StateLive ) {
       if (this.state.message.length > 0) {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
@@ -323,7 +323,7 @@ class Live extends Component {
   };
 
   handleEnlive = (data) => {
-    if (data === true) {
+    if (data ) {
       this.removeMyLiveSesssion();
     }
   };
@@ -379,7 +379,7 @@ class Live extends Component {
               <div className="hold-videi-live">
                 <div
                   className={`hold-lay ${
-                    this.state.StateLive === true ? "active" : ""
+                    this.state.StateLive  ? "active" : ""
                   }`}
                 >
                   <div className="tile-o-live-prpe">
@@ -436,7 +436,7 @@ class Live extends Component {
                   muted
                   className="live"
                 ></video>
-                {this.state.StateLive === true ? (
+                {this.state.StateLive  ? (
                   <div className="wrappingf">
                     <div className="controle-the-call">
                       <button
@@ -456,7 +456,7 @@ class Live extends Component {
 
               <div
                 className={`hold-chat-live ${
-                  this.state.StateLive === true ? "active" : ""
+                  this.state.StateLive  ? "active" : ""
                 }`}
               >
                 <div className="hold-those-chat">
@@ -467,7 +467,7 @@ class Live extends Component {
                         this.openLivebox(true);
                       }}
                       className={`memu ${
-                        this.state.StateLive === true ? "active" : ""
+                        this.state.StateLive  ? "active" : ""
                       }`}
                     >
                       <i className="fas fa-ellipsis-v"></i>

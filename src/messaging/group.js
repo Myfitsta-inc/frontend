@@ -344,7 +344,7 @@ class Group extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.add === true ? (
+                {this.state.add  ? (
                   <AddParticipant
                     group={this.state.group}
                     handleaddParti={this.handleaddParti}

@@ -137,11 +137,11 @@ class CreatGroupChat extends Component {
   render() {
     return (
       <div
-        className={`gnjtjtjtjdt ${this.props.group === true ? "active" : ""}`}
+        className={`gnjtjtjtjdt ${this.props.group  ? "active" : ""}`}
       >
         <div
           className={`group-chat-box  ${
-            this.state.next === true ? "active" : ""
+            this.state.next  ? "active" : ""
           } `}
         >
           <div className="wrapeerjj">
@@ -243,7 +243,7 @@ class CreatGroupChat extends Component {
               </div>
             </div>
             <div
-              className={`fnjerfe ${this.state.next === true ? "active" : ""}`}
+              className={`fnjerfe ${this.state.next  ? "active" : ""}`}
             >
               <div className="cresjfjf">
                 <button onClick={this.nextsilde} className="close-that">

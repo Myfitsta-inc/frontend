@@ -50,12 +50,12 @@ class EditName extends Component {
     return (
       <div
         className={`edit-box-profile ${
-          this.state.editname === true ? "active" : ""
+          this.state.editname  ? "active" : ""
         }`}
       >
         <div className="wrapefjej">
           <label htmlFor="Website">Group Name</label>
-          {this.state.editname === true ? (
+          {this.state.editname  ? (
             <div onClick={this.savename} className="dibnifif">
               <GoCheck />
             </div>
@@ -67,7 +67,7 @@ class EditName extends Component {
         </div>
 
         <div className="wrwapwerisiiri">
-          {this.state.editname === true ? (
+          {this.state.editname  ? (
             <input
               onChange={this.saveChange}
               className="website-profile"

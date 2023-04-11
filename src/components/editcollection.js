@@ -47,7 +47,7 @@ class EditCollection extends Component {
     return (
       <div
         className={`change-collectlection-name ${
-          this.props.editCollection === true ? "active" : ""
+          this.props.editCollection  ? "active" : ""
         }`}
       >
         <div className="add-tocollection-boxx">
@@ -78,7 +78,7 @@ class EditCollection extends Component {
           <div className="add-collection-tolistt">
             <button
               onClick={this.saveChange}
-              className={`change ${this.state.save === true ? "active" : ""}`}
+              className={`change ${this.state.save  ? "active" : ""}`}
             >
               SAVE CHANGE
             </button>

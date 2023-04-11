@@ -66,7 +66,7 @@ class PaymentOption extends Component {
             </div>
 
             </div>*/}
-          {this.state.option === true ? (
+          {this.state.option  ? (
             <div className="payment-option">
               <div className="boixbfitjrj">Choose Payment Method</div>
               <Paymentmethod
@@ -74,7 +74,7 @@ class PaymentOption extends Component {
                 hideoption={this.hideoption}
                 handleCard={this.handleCard}
               />
-              {this.state.card === true ? (
+              {this.state.card  ? (
                 <div className="wroiriitiiir">
                   <div
                     onClick={this.handlePaymentcard}

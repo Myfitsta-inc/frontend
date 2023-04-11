@@ -135,7 +135,7 @@ class Notification extends Component {
                         this.handleSwich(true);
                       }}
                       className={`boxj-thsttjsntnd ${
-                        this.state.tabsDeafalt === true ? "active" : ""
+                        this.state.tabsDeafalt  ? "active" : ""
                       }`}
                     >
                       MYFITSTA
@@ -152,7 +152,7 @@ class Notification extends Component {
                     </div>
                   </div>
                   <div className="hold-thodisjhjijjrnbbd">
-                    {this.state.tabsDeafalt === true ? (
+                    {this.state.tabsDeafalt  ? (
                       <NotificationBasicBox userId={this.props.user.userId} />
                     ) : (
                       ""
@@ -176,7 +176,7 @@ class Notification extends Component {
           </div>
         </div>
 
-        {this.state.drop === true ? (
+        {this.state.drop  ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

@@ -27,7 +27,7 @@ class PaymentmethodCard extends Component {
       if (result.data._id) {
         if (result.data.paymentTokens.length > 0) {
           let tochoose = result.data.paymentTokens.filter(
-            (item) => item.default === true
+            (item) => item.default 
           );
           this.setState({
             payment: tochoose[0],
@@ -55,7 +55,7 @@ class PaymentmethodCard extends Component {
         loading: true,
       });
       axios.post(`/api/braintree/v1/sandbox`, option).then((result) => {
-        if (result.data.success === true) {
+        if (result.data.success ) {
           itemCouter++;
           if (itemCouter === this.props.item.length) {
             this.props.history.push("/collection/program");
@@ -81,7 +81,7 @@ class PaymentmethodCard extends Component {
               <div
                 onClick={this.handleclick}
                 className={`wraskfkfofnj-crsfdnf ${
-                  this.state.button === true ? "active" : ""
+                  this.state.button  ? "active" : ""
                 } `}
               >
                 <div className="positf active">
@@ -124,18 +124,18 @@ class PaymentmethodCard extends Component {
               <LoadingSpin />
             </div>
           )}
-          {this.state.button === true ? (
+          {this.state.button  ? (
             <div className="wraohririirii">
               <div className="controil-theaction">
                 <button
                   onClick={this.handlePay}
                   className={`add-shch ${
-                    this.state.loading === true ? "active" : ""
+                    this.state.loading  ? "active" : ""
                   }`}
                 >
-                  {this.state.loading === true ? "" : "PURCHACE"}
+                  {this.state.loading  ? "" : "PURCHACE"}
                 </button>
-                {this.state.loading === true ? (
+                {this.state.loading  ? (
                   <div className="jietiooeo">
                     {" "}
                     <LoadingSpin />

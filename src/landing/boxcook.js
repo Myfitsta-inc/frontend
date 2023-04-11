@@ -25,7 +25,7 @@ class BoxCook extends Component {
   };
 
   render() {
-    return this.state.click === true ? (
+    return this.state.click  ? (
       ""
     ) : (
       <div className="boxnfkjtotfkff">

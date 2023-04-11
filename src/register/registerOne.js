@@ -20,7 +20,7 @@ class RegisterOne extends Component {
     });
 
     axios.post(`/api/recover-my-account`, option).then((result) => {
-      if (result.data.succes === true) {
+      if (result.data.succes ) {
         this.props.handleNext(1);
       }
     });
@@ -56,10 +56,10 @@ class RegisterOne extends Component {
         ) : (
           <button
             className={`next agreen   ${
-              this.state.loading === true ? "loading" : ""
+              this.state.loading  ? "loading" : ""
             }  `}
           >
-            {this.state.loading === true ? <LoadingSpin /> : ""}
+            {this.state.loading  ? <LoadingSpin /> : ""}
           </button>
         )}
       </form>

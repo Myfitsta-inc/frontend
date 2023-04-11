@@ -107,7 +107,7 @@ class Register extends Component {
     if (
       this.state.email.length > 0 &&
       this.state.username.length > 2 &&
-      Statepassword === true
+      Statepassword 
     ) {
       const userinfo = {
         email: this.state.email.trim(),

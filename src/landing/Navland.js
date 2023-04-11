@@ -34,7 +34,7 @@ class Navland extends Component {
     return (
       <div className="wrapeeriror">
         <div
-          className={`hearderdff ${this.state.mode === true ? "active" : ""}  `}
+          className={`hearderdff ${this.state.mode  ? "active" : ""}  `}
         >
           <Link to={"/"} className="wrparpprpr">
             <div className="holthe-logo"></div>
@@ -118,8 +118,8 @@ class Navland extends Component {
 
         <div
           className={`side-bahrirr  ${
-            this.state.mode === true ? "activee" : ""
-          }    ${this.state.nav === true ? "active" : ""}`}
+            this.state.mode  ? "activee" : ""
+          }    ${this.state.nav  ? "active" : ""}`}
         >
           <div className="hold-shjtjrj">
             <div className="hlsjjjtjtjjtttr">

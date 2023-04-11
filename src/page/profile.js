@@ -35,7 +35,7 @@ class Profile extends Component {
     ); // fragment locator
 
     let result = !!pattern.test(str);
-    if (result === true) {
+    if (result ) {
       return str;
     } else {
       let modifie = `${str}.com`;
@@ -148,7 +148,7 @@ class Profile extends Component {
                           <div className="name-action">
                             <div className="name-pr">
                               {this.props.user.username}
-                              {this.props.user.verified === true ? (
+                              {this.props.user.verified  ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
                                 </div>
@@ -157,7 +157,7 @@ class Profile extends Component {
                               )}
                             </div>
                             <div className="wrpw-it">
-                              {this.props.user.canActivate === true ? (
+                              {this.props.user.canActivate  ? (
                                 <button className="edit-profile-activatge">
                                   <img src={logo} alt="logo" />
                                   <Link to="/setup"></Link>
@@ -338,7 +338,7 @@ class Profile extends Component {
                       this.chantabs(true);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged === true ? "active" : ""
+                      this.state.tagged  ? "active" : ""
                     }`}
                   >
                     TAGGED
@@ -389,7 +389,7 @@ class Profile extends Component {
                 )}
                 <div
                   className={`tabgeedhs ${
-                    this.state.tagged === true ? "active" : ""
+                    this.state.tagged  ? "active" : ""
                   }`}
                 >
                   <TagggedPost

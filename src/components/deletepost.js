@@ -9,7 +9,7 @@ class DeletePost extends Component {
     return (
       <div
         className={`overlayrjhhntufbghjdjhb ${
-          this.props.deletePost.open === true ? "active" : ""
+          this.props.deletePost.open  ? "active" : ""
         }`}
       >
         <div className="delete-the-colletion">

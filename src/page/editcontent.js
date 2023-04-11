@@ -145,7 +145,7 @@ class EditContent extends Component {
                   </div>
                   <div
                     className={`conte-thise-action ${
-                      this.state.button === true ? "active" : ""
+                      this.state.button  ? "active" : ""
                     }`}
                   >
                     <button onClick={this.saveChange} className="save">

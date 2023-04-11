@@ -21,7 +21,7 @@ class Termss extends Component {
             <Link
               to="/termsconditon"
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -38,7 +38,7 @@ class Termss extends Component {
             <Link
               to="/cookies"
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -56,7 +56,7 @@ class Termss extends Component {
             <Link
               to="/privacy"
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">

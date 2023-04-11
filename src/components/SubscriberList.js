@@ -35,7 +35,7 @@ class SubscriberList extends Component {
   };
 
   checkLoad = (data) => {
-    if (data === true) {
+    if (data ) {
       if (this.state.loading === false) {
         this.setState(
           {
@@ -89,7 +89,7 @@ class SubscriberList extends Component {
               placeholder="Seach..."
               type="text"
             />
-            {this.state.loading === true ? (
+            {this.state.loading  ? (
               <div className="cnjrrjrn">
                 <LoadingSpin />
               </div>

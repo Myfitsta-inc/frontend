@@ -86,7 +86,7 @@ class SeeCollection extends Component {
   handleChange = (event) => {};
 
   checkLoad = (data) => {
-    if (data === true) {
+    if (data ) {
       if (this.props.loading === false) {
         this.setState(
           {
@@ -171,7 +171,7 @@ class SeeCollection extends Component {
 
                   <div className="box-hold-all-collecn active">
                     {media}
-                    {this.state.loading === true ? (
+                    {this.state.loading  ? (
                       <div className="bixnknfkfjkjrjr">
                         <LoadingSpin />
                       </div>

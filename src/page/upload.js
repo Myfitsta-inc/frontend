@@ -288,7 +288,7 @@ class Upload extends Component {
       <div className="conatiner">
         <div
           className={`over-lay-when-postig  ${
-            this.state.uploadIng === true ? "active" : ""
+            this.state.uploadIng  ? "active" : ""
           }`}
         >
           <LoadingSpin />
@@ -299,7 +299,7 @@ class Upload extends Component {
             <div id="post">
               <div
                 className={`box-uploadone  ${
-                  this.state.pageOne === true ? "active" : "disp"
+                  this.state.pageOne  ? "active" : "disp"
                 }`}
               >
                 <div className="title-post">
@@ -368,7 +368,7 @@ class Upload extends Component {
 
               <div
                 className={`section-two  ${
-                  this.state.pageTwo === true ? "active" : ""
+                  this.state.pageTwo  ? "active" : ""
                 }`}
               >
                 <div className="before-upod">

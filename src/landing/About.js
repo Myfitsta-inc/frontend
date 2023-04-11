@@ -16,7 +16,7 @@ class About extends Component {
       <div
         id="fearture"
         className={`abourhrjjrjejje ${
-          this.props.mode === true ? "active" : ""
+          this.props.mode  ? "active" : ""
         } `}
       >
         <div className="detailskfnf">What do we got here?</div>
@@ -24,7 +24,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -44,7 +44,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -64,7 +64,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -84,7 +84,7 @@ class About extends Component {
           <Roll right>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -103,7 +103,7 @@ class About extends Component {
           <Roll right>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -123,7 +123,7 @@ class About extends Component {
           <Roll right>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -141,7 +141,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -161,7 +161,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">
@@ -181,7 +181,7 @@ class About extends Component {
           <Roll left>
             <div
               className={`carvjdgjjfk ${
-                this.props.mode === true ? "active" : ""
+                this.props.mode  ? "active" : ""
               } `}
             >
               <div className="iocjfjjr">

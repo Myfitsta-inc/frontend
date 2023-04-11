@@ -61,7 +61,7 @@ class Watcher extends Component {
   };
 
   sendmessage = () => {
-    if (this.state.StateLive === true) {
+    if (this.state.StateLive ) {
       if (this.state.message.length > 0) {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
@@ -93,7 +93,7 @@ class Watcher extends Component {
       })
       .then((res) => {
         if (res.data.broadcasterName) {
-          if (res.data.instant === true) {
+          if (res.data.instant ) {
             this.setState({
               data: res.data,
               title: res.data.roomName,
@@ -131,7 +131,7 @@ class Watcher extends Component {
 
         socket.emit("wacth-a-live", payload);
         socket.on("wath-accepted", (infolive) => {
-          if (infolive.succes === true) {
+          if (infolive.succes ) {
             const desc = new RTCSessionDescription(infolive.sdp);
             peer.setRemoteDescription(desc).catch((e) => console.log(e));
           } else {
@@ -239,7 +239,7 @@ class Watcher extends Component {
               <div className="hold-videi-live">
                 <div
                   className={`hold-lay ${
-                    this.state.StateLive === true ? "active" : ""
+                    this.state.StateLive  ? "active" : ""
                   }`}
                 >
                   <div className="tile-o-live-prpe">
@@ -248,7 +248,7 @@ class Watcher extends Component {
                     </div>
                     <p className="">Live Workout</p>
                   </div>
-                  {this.state.loading === true ? (
+                  {this.state.loading  ? (
                     <div className="wrapjrjrrjjrjrjjrj">
                       <LoadingSpin />
                     </div>
@@ -298,7 +298,7 @@ class Watcher extends Component {
 
               <div
                 className={`hold-chat-live ${
-                  this.state.StateLive === true ? "active" : ""
+                  this.state.StateLive  ? "active" : ""
                 }`}
               >
                 <div className="hold-those-chat">

@@ -148,7 +148,7 @@ class ConversationList extends Component {
             <LoadingSpin />
           </div>
         )}
-        {this.state.open === true ? (
+        {this.state.open  ? (
           <Newmessage
             user={this.props.user}
             handleopen={this.handleopen}

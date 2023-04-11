@@ -127,7 +127,7 @@ class Comment extends Component {
   };
 
   checkLoad = (data) => {
-    if (data === true) {
+    if (data ) {
       if (this.state.loadind === false) {
         this.setState(
           {
@@ -306,7 +306,7 @@ class Comment extends Component {
                           );
                         }
                       })}
-                      {this.state.loadind === true ? (
+                      {this.state.loadind  ? (
                         <div className="bixnknfkfjkjrjr">
                           <LoadingSpin />
                         </div>

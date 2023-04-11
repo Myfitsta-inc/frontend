@@ -396,7 +396,7 @@ button {
   height: 40px;
   color: white;
   border: 0;
-  border-radius: 2px;
+  border-radius: 10px;
 
   font-size: 16px;
 }

@@ -65,7 +65,7 @@ class Earning extends Component {
           </div>
         </div>
 
-        {this.props.user.myfitstapro === true ? (
+        {this.props.user.myfitstapro  ? (
           this.state.data !== null ? (
             <div className="earningsf-boxnjf">
               <div className="hold-thegrapgjhs-jfhtf">

@@ -15,7 +15,7 @@ class Video extends Component {
         fullscren: !this.state.fullscren,
       },
       () => {
-        if (this.state.fullscren === true) {
+        if (this.state.fullscren ) {
           document
             .exitFullscreen()
             .then(() => {})

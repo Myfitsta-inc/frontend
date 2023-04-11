@@ -84,7 +84,7 @@ class Report extends Component {
     return (
       <div
         className={`report-hiver-overt ${
-          this.props.report.open === true ? "active" : ""
+          this.props.report.open  ? "active" : ""
         }`}
       >
         <div className="box-theholf-thereport">

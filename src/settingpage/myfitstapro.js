@@ -33,7 +33,7 @@ class MyfitstaProAc extends Component {
         userId: this.props.users.userId,
       };
       axios.post(`/api/activate-myfit-sta-pro`, option).then((data) => {
-        if (data.data.succes === true) {
+        if (data.data.succes ) {
           this.props.history.push("/setup");
         } else {
         }
@@ -72,7 +72,7 @@ class MyfitstaProAc extends Component {
             <p>MYFITSTAPRO</p>
           </div>
         </div>
-        {this.props.users.myfitstapro === true ? (
+        {this.props.users.myfitstapro  ? (
           <div className="fjejtietii">
             <div className="wrpajna-thetabshs">
               <div

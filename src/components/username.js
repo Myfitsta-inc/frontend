@@ -12,7 +12,7 @@ const Username = ({ user }) => {
   return (
     <div className="usernsmr-the-compoocnf">
       {username !== null ? (
-        link === true ? (
+        link  ? (
           <div className="srjhsur">
             {username.username === username ? (
               <Link
@@ -29,7 +29,7 @@ const Username = ({ user }) => {
                 {username.username}
               </Link>
             )}
-            {username.pro === true ? (
+            {username.pro  ? (
               <div className="wfjiriej">
                 <img src={logo} />
               </div>

@@ -71,7 +71,7 @@ class ReviewMenu extends Component {
     return (
       <div
         className={`boxmrjrjerjrjnue ${
-          this.state.top === true ? "top" : "top"
+          this.state.top  ? "top" : "top"
         }`}
         ref={this.container}
       >
@@ -86,7 +86,7 @@ class ReviewMenu extends Component {
           </button>
         </div>
         <div
-          className={`tisjjrjrjr ${this.state.open === true ? "active" : ""}`}
+          className={`tisjjrjrjr ${this.state.open  ? "active" : ""}`}
         >
           <div
             className={`box-that-hold-the-setting ${

@@ -213,10 +213,10 @@ class Registraction extends Component {
             <button
               onClick={() => this.nextStep()}
               className={`next agreen   ${
-                this.state.loadingButtton === true ? "loading" : ""
+                this.state.loadingButtton  ? "loading" : ""
               }  `}
             >
-              {this.state.loadingButtton === true ? (
+              {this.state.loadingButtton  ? (
                 <LoadingSpin />
               ) : (
                 "CONTINUE"

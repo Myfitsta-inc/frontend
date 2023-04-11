@@ -349,7 +349,7 @@ img {
   background-color: #6f56e5 !important;
   color: white;
   border: 0;
-  border-radius: 2px;
+  border-radius: 10px;
   width: 95%;
   font-size: 17px;
   font-weight: 600;
@@ -501,7 +501,7 @@ video:-webkit-media-controls-panel {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 2px;
+  border-radius: 10px;
   border: 0;
 }
 .wraperjf-ffkfkr p:nth-child(2) {
@@ -947,7 +947,7 @@ video:-webkit-media-controls-panel {
 .jfjekkk .wriffjjxif button {
   width: 100px;
   height: 35px;
-  border-radius: 2px;
+  border-radius: 10px;
   border: 0;
   color: var(--text);
   font-size: 14px;
@@ -981,7 +981,7 @@ video:-webkit-media-controls-panel {
   font-size: 16px;
   font-weight: 600;
 
-  border-radius: 4px;
+  border-radius: 10px;
 }
 .rj4j53rj a {
 }
@@ -1547,7 +1547,7 @@ video:-webkit-media-controls-panel {
   font-weight: 600;
   background-color: transparent;
   border: 2px solid #6f56e5;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 .wraprrrt-follror {
   position: relative;
@@ -1681,7 +1681,7 @@ video:-webkit-media-controls-panel {
   width: 90px;
   height: 35px;
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 10px;
   color: var(--text);
   font-size: 16px;
   font-weight: 600;
@@ -1885,7 +1885,7 @@ video:-webkit-media-controls-panel {
   color: var(--text);
   border: 0;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
   border: 1px solid var(--main-bg-cool-rgb);
 }
 .wroarr-homfhjfj button {
@@ -1896,7 +1896,7 @@ video:-webkit-media-controls-panel {
   color: var(--text);
   border: 0;
   background-color: transparent;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .wraprjkrrrj {
@@ -2283,7 +2283,7 @@ video:-webkit-media-controls-panel {
   justify-content: center;
 }
 .wrwjneneew video {
-  border-radius: 2px;
+  border-radius: 10px;
 }
 .box-thatjekkek:before {
   content: "";
@@ -3045,7 +3045,7 @@ body {
   border: 0;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 .hold-that-button-that-does-it {
   height: 50px;
@@ -6075,7 +6075,7 @@ video {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
+  border-radius: 10px;
   margin: 0 auto;
 }
 

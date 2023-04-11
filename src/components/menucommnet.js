@@ -76,7 +76,7 @@ class MenuComment extends Component {
     return (
       <div
         className={`boxmrjrjerjrjnue ${
-          this.state.top === true ? "top" : "bottom"
+          this.state.top  ? "top" : "bottom"
         }`}
         ref={this.container}
       >
@@ -91,7 +91,7 @@ class MenuComment extends Component {
           </button>
         </div>
         <div
-          className={`tisjjrjrjr ${this.state.open === true ? "active" : ""}`}
+          className={`tisjjrjrjr ${this.state.open  ? "active" : ""}`}
         >
           {this.props.users.userId === this.props.item.userId ? (
             <div className="box-that-hold-the-setting">

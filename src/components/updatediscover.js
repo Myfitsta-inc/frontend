@@ -89,7 +89,7 @@ class UpdateDiscover extends Component {
       <div
         ref={this.container}
         className={`wraper-theshiirr ${
-          this.state.open === true ? "active" : ""
+          this.state.open  ? "active" : ""
         }`}
       >
         <div className="seac-box" id="search-boxxx">
@@ -99,7 +99,7 @@ class UpdateDiscover extends Component {
             }}
             className="find-con sear"
           >
-            {this.state.open === true ? <BiArrowBack /> : <CgSearch />}
+            {this.state.open  ? <BiArrowBack /> : <CgSearch />}
           </button>
           <input
             onClick={(e) => {

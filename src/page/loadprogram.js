@@ -202,7 +202,7 @@ function Loadprogram({ history }) {
                     </div> */}
                   <div
                     className={`commnentnjntjn ${
-                      comment === true ? "active" : ""
+                      comment  ? "active" : ""
                     }`}
                   >
                     {/* <div className="load-the-comnent-title">
@@ -218,7 +218,7 @@ function Loadprogram({ history }) {
 
                 <div
                   className={`showthebar-of-theother-element-player ${
-                    lecture === true ? "active" : ""
+                    lecture  ? "active" : ""
                   }`}
                 >
                   <div className="fjejdgrrfje">

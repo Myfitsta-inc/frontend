@@ -115,10 +115,10 @@ class Newmessage extends Component {
     this.seachPeopplrrre();
   };
   render() {
-    return this.props.open === true ? (
+    return this.props.open  ? (
       <div
         className={`overflow-it-newmesagee  ${
-          this.props.open === true ? "active" : ""
+          this.props.open  ? "active" : ""
         }`}
       >
         <div className="box-that-hold-the-shrare">
@@ -200,7 +200,7 @@ class Newmessage extends Component {
           </div>
 
           <div className="rhhjiushhf">
-            {this.state.loadding === true ? (
+            {this.state.loadding  ? (
               <button className="add-shch active">
                 <LoadingSpin />
               </button>
