@@ -18,10 +18,10 @@ import Navtop from "components/navtop";
 import Navbom from "components/navbom";
 import DropHomeUp from "components/dropHomeUp";
 import useUser from "hooks/useUser";
-import { useSelector ,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 const Home = () => {
   const { user } = useUser();
-const userFeeds=useSelector((state)=>state.userFeeds)
+  const userFeeds = useSelector((state) => state.userFeeds);
   const [search, setSearch] = useState(false);
   const [setting, setSetting] = useState(false);
   const [shareoption, setShareoption] = useState(false);
@@ -29,7 +29,7 @@ const userFeeds=useSelector((state)=>state.userFeeds)
   const [drop, setDrop] = useState(false);
   const [numberToLoad, setNumberToLoad] = useState(10);
   const [loading, setLoading] = useState(false);
-   const dispatch=useDispatch()
+  const dispatch = useDispatch();
   const handloption = (data) => {
     setDrop(data);
   };
@@ -69,21 +69,19 @@ const userFeeds=useSelector((state)=>state.userFeeds)
             if (userFeeds !== null) {
               let list = [...new Set([...res.data, ...userFeeds])];
               setLoading(false);
-              dispatch({type:"UPDATE_FEED",value:list})
+              dispatch({ type: "UPDATE_FEED", value: list });
             } else {
               let list = [...new Set([...res.data])];
               setLoading(false);
-              dispatch({type:"UPDATE_FEED",value:list})
-            
+              dispatch({ type: "UPDATE_FEED", value: list });
             }
           } else {
             if (userFeeds === null) {
               setLoading(false);
-              dispatch({type:"UPDATE_FEED",value:[]})
+              dispatch({ type: "UPDATE_FEED", value: [] });
             } else {
               setLoading(false);
-              dispatch({type:"UPDATE_FEED",value:userFeeds})
-
+              dispatch({ type: "UPDATE_FEED", value: userFeeds });
             }
           }
         }

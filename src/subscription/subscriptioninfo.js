@@ -28,7 +28,7 @@ class SubscriptionInfo extends Component {
       pusblisherId: this.state.data.userID,
       subScriberId: this.state.data.subScriberId,
     };
-  
+
     // axios
     //   .post("/api/cancel-my-sub-scription-plan-for-programs", option, {
     //     withCredentials: true,

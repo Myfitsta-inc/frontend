@@ -73,12 +73,10 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
     });
   };
 
-  const handleLike = ( data) => {
-  
-      setNumberOfLikesForThisPost(numberOfLikesForThisPost + 1);
-      saveLikes(data);
-      updatePost(data);
-    
+  const handleLike = (data) => {
+    setNumberOfLikesForThisPost(numberOfLikesForThisPost + 1);
+    saveLikes(data);
+    updatePost(data);
   };
 
   const removelike = (data) => {
@@ -122,7 +120,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
       ) : (
         <div
           onClick={(e) => {
-            handleLike( postId);
+            handleLike(postId);
           }}
           className="icon"
         >

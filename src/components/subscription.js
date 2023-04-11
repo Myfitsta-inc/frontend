@@ -3,8 +3,7 @@ import PaymentSub from "payment/paymentsub";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
-import { SILVER_PLAN,PLATINUM_PLAN ,GOLD_PLAN} from "productOptions/plan";
-
+import { SILVER_PLAN, PLATINUM_PLAN, GOLD_PLAN } from "productOptions/plan";
 
 class Subscribe extends Component {
   state = {
@@ -82,8 +81,9 @@ class Subscribe extends Component {
                           <div className="wharoor-the-amoiut">
                             <span>$</span>
                             <p className="price-it">
-                              {convertFromStripe(item.price,"USD" )}
-                            </p> /{" "}
+                              {convertFromStripe(item.price, "USD")}
+                            </p>{" "}
+                            /{" "}
                             <p className="title-4hh4">
                               {item.planName === SILVER_PLAN
                                 ? "month"

@@ -45,7 +45,6 @@ class Lookformyfitstapro extends Component {
             });
           }
         } else {
-;
           /// this.props.history.push("/");
         }
       });

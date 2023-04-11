@@ -8,8 +8,7 @@ import Checkout from "./Checkout";
 import PaymentMethodSub from "payment/paymentMethodSub";
 import LoadingSpin from "components/loadingspin";
 import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
-import { SILVER_PLAN,PLATINUM_PLAN } from "productOptions/plan";
-
+import { SILVER_PLAN, PLATINUM_PLAN } from "productOptions/plan";
 
 class PaymentSub extends Component {
   instance;
@@ -92,7 +91,7 @@ class PaymentSub extends Component {
                     <div className="wharoor-the-amoiut">
                       <span>$</span>
                       <p className="price-itr">
-                        {convertFromStripe(this.props.item.price,"USD")}
+                        {convertFromStripe(this.props.item.price, "USD")}
                       </p>{" "}
                       /{" "}
                       <p className="title-4hh4">

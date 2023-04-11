@@ -24,7 +24,6 @@ class Convercard extends Component {
         </div>
         <div className="info-about-conversation">
           <div className="name-of-fiend">
-    
             <Username user={this.props.item.userId} />
             <p className="daytn"></p>
           </div>

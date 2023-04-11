@@ -102,16 +102,15 @@ class Video extends Component {
 
   render() {
     return (
-  
-    <ReactPlayer
-              url={`${apiUrl.content}${this.props.data}`}
-              width="100%"
-              controls={true}
-              height="100%"
-              playing={false}
-              muted={true}
-              loop={false}
-            />
+      <ReactPlayer
+        url={`${apiUrl.content}${this.props.data}`}
+        width="100%"
+        controls={true}
+        height="100%"
+        playing={false}
+        muted={true}
+        loop={false}
+      />
       // <div className="wraproor">
       //   <div className="wrpaer-video">
       //     <video onLoadedMetadata={this.getTimeur} className="vide">

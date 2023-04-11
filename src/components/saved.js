@@ -4,9 +4,7 @@ import { withRouter } from "react-router-dom";
 class Saved extends Component {
   state = {};
 
-  loadSaved = () => {
-
-  };
+  loadSaved = () => {};
   render() {
     return (
       <div className="hold-the-saved-bodnfknrjfj">

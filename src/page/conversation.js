@@ -224,8 +224,7 @@ class Conversation extends Component {
 
   messageConnection = () => {
     socket.on("your-new-message", (data) => {
-    
-      console.log(data)
+      console.log(data);
       if (
         data.sender === this.props.match.params.id ||
         data.sender === this.props.user.userId
@@ -233,15 +232,17 @@ class Conversation extends Component {
         let listt = [...this.props.inbox];
         let foundIndex = listt.findIndex(
           (x) => x.userId === this.props.match.params.id
-        );   ;
+        );
         if (foundIndex) {
-          let message = JSON.parse(JSON.stringify(this.props.inbox[foundIndex]));
+          let message = JSON.parse(
+            JSON.stringify(this.props.inbox[foundIndex])
+          );
           message.data = Date.now();
           listt[foundIndex] = message;
           let sorted = listt.sort((a, b) => {
             return parseInt(b.data) - parseInt(a.data);
           });
-         this.props.updateInbox(sorted);
+          this.props.updateInbox(sorted);
         }
 
         let list = [...this.state.conversation, data];
