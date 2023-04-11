@@ -117,7 +117,6 @@ class Following extends Component {
                           </div>
                           <div className="wirjsjjfkkfkf">
                             <Username link={true} user={item.followingId} />
-                            {/* <Subinfo user={item.followingId} />*/}
                           </div>
                         </div>
                       </InView>
@@ -128,11 +127,9 @@ class Following extends Component {
                         </div>
                         <div className="wirjsjjfkkfkf">
                           <Username link={true} user={item.followingId} />
-                          {/*<Subinfo user={item.followingId} />*/}
                         </div>
                       </div>
                     )}
-
                     <div className="wrsokf">
                       <ButtonFollow friend={item.followingId} />
                     </div>

@@ -117,7 +117,7 @@ class Follower extends Component {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="wrprtit-peoplrkr"
-                      key={item.follower}
+                      key={item.followerId}
                     >
                       <InView
                         onChange={(inView, entry) => this.checkLoad(inView)}
@@ -129,7 +129,6 @@ class Follower extends Component {
                           </div>
                           <div className="wirjsjjfkkfkf">
                             <Username link={true} user={item.followerId} />
-                            {/* <Subinfo user={item.followerId} />*/}
                           </div>
                         </div>
                       </InView>
@@ -137,7 +136,7 @@ class Follower extends Component {
                       <div className="wrsokf">
                         <ButtonFollow
                           user={this.props.user}
-                          friend={item.follower}
+                          friend={item.followerId}
                         />
                       </div>
                     </motion.div>
@@ -149,7 +148,7 @@ class Follower extends Component {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="wrprtit-peoplrkr"
-                      key={item.follower}
+                      key={item.followerId}
                     >
                       <div className="jkrikskfjjr">
                         <div className="iconnf">
@@ -157,13 +156,13 @@ class Follower extends Component {
                         </div>
                         <div className="wirjsjjfkkfkf">
                           <Username link={true} user={item.followerId} />
-                          {/*  <Subinfo user={item.followerId} />*/}
+                
                         </div>
                       </div>
                       <div className="wrsokf">
                         <ButtonFollow
                           user={this.props.user}
-                          friend={item.follower}
+                          friend={item.followerId}
                         />
                       </div>
                     </motion.div>
