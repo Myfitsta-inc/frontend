@@ -12,7 +12,7 @@ class PostMessage extends Component {
 
   loadimgage = () => {
     axios
-      .get(`/api/imageinfo/${this.props.item.content}`, {
+      .get(`/api/postinfo/${this.props.item.content}`, {
         withCredentials: true,
       })
       .then((res) => {

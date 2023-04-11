@@ -46,6 +46,7 @@ import Lookformyfitstapro from "page/lookformyfitstapro";
 import useMyfitstaPro from "hooks/useMyfitstaPro";
 import useUser from "hooks/useUser";
 import { useSelector, useDispatch } from "react-redux";
+import DeletePost from "modals/DeletePost";
 import socket from "socketConfig";
 
 function App() {
@@ -83,10 +84,13 @@ function App() {
       });
   };
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
     if (!user) {
       const checkLogin = async () => {
         const { data } = await axios.get("/api/check-login", {
           withCredentials: true,
+          signal,
         });
         const { isLogIn, user } = data;
         if (isLogIn) {
@@ -100,6 +104,7 @@ function App() {
         } else {
           dispatch({ type: "UPDATE_USER", value: { email: "" } });
         }
+        return () => controller.abort();
       };
       checkLogin();
     }
@@ -559,6 +564,7 @@ function App() {
           </Switch>
         </AnimatePresence>
       </BrowserRouter>
+      <DeletePost />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
-import apiUrl from "apiUrl/url";
 import { connect } from "react-redux";
 
 class ReviewMenu extends Component {
@@ -129,7 +128,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch({ type: "UPDATE_REVIEW", data: data });
     },
     updataReport: (data) => {
-      dispatch({ type: "UPDATE_REPORT", data: data });
+      dispatch({ type: "UPDATE_REPORT", value: data });
     },
   };
 };

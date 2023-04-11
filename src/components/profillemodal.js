@@ -48,7 +48,7 @@ class ProfileModal extends Component {
                 </Link>
               </div>
               <div className="all">
-                <Link to={`user/${this.props.profile.username}/followingId`}>
+                <Link to={`user/${this.props.profile.username}/following`}>
                   {this.props.profile.numberOfFollowings} Following
                 </Link>
               </div>

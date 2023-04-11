@@ -13,7 +13,7 @@ const store = {
   },
   deletePost: {
     open: false,
-    file: "",
+    postId: "",
   },
   postId: "",
   isboxCollectionOpen: false,
@@ -23,6 +23,7 @@ const store = {
   iconList: [],
   postList: [],
   followLists: [],
+  userFeeds: null,
 };
 
 export default store;

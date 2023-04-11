@@ -51,7 +51,7 @@ class LoadDiscover extends Component {
   };
   loadPost = () => {
     axios
-      .get(`/api/imageinfo/${this.props.match.params.id}`, {
+      .get(`/api/postinfo/${this.props.match.params.id}`, {
         withCredentials: true,
         cancelToken: source.token,
       })

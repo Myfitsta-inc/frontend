@@ -135,7 +135,7 @@ class Earning extends Component {
               <p>lock Earnings</p>
               <p>To be able unlock Earning you need to activate MyfitstaPro</p>
               <div className="wraper-thejr">
-                <Link className="dijroooeo" to={"/setting/myfitstapropro"}>
+                <Link className="dijroooeo" to={"/setting/myfitstapro"}>
                   Check status
                 </Link>
               </div>

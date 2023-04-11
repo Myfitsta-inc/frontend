@@ -53,7 +53,7 @@ class Subcription extends Component {
         </div>
         <div className="wraper-boxx-for-siucn">
           <div className="box-table-tabs">
-            <div className="box-peopler active">Subcriptions</div>
+            <div className="box-peopler active">Subscription</div>
           </div>
 
           {this.state.list !== null ? (

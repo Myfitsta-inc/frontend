@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import "style/setting.css";
 import Mode from "settingpage/mode";
-import MyfistaProAc from "settingpage/myfitstapro";
+import MyfitstaProAc from "settingpage/myfitstapro";
 import LoginActivity from "settingpage/loginactivity";
 import PaymentInfo from "settingpage/paymentinfo";
 import Earning from "settingpage/earning";
@@ -124,7 +124,7 @@ class Setting extends Component {
                 <div
                   className={`box-that0-hold-thetabsb-m ${
                     this.props.match.params.id !== undefined
-                      ? this.props.match.params.id === "myfitstapropro"
+                      ? this.props.match.params.id === "myfitstapro"
                         ? "active "
                         : ""
                       : ""
@@ -133,7 +133,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <i className="fas fa-fire-alt"></i>
                   </div>
-                  <Link to={"/setting/myfitstapropro"}>MyFitstapro</Link>
+                  <Link to={"/setting/myfitstapro"}>MyFitstapro</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>
@@ -220,7 +220,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <MdPayment />
                   </div>
-                  <Link to={"/setting/paymentInfo"}>Payment methode</Link>
+                  <Link to={"/setting/paymentInfo"}>Payment method</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>
@@ -407,17 +407,17 @@ class Setting extends Component {
                   ""
                 )}
                 {this.props.match.params.id !== undefined ? (
-                  this.props.match.params.id === "myfitstapropro" ? (
+                  this.props.match.params.id === "myfitstapro" ? (
                     <div
                       className={`sub-wraprj-tabs ${
                         this.props.match.params.id !== undefined
-                          ? this.props.match.params.id === "myfitstapropro"
+                          ? this.props.match.params.id === "myfitstapro"
                             ? "active "
                             : ""
                           : ""
                       }`}
                     >
-                      <MyfistaProAc />
+                      <MyfitstaProAc />
                     </div>
                   ) : (
                     ""

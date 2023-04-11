@@ -395,6 +395,7 @@
   background-color: var(--main-bg-cool-rgb);
   display: none;
   z-index: 10;
+  backdrop-filter: blur(1px);
 }
 .second-box-that-hold-the-conwn {
   display: flex;
@@ -754,6 +755,7 @@
   animation: fadeInUp;
   transition: all 0.2s ease;
   animation-duration: 0.3s;
+  backdrop-filter: blur(1px);
 }
 .previews {
   width: 100%;

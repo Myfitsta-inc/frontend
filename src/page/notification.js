@@ -138,7 +138,7 @@ class Notification extends Component {
                         this.state.tabsDeafalt === true ? "active" : ""
                       }`}
                     >
-                      MyFista
+                      MYFITSTA
                     </div>
                     <div
                       onClick={() => {
@@ -148,7 +148,7 @@ class Notification extends Component {
                         this.state.tabsDeafalt === false ? "active" : ""
                       }`}
                     >
-                      MyFistapro
+                      MYFISTAPRO
                     </div>
                   </div>
                   <div className="hold-thodisjhjijjrnbbd">

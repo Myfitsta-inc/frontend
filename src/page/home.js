@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "components/seach";
-import Post from "components/post";
+import HomePageFeed from "components/HomePageFeed";
 import Nav from "components/nav";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -15,24 +15,21 @@ import { GoPlus } from "react-icons/go";
 import Report from "components/report";
 import DropOption from "components/dropHome";
 import Navtop from "components/navtop";
-import DeletePost from "components/deletepost";
 import Navbom from "components/navbom";
 import DropHomeUp from "components/dropHomeUp";
 import useUser from "hooks/useUser";
-
+import { useSelector, useDispatch } from "react-redux";
 const Home = () => {
   const { user } = useUser();
-
-  const [post, setPost] = useState(null);
+  const userFeeds = useSelector((state) => state.userFeeds);
   const [search, setSearch] = useState(false);
   const [setting, setSetting] = useState(false);
   const [shareoption, setShareoption] = useState(false);
   const [sharebox, setSharebox] = useState(false);
   const [drop, setDrop] = useState(false);
-  const [postId, setPostId] = useState("");
   const [numberToLoad, setNumberToLoad] = useState(10);
   const [loading, setLoading] = useState(false);
-
+  const dispatch = useDispatch();
   const handloption = (data) => {
     setDrop(data);
   };
@@ -69,21 +66,22 @@ const Home = () => {
       .then((res) => {
         if (res.data) {
           if (res.data.length > 0) {
-            if (post !== null) {
-              let list = [...new Set([...res.data, ...post])];
+            if (userFeeds !== null) {
+              let list = [...new Set([...res.data, ...userFeeds])];
               setLoading(false);
-              setPost(list);
+              dispatch({ type: "UPDATE_FEED", value: list });
             } else {
               let list = [...new Set([...res.data])];
               setLoading(false);
-              setPost(list);
+              dispatch({ type: "UPDATE_FEED", value: list });
             }
           } else {
-            if (post === null) {
+            if (userFeeds === null) {
               setLoading(false);
-              setPost([]);
+              dispatch({ type: "UPDATE_FEED", value: [] });
             } else {
               setLoading(false);
+              dispatch({ type: "UPDATE_FEED", value: [] });
             }
           }
         }
@@ -142,15 +140,13 @@ const Home = () => {
                   <DropOption handloption={handloption} drop={drop} />
                 </div>
 
-                {post !== null ? (
-                  post.length > 0 ? (
-                    <Post
+                {userFeeds !== null ? (
+                  userFeeds.length > 0 ? (
+                    <HomePageFeed
                       loading={loading}
                       loadmore={loadmore}
                       handleSetting={handleSetting}
                       handlOpen={handlOpen}
-                      user={user}
-                      feed={post}
                     />
                   ) : (
                     <div className="sfhej">
@@ -214,7 +210,6 @@ const Home = () => {
         ""
       )}
       <Report />
-      <DeletePost />
       {drop ? <DropHomeUp handloption={handloption} drop={drop} /> : ""}
 
       <div></div>

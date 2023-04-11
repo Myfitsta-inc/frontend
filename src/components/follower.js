@@ -125,11 +125,11 @@ class Follower extends Component {
                       >
                         <div className="jkrikskfjjr">
                           <div className="iconnf">
-                            <IconProfile user={item.follower} />
+                            <IconProfile user={item.followerId} />
                           </div>
                           <div className="wirjsjjfkkfkf">
-                            <Username link={true} user={item.follower} />
-                            {/* <Subinfo user={item.follower} />*/}
+                            <Username link={true} user={item.followerId} />
+                            {/* <Subinfo user={item.followerId} />*/}
                           </div>
                         </div>
                       </InView>
@@ -153,11 +153,11 @@ class Follower extends Component {
                     >
                       <div className="jkrikskfjjr">
                         <div className="iconnf">
-                          <IconProfile user={item.follower} />
+                          <IconProfile user={item.followerId} />
                         </div>
                         <div className="wirjsjjfkkfkf">
-                          <Username link={true} user={item.follower} />
-                          {/*  <Subinfo user={item.follower} />*/}
+                          <Username link={true} user={item.followerId} />
+                          {/*  <Subinfo user={item.followerId} />*/}
                         </div>
                       </div>
                       <div className="wrsokf">

@@ -368,6 +368,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(1px);
 }
 
 .bsjfiiif {
@@ -2640,6 +2641,7 @@ video:-webkit-media-controls-panel {
   background-color: var(--main-bg-cool-rgb);
   animation: slideInUp;
   animation-duration: 0.2s;
+  backdrop-filter: blur(1px);
 }
 .rhhjiushhf {
   width: 100%;
@@ -2853,6 +2855,7 @@ video:-webkit-media-controls-panel {
   align-items: center;
   justify-content: center;
   display: none;
+  backdrop-filter: blur(1px);
 }
 .hold-the-reviewert {
   text-align: start;

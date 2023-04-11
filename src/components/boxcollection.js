@@ -97,7 +97,7 @@ const BoxCollection = () => {
             >
               <IoCloseSharp />
             </button>
-            <p>PostCollection</p>
+            <p>Collection</p>
           </div>
           <div className="hold-my-collection">
             {listCollection !== null ? (

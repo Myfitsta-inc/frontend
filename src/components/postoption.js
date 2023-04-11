@@ -2,19 +2,30 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 import { IoEllipsisVertical } from "react-icons/io5";
-
-const PostOption = ({ friend, item, user, history }) => {
+import { useDispatch } from "react-redux";
+import { AiFillDelete } from "react-icons/ai";
+const PostOption = ({ friend, item, userId, history }) => {
+  const dispatch = useDispatch();
   const container = useRef();
   const [open, setOpen] = useState(false);
   const [top, setTop] = useState(false);
-  const [report, setReport] = useState({});
+  const [report, setReport] = useState({
+    open: true,
+    file: item._id,
+    kind: "Post",
+  });
 
-  const updataReport = () => {};
+  const updataReport = (data) => {
+    dispatch({ type: "UPDATE_REPORT", value: data });
+  };
 
+  const deletePost = async (data) => {
+    dispatch({ type: "OPEN_DELETE_POST_MODAL", value: data });
+  };
   const message = () => {
     let option = {
-      id: friend,
-      user: user.userId,
+      friend,
+      userId,
       profileGroup: "",
       type: "inbox",
       members: [],
@@ -55,7 +66,7 @@ const PostOption = ({ friend, item, user, history }) => {
         </button>
       </div>
       <div className={`tisjjrjrjr ${open ? "active" : ""}`}>
-        {user.userId !== item.userId ? (
+        {userId !== item.userId ? (
           <div
             onClick={() => {
               message();
@@ -68,7 +79,19 @@ const PostOption = ({ friend, item, user, history }) => {
             <button className="edit-the-program">Send message</button>
           </div>
         ) : (
-          ""
+          <div className="box-that-hold-the-setting">
+            <div className="hold-thatiocom">
+              <AiFillDelete />
+            </div>
+            <button
+              onClick={() => {
+                deletePost({ open: true, postId: item._id });
+              }}
+              className="edit-the-program"
+            >
+              Delete Post
+            </button>
+          </div>
         )}
 
         <div className="box-that-hold-the-setting">

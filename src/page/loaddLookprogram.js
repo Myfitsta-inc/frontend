@@ -262,7 +262,7 @@ class LoadlookProgram extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     updataReport: (data) => {
-      dispatch({ type: "UPDATE_REPORT", data: data });
+      dispatch({ type: "UPDATE_REPORT", value: data });
     },
   };
 };

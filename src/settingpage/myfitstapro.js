@@ -10,7 +10,7 @@ import Account from "pro/account";
 import { connect } from "react-redux";
 import Billing from "pro/billing";
 import SubscriberList from "components/SubscriberList";
-class MyfistaProAc extends Component {
+class MyfitstaProAc extends Component {
   state = {
     edit: false,
     button: false,
@@ -42,7 +42,7 @@ class MyfistaProAc extends Component {
   };
   componentDidUpdate(prevProps) {
     if (this.state.id !== this.props.match.params.id) {
-      if (this.props.match.params.id === "myfitstapropro") {
+      if (this.props.match.params.id === "myfitstapro") {
       }
       this.setState({ id: this.props.match.params.id });
     }
@@ -50,7 +50,7 @@ class MyfistaProAc extends Component {
 
   componentDidMount = () => {
     //this.activate()
-    if (this.props.match.params.id === "myfitstapropro") {
+    if (this.props.match.params.id === "myfitstapro") {
     }
     if (
       this.props.users.numberOfPosts >= 10 &&
@@ -80,7 +80,7 @@ class MyfistaProAc extends Component {
                   this.props.match.params.data === undefined ? "active" : ""
                 }`}
               >
-                <Link to={"/setting/myfitstapropro"}>Account</Link>
+                <Link to={"/setting/myfitstapro"}>Account</Link>
               </div>
               <div
                 className={`tabshjjjr ${
@@ -91,9 +91,7 @@ class MyfistaProAc extends Component {
                     : ""
                 }`}
               >
-                <Link to={"/setting/myfitstapropro/subscriber"}>
-                  Subscriber
-                </Link>
+                <Link to={"/setting/myfitstapro/subscriber"}>Subscriber</Link>
               </div>
               <div
                 className={`tabshjjjr ${
@@ -104,7 +102,7 @@ class MyfistaProAc extends Component {
                     : ""
                 } `}
               >
-                <Link to={"/setting/myfitstapropro/billing"}>Payment</Link>
+                <Link to={"/setting/myfitstapro/billing"}>Payment</Link>
               </div>
             </div>
             {this.props.match.params.data ? (
@@ -172,4 +170,4 @@ const mapstateToProps = (state) => {
     users: state.user,
   };
 };
-export default connect(mapstateToProps)(withRouter(MyfistaProAc));
+export default connect(mapstateToProps)(withRouter(MyfitstaProAc));

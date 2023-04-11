@@ -37,7 +37,7 @@ class PostCollection extends Component {
       });
     } else {
       axios
-        .get(`/api/imageinfo/${this.props.item}`, { withCredentials: true })
+        .get(`/api/postinfo/${this.props.item}`, { withCredentials: true })
         .then((res) => {
           if (res.data) {
             this.setState(

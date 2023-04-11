@@ -77,7 +77,7 @@ class PaymentInfo extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>Payment Methode</p>
+            <p>Payment Method</p>
           </div>
         </div>
         <div className="load-the-info-sjdjd"></div>
@@ -157,8 +157,8 @@ class PaymentInfo extends Component {
               })
             ) : (
               <div className="wraperjf-ffkfkr">
-                <p>No Payment Methode Addded</p>
-                <p>Payment Methode are added on the checkout page</p>
+                <p>No Payment Method Addded</p>
+                <p>Payment Method are added on the checkout page</p>
               </div>
             )
           ) : (

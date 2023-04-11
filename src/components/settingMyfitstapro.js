@@ -25,10 +25,7 @@ class SettingMyfiststapro extends Component {
           </button>
           <p>Setting</p>
         </div>
-        <Link
-          to={"/setting/myfitstapropro"}
-          className="box-that-hold-the-setting"
-        >
+        <Link to={"/setting/myfitstapro"} className="box-that-hold-the-setting">
           <div className="hold-thatiocom">
             <i className="fas fa-edit"></i>
           </div>

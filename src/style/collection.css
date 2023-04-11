@@ -597,6 +597,7 @@ button {
   align-items: center;
   justify-content: center;
   display: none;
+  backdrop-filter: blur(1px);
 }
 .overlay-to-deletet.active {
   display: flex;

@@ -36,7 +36,6 @@ class Lookformyfitstapro extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res.data);
         if (res.data.userId) {
           if (res.data.userId === this.props.user.userId) {
             this.props.history.push("/myfitstapro");

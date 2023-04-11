@@ -10,6 +10,7 @@ import Boxcollection from "components/boxcollection";
 import LoadingSpin from "components/loadingspin.js";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
+import addS from "utility/addS";
 import PostVue from "components/postvue";
 let source;
 source = axios.CancelToken.source();
@@ -178,7 +179,9 @@ class Profile extends Component {
                                     this.props.user.numberOfPosts
                                   )}
                                 </div>
-                                <p>Post</p>
+                                <p>
+                                  {addS("Post", this.props.user.numberOfPosts)}
+                                </p>
                               </div>
                               <Link
                                 to={`/user/${this.props.user.username}/follower`}
@@ -193,10 +196,15 @@ class Profile extends Component {
                                     this.props.user.numberOfFollowers
                                   )}
                                 </div>
-                                <p>followers</p>
+                                <p>
+                                  {addS(
+                                    "Follower",
+                                    this.props.user.numberOfFollowers
+                                  )}
+                                </p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.username}/followingId`}
+                                to={`/user/${this.props.user.username}/following`}
                                 id="followingId-nu al"
                                 className="al"
                               >
@@ -208,7 +216,12 @@ class Profile extends Component {
                                     this.props.user.numberOfFollowings
                                   )}
                                 </div>
-                                <p>Following</p>
+                                <p>
+                                  {addS(
+                                    "Following",
+                                    this.props.user.numberOfFollowings
+                                  )}
+                                </p>
                               </Link>
                             </div>
                           </div>
@@ -257,7 +270,9 @@ class Profile extends Component {
                                     this.props.user.numberOfPosts
                                   )}
                                 </div>
-                                <p>Post</p>
+                                <p>
+                                  {addS("Post", this.props.user.numberOfPosts)}
+                                </p>
                               </div>
                               <Link
                                 to={`/user/${this.props.user.username}/follower`}
@@ -272,10 +287,15 @@ class Profile extends Component {
                                     this.props.user.numberOfFollowers
                                   )}
                                 </div>
-                                <p>Followers</p>
+                                <p>
+                                  {addS(
+                                    "Follower",
+                                    this.props.user.numberOfFollowers
+                                  )}
+                                </p>
                               </Link>
                               <Link
-                                to={`/user/${this.props.user.username}/followingId`}
+                                to={`/user/${this.props.user.username}/following`}
                                 id="followingId-nu al"
                                 className="al"
                               >
@@ -287,7 +307,12 @@ class Profile extends Component {
                                     this.props.user.numberOfFollowings
                                   )}
                                 </div>
-                                <p>Following</p>
+                                <p>
+                                  {addS(
+                                    "Following",
+                                    this.props.user.numberOfFollowings
+                                  )}
+                                </p>
                               </Link>
                             </div>
                           </div>
@@ -306,7 +331,7 @@ class Profile extends Component {
                       this.state.tagged === false ? "active" : ""
                     }`}
                   >
-                    POST
+                    {addS("POST", this.props.user.numberOfPosts)}
                   </div>
                   <div
                     onClick={() => {

@@ -85,7 +85,7 @@ class Reviews extends Component {
             ) : (
               <div className="wraperififoojfhr">
                 <div className="wraperjf-ffkfkr">
-                  <p>Create a Reviews</p>
+                  <p>Write a Review</p>
                   <p>All reviews about the program will be listed here</p>
                 </div>
               </div>

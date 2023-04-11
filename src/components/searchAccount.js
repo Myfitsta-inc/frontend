@@ -63,6 +63,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
       );
 
       setPeople(data);
+      return () => controller.abort();
     };
     if (debouncedSearchInput.length) {
       fetchData();

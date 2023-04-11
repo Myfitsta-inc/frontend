@@ -14,7 +14,7 @@ class LikedNotification extends Component {
 
   getmedia = () => {
     axios
-      .get(`/api/imageinfo/${this.props.item.media}`, { withCredentials: true })
+      .get(`/api/postinfo/${this.props.item.media}`, { withCredentials: true })
       .then((res) => {
         if (res.data.filename) {
           this.setState({

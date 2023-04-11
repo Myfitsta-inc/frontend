@@ -840,8 +840,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
   height: 100%;
   border: 1px;
-
-  object-fit: cover;
+  object-fit: contain;
 }
 .dtailt-onnrnn p {
   margin-right: 10px;

@@ -13,6 +13,7 @@ import TagggedPost from "components/taggedPost";
 import MessageButton from "components/messageSomeone";
 import PostVue from "components/postvue";
 import { BiArrowBack } from "react-icons/bi";
+import addS from "utility/addS";
 let source;
 source = axios.CancelToken.source();
 class Visitpage extends Component {
@@ -252,7 +253,14 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfPosts
                                   )}
                                 </div>
-                                <p>Post</p>
+                                <p>
+                                  {addS(
+                                    "Post",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfPosts
+                                    )
+                                  )}
+                                </p>
                               </div>
                               <Link
                                 to={`/user/${this.state.profile.username}/follower`}
@@ -267,10 +275,17 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfFollowers
                                   )}
                                 </div>
-                                <p>Followers</p>
+                                <p>
+                                  {addS(
+                                    "Follower",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfFollowers
+                                    )
+                                  )}
+                                </p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.username}/followingId`}
+                                to={`/user/${this.state.profile.username}/following`}
                                 id="followingId-nu al"
                                 className="al"
                               >
@@ -282,7 +297,14 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfFollowings
                                   )}
                                 </div>
-                                <p>Following</p>
+                                <p>
+                                  {addS(
+                                    "Following",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfFollowings
+                                    )
+                                  )}
+                                </p>
                               </Link>
                             </div>
                           </div>
@@ -396,7 +418,14 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfPosts
                                   )}
                                 </div>
-                                <p>Post</p>
+                                <p>
+                                  {addS(
+                                    "Post",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfPosts
+                                    )
+                                  )}
+                                </p>
                               </div>
                               <Link
                                 to={`/user/${this.state.profile.username}/follower`}
@@ -411,10 +440,17 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfFollowers
                                   )}
                                 </div>
-                                <p>Followers</p>
+                                <p>
+                                  {addS(
+                                    "Follower",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfFollowers
+                                    )
+                                  )}
+                                </p>
                               </Link>
                               <Link
-                                to={`/user/${this.state.profile.username}/followingId`}
+                                to={`/user/${this.state.profile.username}/following`}
                                 id="followingId-nu al"
                                 className="al"
                               >
@@ -426,13 +462,20 @@ class Visitpage extends Component {
                                     this.state.profile.numberOfFollowings
                                   )}
                                 </div>
-                                <p>Following</p>
+                                <p>
+                                  {addS(
+                                    "Following",
+                                    this.nFormatter(
+                                      this.state.profile.numberOfFollowings
+                                    )
+                                  )}
+                                </p>
                               </Link>
                             </div>
                           </div>
 
                           <div className="bio-info">
-                            <p>Programer</p>
+                            <p></p>
                           </div>
                         </div>
                       </div>

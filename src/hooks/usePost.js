@@ -16,10 +16,13 @@ function usePost(postId) {
         if (found) {
           setPost(found.mediaDetails[0]);
         } else {
-          const { data } = await axios.get(`/api/imageinfo/${postId}`, {
+          const { data } = await axios.get(`/api/postinfo/${postId}`, {
             withCredentials: true,
           });
-          dispatch({ type: "UPDATE_POSTIST", value: [...allPost, data] });
+          if (data && data.userId) {
+            dispatch({ type: "UPDATE_POSTIST", value: [...allPost, data] });
+          }
+
           setPost(data);
         }
       };

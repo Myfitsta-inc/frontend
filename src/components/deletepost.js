@@ -19,7 +19,7 @@ class DeletePost extends Component {
               onClick={() => {
                 this.props.removePost({ open: false, file: "" });
               }}
-              className="back-button"
+              className="close-that"
             >
               <IoCloseSharp />
             </div>
@@ -45,7 +45,7 @@ class DeletePost extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     removePost: (data) => {
-      dispatch({ type: "DELETE_POST", data: data });
+      dispatch({ type: "DELETE_POST", value: data });
     },
   };
 };

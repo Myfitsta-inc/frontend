@@ -63,7 +63,7 @@ class LoginActivity extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>Login Activity</p>
+            <p>Login Activities</p>
           </div>
         </div>
         <div className="hols-tjsjttnej">

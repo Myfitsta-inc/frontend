@@ -10,7 +10,7 @@ class Mediafind extends Component {
   };
   finddata = () => {
     axios
-      .get(`/api/imageinfo/${this.props.postId}`, { withCredentials: true })
+      .get(`/api/postinfo/${this.props.postId}`, { withCredentials: true })
       .then((res) => {
         if (res.data._id) {
           this.setState({

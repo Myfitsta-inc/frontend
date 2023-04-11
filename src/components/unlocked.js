@@ -100,7 +100,7 @@ class Unlocked extends Component {
           ) : (
             <div className="wraperififoojfhr">
               <div className="wraperjf-ffkfkr">
-                <p>No Subsciption or Programs</p>
+                <p>No Subscription or Program</p>
                 <p>
                   When you subscribe to someone or buy a program, You will be
                   able to acces it here

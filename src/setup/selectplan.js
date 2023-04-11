@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import { SLIVER_PLAN, PLATINUM_PLAN, GOLD_PLAN } from "productOptions/plan";
+import { SILVER_PLAN, PLATINUM_PLAN, GOLD_PLAN } from "productOptions/plan";
 const SelectPlan = ({
   selectplan,
   removePlan,
@@ -45,7 +45,7 @@ const SelectPlan = ({
   const addPlan = (plan) => {
     const plans = [
       {
-        name: SLIVER_PLAN,
+        name: SILVER_PLAN,
         value: silver,
         selected: isSilverPlanSelected,
         setter: setisSilverPlanSelected,
@@ -87,7 +87,7 @@ const SelectPlan = ({
   };
 
   const setErrorMessage = (plan, message) => {
-    if (plan === SLIVER_PLAN) {
+    if (plan === SILVER_PLAN) {
       setSilverErrorMessage(message);
     } else if (plan === PLATINUM_PLAN) {
       setPlatiniumErrorMessage(message);
@@ -99,14 +99,14 @@ const SelectPlan = ({
   return (
     <div className="wrpaeorrr">
       <div className="theslider">
-        <div className="wwwr-text">Create your subscrition plans</div>
+        <div className="wwwr-text">Create your Subscription Plan</div>
       </div>
 
       <div className="sucbrcriotion-thatprice">
         <div className="wraper-thesubscriotion">
           <div
             onClick={() => {
-              addPlan(SLIVER_PLAN);
+              addPlan(SILVER_PLAN);
             }}
             className={`wrepr-arounbd0the-plan ${
               isSilverPlanSelected && "active"

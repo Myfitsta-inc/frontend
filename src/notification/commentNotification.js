@@ -14,7 +14,7 @@ class CommentNotification extends Component {
 
   getmedia = () => {
     axios
-      .get(`/api/imageinfo/${this.props.item.postId}`, {
+      .get(`/api/postinfo/${this.props.item.postId}`, {
         withCredentials: true,
       })
       .then((res) => {

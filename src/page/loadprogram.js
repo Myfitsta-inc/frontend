@@ -133,7 +133,7 @@ function Loadprogram({ history }) {
                         <button>
                           <NavLink
                             className="fjkjetj"
-                            to={`/user/${myfitstapro.username}/subscriber`}
+                            to={`/setting/myfitstapro/subscriber`}
                           >
                             Subscribers
                           </NavLink>

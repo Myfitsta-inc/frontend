@@ -547,6 +547,7 @@
   align-items: center;
   justify-content: flex-end;
   z-index: 10;
+  backdrop-filter: blur(1px);
 }
 .tti-rh {
   position: relative;
@@ -672,6 +673,7 @@
   background-color: var(--main-bg-cool-rgb);
   display: none;
   z-index: 10;
+  backdrop-filter: blur(1px);
 }
 .wraper-top {
   position: absolute;

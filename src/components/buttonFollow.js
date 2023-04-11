@@ -68,7 +68,6 @@ function ButtonFollow({ friend, activeBox }) {
         })
         .then((res) => {
           if (res.data) {
-            console.log(res.data);
             let data = followLists.slice();
             data.push(friend);
             updataFollow(data);

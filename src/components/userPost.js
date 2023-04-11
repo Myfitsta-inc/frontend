@@ -35,13 +35,14 @@ function UserPost({ postId, handleSetting }) {
     dispatch({ type: "UPDATE_BOXCOLLECTION", value: add });
     dispatch({ type: "UPDATE_SELECTED_POSTID", value: postId });
   };
+
   const { post } = usePost(postId);
   return (
     post && (
       <div className="post-box">
         <div className="info-profile top">
           <PostOption
-            user={post.userId}
+            userId={user.userId}
             item={post}
             handleSetting={handleSetting}
             friend={post.userId}

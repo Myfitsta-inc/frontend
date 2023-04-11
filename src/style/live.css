@@ -119,6 +119,7 @@
 }
 .overlay-live-info.active {
   display: flex;
+  backdrop-filter: blur(1px);
 }
 .ltvb {
   padding-bottom: 30px;
@@ -208,6 +209,7 @@
   align-items: center;
   justify-content: center;
   display: none;
+  backdrop-filter: blur(1px);
 }
 .overlay-workoiut-live-box.active {
   display: flex;

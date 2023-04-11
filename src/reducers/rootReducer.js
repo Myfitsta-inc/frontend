@@ -59,6 +59,16 @@ const rootReducer = (state = store, action) => {
         ...state,
         postList: value,
       };
+    case "OPEN_DELETE_POST_MODAL":
+      return {
+        ...state,
+        deletePost: value,
+      };
+    case "UPDATE_FEED":
+      return {
+        ...state,
+        userFeeds: value,
+      };
     default:
       return state;
   }

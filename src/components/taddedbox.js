@@ -28,7 +28,7 @@ class Tagggedbox extends Component {
 
   loaddata = () => {
     axios
-      .get(`/api/imageinfo/${this.props.item.filename}`, {
+      .get(`/api/postinfo/${this.props.item.filename}`, {
         withCredentials: true,
       })
       .then((res) => {

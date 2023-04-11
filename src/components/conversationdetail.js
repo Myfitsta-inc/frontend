@@ -52,7 +52,6 @@ class ConversationDetail extends Component {
 
   getinfo = () => {
     axios.get(`/api/profile/${this.props.match.params.id}`).then((res) => {
-      console.log(res.data);
       if (res.data.email) {
         this.setState({
           friend: res.data,

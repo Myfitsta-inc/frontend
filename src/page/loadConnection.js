@@ -92,13 +92,13 @@ class LoadConnection extends Component {
                           </div>
                           <div
                             className={`tsgfhjked ${
-                              this.props.match.params.data === "followingId"
+                              this.props.match.params.data === "following"
                                 ? "active"
                                 : ""
                             }`}
                           >
                             <Link
-                              to={`/user/${this.props.match.params.id}/followingId`}
+                              to={`/user/${this.props.match.params.id}/following`}
                             >
                               Following
                             </Link>
@@ -141,12 +141,12 @@ class LoadConnection extends Component {
                           </motion.div>
                           <motion.div
                             className={`wfijiwrjwkjrnr ${
-                              this.props.match.params.data === "followingId"
+                              this.props.match.params.data === "following"
                                 ? "active"
                                 : ""
                             }`}
                           >
-                            {this.props.match.params.data === "followingId" ? (
+                            {this.props.match.params.data === "following" ? (
                               this.state.profile !== null ? (
                                 <Following user={this.state.profile.userId} />
                               ) : (

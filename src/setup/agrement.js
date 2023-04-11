@@ -11,7 +11,7 @@ class Agreement extends Component {
     this.setState({
       loading: true,
     });
-    this.props.Activatemyfitstapropro();
+    this.props.Activatemyfitstapro();
   };
 
   handleClik = () => {
