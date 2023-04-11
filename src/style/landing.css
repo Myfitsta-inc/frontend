@@ -765,8 +765,11 @@ body {
 .hiolt-the-name {
   font-size: 20px;
   font-weight: 600;
-  color: var(--text);
   letter-spacing: 4px;
+  background-image: linear-gradient(#2ecc71, #186a3b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .trrjsjjrr {
   margin-top: 20px;

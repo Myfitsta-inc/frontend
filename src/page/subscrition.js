@@ -70,7 +70,6 @@ class Myfitstapr extends Component {
       )
       .then((res) => {
         if (res.data.success) {
-          console.log(res.data.result);
           this.setState({
             program: res.data.result,
           });

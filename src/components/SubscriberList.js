@@ -25,7 +25,6 @@ class SubscriberList extends Component {
         `/api/load-my-subscriber/${this.props.user}/${this.state.value}/${number}`
       )
       .then((result) => {
-        console.log(result);
         if (result.data !== "no") {
           this.setState({
             loading: false,

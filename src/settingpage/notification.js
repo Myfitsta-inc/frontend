@@ -47,7 +47,7 @@ class NotificationAc extends Component {
       {
         title: "Subscribers",
         detail:
-          "These notifications notify you when you have new Subscribers on MyFitstapro",
+          "These notifications notify you when you have new Subscribers on MYFITSTAPRO",
         data: ["From everyone", "From people I'am Following", "Off"],
       },
     ],

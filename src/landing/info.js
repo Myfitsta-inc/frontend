@@ -13,9 +13,9 @@ class Info extends Component {
               this.props.mode === true ? "active" : ""
             } `}
           >
-            <div className="detailskfnf white">What is MyFitsta?</div>
+            <div className="detailskfnf white">What is MYFITSTA?</div>
             <div className="smajkkrrjr white">
-              Myfitsta is a social fitness platform that is changing the way
+              MYFITSTA is a social fitness platform that is changing the way
               people think about fitness. It is a platform that allows anyone to
               buy and sell programs. it helps you achieve your fitness goals, by
               surrounding you with a supportive community.

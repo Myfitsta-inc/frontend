@@ -82,7 +82,7 @@ function Nav() {
                 <div className={`ic ${user.myfitstapro && "pro"}`}>
                   <i className="fas fa-fire-alt"></i>
                 </div>
-                <p>MyFitstapro</p>
+                <p>MYFITSTAPRO</p>
               </NavLink>
 
               <NavLink

@@ -22,7 +22,6 @@ function DeletePost() {
     await axios.post("/api/deletepost", { postId: postId });
     const newPostList = postList.filter((post) => post._id !== postId);
     const newFeeds = userFeeds.filter((id) => id !== postId);
-    console.log(newPostList, newFeeds);
     dispatch({ type: "UPDATE_POSTIST", value: newPostList });
     dispatch({ type: "UPDATE_FEED", value: newFeeds });
     closeModal();

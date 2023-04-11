@@ -60,7 +60,7 @@ class Conversation extends Component {
             let sorted = listt.sort((a, b) => {
               return parseInt(b.data) - parseInt(a.data);
             });
-            console.log(sorted)
+
             this.props.updateInbox(sorted);
           }
           let message = res.data.message[res.data.message.length - 1];

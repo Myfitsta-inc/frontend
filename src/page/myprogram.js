@@ -115,7 +115,6 @@ class Myprogram extends Component {
         cancelToken: source.token,
       })
       .then((res) => {
-        console.log(res.data, "jjjjjjjj");
         if (res.data.programId) {
           this.setState({
             program: res.data,

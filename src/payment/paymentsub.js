@@ -7,6 +7,10 @@ import axios from "axios";
 import Checkout from "./Checkout";
 import PaymentMethodSub from "payment/paymentMethodSub";
 import LoadingSpin from "components/loadingspin";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
+import { SILVER_PLAN,PLATINUM_PLAN } from "productOptions/plan";
+
+
 class PaymentSub extends Component {
   instance;
   state = {
@@ -88,13 +92,13 @@ class PaymentSub extends Component {
                     <div className="wharoor-the-amoiut">
                       <span>$</span>
                       <p className="price-itr">
-                        {this.props.item.price / 100}
+                        {convertFromStripe(this.props.item.price,"USD")}
                       </p>{" "}
                       /{" "}
                       <p className="title-4hh4">
-                        {this.props.item.planName === "silver"
+                        {this.props.item.planName === SILVER_PLAN
                           ? "month"
-                          : this.props.item.planName === "platinum"
+                          : this.props.item.planName === PLATINUM_PLAN
                           ? "3 month"
                           : "Year"}
                       </p>

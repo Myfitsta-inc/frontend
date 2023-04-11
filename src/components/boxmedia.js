@@ -31,7 +31,7 @@ function BoxMedia({ mediaDetails }) {
         mediaDetails[0].mimetype.includes("image") ? (
           <img src={`${apiUrl.content}${mediaDetails[0].key}`} alt="workout" />
         ) : (
-          <VideoPost src={mediaDetails[0].key} />
+          <VideoPost src={`${apiUrl.content}${mediaDetails[0].key}`} />
         )
       ) : (
         <div className="multipla-content">

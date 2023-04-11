@@ -5,7 +5,7 @@ class Saved extends Component {
   state = {};
 
   loadSaved = () => {
-    console.log("jjtjj");
+
   };
   render() {
     return (

@@ -69,7 +69,7 @@ class MyfitstaProAc extends Component {
             <div onClick={this.goBack} className="close-that">
               <BiArrowBack />
             </div>
-            <p>MyFitstapro</p>
+            <p>MYFITSTAPRO</p>
           </div>
         </div>
         {this.props.users.myfitstapro === true ? (
@@ -117,7 +117,7 @@ class MyfitstaProAc extends Component {
           </div>
         ) : (
           <div className="wrpefrirrrj">
-            <div className="tifiooif">What can you do with MyFitstapro?</div>
+            <div className="tifiooif">What can you do with MYFITSTAPRO?</div>
 
             <div className="wtapthensjjfjt">
               <div className="class-boxx">

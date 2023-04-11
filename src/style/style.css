@@ -2744,7 +2744,6 @@ video:-webkit-media-controls-panel {
   color: var(--text);
 }
 .ksiiriijr {
-  border-bottom: 1px solid var(--main-bg-cool-rgb);
   height: 100%;
   display: flex;
   justify-content: center;

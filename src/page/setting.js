@@ -133,7 +133,7 @@ class Setting extends Component {
                   <div className="back-buttont">
                     <i className="fas fa-fire-alt"></i>
                   </div>
-                  <Link to={"/setting/myfitstapro"}>MyFitstapro</Link>
+                  <Link to={"/setting/myfitstapro"}>MYFITSTAPRO</Link>
                   <div className="back-button">
                     <RiArrowRightSLine />
                   </div>

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import apiUrl from "apiUrl/url";
 import { GrPlayFill, GrPauseFill } from "react-icons/gr";
+import ReactPlayer from "react-player";
 class Video extends Component {
   state = {
-    playing: false,
+    playing: true,
     x: null,
     fullscren: false,
   };
@@ -101,55 +102,65 @@ class Video extends Component {
 
   render() {
     return (
-      <div className="wraproor">
-        <div className="wrpaer-video">
-          <video onLoadedMetadata={this.getTimeur} className="vide">
-            <source src={`${apiUrl.content}${this.props.data}`} />
-          </video>
-        </div>
+  
+    <ReactPlayer
+              url={`${apiUrl.content}${this.props.data}`}
+              width="100%"
+              controls={true}
+              height="100%"
+              playing={false}
+              muted={true}
+              loop={false}
+            />
+      // <div className="wraproor">
+      //   <div className="wrpaer-video">
+      //     <video onLoadedMetadata={this.getTimeur} className="vide">
+      //       <source src={`${apiUrl.content}${this.props.data}`} />
+      //     </video>
+      //   </div>
 
-        <div
-          className={`control-theelment ${
-            this.state.playing === false ? "active" : ""
-          }`}
-        >
-          <div className="control-bar">
-            <div className="bar-that-show-it">
-              <div className="progress-bar"></div>
-            </div>
-          </div>
-          <div className="control-action-video">
-            <div className="wraper-div-actionr-omne">
-              <div className="play-or-pause-media">
-                <div className="play-that-orpause-tie" onClick={this.play}>
-                  {this.state.playing === false ? (
-                    <GrPlayFill style={{ fill: "white" }} size={20} />
-                  ) : (
-                    <GrPauseFill />
-                  )}
-                </div>
-              </div>
+      //   <div
+      //     className={`control-theelment ${
+      //       this.state.playing === false ? "active" : ""
+      //     }`}
+      //   >
+      //     <div className="control-bar">
+      //       <div className="bar-that-show-it">
+      //         <div className="progress-bar"></div>
+      //       </div>
+      //     </div>
+      //     <div className="control-action-video">
+      //       <div className="wraper-div-actionr-omne">
+      //         <div className="play-or-pause-media">
+      //           <div className="play-that-orpause-tie" onClick={this.play}>
+      //             {this.state.playing === false ? (
+      //               <GrPlayFill style={{ fill: "white" }} size={20} />
+      //             ) : (
+      //               <GrPauseFill />
+      //             )}
+      //           </div>
+      //         </div>
 
-              <div className="soud-or-pause-media">
-                <i className="fas fa-volume-up"></i>
-              </div>
+      //         <div className="soud-or-pause-media">
+      //           <i className="fas fa-volume-up"></i>
+      //         </div>
 
-              <div className="timeur-intheplayyer">
-                <div className="box-hold-thsttimeur">
-                  <p className="curent-timeu">0:00</p>/
-                  <p className="end-entimeur">0:00</p>
-                </div>
-              </div>
-            </div>
-            <div onClick={this.fullScreen} className="wraper-div-actionr-two">
-              <div className="expandx">
-                <i className="fas fa-expand"></i>
-              </div>
-            </div>
-          </div>
-          <div className="click-toplay-orpay"></div>
-        </div>
-      </div>
+      //         <div className="timeur-intheplayyer">
+      //           <div className="box-hold-thsttimeur">
+      //             <p className="curent-timeu">0:00</p>/
+      //             <p className="end-entimeur">0:00</p>
+      //           </div>
+      //         </div>
+      //       </div>
+      //       <div onClick={this.fullScreen} className="wraper-div-actionr-two">
+      //         <div className="expandx">
+      //           <i className="fas fa-expand"></i>
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <div className="click-toplay-orpay"></div>
+      //   </div>
+      // </div>
     );
   }
 }

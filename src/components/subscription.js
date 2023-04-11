@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import PaymentSub from "payment/paymentsub";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
+import { SILVER_PLAN,PLATINUM_PLAN ,GOLD_PLAN} from "productOptions/plan";
+
+
 class Subscribe extends Component {
   state = {
     selected: null,
@@ -40,7 +44,7 @@ class Subscribe extends Component {
               >
                 <IoCloseSharp />
               </button>
-              <p>Subcribe</p>
+              <p>Subscribe</p>
             </div>
           </div>
           <div className="hold-thesubcribe">
@@ -65,7 +69,7 @@ class Subscribe extends Component {
                         <div
                           className={`wrepr-arounbd0the-plan ${
                             this.state.selected !== null
-                              ? item.planName == this.state.selected.planName
+                              ? item.planName === this.state.selected.planName
                                 ? "active"
                                 : ""
                               : ""
@@ -78,13 +82,13 @@ class Subscribe extends Component {
                           <div className="wharoor-the-amoiut">
                             <span>$</span>
                             <p className="price-it">
-                              {item.price / 100}
+                              {convertFromStripe(item.price,"USD" )}
                             </p> /{" "}
                             <p className="title-4hh4">
-                              {item.planName === "silver"
+                              {item.planName === SILVER_PLAN
                                 ? "month"
-                                : item.planName === "platinum"
-                                ? "3 month"
+                                : item.planName === PLATINUM_PLAN
+                                ? "3 months"
                                 : "Year"}
                             </p>
                           </div>

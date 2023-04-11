@@ -60,7 +60,6 @@ class ConversationList extends Component {
       })
       .then((res) => {
         if (res.data !== "no") {
-          console.log(res.data)
           this.props.updateInbox(res.data);
         } else {
           this.props.updateInbox([]);
@@ -71,7 +70,6 @@ class ConversationList extends Component {
   componentDidMount = (e) => {
     this.getConversation();
     socket.on("new-coversation-or-message", (data) => {
-      console.log("kkkkkkk")
       this.getConversation();
     });
   };
