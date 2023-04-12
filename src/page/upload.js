@@ -421,7 +421,7 @@ class Upload extends Component {
                   <div id="add-tags">
                     <input
                       onChange={this.filtertags}
-                      onKeyDown={this.inputKeyDown}
+                      onKeyPress={this.inputKeyDown}
                       value={this.state.item}
                       type="text"
                       placeholder="Add a tags..."
