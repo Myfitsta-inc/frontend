@@ -38,13 +38,13 @@ class Upload extends Component {
 
   filtertags = (e) => {
     this.setState({
-      item: e.target.value.trim(),
+      item: e.target.value,
     });
   };
   inputKeyDown = (e) => {
     if (e.key===" ") {
       if (this.state.item.trim().length > 0 && this.state.tags.length <= 15) {
-        let list = [...this.state.tags, this.state.item];
+        let list = [...this.state.tags, this.state.item.trim()];
         this.setState({
           tags: list,
           item: "",
