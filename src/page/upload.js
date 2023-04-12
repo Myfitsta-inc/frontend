@@ -42,7 +42,7 @@ class Upload extends Component {
     });
   };
   inputKeyDown = (e) => {
-    if (e.keyCode === 13 || e.keyCode === 32 ||e.keyCode  === 0 || e.keyCode  === 229) {
+    if (e.keyCode === 13 || e.keyCode === 32 || e.keyCode  === 229) {
       if (this.state.item.trim().length > 0 && this.state.tags.length <= 15) {
         let list = [...this.state.tags, this.state.item];
         this.setState({
