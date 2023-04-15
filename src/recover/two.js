@@ -25,7 +25,7 @@ class Two extends Component {
         loading: true,
       });
       axios.post(`/api/verifie-your-code`, option).then((result) => {
-        if (result.data.succes ) {
+        if (result.data.succes) {
           this.props.move(3);
         } else {
         }

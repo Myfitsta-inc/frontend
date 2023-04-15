@@ -44,7 +44,7 @@ class PaymentSub extends Component {
       if (result.data._id) {
         if (result.data.paymentMethods.length > 0) {
           let tochoose = result.data.paymentMethods.filter(
-            (item) => item.default 
+            (item) => item.default
           );
           this.setState({
             paymentMethod: tochoose[0],

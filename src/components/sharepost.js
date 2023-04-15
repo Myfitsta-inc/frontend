@@ -130,7 +130,7 @@ class SharePost extends Component {
     return (
       <div
         className={`overlay-that-holt-it  ${
-          this.props.sharebox  ? "active" : ""
+          this.props.sharebox ? "active" : ""
         }`}
       >
         <div className="box-that-hold-the-shrare">
@@ -205,7 +205,7 @@ class SharePost extends Component {
           </div>
 
           <div className="rhhjiushhf">
-            {this.state.loading  ? (
+            {this.state.loading ? (
               <button onClick={this.continue} className="add-shch active">
                 <LoadingSpin />
               </button>

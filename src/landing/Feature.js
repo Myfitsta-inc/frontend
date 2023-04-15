@@ -921,9 +921,7 @@ class Feature extends Component {
         </Fade>
         <Fade bottom>
           <div
-            className={`featyu-aboutb-app ${
-              this.props.mode  ? "active" : ""
-            } `}
+            className={`featyu-aboutb-app ${this.props.mode ? "active" : ""} `}
           >
             <div className="detailskfnf white">
               Why are we the best at what we do?

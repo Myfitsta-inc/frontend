@@ -20,9 +20,7 @@ class Termss extends Component {
           <div className="wrpsjrirr">
             <Link
               to="/termsconditon"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
@@ -37,9 +35,7 @@ class Termss extends Component {
             </Link>
             <Link
               to="/cookies"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
@@ -55,9 +51,7 @@ class Termss extends Component {
 
             <Link
               to="/privacy"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">

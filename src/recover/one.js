@@ -30,7 +30,7 @@ class One extends Component {
     });
 
     axios.post(`/api/recover-my-account`, option).then((result) => {
-      if (result.data.succes ) {
+      if (result.data.succes) {
         this.props.move(2);
       }
     });
@@ -63,14 +63,14 @@ class One extends Component {
           {this.state.messageusername}
         </p>
 
-        {this.state.loading  ? (
+        {this.state.loading ? (
           <div className="controil-theaction">
             <button
               className={`next agreen   ${
-                this.state.loading  ? "loading" : ""
+                this.state.loading ? "loading" : ""
               }  `}
             >
-              {this.state.loading  ? <LoadingSpin /> : "NEXT"}
+              {this.state.loading ? <LoadingSpin /> : "NEXT"}
             </button>
           </div>
         ) : (

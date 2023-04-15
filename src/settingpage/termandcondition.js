@@ -27,9 +27,7 @@ class TermCondition extends Component {
           <div className="wrpsjrirrr">
             <Link
               to="/termsconditon"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
@@ -44,9 +42,7 @@ class TermCondition extends Component {
             </Link>
             <Link
               to="/cookies"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
@@ -62,9 +58,7 @@ class TermCondition extends Component {
 
             <Link
               to="/privacy"
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
+              className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}
             >
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">

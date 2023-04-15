@@ -164,7 +164,7 @@ class Editprogram extends Component {
 
           <div
             className={`conte-thise-action ${
-              this.state.button  ? "active" : ""
+              this.state.button ? "active" : ""
             } ${this.state.loading && "loading"}`}
           >
             <button

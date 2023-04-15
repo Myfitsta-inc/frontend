@@ -40,7 +40,7 @@ class ProgramMessage extends Component {
   };
   render() {
     return this.state.show !== null ? (
-      this.state.show  ? (
+      this.state.show ? (
         <div className="wrspejrj-profilej chh">
           <div className="header-post vbf ">
             <div className="icon0tjnnr">

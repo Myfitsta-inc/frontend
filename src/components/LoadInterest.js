@@ -58,7 +58,7 @@ function LoadInterest() {
   };
 
   const handleLoad = (data) => {
-    if (data ) {
+    if (data) {
       if (loading === false) {
         setNumberLoad(numberLoad + 10);
       } else {

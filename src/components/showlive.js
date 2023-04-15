@@ -41,9 +41,7 @@ export default class ShowLive extends Component {
   render() {
     return (
       <div
-        className={`liv-workot-streaming  ${
-          this.state.open  ? "active" : ""
-        }`}
+        className={`liv-workot-streaming  ${this.state.open ? "active" : ""}`}
       >
         <div className="titeehwhle">Live Streaming</div>
         <div className="holfk-fnnfnf">

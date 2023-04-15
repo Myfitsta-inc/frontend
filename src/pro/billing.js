@@ -29,7 +29,7 @@ class Billing extends Component {
     axios
       .get("/api/load-my-finanicial/data-fic", { withCredentials: true })
       .then((result) => {
-        if (result.data.success ) {
+        if (result.data.success) {
           this.setState({
             wallet: result.data,
           });
@@ -103,7 +103,7 @@ class Billing extends Component {
             </div>
           </div>
         </div>
-        {this.state.bank  ? (
+        {this.state.bank ? (
           <Banking
             getData={this.getData}
             data={this.state.data}

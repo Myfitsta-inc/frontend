@@ -20,7 +20,7 @@ class RelatedPost extends Component {
   };
 
   checkLoad = (data) => {
-    if (data ) {
+    if (data) {
       if (this.state.loading === false) {
         this.setState(
           {
@@ -78,7 +78,7 @@ class RelatedPost extends Component {
             return <UserPost postId={item._id} />;
           }
         })}
-        {this.state.loading  ? (
+        {this.state.loading ? (
           <div className="bixnknfkfjkjrjr">
             <LoadingSpin />
           </div>

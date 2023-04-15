@@ -70,9 +70,7 @@ class ReviewMenu extends Component {
   render() {
     return (
       <div
-        className={`boxmrjrjerjrjnue ${
-          this.state.top  ? "top" : "top"
-        }`}
+        className={`boxmrjrjerjrjnue ${this.state.top ? "top" : "top"}`}
         ref={this.container}
       >
         <div className="title-of--thise-action">
@@ -85,9 +83,7 @@ class ReviewMenu extends Component {
             <IoEllipsisHorizontalSharp />
           </button>
         </div>
-        <div
-          className={`tisjjrjrjr ${this.state.open  ? "active" : ""}`}
-        >
+        <div className={`tisjjrjrjr ${this.state.open ? "active" : ""}`}>
           <div
             className={`box-that-hold-the-setting ${
               this.props.item.userId !== this.props.users.userId

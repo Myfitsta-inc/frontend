@@ -21,7 +21,7 @@ class Verification extends Component {
             verify: result.data.verification,
           });
 
-          if (result.data.verification ) {
+          if (result.data.verification) {
             x = setInterval(() => {
               this.checkVerification();
             }, 3000);

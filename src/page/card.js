@@ -266,7 +266,7 @@ class Card extends Component {
             )}
           </div>
         </div>
-        {this.state.checkout  ? (
+        {this.state.checkout ? (
           <PaymentBoxCard
             handleCheckout={this.handleCheckout}
             item={this.state.item}

@@ -74,7 +74,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
 
   return (
     <>
-      <div className={`box-find ${tabs  ? "active" : ""}`}>
+      <div className={`box-find ${tabs ? "active" : ""}`}>
         <p>
           <i className="fas fa-search"></i>
         </p>

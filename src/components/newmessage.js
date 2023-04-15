@@ -115,11 +115,9 @@ class Newmessage extends Component {
     this.seachPeopplrrre();
   };
   render() {
-    return this.props.open  ? (
+    return this.props.open ? (
       <div
-        className={`overflow-it-newmesagee  ${
-          this.props.open  ? "active" : ""
-        }`}
+        className={`overflow-it-newmesagee  ${this.props.open ? "active" : ""}`}
       >
         <div className="box-that-hold-the-shrare">
           <div className="title-of--thise-action">
@@ -200,7 +198,7 @@ class Newmessage extends Component {
           </div>
 
           <div className="rhhjiushhf">
-            {this.state.loadding  ? (
+            {this.state.loadding ? (
               <button className="add-shch active">
                 <LoadingSpin />
               </button>

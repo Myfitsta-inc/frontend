@@ -22,7 +22,7 @@ class Three extends Component {
 
   handeSubmit = (e) => {
     e.preventDefault();
-    if (this.CheckPassword(this.state.password) ) {
+    if (this.CheckPassword(this.state.password)) {
       if (this.state.password === this.state.repassword) {
       } else {
         this.setState({
@@ -36,7 +36,7 @@ class Three extends Component {
     }
 
     if (
-      this.CheckPassword(this.state.password)  &&
+      this.CheckPassword(this.state.password) &&
       this.state.password === this.state.repassword
     ) {
       let option = {
@@ -44,7 +44,7 @@ class Three extends Component {
         newPassword: this.state.password,
       };
       axios.post("/api/update-password", option).then((result) => {
-        if (result.data.succes ) {
+        if (result.data.succes) {
           this.props.history.push("/login");
         }
       });

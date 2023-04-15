@@ -15,7 +15,7 @@ class VideoProgram extends Component {
         fullscren: !this.state.fullscren,
       },
       () => {
-        if (this.state.fullscren ) {
+        if (this.state.fullscren) {
           document
             .exitFullscreen()
             .then(() => {})

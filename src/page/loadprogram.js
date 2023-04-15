@@ -200,11 +200,7 @@ function Loadprogram({ history }) {
                         Comment
                       </div>
                     </div> */}
-                  <div
-                    className={`commnentnjntjn ${
-                      comment  ? "active" : ""
-                    }`}
-                  >
+                  <div className={`commnentnjntjn ${comment ? "active" : ""}`}>
                     {/* <div className="load-the-comnent-title">
                         <p>{media.numberOfComments} Comment</p>
                       </div>
@@ -218,7 +214,7 @@ function Loadprogram({ history }) {
 
                 <div
                   className={`showthebar-of-theother-element-player ${
-                    lecture  ? "active" : ""
+                    lecture ? "active" : ""
                   }`}
                 >
                   <div className="fjejdgrrfje">

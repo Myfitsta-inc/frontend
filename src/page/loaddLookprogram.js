@@ -168,14 +168,14 @@ class LoadlookProgram extends Component {
 
                     <div
                       className={`commnentnjntjn ${
-                        this.state.comment  ? "active" : ""
+                        this.state.comment ? "active" : ""
                       }`}
                     ></div>
                   </div>
 
                   <div
                     className={`showthebar-of-theother-element-player ${
-                      this.state.lecture  ? "active" : ""
+                      this.state.lecture ? "active" : ""
                     }`}
                   >
                     <div className="fjejdgrrfje">

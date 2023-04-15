@@ -145,10 +145,10 @@ class Login extends Component {
             ) : (
               <button
                 className={`next agreen   ${
-                  this.state.loading  ? "loading" : ""
+                  this.state.loading ? "loading" : ""
                 }  `}
               >
-                {this.state.loading  ? <LoadingSpin /> : ""}
+                {this.state.loading ? <LoadingSpin /> : ""}
               </button>
             )}
             <div id="agreement">

@@ -293,7 +293,7 @@ class Myprogram extends Component {
                   </div>
                 </div>
 
-                {this.state.program.published  ? (
+                {this.state.program.published ? (
                   <p className="published rr">Publish</p>
                 ) : (
                   <p className="draft rr">Draft</p>
@@ -305,7 +305,7 @@ class Myprogram extends Component {
                       this.changetabs(true, false);
                     }}
                     className={`tabs-tonore ${
-                      this.state.tabsprogram  ? "active" : ""
+                      this.state.tabsprogram ? "active" : ""
                     }`}
                   >
                     Content
@@ -315,7 +315,7 @@ class Myprogram extends Component {
                       this.changetabs(false, true);
                     }}
                     className={`tabs-tonore ${
-                      this.state.reviewtabs  ? "active" : ""
+                      this.state.reviewtabs ? "active" : ""
                     }`}
                   >
                     Reviews
@@ -328,7 +328,7 @@ class Myprogram extends Component {
                       tabsprogram={this.state.tabsprogram}
                       item={this.state.item}
                     />
-                  ) : this.state.tabsprogram  ? (
+                  ) : this.state.tabsprogram ? (
                     <div className="wisiffii">
                       <div className="wraperififoojfhr">
                         <div className="wraperjf-ffkfkr">
@@ -373,7 +373,7 @@ class Myprogram extends Component {
         </div>
 
         {this.state.program.programId ? (
-          this.state.edit  ? (
+          this.state.edit ? (
             <Editprogram
               getProgramInfo={this.getProgramInfo}
               handlepublish={this.handlepublish}
@@ -404,8 +404,8 @@ class Myprogram extends Component {
           ""
         )}
 
-        {this.state.upload  ? (
-          this.state.upload  ? (
+        {this.state.upload ? (
+          this.state.upload ? (
             <UploadInProgram
               looadProgram={this.looadProgram}
               handlUpload={this.handlUpload}
@@ -420,7 +420,7 @@ class Myprogram extends Component {
           ""
         )}
         {this.state.program.programId ? (
-          this.state.published  ? (
+          this.state.published ? (
             <Publish
               changePublichState={this.changePublichState}
               content={this.state.item}

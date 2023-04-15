@@ -48,9 +48,7 @@ class Settinginterest extends Component {
   render() {
     return (
       <div
-        className={`boxmrjrjerjrjnue ${
-          this.state.top  ? "top" : "bottom"
-        }`}
+        className={`boxmrjrjerjrjnue ${this.state.top ? "top" : "bottom"}`}
         ref={this.container}
       >
         <div className="title-of--thise-action">
@@ -63,9 +61,7 @@ class Settinginterest extends Component {
             <IoEllipsisVertical />
           </button>
         </div>
-        <div
-          className={`tisjjrjrjr ${this.state.open  ? "active" : ""}`}
-        >
+        <div className={`tisjjrjrjr ${this.state.open ? "active" : ""}`}>
           <div className="box-that-hold-the-setting">
             <div className="hold-thatiocom">
               <MdEdit />

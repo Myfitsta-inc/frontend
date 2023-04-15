@@ -85,7 +85,7 @@ class RegisterThree extends Component {
     if (
       this.props.data.email.length > 0 &&
       this.props.data.username.length > 2 &&
-      Statepassword 
+      Statepassword
     ) {
       const userinfo = {
         email: this.props.data.email.trim(),
@@ -190,11 +190,9 @@ class RegisterThree extends Component {
           <input id="register" type="submit" value="Join" />
         ) : (
           <button
-            className={`next agreen   ${
-              this.state.loading  ? "loading" : ""
-            }  `}
+            className={`next agreen   ${this.state.loading ? "loading" : ""}  `}
           >
-            {this.state.loading  ? <LoadingSpin /> : ""}
+            {this.state.loading ? <LoadingSpin /> : ""}
           </button>
         )}
         <div id="agreement">

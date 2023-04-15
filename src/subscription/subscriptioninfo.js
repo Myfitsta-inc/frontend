@@ -134,7 +134,7 @@ class SubscriptionInfo extends Component {
 
         <div className="button-busnn-bossn">
           {this.state.data !== null ? (
-            this.state.data.hasActiveSubscription  ? (
+            this.state.data.hasActiveSubscription ? (
               <button onClick={this.cancelSubscription}>Unsubscribe</button>
             ) : (
               <button>Subscribe</button>
@@ -143,7 +143,7 @@ class SubscriptionInfo extends Component {
             ""
           )}
         </div>
-        {this.state.unbscribe  ? (
+        {this.state.unbscribe ? (
           <div className="unbribeijsjjfjfj">
             <div className="delete-the-colletion ajrjjrj">
               <div className="title-of--thise-action">
@@ -163,7 +163,7 @@ class SubscriptionInfo extends Component {
                   : ""}{" "}
               </div>
               <div className="conte-thise-actionrrr active">
-                {this.state.loadinUnb  ? (
+                {this.state.loadinUnb ? (
                   <button>
                     <LoadingSpin />
                   </button>

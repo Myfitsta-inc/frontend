@@ -40,7 +40,7 @@ class Search extends Component {
   };
 
   loadMore = (data) => {
-    if (data ) {
+    if (data) {
       this.setState(
         {
           loadPeople: this.state.loadPeople + 5,

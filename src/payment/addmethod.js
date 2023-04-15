@@ -33,7 +33,7 @@ class AddMethod extends Component {
             </button>
             <p>Add Payment Method</p>
           </div>
-          {this.state.option  ? (
+          {this.state.option ? (
             <div className="wroiriitiiir">
               <div onClick={this.handlePaymentcard} className="pay-with-card">
                 <div className="wrtapr">

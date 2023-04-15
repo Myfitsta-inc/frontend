@@ -52,7 +52,7 @@ class PaymentmethodSub extends Component {
         <div className="wrapfjrr">
           <div
             className={`wraskfkfofnj-crsfdnf ${
-              this.state.button  ? "active" : ""
+              this.state.button ? "active" : ""
             } `}
           >
             <div className="positf active">
@@ -91,13 +91,11 @@ class PaymentmethodSub extends Component {
             <div className="controil-theaction">
               <button
                 onClick={this.handlePay}
-                className={`add-shch ${
-                  this.state.loading  ? "active" : ""
-                }`}
+                className={`add-shch ${this.state.loading ? "active" : ""}`}
               >
-                {this.state.loading  ? "" : "SUBSCRIBE"}
+                {this.state.loading ? "" : "SUBSCRIBE"}
               </button>
-              {this.state.loading  ? (
+              {this.state.loading ? (
                 <div className="jietiooeo">
                   {" "}
                   <LoadingSpin />

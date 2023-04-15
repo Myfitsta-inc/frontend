@@ -177,7 +177,7 @@ class Visitpage extends Component {
                       </div>
                       <div className="name-pr">
                         {this.state.profile.username}
-                        {this.state.profile.verified  ? (
+                        {this.state.profile.verified ? (
                           <div className="verified">
                             <i className="fas fa-check"></i>
                           </div>
@@ -231,7 +231,7 @@ class Visitpage extends Component {
                           <div className="name-actionn">
                             <div className="name-prrr">
                               {this.state.profile.username}
-                              {this.state.profile.verified  ? (
+                              {this.state.profile.verified ? (
                                 <div className="verified">
                                   <i className="fas fa-check"></i>
                                 </div>
@@ -324,7 +324,7 @@ class Visitpage extends Component {
                               ""
                             )}
 
-                            {this.state.profile.myfitstapro  ? (
+                            {this.state.profile.myfitstapro ? (
                               <button className="flo">
                                 <Link
                                   className="llx"
@@ -384,7 +384,7 @@ class Visitpage extends Component {
                           )}
                         </div>
 
-                        {this.state.profile.myfitstapro  ? (
+                        {this.state.profile.myfitstapro ? (
                           <button className="flo">
                             <Link
                               className="llx"
@@ -498,7 +498,7 @@ class Visitpage extends Component {
                       this.chantabs(true);
                     }}
                     className={`vbfhj-tabs ${
-                      this.state.tagged  ? "active" : ""
+                      this.state.tagged ? "active" : ""
                     }`}
                   >
                     TAGGED
@@ -537,9 +537,7 @@ class Visitpage extends Component {
                   ""
                 )}
                 <div
-                  className={`tabgeedhs ${
-                    this.state.tagged  ? "active" : ""
-                  }`}
+                  className={`tabgeedhs ${this.state.tagged ? "active" : ""}`}
                 >
                   {this.state.profile.userId ? (
                     <TagggedPost

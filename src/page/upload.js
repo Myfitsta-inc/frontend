@@ -42,7 +42,7 @@ class Upload extends Component {
     });
   };
   inputKeyDown = (e) => {
-    if (e.key===" ") {
+    if (e.key === " ") {
       if (this.state.item.trim().length > 0 && this.state.tags.length <= 15) {
         let list = [...this.state.tags, this.state.item.trim()];
         this.setState({
@@ -288,7 +288,7 @@ class Upload extends Component {
       <div className="conatiner">
         <div
           className={`over-lay-when-postig  ${
-            this.state.uploadIng  ? "active" : ""
+            this.state.uploadIng ? "active" : ""
           }`}
         >
           <LoadingSpin />
@@ -299,7 +299,7 @@ class Upload extends Component {
             <div id="post">
               <div
                 className={`box-uploadone  ${
-                  this.state.pageOne  ? "active" : "disp"
+                  this.state.pageOne ? "active" : "disp"
                 }`}
               >
                 <div className="title-post">
@@ -367,9 +367,7 @@ class Upload extends Component {
               </div>
 
               <div
-                className={`section-two  ${
-                  this.state.pageTwo  ? "active" : ""
-                }`}
+                className={`section-two  ${this.state.pageTwo ? "active" : ""}`}
               >
                 <div className="before-upod">
                   <div

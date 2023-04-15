@@ -335,7 +335,7 @@ class Myfitstapr extends Component {
           </div>
         </div>
 
-        {this.state.subscribeBox  ? (
+        {this.state.subscribeBox ? (
           this.state.profile._id ? (
             <Subscribe
               closesubscribe={this.closesubscribe}

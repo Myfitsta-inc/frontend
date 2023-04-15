@@ -26,7 +26,7 @@ class NotificationBasicBox extends Component {
   }
 
   LoadMore = (data) => {
-    if (data ) {
+    if (data) {
       if (this.state.loading === false) {
         this.setState(
           {
@@ -72,11 +72,7 @@ class NotificationBasicBox extends Component {
 
   render() {
     return (
-      <div
-        className={`tabs-for-all ${
-          this.state.tabsDeafalt  ? "active" : ""
-        }`}
-      >
+      <div className={`tabs-for-all ${this.state.tabsDeafalt ? "active" : ""}`}>
         {this.state.basic !== null ? (
           this.state.basic !== "no" ? (
             this.state.basic?.map((item, index) => {

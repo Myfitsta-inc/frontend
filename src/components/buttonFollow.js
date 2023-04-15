@@ -32,7 +32,7 @@ function ButtonFollow({ friend, activeBox }) {
   const followUser = () => {
     let dataUser = {
       userId: userId,
-      ToFollow: friend,
+      userToFollowId: friend,
     };
     setFollow(true);
     axios.post("/api/update-fo", dataUser).then((res) => {});
@@ -41,7 +41,7 @@ function ButtonFollow({ friend, activeBox }) {
   const removeFollow = () => {
     let option = {
       userId: userId,
-      ToUnfollow: friend,
+      userToUnFollowId: friend,
     };
     activeFollow();
     setFollow(false);

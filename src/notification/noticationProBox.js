@@ -21,7 +21,7 @@ class NotificationProBox extends Component {
     };
   }
   LoadMore = (data) => {
-    if (data ) {
+    if (data) {
       if (this.state.loading === false) {
         this.setState(
           {

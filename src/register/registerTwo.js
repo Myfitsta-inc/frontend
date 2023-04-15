@@ -27,7 +27,7 @@ class RegisterTwo extends Component {
         code: parseInt(this.state.code),
       };
       axios.post(`/api/verifie-your-code`, option).then((result) => {
-        if (result.data.succes ) {
+        if (result.data.succes) {
           this.props.handleNext(2);
         } else {
           this.setState({
@@ -71,11 +71,9 @@ class RegisterTwo extends Component {
           <input id="login" type="submit" name="submit" value="CHECK CODE" />
         ) : (
           <button
-            className={`next agreen   ${
-              this.state.loading  ? "loading" : ""
-            }  `}
+            className={`next agreen   ${this.state.loading ? "loading" : ""}  `}
           >
-            {this.state.loading  ? <LoadingSpin /> : ""}
+            {this.state.loading ? <LoadingSpin /> : ""}
           </button>
         )}
       </form>

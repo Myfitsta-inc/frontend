@@ -36,7 +36,7 @@ class Follower extends Component {
       });
   };
   checkLoad = (data) => {
-    if (data ) {
+    if (data) {
       if (this.state.loading === false) {
         this.setState(
           {
@@ -91,7 +91,7 @@ class Follower extends Component {
                   placeholder="Seach..."
                   type="text"
                 />
-                {this.state.loading  ? (
+                {this.state.loading ? (
                   <div className="cnjrrjrn">
                     <LoadingSpin />
                   </div>
@@ -156,7 +156,6 @@ class Follower extends Component {
                         </div>
                         <div className="wirjsjjfkkfkf">
                           <Username link={true} user={item.followerId} />
-                
                         </div>
                       </div>
                       <div className="wrsokf">

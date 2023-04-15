@@ -10,7 +10,7 @@ import profile from "profile.webp";
 import Username from "components/username";
 import apiUrl from "apiUrl/url";
 import LoadingSpin from "components/loadingspin.js";
-import Addprogram from "components/addProgram";
+import Addprogram from "components/AddProgram";
 import { BiArrowBack } from "react-icons/bi";
 import ActivateMyfitsta from "components/ActivateMyFitstaPro";
 import SettingMyfiststapro from "components/settingMyfitstapro";
@@ -114,7 +114,7 @@ function Myfitstapro({ history }) {
                       <div className="name-action">
                         <div className="name-pr">
                           <p>{user.username}</p>{" "}
-                          {user.verified  ? (
+                          {user.verified ? (
                             <p className="cheh">
                               <i className="fas fa-check"></i>
                             </p>
@@ -234,7 +234,7 @@ function Myfitstapro({ history }) {
                                 )}
                               </div>
 
-                              {item.published  ? (
+                              {item.published ? (
                                 <p className="published">Publish</p>
                               ) : (
                                 <p className="draft">Draft</p>

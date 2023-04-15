@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 class Loading extends Component {
   render() {
     return (
-      <div
-        className={`loading  ${this.props.loading  ? "active" : ""}`}
-      >
+      <div className={`loading  ${this.props.loading ? "active" : ""}`}>
         <motion.img
           layout
           animate={{ rotate: 360, width: 200, height: 200 }}

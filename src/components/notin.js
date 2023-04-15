@@ -8,7 +8,7 @@ class Notin extends Component {
     axios
       .get(`/api/load-number-of-notification/${this.props.userId}`)
       .then((result) => {
-        if (result.data.succes ) {
+        if (result.data.succes) {
           this.setState({
             number: result.data.data,
           });

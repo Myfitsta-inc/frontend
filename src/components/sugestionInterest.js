@@ -32,9 +32,7 @@ function Interest({ tabs }) {
   }, []);
 
   return (
-    <div
-      className={`subjection-top-folow-box ${tabs  ? "active" : ""}`}
-    >
+    <div className={`subjection-top-folow-box ${tabs ? "active" : ""}`}>
       {interest !== null ? (
         interest.accountId ? (
           <LoadInterest />

@@ -161,7 +161,7 @@ class Edit extends Component {
         email: this.props.user.email,
       };
       axios.post(`/api/update-username`, option).then((data) => {
-        if (data.data.succes ) {
+        if (data.data.succes) {
           window.location.reload();
         } else {
           this.setState({

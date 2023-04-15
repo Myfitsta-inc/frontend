@@ -26,7 +26,7 @@ class Paymentmethod extends Component {
       if (result.data._id) {
         const { paymentMethods } = result.data;
         if (paymentMethods.length > 0) {
-          let tochoose = paymentMethods.filter((item) => item.default );
+          let tochoose = paymentMethods.filter((item) => item.default);
           this.setState({
             payment: tochoose[0],
           });
@@ -52,7 +52,7 @@ class Paymentmethod extends Component {
       loading: true,
     });
     axios.post(`/api/braintree/v1/sandbox`, option).then((result) => {
-      if (result.data.success ) {
+      if (result.data.success) {
         this.props.history.push(`/program/unlock/${option.program.programId}`);
       }
     });
@@ -71,7 +71,7 @@ class Paymentmethod extends Component {
               <div
                 onClick={this.handleclick}
                 className={`wraskfkfofnj-crsfdnf ${
-                  this.state.button  ? "active" : ""
+                  this.state.button ? "active" : ""
                 } `}
               >
                 <div className="positf active">
@@ -114,18 +114,16 @@ class Paymentmethod extends Component {
               <LoadingSpin />
             </div>
           )}
-          {this.state.button  ? (
+          {this.state.button ? (
             <div className="wraohririirii">
               <div className="controil-theaction">
                 <button
                   onClick={this.handlePay}
-                  className={`add-shch ${
-                    this.state.loading  ? "active" : ""
-                  }`}
+                  className={`add-shch ${this.state.loading ? "active" : ""}`}
                 >
-                  {this.state.loading  ? "" : "PURCHACE"}
+                  {this.state.loading ? "" : "PURCHACE"}
                 </button>
-                {this.state.loading  ? (
+                {this.state.loading ? (
                   <div className="jietiooeo">
                     {" "}
                     <LoadingSpin />

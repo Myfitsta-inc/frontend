@@ -33,9 +33,7 @@ class Navland extends Component {
   render() {
     return (
       <div className="wrapeeriror">
-        <div
-          className={`hearderdff ${this.state.mode  ? "active" : ""}  `}
-        >
+        <div className={`hearderdff ${this.state.mode ? "active" : ""}  `}>
           <Link to={"/"} className="wrparpprpr">
             <div className="holthe-logo"></div>
             <div className="hold-the-logo">
@@ -117,9 +115,9 @@ class Navland extends Component {
         </div>
 
         <div
-          className={`side-bahrirr  ${
-            this.state.mode  ? "activee" : ""
-          }    ${this.state.nav  ? "active" : ""}`}
+          className={`side-bahrirr  ${this.state.mode ? "activee" : ""}    ${
+            this.state.nav ? "active" : ""
+          }`}
         >
           <div className="hold-shjtjrj">
             <div className="hlsjjjtjtjjtttr">

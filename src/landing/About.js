@@ -15,18 +15,12 @@ class About extends Component {
     return (
       <div
         id="fearture"
-        className={`abourhrjjrjejje ${
-          this.props.mode  ? "active" : ""
-        } `}
+        className={`abourhrjjrjejje ${this.props.mode ? "active" : ""} `}
       >
         <div className="detailskfnf">What do we got here?</div>
         <div className="wrpsjrirr">
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <BiRocket />
@@ -42,11 +36,7 @@ class About extends Component {
           </Roll>
 
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <BsClock />
@@ -62,11 +52,7 @@ class About extends Component {
           </Roll>
 
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <RiBankLine />
@@ -82,11 +68,7 @@ class About extends Component {
           </Roll>
 
           <Roll right>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <HiSpeakerphone />
@@ -101,11 +83,7 @@ class About extends Component {
           </Roll>
 
           <Roll right>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <HiBadgeCheck />
@@ -121,11 +99,7 @@ class About extends Component {
           </Roll>
 
           <Roll right>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <VscMail />
@@ -139,11 +113,7 @@ class About extends Component {
             </div>
           </Roll>
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <BsPieChartFill />
@@ -159,11 +129,7 @@ class About extends Component {
           </Roll>
 
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <BsGraphUp />
@@ -179,11 +145,7 @@ class About extends Component {
           </Roll>
 
           <Roll left>
-            <div
-              className={`carvjdgjjfk ${
-                this.props.mode  ? "active" : ""
-              } `}
-            >
+            <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
                   <BsFillLockFill />

@@ -9,9 +9,7 @@ class Info extends Component {
       <div className="reskjrrj">
         <Fade left>
           <div
-            className={`featyu-aboutb-app ${
-              this.props.mode  ? "active" : ""
-            } `}
+            className={`featyu-aboutb-app ${this.props.mode ? "active" : ""} `}
           >
             <div className="detailskfnf white">What is MYFITSTA?</div>
             <div className="smajkkrrjr white">

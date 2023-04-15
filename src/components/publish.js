@@ -127,12 +127,12 @@ class Publish extends Component {
               onClick={this.published}
               className={`conte-thise-action  ${
                 this.state.canpublih === false ? "" : "active"
-              }  ${this.state.loading  ? "loading" : ""}`}
+              }  ${this.state.loading ? "loading" : ""}`}
             >
               <button className="save">
-                {this.state.loading  ? "Publishing" : "Publish"}
+                {this.state.loading ? "Publishing" : "Publish"}
               </button>
-              {this.state.loading  ? (
+              {this.state.loading ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>
@@ -144,17 +144,17 @@ class Publish extends Component {
             ""
           )}
 
-          {this.state.published  ? (
+          {this.state.published ? (
             <div
               onClick={this.published}
               className={`conte-thise-action  ${
                 this.state.canpublih === false ? "" : "activefjf"
-              }  ${this.state.loading  ? "loading" : ""}`}
+              }  ${this.state.loading ? "loading" : ""}`}
             >
               <button className="save">
-                {this.state.loading  ? "UnPublishing" : "UnPublish"}
+                {this.state.loading ? "UnPublishing" : "UnPublish"}
               </button>
-              {this.state.loading  ? (
+              {this.state.loading ? (
                 <div className="wraprroro">
                   <LoadingSpin />
                 </div>

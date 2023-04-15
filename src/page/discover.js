@@ -92,7 +92,7 @@ class Discover extends Component {
     }
   };
   checkLoad = (data) => {
-    if (data ) {
+    if (data) {
       if (this.state.loading === false) {
         this.setState({
           numberLoad: this.state.numberLoad + 10,
@@ -311,7 +311,7 @@ class Discover extends Component {
                 ) : (
                   ""
                 )}
-                {this.state.loading  ? (
+                {this.state.loading ? (
                   <div className="bixnknfkfjkjrjr">
                     <LoadingSpin />
                   </div>
@@ -335,7 +335,7 @@ class Discover extends Component {
             />
           </div>
         </div>
-        {this.state.drop  ? (
+        {this.state.drop ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""

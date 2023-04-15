@@ -39,7 +39,7 @@ class Groupcard extends Component {
     });
   };
   render() {
-    return this.state.nope  ? (
+    return this.state.nope ? (
       <div
         className={`box-hold-friend-totalkwith ${
           this.props.item.conversationId === this.props.match.params.id

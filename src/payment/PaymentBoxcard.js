@@ -52,7 +52,7 @@ class PaymentBoxCard extends Component {
             </div>
           </div>
 
-          {this.state.option  ? (
+          {this.state.option ? (
             <div className="payment-option">
               <div className="boixbfitjrj">Choose Payment Method</div>
               <PaymentmethodCard
@@ -60,7 +60,7 @@ class PaymentBoxCard extends Component {
                 hideoption={this.hideoption}
                 handleCard={this.handleCard}
               />
-              {this.state.card  ? (
+              {this.state.card ? (
                 <div className="wroiriitiiir">
                   <div
                     onClick={this.handlePaymentcard}
@@ -96,11 +96,7 @@ class PaymentBoxCard extends Component {
             ""
           )}
           <div className="holdnrkj-fjrkr">
-            {this.state.dropin  ? (
-              <FieldsCard item={this.props.item} />
-            ) : (
-              ""
-            )}
+            {this.state.dropin ? <FieldsCard item={this.props.item} /> : ""}
           </div>
         </div>
       </motion.div>

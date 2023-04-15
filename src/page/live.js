@@ -287,7 +287,7 @@ class Live extends Component {
   };
 
   sendmessage = () => {
-    if (this.state.StateLive ) {
+    if (this.state.StateLive) {
       if (this.state.message.length > 0) {
         socket.emit("new-message-to-chat", {
           room: this.state.id,
@@ -323,7 +323,7 @@ class Live extends Component {
   };
 
   handleEnlive = (data) => {
-    if (data ) {
+    if (data) {
       this.removeMyLiveSesssion();
     }
   };
@@ -378,9 +378,7 @@ class Live extends Component {
             <div className="box-hold-the-lie-and-chat">
               <div className="hold-videi-live">
                 <div
-                  className={`hold-lay ${
-                    this.state.StateLive  ? "active" : ""
-                  }`}
+                  className={`hold-lay ${this.state.StateLive ? "active" : ""}`}
                 >
                   <div className="tile-o-live-prpe">
                     <div onClick={this.goBack} className="close-that">
@@ -436,7 +434,7 @@ class Live extends Component {
                   muted
                   className="live"
                 ></video>
-                {this.state.StateLive  ? (
+                {this.state.StateLive ? (
                   <div className="wrappingf">
                     <div className="controle-the-call">
                       <button
@@ -456,7 +454,7 @@ class Live extends Component {
 
               <div
                 className={`hold-chat-live ${
-                  this.state.StateLive  ? "active" : ""
+                  this.state.StateLive ? "active" : ""
                 }`}
               >
                 <div className="hold-those-chat">
@@ -466,9 +464,7 @@ class Live extends Component {
                       onClick={() => {
                         this.openLivebox(true);
                       }}
-                      className={`memu ${
-                        this.state.StateLive  ? "active" : ""
-                      }`}
+                      className={`memu ${this.state.StateLive ? "active" : ""}`}
                     >
                       <i className="fas fa-ellipsis-v"></i>
                     </div>

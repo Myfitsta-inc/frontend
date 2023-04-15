@@ -31,10 +31,9 @@ function BoxMedia({ mediaDetails }) {
         mediaDetails[0].mimetype.includes("image") ? (
           <img src={`${apiUrl.content}${mediaDetails[0].key}`} alt="workout" />
         ) : (
-  <>
-  
-  <VideoPost src={`${mediaDetails[0].key}`} />
-  </>
+          <>
+            <VideoPost src={`${mediaDetails[0].key}`} />
+          </>
         )
       ) : (
         <div className="multipla-content">
@@ -53,7 +52,7 @@ function BoxMedia({ mediaDetails }) {
                   exit="exit"
                   variants={{
                     enter: {
-                      x: begin  ? (index > previous ? 500 : -500) : "",
+                      x: begin ? (index > previous ? 500 : -500) : "",
                       opacity: 0,
                     },
                     in: { x: 0, opacity: 1 },

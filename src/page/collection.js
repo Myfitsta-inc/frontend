@@ -212,7 +212,7 @@ class PostCollection extends Component {
             </div>
             <Navbom handloption={this.handloption} />
           </div>
-          {this.state.boxCollection  ? (
+          {this.state.boxCollection ? (
             <div
               className={`collection-overlay  ${
                 this.state.boxCollection === false ? "" : "active"
@@ -254,7 +254,7 @@ class PostCollection extends Component {
             ""
           )}
         </div>
-        {this.state.drop  ? (
+        {this.state.drop ? (
           <DropHomeUp handloption={this.handloption} drop={this.state.drop} />
         ) : (
           ""
