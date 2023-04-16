@@ -66,7 +66,7 @@ class Subcription extends Component {
             ) : (
               <div className="wraperififoojfhr">
                 <div className="wraperjf-ffkfkr">
-                  <p>No Subsciption</p>
+                  <p>No Subscription</p>
                   <p>
                     When you subscribe to someone you will be able to see it
                     here

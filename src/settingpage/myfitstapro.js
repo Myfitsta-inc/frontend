@@ -127,7 +127,7 @@ class MyfitstaProAc extends Component {
                     <div className="wrpsjiirir-icocod">
                       <BsArrowRepeat />
                     </div>
-                    <div className="djfrjir">Create Subsciption</div>
+                    <div className="djfrjir">Create Subscription</div>
                   </div>
                 </div>
                 <div className="decrioirbe">
@@ -136,7 +136,7 @@ class MyfitstaProAc extends Component {
                       <HiCheck />
                     </div>
                     <div className="ksffkfkkf">
-                      Create your own Subsciption plan
+                      Create your own Subscription plan
                     </div>
                   </div>
                   <div className="wrapeiirr">
