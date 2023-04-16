@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
-import Search from "components/seach";
-import Boxcollection from "components/boxcollection";
-import ShareOption from "components/shareoption";
-import SharePost from "components/sharepost";
-import RelatedPost from "components/relatedpost";
+import Nav from "Components/nav";
+import Search from "Components/seach";
+import Boxcollection from "Components/boxcollection";
+import ShareOption from "Components/shareoption";
+import SharePost from "Components/sharepost";
+import RelatedPost from "Components/relatedpost";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import PostBox from "components/postbox";
+import PostBox from "Components/postbox";
 import { BiArrowBack } from "react-icons/bi";
-import Report from "components/report";
-import UserPost from "components/userPost";
+import Report from "Components/report";
+import UserPost from "Components/userPost";
 let source;
 source = axios.CancelToken.source();
 class LoadDiscover extends Component {

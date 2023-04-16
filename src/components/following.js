@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import { InView } from "react-intersection-observer";
 import ButtonFollow from "./buttonFollow";
-import IconProfile from "./iconpicture";
-import Username from "./username";
+import IconProfile from "./Iconpicture";
+import Username from "./Username";
 import { motion } from "framer-motion";
 import { AiOutlineSearch } from "react-icons/ai";
 import { connect } from "react-redux";

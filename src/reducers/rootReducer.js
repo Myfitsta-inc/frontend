@@ -69,6 +69,11 @@ const rootReducer = (state = store, action) => {
         ...state,
         userFeeds: value,
       };
+    case "UPDATE_COMMENT":
+      return {
+        ...state,
+        comments: value,
+      };
     default:
       return state;
   }

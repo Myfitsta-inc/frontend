@@ -9,7 +9,7 @@ import Editable from "./editable";
 import { BiArrowBack } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import { motion } from "framer-motion";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 class UploadInProgram extends Component {
   state = {
     title: "",

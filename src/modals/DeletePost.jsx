@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { IoCloseSharp } from "react-icons/io5";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import axios from "axios";
 function DeletePost() {
   const dispatch = useDispatch();

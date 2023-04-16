@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { InView } from "react-intersection-observer";
-import LoadingSpin from "components/loadingspin.js";
+import LoadingSpin from "Components/Loadingspin.js";
 import ProSubscription from "notification/proSubscription";
 import apiUrl from "apiUrl/url.js";
 import axios from "axios";

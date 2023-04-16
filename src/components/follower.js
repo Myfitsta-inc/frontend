@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import SuggectionBox from "./suggectionbox";
 import ButtonFollow from "./buttonFollow";
-import IconProfile from "./iconpicture";
-import LoadingSpin from "./loadingspin";
+import IconProfile from "./Iconpicture";
+import LoadingSpin from "./Loadingspin";
 import { connect } from "react-redux";
 import { motion } from "framer-motion";
-import Username from "./username";
+import Username from "./Username";
 import { InView } from "react-intersection-observer";
 import { AiOutlineSearch } from "react-icons/ai";
 class Follower extends Component {

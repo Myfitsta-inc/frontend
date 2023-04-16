@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import BoxMedia from "./boxmedia";
-import IconProfile from "./iconpicture";
-import Username from "./username";
+import BoxMedia from "./Boxmedia";
+import IconProfile from "./Iconpicture";
+import Username from "./Username";
 class ProgramMessage extends Component {
   state = {
     icon: null,

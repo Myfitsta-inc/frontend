@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import VideoPost from "components/videopost";
-import IconProfile from "components/iconpicture";
-import Username from "components/username";
-import DataPost from "components/datePost";
+import VideoPost from "Components/videopost";
+import IconProfile from "Components/Iconpicture";
+import Username from "Components/Username";
+import DataPost from "Components/datePost";
 import apiUrl from "apiUrl/url";
 class TaggedNotification extends Component {
   state = {

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import moment from "moment";
-import TagPeople from "components/tagsPeople";
+import TagPeople from "Components/tagsPeople";
 import { IoCloseSharp } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
 import PreviewPost from "video/previewPost";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import "style/style.css";
 let source;
 source = axios.CancelToken.source();

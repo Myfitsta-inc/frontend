@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import { withRouter } from "react-router-dom";
 import { BiCheck } from "react-icons/bi";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import socket from "socketConfig";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";

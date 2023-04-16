@@ -3,7 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import apiUrl from "apiUrl/url";
 import { IoCloseSharp } from "react-icons/io5";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import VideoPost from "./videopost";
 class Publish extends Component {
   state = {

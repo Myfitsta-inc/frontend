@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import LoadConnection from "page/loadConnection";
 import Checkout from "page/checkout";
+import Report from "Components/report";
 import Register from "page/register";
 import Landing from "page/landingPage";
 import ShopingItem from "page/shopingItem";
@@ -20,7 +21,7 @@ import LoadlookProgram from "page/loaddLookprogram";
 import Recorver from "page/recover";
 import Home from "page/home";
 import Cookies from "landing/coki";
-import Loading from "components/loading";
+import Loading from "Components/loading";
 import Login from "page/login";
 import Discover from "page/discover";
 import Group from "messaging/group";
@@ -565,6 +566,7 @@ function App() {
         </AnimatePresence>
       </BrowserRouter>
       <DeletePost />
+      <Report />
     </div>
   );
 }

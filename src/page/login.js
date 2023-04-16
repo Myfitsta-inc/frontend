@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "style/login.css";
 import Navland from "landing/Navland";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import logoone from "logo/logo.png";
 import Fade from "react-reveal/Fade";
 import { motion } from "framer-motion";

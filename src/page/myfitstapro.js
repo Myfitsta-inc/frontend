@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "style/ui.css";
-import Nav from "components/nav";
-import SharePost from "components/sharepost";
-import ShareOption from "components/shareoption";
+import Nav from "Components/nav";
+import SharePost from "Components/sharepost";
+import ShareOption from "Components/shareoption";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { GoPlus } from "react-icons/go";
 import profile from "profile.webp";
-import Username from "components/username";
+import Username from "Components/Username";
 import apiUrl from "apiUrl/url";
-import LoadingSpin from "components/loadingspin.js";
-import Addprogram from "components/AddProgram";
+import LoadingSpin from "Components/Loadingspin.js";
+import Addprogram from "Components/AddProgram";
 import { BiArrowBack } from "react-icons/bi";
-import ActivateMyfitsta from "components/ActivateMyFitstaPro";
-import SettingMyfiststapro from "components/settingMyfitstapro";
+import ActivateMyfitsta from "Components/ActivateMyFitstaPro";
+import SettingMyfiststapro from "Components/settingMyfitstapro";
 import useUser from "hooks/useUser";
 
 function Myfitstapro({ history }) {

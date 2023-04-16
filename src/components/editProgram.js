@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { IoCloseSharp } from "react-icons/io5";
 import Editable from "./editable";
 import EditPreviews from "programs/editPreviews";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 class Editprogram extends Component {
   state = {
     open: false,

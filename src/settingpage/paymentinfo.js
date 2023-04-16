@@ -5,7 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { connect } from "react-redux";
 import AddMethod from "payment/addmethod";
 import { GoPlus } from "react-icons/go";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 
 class PaymentInfo extends Component {
   state = {

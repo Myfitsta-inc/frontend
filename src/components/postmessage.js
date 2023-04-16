@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import IconProfile from "./iconpicture";
-import Username from "./username";
+import IconProfile from "./Iconpicture";
+import Username from "./Username";
 import Mediafind from "./mediafind";
 
 class PostMessage extends Component {

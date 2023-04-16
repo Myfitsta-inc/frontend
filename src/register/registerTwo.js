@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import logoone from "logo/logo.png";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import Fade from "react-reveal/Fade";
 class RegisterTwo extends Component {
   state = {

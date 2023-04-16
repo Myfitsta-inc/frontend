@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import { connect } from "react-redux";
 class Subinfo extends Component {
   state = {

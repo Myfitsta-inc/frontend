@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import ButtonFollow from "./buttonFollow";
-import IconProfile from "./iconpicture";
-import Username from "./username";
-import LoadingSpin from "./loadingspin";
+import IconProfile from "./Iconpicture";
+import Username from "./Username";
+import LoadingSpin from "./Loadingspin";
 import { MdModeEdit } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
-import LoadingSpin from "./loadingspin";
-import Username from "./username";
+import LoadingSpin from "./Loadingspin";
+import Username from "./Username";
 import ProgramBought from "programs/programbougth";
 import ProIcon from "programs/proicon";
 import SubscriptionBougth from "programs/subscriptionbought";

@@ -1677,6 +1677,8 @@ video:-webkit-media-controls-panel {
   width: 100%;
   height: 100%;
 }
+.wraperjrrnrnnrnr {
+}
 .wrsokf button {
   width: 90px;
   height: 35px;
@@ -3827,8 +3829,9 @@ body {
 .hold-comment-relater {
   overflow: scroll;
   position: relative;
-
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .actuel-comment {
   overflow-wrap: break-word;

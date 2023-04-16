@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { HiCheck } from "react-icons/hi";
 import axios from "axios";
-import ActivateMyFitstaPro from "components/ActivateMyFitstaPro";
+import ActivateMyFitstaPro from "Components/ActivateMyFitstaPro";
 import { BsArrowRepeat, BsGraphUp } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import Account from "pro/account";
 import { connect } from "react-redux";
 import Billing from "pro/billing";
-import SubscriberList from "components/SubscriberList";
+import SubscriberList from "Components/SubscriberList";
 class MyfitstaProAc extends Component {
   state = {
     edit: false,

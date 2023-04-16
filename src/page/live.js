@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import adapter from "webrtc-adapter";
 import "style/live.css";
 import webrtc from "wrtc";
 import apiUrl from "apiUrl/url";
 import EndLive from "live/endLive";
-import IconProfile from "components/iconpicture";
-import Username from "components/username";
+import IconProfile from "Components/Iconpicture";
+import Username from "Components/Username";
 import Description from "live/description";
 import { withRouter } from "react-router-dom";
 import { IoSendSharp } from "react-icons/io5";

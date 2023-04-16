@@ -4,13 +4,13 @@ import _ from "lodash";
 import profile from "profile.webp";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
-import Username from "components/username";
+import Username from "Components/Username";
 import apiUrl from "apiUrl/url";
-import LoadingSpin from "components/loadingspin.js";
+import LoadingSpin from "Components/Loadingspin.js";
 import { BiArrowBack } from "react-icons/bi";
-import Subscribe from "components/subscription";
-import MessageButton from "components/messageSomeone";
-import SettingMyfiststapro from "components/settingMyfitstapro";
+import Subscribe from "Components/subscription";
+import MessageButton from "Components/messageSomeone";
+import SettingMyfiststapro from "Components/settingMyfitstapro";
 let source;
 source = axios.CancelToken.source();
 class Myfitstapr extends Component {

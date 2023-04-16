@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { InView } from "react-intersection-observer";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import useDebounce from "hooks/useDebounce";
 const SearchAccount = ({ tabs, openSearch, user }) => {
   const [query, setQuery] = useState("");

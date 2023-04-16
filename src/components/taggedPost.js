@@ -3,7 +3,7 @@ import axios from "axios";
 import apiUrl from "apiUrl/url";
 import Tagggedbox from "./taddedbox";
 import { connect } from "react-redux";
-import PostVue from "components/postvue";
+import PostVue from "Components/postvue";
 class TagggedPost extends Component {
   state = {
     list: null,

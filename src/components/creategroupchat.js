@@ -4,8 +4,8 @@ import { BiCheck } from "react-icons/bi";
 import { AiOutlineSearch, AiOutlineCamera } from "react-icons/ai";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import { BiArrowBack } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
 class CreatGroupChat extends Component {

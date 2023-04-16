@@ -24,6 +24,7 @@ const store = {
   postList: [],
   followLists: [],
   userFeeds: null,
+  comments: [],
 };
 
 export default store;

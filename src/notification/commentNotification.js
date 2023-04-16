@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import IconProfile from "components/iconpicture";
-import VideoPost from "components/videopost";
-import Username from "components/username";
+import IconProfile from "Components/Iconpicture";
+import VideoPost from "Components/videopost";
+import Username from "Components/Username";
 import apiUrl from "apiUrl/url";
-import DataPost from "components/datePost";
+import DataPost from "Components/datePost";
 class CommentNotification extends Component {
   state = {
     username: null,

@@ -1,252 +1,157 @@
-import React, { Component } from "react";
-import Nav from "components/nav";
+import React, { useEffect, useState } from "react";
+import Nav from "Components/nav";
 import axios from "axios";
-import Username from "components/username";
-import IconProfile from "components/iconpicture";
+import Username from "Components/Username";
+import IconProfile from "Components/Iconpicture";
 import { Link } from "react-router-dom";
-import BoxMedia from "components/boxmedia";
-import { InView } from "react-intersection-observer";
-import Editable from "components/editable";
-import LoadingSpin from "components/loadingspin.js";
+import BoxMedia from "Components/Boxmedia";
+import Editable from "Components/editable";
+import LoadingSpin from "Components/Loadingspin";
 import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
 import { BiArrowBack } from "react-icons/bi";
 import { IoSendSharp } from "react-icons/io5";
-import Report from "components/report";
 import moment from "moment";
 import socket from "socketConfig";
-import CommentBox from "components/commentBox";
-let source;
-source = axios.CancelToken.source();
-class Comment extends Component {
-  state = {
-    item: {},
-    comments: [],
-    comment: "",
-    counter: 0,
-    numberToLoad: 10,
-    loadind: false,
+import { useParams } from "react-router-dom";
+import usePost from "hooks/usePost";
+import { useSelector, useDispatch } from "react-redux";
+import PostCommentSection from "Components/Comment/PostCommentSection";
+import useUser from "hooks/useUser";
+function Comment({ history }) {
+  const { user } = useUser();
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const [comment, setComment] = useState("");
+  const [numberOfComments, setnumberOfComments] = useState(0);
+  const [numberToLoad, setNumberToLoad] = useState(10);
+  const [loading, setLoading] = useState(false);
+  const { post } = usePost(id);
+  const comments = useSelector((state) => state.comments);
+
+  const sendComment = (comment, action = "addComment") => {
+    const newComment = { ...comment, action };
+    socket.emit("comment:sent", newComment);
   };
 
-  constructor(props) {
-    super(props);
-    source = axios.CancelToken.source();
-  }
-  removecomment = (data) => {
-    let list = this.state.comments.filter((item) => item._id !== data.id);
-    this.setState(
-      {
-        comments: list,
-        counter: this.state.counter - 1,
-      },
-      () => {
-        socket.emit("update-the-comment", {
-          postId: this.state.item._id,
-          count: this.state.counter,
-        });
-      }
-    );
+  const handleComment = (event) => {
+    setComment(event.target.innerText);
   };
 
-  updatenotification = (comment) => {
-    let option = {
-      userIdToNotify: this.state.item.userId,
-      type: "comment",
-      notifiyiId: this.props.user.userId,
-      postId: this.state.item._id,
-      date: moment().format(),
-      extraInfo: comment,
-    };
-
-    if (this.state.item.userId !== this.props.user.userId) {
-      axios
-        .post(`/api/update-notification`, option, {
-          cancelToken: source.token,
-        })
-        .then((res) => {
-          socket.emit("update-the-comment", {
-            postId: this.state.item._id,
-            count: this.state.counter + 1,
-          });
-        });
-    } else {
-      socket.emit("update-the-comment", {
-        postId: this.state.item._id,
-        count: this.state.counter + 1,
-      });
-    }
+  const goBack = (e) => {
+    history.goBack();
   };
 
-  goBack = (e) => {
-    this.props.history.goBack();
-  };
-  postComment = () => {
-    if (this.state.comment.length > 0) {
-      let option = {
-        userId: this.props.user.userId,
-        postId: this.state.item._id,
-        content: this.state.comment,
+  const postComment = async () => {
+    if (comment.length > 0) {
+      const option = {
+        userId: user.userId,
+        postId: post._id,
+        content: comment,
         date: moment().format(),
       };
-
-      axios
-        .post("/api/newcomment", option, { cancelToken: source.token })
-        .then((res) => {
-          this.updatenotification(res.data?.comment);
-        });
-
-      this.setState({
-        comment: "",
-      });
-
+      setComment("");
+      const { data } = await axios.post("/api/newcomment", option);
+      sendComment(data.comment);
       document.querySelector(".hold-edit-bio").innerHTML = "";
     }
   };
 
-  setComment = (event) => {
-    this.setState({
-      comment: event.target.innerText,
-    });
-  };
-
-  getComment = () => {
-    axios
-      .get(`/api/commentt/${this.props.match.params.id}`, {
-        withCredentials: true,
-        cancelToken: source.token,
-      })
-      .then((res) => {
-        if (res.data._id) {
-          this.setState({
-            item: res.data,
-            counter: res.data.numberOfComments,
-          });
-          this.loadComment(this.state.numberToLoad);
-        }
-      });
-  };
-
-  checkLoad = (data) => {
-    if (data) {
-      if (this.state.loadind === false) {
-        this.setState(
-          {
-            numberToLoad: this.state.numberToLoad + 10,
-          },
-          () => {
-            this.loadComment(this.state.numberToLoad);
-          }
-        );
-      }
+  const getComment = async () => {
+    if (post) {
+      const { numberOfComments } = post;
+      setnumberOfComments(numberOfComments);
+      loadComment(numberToLoad);
     }
   };
-  loadComment = (number) => {
-    this.setState({
-      loadind: true,
-    });
-    axios
-      .get(`/api/commentonthis/${this.props.match.params.id}/${number}`, {
-        withCredentials: true,
-        cancelToken: source.token,
-      })
-      .then((res) => {
-        if (res.data.length > 0) {
-          this.setState({
-            loadind: false,
-            comments: res.data,
-          });
-        } else {
-          this.setState({
-            loadind: false,
-          });
-        }
-      });
+
+  const loadMore = () => {
+    const newPading = numberToLoad + 10;
+    setNumberToLoad(newPading);
+    loadComment(newPading);
   };
 
-  updatePost = (data) => {
-    if (this.props.postList.length > 0) {
-      let Updated = this.props.postList.find((item) => item.postId === data);
-      if (Updated) {
-        Updated.numberOfComments = this.state.counter;
-        let list = this.props.postList.filter((item) => item.postId !== data);
-        let sortted = [...list, Updated];
-        this.props.addPost(sortted);
+  const loadComment = async (number) => {
+    const { data } = await axios.get(`/api/commentonthis/${id}/${number}`, {
+      withCredentials: true,
+    });
+
+    if (data.length > comments.length) {
+      updateComment(data);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    socket.on("comment:receive", (commentToSend) => {
+      const { action, commentId } = commentToSend;
+      if (action === "addComment") {
+        const newComment = { ...commentToSend };
+        const newComments = [newComment, ...comments];
+        setnumberOfComments(numberOfComments + 1);
+        dispatch({ type: "UPDATE_COMMENT", value: newComments });
       } else {
-      }
-    }
-  };
-  componentDidMount = () => {
-    socket.on("update-this-comment", (data) => {
-      if (data.postId === this.state.item._id) {
-        this.setState(
-          {
-            counter: data.count,
-          },
-          () => {
-            this.updatePost(data.postId);
-            this.loadComment(this.state.numberToLoad);
-          }
+        const newCommentss = [...comments].filter(
+          (comment) => comment._id !== commentId
         );
+        setnumberOfComments(numberOfComments - 1);
+        dispatch({ type: "UPDATE_COMMENT", value: newCommentss });
       }
     });
+    return () => socket.off("comment:receive");
+  }, [comments]);
 
-    this.getComment();
+  const updateComment = (comments) => {
+    dispatch({ type: "UPDATE_COMMENT", value: [...comments] });
   };
-
-  componentWillUnmount = () => {
-    if (source) {
-      source.cancel("Landing Component got unmounted");
+  useEffect(() => {
+    getComment();
+    if (post) {
     }
-    socket.off("update-this-comment");
-  };
-  render() {
-    return (
-      <div className="conatiner">
-        <Nav user={this.props.user} />
-        <div id="app">
-          <div id="body-tabs-comm">
-            <div className="wrapper-comment">
-              <div className="back-topreviews-page">
-                <div onClick={this.goBack} className="close-that">
-                  <BiArrowBack />
-                </div>
-                <div className="title-comment-page">Comment</div>
+  }, [id, post]);
+
+  return (
+    <div className="conatiner">
+      <Nav user={user} />
+      <div id="app">
+        <div id="body-tabs-comm">
+          <div className="wrapper-comment">
+            <div className="back-topreviews-page">
+              <div onClick={goBack} className="close-that">
+                <BiArrowBack />
+              </div>
+              <div className="title-comment-page">Comment</div>
+            </div>
+
+            <div className="hjjjnd">
+              <div className="hold-that-image-sjje">
+                {post?.userId ? (
+                  <BoxMedia
+                    file={post.filename}
+                    mediaDetails={post.mediaDetails}
+                  />
+                ) : (
+                  ""
+                )}
               </div>
 
-              <div className="hjjjnd">
-                <div className="hold-that-image-sjje">
-                  {this.state.item.userId ? (
-                    <BoxMedia
-                      file={this.state.item.filename}
-                      mediaDetails={this.state.item.mediaDetails}
-                    />
-                  ) : (
-                    ""
-                  )}
-                </div>
-
-                <div className="box-wraper-comment">
-                  <div className="post-comment-render">
-                    <div
-                      className="hold-comment-relater"
-                      ref={(el) => {
-                        this.messagesEnd = el;
-                      }}
-                    >
+              <div className="box-wraper-comment">
+                <div className="post-comment-render">
+                  <div className="hold-comment-relater">
+                    {post && (
                       <div className="nejrrrjr">
                         <div className="detail-abou-comment">
                           <div className="wraper-info-oc-post">
                             <div className="profile-usr-comment">
-                              {this.state.item._id ? (
-                                <IconProfile user={this.state.item.userId} />
+                              {post._id ? (
+                                <IconProfile user={post.userId} />
                               ) : (
                                 ""
                               )}
                             </div>
                             <div className="info-commet-detail">
                               <div className="name-pro-dut">
-                                {this.state.item._id ? (
-                                  <Username user={this.state.item.userId} />
+                                {post._id ? (
+                                  <Username user={post.userId} />
                                 ) : (
                                   ""
                                 )}
@@ -254,14 +159,14 @@ class Comment extends Component {
 
                               <div className="jfkjt">
                                 <p className="name-pro-dut">
-                                  {this.state.counter}
+                                  {numberOfComments}
                                 </p>
                                 <p>Comment</p>
                               </div>
                             </div>
                           </div>
                           <div className="tags-input-comment rririr">
-                            {this.state.item.tags?.map((tag) => {
+                            {post.tags?.map((tag) => {
                               return (
                                 <div key={Math.random() * 5} className="tags">
                                   <Link to={`/discover/${tag}`}> {tag}</Link>
@@ -273,62 +178,36 @@ class Comment extends Component {
                         <div className="caption-comment-post">
                           <p
                             dangerouslySetInnerHTML={{
-                              __html: this.state.item.caption,
+                              __html: post.caption,
                             }}
                           ></p>
                         </div>
                       </div>
+                    )}
 
-                      {this.state.comments?.map((elment, index) => {
-                        if (this.state.comments.length === index + 1) {
-                          return (
-                            <div className="fhknrbhfiknrbhj" key={elment._id}>
-                              <InView
-                                onChange={(inView, entry) =>
-                                  this.checkLoad(inView)
-                                }
-                              >
-                                <CommentBox
-                                  removecomment={this.removecomment}
-                                  item={elment}
-                                />
-                              </InView>
-                            </div>
-                          );
-                        } else {
-                          return (
-                            <div className="fhknrbhfiknrbhj" key={elment._id}>
-                              <CommentBox
-                                removecomment={this.removecomment}
-                                item={elment}
-                              />
-                            </div>
-                          );
-                        }
-                      })}
-                      {this.state.loadind ? (
-                        <div className="bixnknfkfjkjrjr">
-                          <LoadingSpin />
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                    <PostCommentSection postId={id} loadMore={loadMore} />
+                    {loading ? (
+                      <div className="bixnknfkfjkjrjr">
+                        <LoadingSpin />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
 
-                    <div className="type-message-box">
-                      <div className="watpr-contnr-mem">
-                        <div className="wrappe-mmeshe">
-                          <Editable
-                            message="Add a comment.."
-                            handleBio={this.setComment}
-                            html={this.state.comment}
-                          />
-                          {/*<div onKeyUp={this.setComment} contentEditable="true" data-placeholder="Type a message..." className="hold-message rjj">{this.state.comment}</div>*/}
-                          <div onClick={this.postComment} className="send-hold">
-                            <button>
-                              <IoSendSharp />
-                            </button>
-                          </div>
+                  <div className="type-message-box">
+                    <div className="watpr-contnr-mem">
+                      <div className="wrappe-mmeshe">
+                        <Editable
+                          message="Add a comment.."
+                          handleBio={handleComment}
+                          html={comment}
+                        />
+                        {/* <div  onInput={(e)=>{handleComment(e)}} contentEditable="true" data-placeholder="Type a message..." className="hold-message rjj">{comment}eeetttte</div> */}
+                        <div onClick={postComment} className="send-hold">
+                          <button>
+                            <IoSendSharp />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -338,30 +217,10 @@ class Comment extends Component {
             </div>
           </div>
         </div>
-        <Report />
       </div>
-    );
-  }
+    </div>
+  );
 }
-const mapstateToProps = (state) => {
-  return {
-    likes: state.likes,
-    users: state.user,
-    postList: state.postList,
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addLikes: (data) => {
-      dispatch({ type: "UPDATE_LIKES", data: data });
-    },
-    addPost: (data) => {
-      dispatch({ type: "UPDATE_POSTIST", data: data });
-    },
-  };
-};
-export default connect(
-  mapstateToProps,
-  mapDispatchToProps
-)(withRouter(Comment));
+
+export default withRouter(Comment);

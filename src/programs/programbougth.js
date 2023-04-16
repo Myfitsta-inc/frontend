@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Rating from "components/rating";
+import Rating from "Components/rating";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import VideoPost from "components/videopost";
+import VideoPost from "Components/videopost";
 import apiUrl from "apiUrl/url";
 class ProgramBought extends Component {
   state = {

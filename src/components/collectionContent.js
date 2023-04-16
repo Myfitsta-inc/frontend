@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import usePost from "hooks/usePost";
-import CollectionMedia from "components/collectionMedia";
+import CollectionMedia from "Components/collectionMedia";
 import { Link } from "react-router-dom";
 const CollectionContent = ({ collection }) => {
   const { collectionList } = collection;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { BiArrowBack } from "react-icons/bi";
-import DataPost from "components/datePost";
+import DataPost from "Components/datePost";
 import { motion } from "framer-motion";
 import { SiGooglemaps } from "react-icons/si";
 import socket from "socketConfig";

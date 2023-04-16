@@ -4,8 +4,8 @@ import axios from "axios";
 import PostBox from "./postbox";
 import apiUrl from "apiUrl/url";
 import { InView } from "react-intersection-observer";
-import LoadingSpin from "./loadingspin";
-import UserPost from "components/userPost";
+import LoadingSpin from "./Loadingspin";
+import UserPost from "Components/userPost";
 class RelatedPost extends Component {
   state = {
     tags: null,

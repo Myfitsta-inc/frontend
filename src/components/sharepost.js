@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import { BiCheck } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
-import Username from "./username";
+import Username from "./Username";
 import apiUrl from "apiUrl/url";
-import IconProfile from "./iconpicture";
+import IconProfile from "./Iconpicture";
 import { connect } from "react-redux";
 let people = 0;
 class SharePost extends Component {

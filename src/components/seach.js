@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import axios from "axios";
 import Subinfo from "./subinfo";
 import { InView } from "react-intersection-observer";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import Interest from "./sugestionInterest";
 import { IoCloseSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import SearchAccount from "./searchAccount";
 class Search extends Component {
   state = {

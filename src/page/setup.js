@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import { HiCheck } from "react-icons/hi";
 import Agreement from "setup/agrement";
 import { BsArrowRepeat } from "react-icons/bs";

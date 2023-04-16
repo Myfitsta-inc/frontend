@@ -5,7 +5,7 @@ import LikedNotification from "notification/likednotifiction";
 import CommentNotification from "notification/commentNotification";
 import TaggedNotification from "notification/taggedNotification";
 import FollowNotification from "notification/followNotification";
-import LoadingSpin from "components/loadingspin.js";
+import LoadingSpin from "Components/Loadingspin.js";
 import apiUrl from "apiUrl/url";
 import axios from "axios";
 let source;

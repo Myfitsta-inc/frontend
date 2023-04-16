@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import { connect } from "react-redux";
 let itemCouter = 0;
 class PaymentmethodCard extends Component {

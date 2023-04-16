@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import BoxMedia from "./boxmedia";
+import BoxMedia from "./Boxmedia";
 import { Link } from "react-router-dom";
 import LikeButton from "./likeButton";
 import PostOption from "./postoption";
 import DataPost from "./datePost";
-import Username from "./username";
+import Username from "./Username";
 import { connect } from "react-redux";
-import IconProfile from "./iconpicture";
+import IconProfile from "./Iconpicture";
 import axios from "axios";
 import socket from "socketConfig";
 import { GoPlus } from "react-icons/go";

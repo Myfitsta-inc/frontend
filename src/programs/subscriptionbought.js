@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import ProgramBought from "programs/programbougth";
 import { connect } from "react-redux";
-import Username from "components/username";
+import Username from "Components/Username";
 
 class SubscriptionBougth extends Component {
   state = {

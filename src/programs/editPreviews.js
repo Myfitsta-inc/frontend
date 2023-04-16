@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VideoPost from "components/videopost";
+import VideoPost from "Components/videopost";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 class EditPreviews extends Component {

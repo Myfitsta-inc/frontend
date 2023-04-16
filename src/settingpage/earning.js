@@ -4,7 +4,7 @@ import axios from "axios";
 import Chart from "chart/chart.js";
 import { BiArrowBack } from "react-icons/bi";
 import OrderSales from "pro/orderSale";
-import LoadingSpin from "components/loadingspin.js";
+import LoadingSpin from "Components/Loadingspin.js";
 import OrderSubscription from "pro/orderSubscription";
 import { connect } from "react-redux";
 import TodayEarning from "earnings/today";

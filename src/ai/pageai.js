@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 class Pageai extends Component {
   render() {
     return (

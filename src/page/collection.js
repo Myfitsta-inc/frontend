@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import { IoCloseSharp } from "react-icons/io5";
 import { GoPlus } from "react-icons/go";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import { Link, withRouter } from "react-router-dom";
-import Navbom from "components/navbom";
+import Navbom from "Components/navbom";
 import apiUrl from "apiUrl/url";
-import DropHomeUp from "components/dropHomeUp";
-import Unlocked from "components/unlocked";
-import CollectionContent from "components/collectionContent";
+import DropHomeUp from "Components/dropHomeUp";
+import Unlocked from "Components/unlocked";
+import CollectionContent from "Components/collectionContent";
 let source;
 source = axios.CancelToken.source();
 class PostCollection extends Component {

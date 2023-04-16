@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import Rating from "components/rating";
+import Rating from "Components/rating";
 import { withRouter } from "react-router-dom";
 import "style/program.css";
-import Nav from "components/nav";
-import Cardmdedia from "components/cardmedia";
+import Nav from "Components/nav";
+import Cardmdedia from "Components/cardmedia";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import PaymentOption from "payment/paymentBox";
 import { BiArrowBack } from "react-icons/bi";
-import VideoProgram from "components/videoProgram";
-import Reviews from "components/reviews";
-import SettingHisProgram from "components/settinghisprogram";
+import VideoProgram from "Components/videoProgram";
+import Reviews from "Components/reviews";
+import SettingHisProgram from "Components/settinghisprogram";
 let source;
 source = axios.CancelToken.source();
 class ShopingItem extends Component {

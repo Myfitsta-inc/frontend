@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "logo/logo.png";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import { motion } from "framer-motion";
 class Loading extends Component {
   render() {

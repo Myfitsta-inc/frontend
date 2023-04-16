@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { connect } from "react-redux";
+import socket from "socketConfig";
 class MenuComment extends Component {
   container = React.createRef();
   state = {
@@ -15,17 +16,21 @@ class MenuComment extends Component {
       kind: "comment",
     },
   };
-  removeComment = () => {
+  removeComment = async () => {
     this.setState({
       delete: true,
     });
-    let option = {
-      userId: this.props.item.userId,
+    const option = {
+      commentId: this.props.commentId,
       postId: this.props.item.postId,
+      action: "removeComment",
     };
-    axios.post("/api/remove-this-comment", option).then((result) => {
-      this.props.removecomment({ id: this.props.item._id });
-    });
+    await axios.post("/api/remove-this-comment", option);
+    const postToRemoveDetails = {
+      action: "removeComment",
+      commentId: this.props.commentId,
+    };
+    socket.emit("comment:sent", postToRemoveDetails);
   };
   handleclick = (data, e) => {
     if (e != null) {

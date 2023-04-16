@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 let source;

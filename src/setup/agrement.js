@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import { BiArrowBack } from "react-icons/bi";
 
 class Agreement extends Component {

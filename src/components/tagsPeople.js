@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import { BiCheck } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
 class TagPeople extends Component {

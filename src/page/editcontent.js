@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import { withRouter } from "react-router-dom";
-import VideoProgram from "components/videoProgram";
+import VideoProgram from "Components/videoProgram";
 import { BiArrowBack } from "react-icons/bi";
 let source;
 source = axios.CancelToken.source();

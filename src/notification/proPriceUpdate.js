@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import IconProfile from "components/iconpicture";
-import Username from "components/username";
-import DataPost from "components/datePost";
+import IconProfile from "Components/Iconpicture";
+import Username from "Components/Username";
+import DataPost from "Components/datePost";
 class CommentNotification extends Component {
   state = {
     username: null,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 import { PaymentElement } from "@stripe/react-stripe-js";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import axios from "axios";
 function CheckoutForm({ plan, publisherId, userId }) {
   const [loading, setLoading] = useState(false);

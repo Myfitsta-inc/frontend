@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import LoadingSpin from "./loadingspin";
+import LoadingSpin from "./Loadingspin";
 import { BiArrowBack } from "react-icons/bi";
 import socket from "socketConfig";
 import Newmessage from "./newmessage";

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
-import TagggedPost from "components/taggedPost";
+import TagggedPost from "Components/taggedPost";
 import profile from "profile.webp";
 import { Link, withRouter } from "react-router-dom";
 import logo from "logo.png";
 import apiUrl from "apiUrl/url";
-import Boxcollection from "components/boxcollection";
-import LoadingSpin from "components/loadingspin.js";
+import Boxcollection from "Components/boxcollection";
+import LoadingSpin from "Components/Loadingspin.js";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiArrowBack } from "react-icons/bi";
 import addS from "utility/addS";
-import PostVue from "components/postvue";
+import PostVue from "Components/postvue";
 let source;
 source = axios.CancelToken.source();
 class Profile extends Component {

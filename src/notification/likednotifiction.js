@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
-import IconProfile from "components/iconpicture";
-import Username from "components/username";
-import VideoPost from "components/videopost";
-import DataPost from "components/datePost";
+import IconProfile from "Components/Iconpicture";
+import Username from "Components/Username";
+import VideoPost from "Components/videopost";
+import DataPost from "Components/datePost";
 class LikedNotification extends Component {
   state = {
     username: null,

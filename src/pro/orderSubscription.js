@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
-import Username from "components/username";
-import IconProfile from "components/iconpicture";
+import Username from "Components/Username";
+import IconProfile from "Components/Iconpicture";
 import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 class OrderSubscription extends Component {
   state = {

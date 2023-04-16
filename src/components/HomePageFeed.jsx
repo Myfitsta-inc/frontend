@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import LoadingSpin from "./loadingspin.js";
+import LoadingSpin from "./Loadingspin.js";
 import { InView } from "react-intersection-observer";
 import PostCollection from "./postcollection.js";
 import Postfit from "./postfit.js";
-import UserPost from "components/userPost";
+import UserPost from "Components/userPost.js";
 import { useSelector } from "react-redux";
 function HomePageFeed({ loading, loadmore }) {
   const userFeeds = useSelector((state) => state.userFeeds);

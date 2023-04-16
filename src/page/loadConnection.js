@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
-import Search from "components/seach";
-import SubscriberList from "components/SubscriberList";
-import Following from "components/following";
+import Nav from "Components/nav";
+import Search from "Components/seach";
+import SubscriberList from "Components/SubscriberList";
+import Following from "Components/following";
 import { motion } from "framer-motion";
-import Follower from "components/follower";
+import Follower from "Components/follower";
 import axios from "axios";
 import { withRouter, Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";

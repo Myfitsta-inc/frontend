@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import RegistractionTwo from "setup/registrationtwo";
-import BaxBar from "components/barbox";
+import BaxBar from "Components/barbox";
 import { connect } from "react-redux";
 import Sila from "silaconfig";
 class Registraction extends Component {

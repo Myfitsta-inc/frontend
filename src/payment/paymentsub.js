@@ -6,7 +6,7 @@ import { HiOutlineChevronRight } from "react-icons/hi";
 import axios from "axios";
 import Checkout from "./Checkout";
 import PaymentMethodSub from "payment/paymentMethodSub";
-import LoadingSpin from "components/loadingspin";
+import LoadingSpin from "Components/Loadingspin";
 import { convertFromStripe } from "currencyFlow/formatMoneyTopayment";
 import { SILVER_PLAN, PLATINUM_PLAN } from "productOptions/plan";
 

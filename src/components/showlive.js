@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import { Link } from "react-router-dom";
-import Username from "./username";
-import IconProfile from "./iconpicture";
+import Username from "./Username";
+import IconProfile from "./Iconpicture";
 import socket from "socketConfig";
 export default class ShowLive extends Component {
   state = {

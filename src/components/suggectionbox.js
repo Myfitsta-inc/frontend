@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
-import IconProfile from "./iconpicture";
+import IconProfile from "./Iconpicture";
 import ButtonFollow from "./buttonFollow";
 import { connect } from "react-redux";
 

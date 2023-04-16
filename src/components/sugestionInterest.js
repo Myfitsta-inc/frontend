@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LoadingSpin from "components/loadingspin";
-import LoadInterest from "components/LoadInterest";
-import SelctedInterest from "components/seletedInterest";
+import LoadingSpin from "Components/Loadingspin";
+import LoadInterest from "Components/LoadInterest";
+import SelctedInterest from "Components/seletedInterest";
 import { useSelector, useDispatch } from "react-redux";
 function Interest({ tabs }) {
   const [selected, setSelected] = useState();

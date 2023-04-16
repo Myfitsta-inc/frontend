@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { withRouter, Link } from "react-router-dom";
 import PaymentBoxCard from "payment/PaymentBoxcard";
 import { BiArrowBack } from "react-icons/bi";
-import CardItem from "components/carditem";
+import CardItem from "Components/carditem";
 let source;
 source = axios.CancelToken.source();
 class Card extends Component {

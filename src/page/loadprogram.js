@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import "style/loadp.css";
 import { MdModeEdit } from "react-icons/md";
 import { withRouter, NavLink } from "react-router-dom";
-import Video from "components/video";
-import LoadingSpin from "components/loadingspin";
+import Video from "Components/video";
+import LoadingSpin from "Components/Loadingspin";
 import { GrPlayFill } from "react-icons/gr";
 import ProIcon from "programs/proicon";
 import { BiArrowBack } from "react-icons/bi";
 import apiUrl from "apiUrl/url";
 import { AiFillDelete } from "react-icons/ai";
-import DeleteContent from "components/deleteContentP";
+import DeleteContent from "Components/deleteContentP";
 import { useParams } from "react-router-dom";
 import useUser from "hooks/useUser";
 function Loadprogram({ history }) {

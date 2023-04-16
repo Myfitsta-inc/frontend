@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import LikeButton from "./likeButton";
-import Username from "./username";
+import Username from "./Username";
 import { GoPlus } from "react-icons/go";
 import DataPost from "./datePost";
-import BoxMedia from "./boxmedia";
+import BoxMedia from "./Boxmedia";
 import PostOption from "./postoption";
-import IconProfile from "./iconpicture";
+import IconProfile from "./Iconpicture";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 class PostBox extends Component {

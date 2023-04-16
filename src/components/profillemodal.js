@@ -3,7 +3,7 @@ import axios from "axios";
 import MessageButton from "./messageSomeone";
 import ButtonFollow from "./buttonFollow";
 import { Link } from "react-router-dom";
-import IconProfile from "./iconpicture";
+import IconProfile from "./Iconpicture";
 class ProfileModal extends Component {
   state = {
     profile: {},

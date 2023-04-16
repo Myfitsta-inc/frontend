@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { HiCheck } from "react-icons/hi";
 import { BsArrowRepeat, BsGraphUp } from "react-icons/bs";
-import BaxBar from "components/barbox";
+import BaxBar from "Components/barbox";
 import { BiArrowBack } from "react-icons/bi";
 class Select extends Component {
   state = {};

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Nav from "components/nav";
+import Nav from "Components/nav";
 import axios from "axios";
 import NotificationBasicBox from "notification/notificationBasicBox";
 import NotificationProBox from "notification/noticationProBox";
 import { withRouter } from "react-router-dom";
-import Search from "components/seach";
+import Search from "Components/seach";
 import { BiArrowBack } from "react-icons/bi";
-import Navbom from "components/navbom";
-import DropHomeUp from "components/dropHomeUp";
+import Navbom from "Components/navbom";
+import DropHomeUp from "Components/dropHomeUp";
 
 let source;
 source = axios.CancelToken.source();
