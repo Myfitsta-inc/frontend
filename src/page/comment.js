@@ -83,7 +83,8 @@ function Comment({ history }) {
 
   useEffect(() => {
     socket.on("comment:receive", (commentToSend) => {
-      const { action, commentId } = commentToSend;
+      const { action, commentId, postId } = commentToSend;
+      if (postId !== id) return;
       if (action === "addComment") {
         const newComment = { ...commentToSend };
         const newComments = [newComment, ...comments];

@@ -29,6 +29,7 @@ class MenuComment extends Component {
     const postToRemoveDetails = {
       action: "removeComment",
       commentId: this.props.commentId,
+      postId: this.props.item.postId,
     };
     socket.emit("comment:sent", postToRemoveDetails);
   };
