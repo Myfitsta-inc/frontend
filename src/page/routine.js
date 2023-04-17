@@ -15,9 +15,7 @@ class Routine extends Component {
     this.props.history.goBack();
   };
 
-  handleChange = (event) => {
-    console.log(event);
-  };
+  handleChange = (event) => {};
 
   getRoutine = () => {
     axios

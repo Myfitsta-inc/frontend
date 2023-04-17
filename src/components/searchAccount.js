@@ -29,7 +29,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
     };
     axios.post("/api/removeRecentprofile", option).then((res) => {
       let list = people.filter((item) => {
-        return item.userId != data;
+        return item.userId !== data;
       });
       setPeople(list);
     });
@@ -152,7 +152,7 @@ const SearchAccount = ({ tabs, openSearch, user }) => {
                       </div>
                       <div
                         onClick={(e) => {
-                          removerecent(e, item.userId);
+                          removerecent(item.userId);
                         }}
                         className="delc-pro"
                       >

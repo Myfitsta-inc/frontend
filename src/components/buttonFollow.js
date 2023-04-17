@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { MdDelete } from "react-icons/md";
-import moment from "moment";
 import useUser from "hooks/useUser";
 import { useSelector, useDispatch } from "react-redux";
 import { IoCloseSharp } from "react-icons/io5";
@@ -13,17 +12,6 @@ function ButtonFollow({ friend, activeBox }) {
   const [follow, setFollow] = useState(null);
   const [unfollow, setUnfollow] = useState(false);
   const followLists = useSelector((state) => state.followLists);
-  const updatenotification = () => {
-    let option = {
-      userIdToNotify: friend,
-      type: "follow",
-      notifiyiId: userId,
-      media: userId,
-      date: moment().format(),
-      extraInfo: "",
-    };
-    axios.post(`/api/update-notification`, option).then((res) => {});
-  };
 
   const activeFollow = () => {
     setUnfollow(!unfollow);
@@ -36,7 +24,6 @@ function ButtonFollow({ friend, activeBox }) {
     };
     setFollow(true);
     axios.post("/api/update-fo", dataUser).then((res) => {});
-    updatenotification();
   };
   const removeFollow = () => {
     let option = {
@@ -119,9 +106,6 @@ function ButtonFollow({ friend, activeBox }) {
               </div>
               <div className="fjjtutjsjr">
                 <p className="rkerr">Unfollow</p>{" "}
-                {/* <div className="fheijwhr">
-                    <Username user={friend} />
-                  </div> */}
               </div>
             </div>
             <div className="jfkjworf">

@@ -453,7 +453,7 @@ function App() {
             <Route exact path="/setup">
               {user !== null ? (
                 user.email.length > 0 ? (
-                  user.canActivate === false ? (
+                  user.canActivate ? (
                     myfitstapro.username ? (
                       <Redirect to="/myfitstapro" />
                     ) : (

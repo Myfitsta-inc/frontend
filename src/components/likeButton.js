@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import uuid from "react-uuid";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import moment from "moment";
 import Bounce from "react-reveal/Bounce";
 import socket from "socketConfig";
 import { useSelector, useDispatch } from "react-redux";
+import nFormatter from "utility/nFormatter";
 function LikeButton({ numberOfLikes, userId, posterId, postId }) {
   const [numberOfLikesForThisPost, setNumberOfLikesForThisPost] =
     useState(numberOfLikes);
@@ -25,9 +25,7 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
     };
     let list = [...likes, info];
     dispatch({ type: "UPDATE_LIKES", value: list });
-    axios.post("/api/likedpost", option).then((res) => {
-      updatenotification(res.data);
-    });
+    axios.post("/api/likedpost", option).then((res) => {});
   };
   const addPost = (data) => {
     dispatch({ type: "UPDATE_POSTIST", value: data });
@@ -42,36 +40,11 @@ function LikeButton({ numberOfLikes, userId, posterId, postId }) {
     } else {
     }
   };
-  const nFormatter = (num) => {
-    if (num >= 1000000000) {
-      return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "B";
-    }
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-    }
-    if (num >= 1000) {
-      return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
-    }
-    return num;
-  };
-  const updatenotification = (data) => {
-    let option = {
-      userIdToNotify: data.userId,
-      type: "like",
-      notifiyiId: userId,
-      media: data.postId,
-      date: moment().format(),
-      extraInfo: "",
-    };
 
-    if (userId !== posterId) {
-      axios.post(`/api/update-notification`, option).then((res) => {});
-    }
-    socket.emit("some-like-a-post", {
-      postId: data.postId,
-      numberOfLikes: numberOfLikesForThisPost,
-    });
-  };
+  // socket.emit("some-like-a-post", {
+  //   postId: data.postId,
+  //   numberOfLikes: numberOfLikesForThisPost,
+  // });
 
   const handleLike = (data) => {
     setNumberOfLikesForThisPost(numberOfLikesForThisPost + 1);

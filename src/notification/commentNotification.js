@@ -31,7 +31,7 @@ class CommentNotification extends Component {
   };
   render() {
     return (
-      <div className="div-hold-hold-thenotification">
+      <div className="div-hold-hold-thenotification navigate">
         <div className="wjsjrhrnnff ">
           <div className="icon-of-thedube">
             {this.props.item ? (
@@ -84,6 +84,10 @@ class CommentNotification extends Component {
             ""
           )}
         </div>
+        <Link
+          className="navigateToPost"
+          to={`/comment/${this.props.item.postId}`}
+        ></Link>
       </div>
     );
   }

@@ -12,24 +12,9 @@ class LikedNotification extends Component {
     media: null,
   };
 
-  getmedia = () => {
-    axios
-      .get(`/api/postinfo/${this.props.item.media}`, { withCredentials: true })
-      .then((res) => {
-        if (res.data.filename) {
-          this.setState({
-            media: res.data,
-          });
-        } else {
-        }
-      });
-  };
-  componentDidMount = () => {
-    // this.getmedia();
-  };
   render() {
     return (
-      <div className="div-hold-hold-thenotification">
+      <div className="div-hold-hold-thenotification navigate">
         <div className="wjsjrhrnnff ">
           <div className="icon-of-thedube">
             {this.props.item ? (
@@ -83,9 +68,10 @@ class LikedNotification extends Component {
           )}
         </div>
 
-        {/*<div className="itjejmsmf">
-            <button><i className="fas fa-ellipsis-v"></i></button>
-        </div>*/}
+        <Link
+          className="navigateToPost"
+          to={`/profile/${this.props.item.notifiyiId}/${this.props.item.postId}`}
+        ></Link>
       </div>
     );
   }

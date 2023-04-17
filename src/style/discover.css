@@ -35,6 +35,7 @@
   width: 100%;
   overflow: scroll;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
 }
 

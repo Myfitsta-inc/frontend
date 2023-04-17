@@ -222,5 +222,4 @@ function Comment({ history }) {
   );
 }
 
-
 export default withRouter(Comment);

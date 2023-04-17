@@ -849,7 +849,7 @@ video:-webkit-media-controls-panel {
   top: 0;
   bottom: 0;
   height: 100vh;
-
+  backdrop-filter: blur(1px);
   background-color: var(--main-bg-cool-rgb);
   z-index: 100000000000000;
   display: none;
@@ -1810,7 +1810,6 @@ video:-webkit-media-controls-panel {
 }
 .bottom-wraper-pos {
   width: 100%;
-  background-color: var(--main-bg-box);
 }
 .tnntntn {
   height: 80px;
@@ -2567,14 +2566,28 @@ video:-webkit-media-controls-panel {
   overflow: hidden;
   border-radius: 10px;
 }
+.navigateToPost {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
 .div-hold-hold-thenotification {
+  position: relative;
   border-bottom: 1px solid var(--main-bg-cool-rgb);
   width: 100%;
   display: flex;
   min-height: 80px;
   padding: 10px;
-
   justify-content: space-between;
+}
+.div-hold-hold-thenotification.navigate:hover {
+  background-color: var(--main-bg-cool-rgb);
+  border-bottom: 0px;
+}
+.div-hold-hold-thenotification.navigate {
+  cursor: pointer;
 }
 .hold-thodisjhjijjrnbbd {
   height: calc(100vh - 110px);
@@ -4283,6 +4296,11 @@ body {
   margin-top: 3px;
   color: var(--text);
 }
+.action-follow-un-fo button:hover {
+  background-color: var(--main-bg-cool-rgb);
+  border: 0 !important;
+}
+
 .action-follow-un-fo button {
   height: 40px;
   width: 120px;
@@ -5110,8 +5128,8 @@ body {
   height: 90%;
   border-radius: 10px;
   max-height: 90%;
-
   background: var(--main-bg-cool-rgb);
+  box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
 }
 .control-that-video-post button {
   background: none;
@@ -5200,6 +5218,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 #upbox p {
   text-transform: uppercase;
@@ -5237,6 +5256,7 @@ body {
   z-index: 1000000;
   background-color: rgba(0, 0, 0, 1);
   backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 #file-input {
   display: none;
@@ -5273,7 +5293,7 @@ body {
 }
 .before-upod p {
   font-weight: bold;
-  padding-left: 20px;
+
   color: var(--text);
 }
 .before-upod {
@@ -5655,6 +5675,8 @@ canvas {
 }
 
 .post-box {
+  padding: 10px;
+  box-shadow: 0px 0px 10px var(--main-bg-cool-rgb);
   position: relative;
   color: var(--text);
   max-width: 670px;
@@ -6080,6 +6102,7 @@ video {
   justify-content: center;
   border-radius: 10px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 #app {

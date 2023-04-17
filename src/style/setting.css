@@ -981,6 +981,7 @@
   border-radius: 10px;
   background-color: var(--main-bg-cool-rgb);
   height: 60px;
+  margin-bottom: 10px;
 }
 
 .rjer3lwr3w {
@@ -1005,10 +1006,8 @@
 }
 .ifiirkjjr {
   display: flex;
-  margin-top: 10px;
+
   min-height: 60px;
-  border-radius: 10px;
-  border: 2px solid var(--main-bg-cool-rgb);
 }
 
 .rjrnjmrkesr.sjrwkjrj {

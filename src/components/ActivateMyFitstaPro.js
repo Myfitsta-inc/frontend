@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, withRouter } from "react-router-dom";
 import LoadingSpin from "./Loadingspin";
 function ActivateMyFitstaPro({ user }) {
   const [loading, setLoading] = useState(false);
@@ -13,7 +12,6 @@ function ActivateMyFitstaPro({ user }) {
     axios.post(`/api/activate-myfit-sta-pro`, option).then((data) => {
       if (data.data.succes) {
         window.location.href = "/setup";
-      } else {
       }
     });
   };

@@ -1,29 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 import IconProfile from "Components/Iconpicture";
 import Username from "Components/Username";
 import ButtonFollow from "Components/buttonFollow";
 class FollowNotification extends Component {
-  state = {
-    username: null,
-    media: null,
-  };
-
-  getmedia = () => {
-    axios
-      .get(`/api/postinfo/${this.props.item.media}`, { withCredentials: true })
-      .then((res) => {
-        if (res.data.filename) {
-          this.setState({
-            media: res.data,
-          });
-        } else {
-        }
-      });
-  };
-  componentDidMount = () => {
-    //this.getmedia()
-  };
   render() {
     return (
       <div className="div-hold-hold-thenotification">
@@ -49,10 +29,6 @@ class FollowNotification extends Component {
             <ButtonFollow friend={this.props.item.notifiyiId} />
           </div>
         </div>
-
-        {/*<div className="itjejmsmf">
-            <button><i className="fas fa-ellipsis-v"></i></button>
-        </div>*/}
       </div>
     );
   }

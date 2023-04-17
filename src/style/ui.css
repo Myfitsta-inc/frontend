@@ -1210,6 +1210,7 @@
 .card-box-program:hover {
 }
 .card-box-program {
+  padding: 10px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1308,6 +1309,8 @@
 }
 .descplr-image-program-ui {
   position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .read-load {

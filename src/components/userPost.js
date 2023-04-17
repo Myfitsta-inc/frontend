@@ -1,36 +1,20 @@
 import usePost from "hooks/usePost";
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import BoxMedia from "./Boxmedia";
 import { Link } from "react-router-dom";
 import LikeButton from "./likeButton";
 import PostOption from "./postoption";
 import DataPost from "./datePost";
 import Username from "./Username";
-import { connect } from "react-redux";
 import IconProfile from "./Iconpicture";
-import axios from "axios";
-import socket from "socketConfig";
-import useCollections from "hooks/useCollections";
 import useUser from "hooks/useUser";
 import { GoPlus } from "react-icons/go";
-const nFormatter = (num) => {
-  if (num >= 1000000000) {
-    return (num / 1000000000).toFixed(1).replace(/\.0$/, "") + "B";
-  }
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-  }
-  if (num >= 1000) {
-    return (num / 1000).toFixed(1).replace(/\.0$/, "") + "K";
-  }
-  return num;
-};
+import nFormatter from "utility/nFormatter";
 
 function UserPost({ postId, handleSetting }) {
   const { user } = useUser();
   const dispatch = useDispatch();
-
   const openBoxCollection = (add) => {
     dispatch({ type: "UPDATE_BOXCOLLECTION", value: add });
     dispatch({ type: "UPDATE_SELECTED_POSTID", value: postId });

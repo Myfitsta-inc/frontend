@@ -24,12 +24,10 @@ class TaggedNotification extends Component {
         }
       });
   };
-  componentDidMount = () => {
-    this.getmedia();
-  };
+  componentDidMount = () => {};
   render() {
     return (
-      <div className="div-hold-hold-thenotification">
+      <div className="div-hold-hold-thenotification navigate">
         <div className="wjsjrhrnnff ">
           <div className="icon-of-thedube">
             {this.props.item ? (
@@ -49,7 +47,7 @@ class TaggedNotification extends Component {
 
             <div className="bmhjn">
               {" "}
-              <div>tagged you </div>{" "}
+              <div>tagged you on a post </div>{" "}
               <div className="boxfj-rnj">
                 {this.props.item ? (
                   <DataPost date={this.props.item.date} />
@@ -88,6 +86,10 @@ class TaggedNotification extends Component {
         {/*<div className="itjejmsmf">
             <button><i className="fas fa-ellipsis-v"></i></button>
         </div>*/}
+        <Link
+          className="navigateToPost"
+          to={`/profile/${this.props.item.notifiyiId}/${this.props.item.postId}`}
+        ></Link>
       </div>
     );
   }
