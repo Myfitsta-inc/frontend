@@ -4,8 +4,7 @@ import { GoPlus } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import Notin from "./notin";
 import useUser from "hooks/useUser";
-function Navbom() {
-  const handloption = () => {};
+function Navbom({ handloption }) {
   const { user } = useUser();
   return (
     user && (

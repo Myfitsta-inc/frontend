@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { FiInstagram, FiTwitter } from "react-icons/fi";
 import { AiFillLinkedin } from "react-icons/ai";
+import { FaDiscord } from "react-icons/fa";
+
 class Fouter extends Component {
   render() {
     return (
@@ -27,9 +29,15 @@ class Fouter extends Component {
               <AiFillLinkedin />
             </a>
           </div>
+          <div className="icon-of-icifj">
+            <a href="https://discord.gg/pzK8uXdVsG">
+              {" "}
+              <FaDiscord />
+            </a>
+          </div>
         </div>
         <div className="jjrjr">
-          <a href="mailto:myfitsta@outlook.com"> myfitsta@outlook.com</a>
+          <a href="mailto:myfitsta@outlook.com">myfitsta@outlook.com</a>
         </div>
       </div>
     );

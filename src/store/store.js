@@ -20,7 +20,7 @@ const store = {
   peopleRecent: [],
   inbox: [],
   usernameLists: [],
-  iconList: [],
+  iconList: {},
   postList: [],
   followLists: [],
   userFeeds: null,

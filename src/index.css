@@ -4,8 +4,7 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
-.appppp {
-}
+
 #root {
   --main-bg-side-dark: #212529;
   --main-bg-pagebox-dark: #1f2125;
