@@ -22,7 +22,7 @@ function useIcon(userId) {
       return () => controller.abort();
     };
     if (userId) loadImage();
-  }, []);
+  }, [userId]);
   return {
     icon,
   };

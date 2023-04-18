@@ -29,7 +29,7 @@ function useUsername(userId) {
       fetchName();
     }
     return () => controller.abort();
-  }, []);
+  }, [userId]);
 
   return {
     username,
