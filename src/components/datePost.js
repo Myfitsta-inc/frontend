@@ -1,28 +1,13 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
-class DataPost extends Component {
-  state = {
-    date: "",
-  };
-
-  update = () => {
-    this.setState({
-      date: moment(this.props.date).fromNow(),
-    });
-  };
-
-  componentDidMount = () => {
-    this.setState({
-      date: moment(this.props.date).fromNow(),
-    });
-    setInterval(() => {
-      this.update();
+function DataPost({ date }) {
+  const [dateFormat, setDateFormat] = useState(moment(date).fromNow());
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDateFormat(moment(date).fromNow());
     }, 10000);
-  };
-
-  render() {
-    return <div className="gjjgkkg-overrjjrlay ">{this.state.date}</div>;
-  }
+    return () => clearInterval(timer);
+  });
+  return <div className="gjjgkkg-overrjjrlay ">{dateFormat}</div>;
 }
-
 export default DataPost;

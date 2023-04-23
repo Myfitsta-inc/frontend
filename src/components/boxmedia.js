@@ -29,7 +29,11 @@ function BoxMedia({ mediaDetails }) {
     <div className="post-content">
       {mediaDetails.length === 1 ? (
         mediaDetails[0].mimetype.includes("image") ? (
-          <img src={`${apiUrl.content}${mediaDetails[0].key}`} alt="workout" />
+          <img
+            src={`${apiUrl.content}${mediaDetails[0].key}`}
+            loading="lazy"
+            alt="workout"
+          />
         ) : (
           <>
             <VideoPost src={`${mediaDetails[0].key}`} />

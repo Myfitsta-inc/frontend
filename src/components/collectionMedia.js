@@ -8,7 +8,7 @@ const CollectionMedia = ({ postId }) => {
     <div className="box-media-show">
       {post ? (
         post.mediaDetails[0].mimetype.includes("image") ? (
-          <img src={`${apiUrl.content}${mediaUrl}`} />
+          <img src={`${apiUrl.content}${mediaUrl}`} loading="lazy" />
         ) : (
           <video>
             <source src={`${apiUrl.content}${mediaUrl}`} />
