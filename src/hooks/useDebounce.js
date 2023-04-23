@@ -8,12 +8,11 @@ function useDebounce(value, delay) {
     }, delay);
 
     return () => {
-       clearTimeout(timer);
+      clearTimeout(timer);
     };
   }, [value, delay]);
 
   return debouncedValue;
 }
-
 
 export default useDebounce;

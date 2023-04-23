@@ -10,7 +10,7 @@ import Feature from "./Feature";
 import Fouter from "./Fouter";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
-
+import GradientNavigations from "landing/GradientNavigation";
 class HomeLand extends Component {
   state = {
     nav: false,
@@ -38,7 +38,9 @@ class HomeLand extends Component {
   render() {
     return (
       <motion.div className={`homne-page`}>
+        <GradientNavigations />
         <Navland switchToggle={this.switchToggle} openNav={this.openNav} />
+
         <div className="holsnjnfj-iofjf">
           <div className="hold-theicondjfnnr">
             <Fade top>

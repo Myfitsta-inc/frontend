@@ -5,7 +5,6 @@ import Navland from "landing/Navland";
 import LoadingSpin from "Components/Loadingspin";
 import logoone from "logo/logo.png";
 import Fade from "react-reveal/Fade";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 let source;
 source = axios.CancelToken.source();
