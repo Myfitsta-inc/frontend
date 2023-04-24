@@ -71,9 +71,7 @@ class HomeLand extends Component {
                 </div>
 
                 <div className="wraperjrjr">
-                  <button>
-                    <Link to={"/login"}>Login</Link>
-                  </button>
+                
                   <button>
                     <Link to={"/register"}>Sign Up</Link>
                   </button>
