@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 import Username from "./Username";
 import IconProfile from "./Iconpicture";
 import useDebounce from "hooks/useDebounce";
+import { useSelector } from "react-redux";
 const SearchAccount = ({ tabs, openSearch, user }) => {
+  const searchBox=useSelector((state)=>state.searchBox)
   const [query, setQuery] = useState("");
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(true);
