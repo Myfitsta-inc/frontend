@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import Nav from "Components/nav";
 import ProfilePromessage from "Components/profilepromessage";
 import axios from "axios";
-import apiUrl from "apiUrl/url";
 import ProgramMessage from "Components/programMessage";
 import ConversationDetail from "Components/conversationdetail";
 import ConversationList from "Components/conversation";
@@ -12,7 +11,6 @@ import VideoMessage from "Components/videomessage";
 import Username from "Components/Username";
 import IconProfile from "Components/Iconpicture";
 import { IoSendSharp } from "react-icons/io5";
-import { AiOutlinePlus } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import ImageMessage from "Components/imagemessage";
 import Profilemessage from "Components/profilemessage";
@@ -267,7 +265,7 @@ class Conversation extends Component {
   render() {
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabss">
             <div className="mesage-box-sessiinon">

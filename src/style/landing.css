@@ -430,7 +430,7 @@ body {
   display: flex;
 }
 .wraperjrjr button:nth-child(1) {
-  border: 2px solid #6f56e5;
+  background-color: #6f56e5;
 }
 .wraperjrjr button:nth-child(2) a {
   color: white;
@@ -439,7 +439,7 @@ body {
   background-color: #6f56e5;
 }
 .wraperjrjr button {
-  width: 50%;
+  width: 100%;
   background-color: transparent;
   height: 40px;
   border-radius: 10px;

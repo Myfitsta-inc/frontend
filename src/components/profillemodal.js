@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import MessageButton from "./messageSomeone";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 import { Link } from "react-router-dom";
 import IconProfile from "./Iconpicture";
 class ProfileModal extends Component {

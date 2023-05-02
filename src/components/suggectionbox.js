@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
 import IconProfile from "./Iconpicture";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 import { connect } from "react-redux";
 
 class SuggectionBox extends Component {

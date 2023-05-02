@@ -8,7 +8,7 @@ import { AiFillDelete } from "react-icons/ai";
 import profile from "profile.webp";
 import { motion } from "framer-motion";
 import { connect } from "react-redux";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 class ConversationDetail extends Component {
   state = {
     id: "",

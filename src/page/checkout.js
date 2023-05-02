@@ -19,7 +19,7 @@ class Checkout extends Component {
   render() {
     return (
       <div className="conatiner" ref={this.container}>
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabs">
             <div className="holdt-he-checkut-info"></div>

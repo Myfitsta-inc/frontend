@@ -63,7 +63,7 @@ class Lookformyfitstapro extends Component {
   render() {
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           {this.state.profile !== null ? (
             this.state.profile.accountType === 1 ? (

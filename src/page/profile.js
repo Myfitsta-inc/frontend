@@ -99,7 +99,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabss">
             <div className="wridjjr-acroutjrnj">

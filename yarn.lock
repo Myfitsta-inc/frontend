@@ -4092,6 +4092,11 @@
   dependencies:
     "fill-range" "^7.0.1"
 
+"brain@^1.0.0":
+  "integrity" "sha512-0+IzJ2IRefmRFe6wF3zn/Btu6+8Z2pYsTmWISwssDEwP8A0FUJPzGrAVICKs4+1jSghxTzt95BXZjD3o5fr2sQ=="
+  "resolved" "https://registry.npmjs.org/brain/-/brain-1.0.0.tgz"
+  "version" "1.0.0"
+
 "brorand@^1.0.1", "brorand@^1.1.0":
   "integrity" "sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8="
   "resolved" "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz"

@@ -9,6 +9,7 @@ import Checkout from "page/checkout";
 import Report from "Components/report";
 import Register from "page/register";
 import Landing from "page/landingPage";
+import Pageai from "ai/PageAi";
 import ShopingItem from "page/shopingItem";
 import Notification from "page/notification";
 import Setup from "page/setup";
@@ -120,6 +121,17 @@ function App() {
               {user ? (
                 user.email.length > 0 ? (
                   <Redirect to="/home" />
+                ) : (
+                  <Landing />
+                )
+              ) : (
+                <Loading />
+              )}
+            </Route>
+            <Route exact path="/ai">
+              {user ? (
+                user.email.length > 0 ? (
+                  <Pageai />
                 ) : (
                   <Landing />
                 )

@@ -6,6 +6,7 @@ function DataPost({ date }) {
     const timer = setInterval(() => {
       setDateFormat(moment(date).fromNow());
     }, 10000);
+
     return () => clearInterval(timer);
   });
   return <div className="gjjgkkg-overrjjrlay ">{dateFormat}</div>;

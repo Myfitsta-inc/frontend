@@ -58,7 +58,7 @@ class LoadConnection extends Component {
   render() {
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabs">
             <div className="wrpart-therjgjrj">
