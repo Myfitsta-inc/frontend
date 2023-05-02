@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import IconProfile from "Components/Iconpicture";
 import Username from "Components/Username";
-import ButtonFollow from "Components/buttonFollow";
+import ButtonFollow from "Components/ButtonFollow";
 class FollowNotification extends Component {
   render() {
     return (

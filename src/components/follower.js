@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import SuggectionBox from "./suggectionbox";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 import IconProfile from "./Iconpicture";
 import LoadingSpin from "./Loadingspin";
 import { connect } from "react-redux";

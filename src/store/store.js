@@ -25,7 +25,7 @@ const store = {
   followLists: [],
   userFeeds: null,
   comments: [],
-  searchBox:[]
+  searchBox: [],
 };
 
 export default store;

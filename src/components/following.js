@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import LoadingSpin from "./Loadingspin";
 import { InView } from "react-intersection-observer";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 import IconProfile from "./Iconpicture";
 import Username from "./Username";
 import { motion } from "framer-motion";

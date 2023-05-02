@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ShareOption from "Components/shareoption";
 import SharePost from "Components/sharepost";
 import { withRouter, Link } from "react-router-dom";
-import ButtonFollow from "Components/buttonFollow";
+import ButtonFollow from "Components/ButtonFollow";
 import Nav from "Components/nav";
 import axios from "axios";
 import apiUrl from "apiUrl/url";
@@ -164,7 +164,7 @@ class Visitpage extends Component {
   render() {
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabs">
             {this.state.profile !== null ? (

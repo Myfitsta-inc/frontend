@@ -128,7 +128,7 @@ class SeeCollection extends Component {
 
     return (
       <div className="conatiner">
-        <Nav user={this.props.user} />
+        <Nav />
 
         <div id="app">
           <div id="body-tabs">

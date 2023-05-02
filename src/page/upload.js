@@ -293,7 +293,7 @@ class Upload extends Component {
         >
           <LoadingSpin />
         </div>
-        <Nav user={this.props.user} />
+        <Nav />
         <div id="app">
           <div id="body-tabss">
             <div id="post">

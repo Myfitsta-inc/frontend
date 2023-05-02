@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 import IconProfile from "./Iconpicture";
 import Username from "./Username";
 import LoadingSpin from "./Loadingspin";

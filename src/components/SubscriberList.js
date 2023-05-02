@@ -8,7 +8,7 @@ import IconProfile from "./Iconpicture";
 import Username from "./Username";
 import { motion } from "framer-motion";
 import Subinfo from "./subinfo";
-import ButtonFollow from "./buttonFollow";
+import ButtonFollow from "./ButtonFollow";
 class SubscriberList extends Component {
   state = {
     list: null,
