@@ -61,7 +61,6 @@ class SharePost extends Component {
       .then((result) => {
         axios.post(`/api/new-message`, option).then((result) => {
           people++;
-
           if (people === this.state.selected.length) {
             people = 0;
             this.props.handlOpenS(false);
