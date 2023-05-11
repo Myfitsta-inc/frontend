@@ -197,38 +197,13 @@ class Discover extends Component {
                                 </div>
                               </div>
 
-                              <div className="pjdjj">
-                                {/* <div className="wrp-actt">
-                                  <LikeButton
-                                    userId={this.props.user.userId}
-                                    mediaDetails={post.mediaDetails}
-                                    postId={post._id}
-                                    numberOfLikes={post.numberOfLikes}
-                                  />
-                                  <Link
-                                    className="rjetrjjrj"
-                                    to={`/comment/${post._id}`}
-                                  >
-                                    <div className="icon">
-                                      <i className="far fa-comment"></i>
-                                    </div>
-                                    <p>{post.numberOfComments}</p>
-                                  </Link>
-                                </div> */}
-                              </div>
+                              <div className="pjdjj"></div>
                             </div>
                             <Link
                               className="rj0ojrj-rjosl"
                               to={`/dis/${post._id}`}
                             ></Link>
-                            {/* <button
-                              onClick={() => {
-                                this.props.openBoxCollection(true, post._id);
-                              }}
-                              className="alodjrr"
-                            >
-                              <GoPlus />
-                            </button> */}
+
                             <InView
                               onChange={(inView, entry) =>
                                 this.checkLoad(inView)
@@ -318,11 +293,6 @@ class Discover extends Component {
                 ) : (
                   ""
                 )}
-                {/*    <div className="contiantien-postt">
-                <div className="box-media-boxx"></div>
-                <div className="box-media-boxx"></div>
-                <div className="box-media-boxx"></div>
-            </div>*/}
               </div>
             </div>
             <Navtop />

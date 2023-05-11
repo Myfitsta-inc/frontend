@@ -1,19 +1,16 @@
-class MYFITSTAI{
-    constructor(){
-        this.models=[]
-    }
+class MYFITSTAI {
+  constructor() {
+    this.models = [];
+  }
 }
 
-export default MYFITSTAI
-
-
-
+export default MYFITSTAI;
 
 // let statesquate="close"
 //  let img;
 // let bar = document.querySelector(".bar")
 // let rightleg="close"
-// let distance 
+// let distance
 // let d
 // let timeot
 // let stateplaying=false
@@ -52,8 +49,6 @@ export default MYFITSTAI
 
 // })
 
-
-
 // function LoadAi(){
 // video = createCapture(VIDEO);
 // video.hide()
@@ -77,10 +72,7 @@ export default MYFITSTAI
 // };
 // brain.load(modelInfo, brainLoaded);
 
- 
- 
 // }
-
 
 // function brainLoaded() {
 //   console.log('pose classification ready!');
@@ -99,30 +91,29 @@ export default MYFITSTAI
 //     brain.classify(inputs, gotResult);
 //   } else {
 //       setTimeout(classifyPose, 100);
-  
+
 //   }
 // }
 
 // function gotResult(error, results) {
 //   if (results[0].a>0.90) {
 //   	statesquate="open"
-  
-//   } 
+
+//   }
 //   if (results[0].c>0.90 && rightleg=="open" && start==true ){
 // if (statesquate=="open") {
 // 	counter= counter+1
 // 	document.querySelector(".hosl-score").innerText=counter
 // 	statesquate="close"
-  
+
 // }
 //   }
 // classifyPose();
 //   }
 
-
 // function gotPoses(poses) {
 
-//   if (poses.length > 0 ) { 
+//   if (poses.length > 0 ) {
 //     pose = poses[0].pose;
 //     skeleton = poses[0].skeleton;
 //   }
@@ -143,7 +134,6 @@ export default MYFITSTAI
 //   ){
 //   rightleg="open"
 
-  
 // /*computer(
 //   pose.rightShoulder.x,
 //   pose.rightShoulder.y,
@@ -156,11 +146,9 @@ export default MYFITSTAI
 // }
 //   //d  = dist(pose.rightEye.x,pose.rightEye.y,pose.leftEye.x,pose.leftEye.y)
 
-
-
 //   }
 //   }
-  
+
 // }
 // function computer(ax,ay,bx,by,cx,cy){
 // let a =  Math.sqrt(Math.pow((bx -  cx),2 ) + Math.pow((by -  cy),2 ) )
@@ -182,7 +170,6 @@ export default MYFITSTAI
 // function setup(){
 //   console.log("create")
 // }
-
 
 // let conter= 100
 //   let x
@@ -208,7 +195,7 @@ export default MYFITSTAI
 // },150)
 // }
 // if (conter==50) {
- 
+
 // }
 //   },150)
 // }
@@ -218,12 +205,11 @@ export default MYFITSTAI
 //   if (stateplaying==true) {
 // let videos= document.querySelectorAll("video")
 // videos.forEach(item=>{
- 
 
 //   let mediaStream = item.srcObject;
 // // hrough the MediaStream, you can get the MediaStreamTracks with getTracks():
 // let tracks = mediaStream.getTracks();
-// // Tracks are returned as an array, so if you know you only have one, you can stop it with: 
+// // Tracks are returned as an array, so if you know you only have one, you can stop it with:
 // tracks[0].stop();
 // // Or stop all like so:
 // tracks.forEach(track => track.stop())
@@ -231,7 +217,7 @@ export default MYFITSTAI
 //  if (item.classList.contains("vivv")) {
 
 //   }else{
-   
+
 //     item.remove()
 //   }
 // })
@@ -243,11 +229,9 @@ export default MYFITSTAI
 // poseNet.removeListener('pose',end);
 // document.querySelector(".display-itme-reletated").style.backgroundColor="#2d3136"
 
-
 //   }
 
 // }
-
 
 // function end(){
 // console.log("end")

@@ -8,6 +8,7 @@ import { BsArrowRepeat } from "react-icons/bs";
 import { BiArrowBack } from "react-icons/bi";
 import SelectPlan from "setup/selectplan";
 import { withRouter } from "react-router-dom";
+import OneTImePaymentStep from "setup/OneTImePaymentStep";
 let source;
 source = axios.CancelToken.source();
 
@@ -215,6 +216,14 @@ class Setup extends Component {
                 )}
 
                 {this.state.step === 4 ? (
+                  <div className="wpaer-theslider active ">
+                    <OneTImePaymentStep />
+                  </div>
+                ) : (
+                  ""
+                )}
+
+                {this.state.step === 5 ? (
                   <div className="wpaer-theslider active">
                     <Agreement
                       cleanPlan={this.cleanPlan}
