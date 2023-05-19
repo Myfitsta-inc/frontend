@@ -255,44 +255,10 @@ function App() {
               )}
             </Route>
 
-            <Route exact path="/message">
-              {user !== null ? (
-                user.email.length > 0 ? (
-                  <Message user={user} />
-                ) : (
-                  <Redirect to="/login" />
-                )
-              ) : (
-                <Loading />
-              )}
-            </Route>
-
             <Route exact path="/account/:id">
               {user !== null ? (
                 user.email.length > 0 ? (
                   <Visitpage user={user} />
-                ) : (
-                  <Redirect to="/login" />
-                )
-              ) : (
-                <Loading />
-              )}
-            </Route>
-            <Route exact path="/message/:id">
-              {user !== null ? (
-                user.email.length > 0 ? (
-                  <Conversation user={user} />
-                ) : (
-                  <Redirect to="/login" />
-                )
-              ) : (
-                <Loading />
-              )}
-            </Route>
-            <Route exact path="/message/room/:id">
-              {user !== null ? (
-                user.email.length > 0 ? (
-                  <Group user={user} />
                 ) : (
                   <Redirect to="/login" />
                 )
