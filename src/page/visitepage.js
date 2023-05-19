@@ -310,13 +310,6 @@ class Visitpage extends Component {
                           </div>
                           <div className="action-follow-un-fo disps">
                             {this.state.profile.userId ? (
-                              <MessageButton
-                                friend={this.state.profile.userId}
-                              />
-                            ) : (
-                              ""
-                            )}
-                            {this.state.profile.userId ? (
                               <ButtonFollow
                                 friend={this.state.profile.userId}
                               />
@@ -369,11 +362,11 @@ class Visitpage extends Component {
                       </div>
                       <div className="action-follow-un-fo mobioe">
                         <div className="wraeoieke">
-                          {this.state.profile.userId ? (
+                          {/* {this.state.profile.userId ? (
                             <MessageButton friend={this.state.profile.userId} />
                           ) : (
                             ""
-                          )}
+                          )} */}
                           {this.state.profile.userId ? (
                             <ButtonFollow
                               user={this.props.user.userId}

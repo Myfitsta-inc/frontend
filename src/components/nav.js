@@ -97,13 +97,13 @@ function Nav() {
                 <p>Collection</p>
               </NavLink>
 
-              <NavLink to="/message" className="nav-lii nav-infoo">
+              {/* <NavLink to="/message" className="nav-lii nav-infoo">
                 <div className="ic">
                   <i className="far fa-envelope"></i>
                 </div>
 
                 <p to="/message">Message</p>
-              </NavLink>
+              </NavLink> */}
 
               <NavLink to="/setting" className="nav-lii nav-infoo">
                 <div className="ic">
