@@ -934,6 +934,7 @@ video:-webkit-media-controls-panel {
 .wriffjjxif {
   position: relative;
   width: 100%;
+  margin-right: 10px;
 }
 .wriffjjxif button a {
   text-decoration: none;
@@ -4305,18 +4306,19 @@ body {
   background-color: var(--main-bg-cool-rgb);
   border: 0 !important;
 }
+.action-follow-un-fo{
+  max-width: 500px;
+}
 
 .action-follow-un-fo button {
   height: 40px;
   width: 100%;
-  max-width: 300px;
   font-weight: bold;
   border: 0;
   font-size: 16px;
   border: 0.5px solid var(--main-bg-cool-rgb);
   border-radius: 10px;
   color: var(--text);
-  margin-right: 5px;
   cursor: pointer;
 }
 
@@ -5320,6 +5322,7 @@ body {
 .disp {
   display: none;
 }
+
 .section-two {
   min-width: 100%;
   background-color: var(--main-bg-pagebox);
@@ -7604,6 +7607,9 @@ video {
   margin-bottom: 5px;
 }
 @media only screen and (max-width: 1000px) {
+  .action-follow-un-fo{
+    max-width:100%;
+  }
   .big-wrapert {
     border-top: 0px solid var(--main-bg-cool-rgb);
     border-right: 0px solid var(--main-bg-cool-rgb);
@@ -7792,7 +7798,6 @@ video {
   }
   .bioo-info {
     display: block;
-
     padding-left: 20px;
     margin: 0 auto;
     width: 95%;
