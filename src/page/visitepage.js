@@ -362,11 +362,6 @@ class Visitpage extends Component {
                       </div>
                       <div className="action-follow-un-fo mobioe">
                         <div className="wraeoieke">
-                          {/* {this.state.profile.userId ? (
-                            <MessageButton friend={this.state.profile.userId} />
-                          ) : (
-                            ""
-                          )} */}
                           {this.state.profile.userId ? (
                             <ButtonFollow
                               user={this.props.user.userId}
@@ -375,20 +370,19 @@ class Visitpage extends Component {
                           ) : (
                             ""
                           )}
+                          {this.state.profile.myfitstapro ? (
+                            <button className="flo">
+                              <Link
+                                className="llx"
+                                to={`/myfitstapro/${this.state.profile.userId}`}
+                              >
+                                PRO
+                              </Link>
+                            </button>
+                          ) : (
+                            ""
+                          )}
                         </div>
-
-                        {this.state.profile.myfitstapro ? (
-                          <button className="flo">
-                            <Link
-                              className="llx"
-                              to={`/myfitstapro/${this.state.profile.userId}`}
-                            >
-                              PRO
-                            </Link>
-                          </button>
-                        ) : (
-                          ""
-                        )}
                       </div>
                       <div className="bioo-info">
                         {this.state.profile.bio ? (
