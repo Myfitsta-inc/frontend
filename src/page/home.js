@@ -112,9 +112,6 @@ const Home = () => {
                 >
                   <i className="fas fa-search"></i>
                 </div>
-                <Link to="/message" id="notification">
-                  <i className="far fa-envelope"></i>
-                </Link>
               </div>
             </div>
             <div className="big-wraper">

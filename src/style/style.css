@@ -933,6 +933,7 @@ video:-webkit-media-controls-panel {
 }
 .wriffjjxif {
   position: relative;
+  width: 100%;
 }
 .wriffjjxif button a {
   text-decoration: none;
@@ -4191,8 +4192,7 @@ body {
   border-radius: 10px;
   background-color: var(--main-bg-box-item);
 }
-.unfol {
-}
+
 .menu-edit-profile {
   position: fixed;
   top: 0;
@@ -4308,7 +4308,8 @@ body {
 
 .action-follow-un-fo button {
   height: 40px;
-  width: 120px;
+  width: 100%;
+  max-width: 300px;
   font-weight: bold;
   border: 0;
   font-size: 16px;
@@ -7838,6 +7839,7 @@ video {
   }
   .wraeoieke button {
     width: 100%;
+    max-width: 100%;
   }
   .wraeoieke {
     width: 90%;
