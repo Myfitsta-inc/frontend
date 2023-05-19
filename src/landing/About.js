@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BiRocket } from "react-icons/bi";
 import { HiBadgeCheck, HiSpeakerphone } from "react-icons/hi";
 import Roll from "react-reveal/Roll";
+import { AiOutlineLink } from "react-icons/ai";
+
 import {
   BsClock,
   BsPieChartFill,
@@ -102,9 +104,9 @@ class About extends Component {
             <div className={`carvjdgjjfk ${this.props.mode ? "active" : ""} `}>
               <div className="iocjfjjr">
                 <div className="wrapejrj-the-iconcj">
-                  <VscMail />
+                  <AiOutlineLink />
                 </div>
-                <p className="fhgjentr">Messaging</p>
+                <p className="fhgjentr">Connect</p>
               </div>
 
               <div className="describejrjr">
