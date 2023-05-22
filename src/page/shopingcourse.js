@@ -209,12 +209,6 @@ class Shoping extends Component {
                       </div>
                     </div>
                     <div className="action-follow-un-fo disps">
-                      {this.state.profile.userId ? (
-                        <MessageButton friend={this.state.profile.userId} />
-                      ) : (
-                        ""
-                      )}
-
                       {this.state.subscribe === false ? (
                         <button className="flo">Subscribe</button>
                       ) : (
@@ -234,11 +228,6 @@ class Shoping extends Component {
                 </div>
                 <div className="action-follow-un-fo mobioe">
                   <div className="wraeoieke">
-                    {this.state.profile.userId ? (
-                      <MessageButton friend={this.state.profile.userId} />
-                    ) : (
-                      ""
-                    )}
                     {this.state.subscribe === false ? (
                       <button className="flo">Subscribe</button>
                     ) : (

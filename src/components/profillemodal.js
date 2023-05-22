@@ -56,7 +56,6 @@ class ProfileModal extends Component {
           </div>
         </div>
         <div className="wroarr-homfhjfj">
-          <MessageButton friend={this.props.profile.userId} />
           <ButtonFollow friend={this.props.profile.userId} />
         </div>
         <div className="holf-the-bio">
